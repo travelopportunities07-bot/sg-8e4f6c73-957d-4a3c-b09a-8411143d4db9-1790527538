@@ -15,7 +15,7 @@ export function CallToAction() {
           <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-white hover:bg-gray-100 transition-colors">
             Nous contacter
           </Link>
-          <Link href="/calendly-widget" className="inline-flex items-center justify-center px-6 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-white/10 transition-colors">
+          <Link href="/rendez-vous" className="inline-flex items-center justify-center px-6 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-white/10 transition-colors">
             Prendre rendez-vous
           </Link>
         </div>
