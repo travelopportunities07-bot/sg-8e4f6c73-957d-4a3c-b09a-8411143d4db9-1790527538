@@ -10,30 +10,28 @@ export function Header() {
   const { t } = useLanguage();
 
   return (
-    <header className="bg-primary text-white">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold">
+    <header className='bg-primary text-white'>
+      <div className='container mx-auto px-4 py-4'>
+        <div className='flex items-center justify-between'>
+          <Link href='/' className='text-2xl font-bold'>
             AfricaOpportunités
           </Link>
 
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/" className="text-lg font-medium hover:text-primary transition-colors">
+          <nav className='hidden md:flex items-center space-x-6'>
+            <Link href='/' className='text-lg font-medium hover:text-primary transition-colors'>
               {t('home')}
             </Link>
-            <Link href="/opportunites" className="text-lg font-medium hover:text-primary transition-colors">
-              {t('opportunities')}
-            </Link>
-            <Link href="/destinations" className="text-lg font-medium hover:text-primary transition-colors">
+            {/* Suppression du lien Opportunités */}
+            <Link href='/destinations' className='text-lg font-medium hover:text-primary transition-colors'>
               {t('destinations')}
             </Link>
-            <Link href="/rendez-vous" className="text-lg font-medium hover:text-primary transition-colors">
+            <Link href='/rendez-vous' className='text-lg font-medium hover:text-primary transition-colors'>
               {t('appointment')}
             </Link>
-            <Link href="/a-propos" className="text-lg font-medium hover:text-primary transition-colors">
+            <Link href='/a-propos' className='text-lg font-medium hover:text-primary transition-colors'>
               {t('about')}
             </Link>
-            <Link href="/contact" className="text-lg font-medium hover:text-primary transition-colors">
+            <Link href='/contact' className='text-lg font-medium hover:text-primary transition-colors'>
               {t('contact')}
             </Link>
             <LanguageSelector />
@@ -52,25 +50,23 @@ export function Header() {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4">
-            <div className="pt-5 pb-6 px-5 space-y-6">
-              <div className="grid grid-cols-1 gap-4">
-                <Link href="/" className="text-base font-medium text-gray-900 hover:text-primary transition-colors">
+          <div className='md:hidden mt-4 pb-4 space-y-4'>
+            <div className='pt-5 pb-6 px-5 space-y-6'>
+              <div className='grid grid-cols-1 gap-4'>
+                <Link href='/' className='text-base font-medium text-gray-900 hover:text-primary transition-colors'>
                   {t('home')}
                 </Link>
-                <Link href="/opportunites" className="text-base font-medium text-gray-900 hover:text-primary transition-colors">
-                  {t('opportunities')}
-                </Link>
-                <Link href="/destinations" className="text-base font-medium text-gray-900 hover:text-primary transition-colors">
+                {/* Suppression du lien Opportunités dans le menu mobile */}
+                <Link href='/destinations' className='text-base font-medium text-gray-900 hover:text-primary transition-colors'>
                   {t('destinations')}
                 </Link>
-                <Link href="/rendez-vous" className="text-base font-medium text-gray-900 hover:text-primary transition-colors">
+                <Link href='/rendez-vous' className='text-base font-medium text-gray-900 hover:text-primary transition-colors'>
                   {t('appointment')}
                 </Link>
-                <Link href="/a-propos" className="text-base font-medium text-gray-900 hover:text-primary transition-colors">
+                <Link href='/a-propos' className='text-base font-medium text-gray-900 hover:text-primary transition-colors'>
                   {t('about')}
                 </Link>
-                <Link href="/contact" className="text-base font-medium text-gray-900 hover:text-primary transition-colors">
+                <Link href='/contact' className='text-base font-medium text-gray-900 hover:text-primary transition-colors'>
                   {t('contact')}
                 </Link>
               </div>
