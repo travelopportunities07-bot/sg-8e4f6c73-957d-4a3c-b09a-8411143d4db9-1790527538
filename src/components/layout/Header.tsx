@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
@@ -15,23 +14,26 @@ export function Header() {
             AfricaOpportunités
           </Link>
 
-          <div className="hidden md:flex space-x-6">
-            <Link href="/" className="hover:text-primary-foreground/80">
+          <nav className='hidden md:flex items-center space-x-6'>
+            <Link href='/' className='text-lg font-medium hover:text-primary transition-colors'>
               Accueil
             </Link>
-            <Link href="/destinations" className="hover:text-primary-foreground/80">
+            <Link href='/opportunites' className='text-lg font-medium hover:text-primary transition-colors'>
+              Opportunités
+            </Link>
+            <Link href='/destinations' className='text-lg font-medium hover:text-primary transition-colors'>
               Destinations
             </Link>
-            <Link href="/opportunites" className="hover:text-primary-foreground/80">
-              Types d'Opportunités
+            <Link href='/rendez-vous' className='text-lg font-medium hover:text-primary transition-colors'>
+              Rendez-vous
             </Link>
-            <Link href="/a-propos" className="hover:text-primary-foreground/80">
-              À Propos
+            <Link href='/a-propos' className='text-lg font-medium hover:text-primary transition-colors'>
+              À propos
             </Link>
-            <Link href="/contact" className="hover:text-primary-foreground/80">
+            <Link href='/contact' className='text-lg font-medium hover:text-primary transition-colors'>
               Contact
             </Link>
-          </div>
+          </nav>
 
           <div className="md:hidden">
             <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -41,22 +43,29 @@ export function Header() {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4">
-            <Link href="/" className="block hover:text-primary-foreground/80">
-              Accueil
-            </Link>
-            <Link href="/destinations" className="block hover:text-primary-foreground/80">
-              Destinations
-            </Link>
-            <Link href="/opportunites" className="block hover:text-primary-foreground/80">
-              Types d'Opportunités
-            </Link>
-            <Link href="/a-propos" className="block hover:text-primary-foreground/80">
-              À Propos
-            </Link>
-            <Link href="/contact" className="block hover:text-primary-foreground/80">
-              Contact
-            </Link>
+          <div className='md:hidden mt-4 pb-4 space-y-4'>
+            <div className='pt-5 pb-6 px-5 space-y-6'>
+              <div className='grid grid-cols-1 gap-4'>
+                <Link href='/' className='text-base font-medium text-gray-900 hover:text-primary transition-colors'>
+                  Accueil
+                </Link>
+                <Link href='/opportunites' className='text-base font-medium text-gray-900 hover:text-primary transition-colors'>
+                  Opportunités
+                </Link>
+                <Link href='/destinations' className='text-base font-medium text-gray-900 hover:text-primary transition-colors'>
+                  Destinations
+                </Link>
+                <Link href='/rendez-vous' className='text-base font-medium text-gray-900 hover:text-primary transition-colors'>
+                  Rendez-vous
+                </Link>
+                <Link href='/a-propos' className='text-base font-medium text-gray-900 hover:text-primary transition-colors'>
+                  À propos
+                </Link>
+                <Link href='/contact' className='text-base font-medium text-gray-900 hover:text-primary transition-colors'>
+                  Contact
+                </Link>
+              </div>
+            </div>
           </div>
         )}
       </div>
