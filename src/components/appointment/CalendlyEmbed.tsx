@@ -1,12 +1,12 @@
-
 import { useEffect } from "react";
 
 interface CalendlyEmbedProps {
   url: string;
   className?: string;
+  height?: number;
 }
 
-export function CalendlyEmbed({ url, className = "" }: CalendlyEmbedProps) {
+export function CalendlyEmbed({ url, className = "", height = 700 }: CalendlyEmbedProps) {
   useEffect(() => {
     // Charger le script Calendly
     const script = document.createElement("script");
@@ -16,11 +16,17 @@ export function CalendlyEmbed({ url, className = "" }: CalendlyEmbedProps) {
 
     return () => {
       // Nettoyer le script lors du démontage du composant
-      document.body.removeChild(script);
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
     };
   }, []);
 
   return (
-    <div className={`calendly-inline-widget ${className}`} data-url={url} style={{ minWidth: "320px", height: "700px" }} />
+    <div 
+      className={`calendly-inline-widget ${className}`} 
+      data-url={url} 
+      style={{ minWidth: "320px", height: `${height}px` }} 
+    />
   );
 }

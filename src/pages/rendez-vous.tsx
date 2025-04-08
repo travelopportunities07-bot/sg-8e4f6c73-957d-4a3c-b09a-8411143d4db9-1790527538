@@ -1,10 +1,10 @@
-
 import { Layout } from "@/components/layout/Layout";
 import { AppointmentSection } from "@/components/appointment/AppointmentSection";
 
 export default function AppointmentPage() {
-  // Remplacez cette URL par votre URL Calendly réelle
-  const calendlyUrl = "https://calendly.com/votre-nom/30min";
+  // TODO: Remplacez cette URL par votre URL Calendly réelle
+  // Format: https://calendly.com/votre-nom/type-de-rendez-vous
+  const calendlyUrl = 'https://calendly.com/votre-nom/30min';
   
   return (
     <Layout
