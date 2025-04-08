@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
@@ -19,6 +18,20 @@ const destinations: Destination[] = [
     flag: "🇨🇦",
     image: "https://images.unsplash.com/photo-1503614472-8c93d56e92ce",
     description: "Un pays accueillant offrant d'excellentes opportunités d'études et de travail."
+  },
+  {
+    id: "lituanie",
+    name: "Lituanie",
+    flag: "🇱🇹",
+    image: "https://images.unsplash.com/photo-1541322072-7d8dea59c2b8",
+    description: "Un joyau baltique avec un riche patrimoine culturel et des universités de qualité."
+  },
+  {
+    id: "autriche",
+    name: "Autriche",
+    flag: "🇦🇹",
+    image: "https://images.unsplash.com/photo-1516550893885-985c836c5be4",
+    description: "Tradition et innovation au cœur de l'Europe, excellence académique et qualité de vie."
   },
   {
     id: "japon",
