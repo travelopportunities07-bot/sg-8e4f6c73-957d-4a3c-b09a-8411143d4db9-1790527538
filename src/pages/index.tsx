@@ -1,21 +1,24 @@
-import React from 'react'
-import Head from 'next/head'
+
+import { Layout } from "@/components/layout/Layout";
+import { Hero } from "@/components/home/Hero";
+import { FeaturedDestinations } from "@/components/home/FeaturedDestinations";
+import { OpportunityTypes } from "@/components/home/OpportunityTypes";
+import { AboutSection } from "@/components/home/AboutSection";
+import { Testimonials } from "@/components/home/Testimonials";
+import { CallToAction } from "@/components/home/CallToAction";
 
 export default function Home() {
   return (
-    <>
-      <Head>
-        <title>Hello World</title>
-        <meta name="description" content="Welcome to my app" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      
-      <main className="min-h-screen bg-gray-100 flex items-center justify-center">
-        <div className="text-center space-y-4">
-          <h1 className="text-4xl font-bold text-gray-900">Hello World</h1>
-          <p className="text-lg text-gray-600">This is going to be your softgen app, start by describing your project.</p>
-        </div>
-      </main>
-    </>
-  )
+    <Layout 
+      title="AfricaOpportunités | Opportunités Internationales pour Résidents Africains"
+      description="Découvrez des opportunités de travail, d'études, de volontariat et plus encore dans les pays les plus attractifs pour les résidents africains."
+    >
+      <Hero />
+      <FeaturedDestinations />
+      <OpportunityTypes />
+      <AboutSection />
+      <Testimonials />
+      <CallToAction />
+    </Layout>
+  );
 }
