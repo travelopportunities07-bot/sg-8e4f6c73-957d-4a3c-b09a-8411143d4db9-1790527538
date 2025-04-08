@@ -1,7 +1,6 @@
-
 import { createContext, useContext, useState, ReactNode } from "react";
 
-type Language = "fr" | "en";
+type Language = 'fr' | 'en' | 'de';
 
 interface LanguageContextType {
   language: Language;
@@ -11,20 +10,28 @@ interface LanguageContextType {
 
 const translations = {
   fr: {
-    "home": "Accueil",
-    "opportunities": "Opportunités",
-    "destinations": "Destinations",
-    "appointment": "Rendez-vous",
-    "about": "À propos",
-    "contact": "Contact",
+    'home': 'Accueil',
+    'opportunities': 'Opportunités',
+    'destinations': 'Destinations',
+    'appointment': 'Rendez-vous',
+    'about': 'À propos',
+    'contact': 'Contact',
   },
   en: {
-    "home": "Home",
-    "opportunities": "Opportunities",
-    "destinations": "Destinations",
-    "appointment": "Appointment",
-    "about": "About",
-    "contact": "Contact",
+    'home': 'Home',
+    'opportunities': 'Opportunities',
+    'destinations': 'Destinations',
+    'appointment': 'Appointment',
+    'about': 'About',
+    'contact': 'Contact',
+  },
+  de: {
+    'home': 'Startseite',
+    'opportunities': 'Möglichkeiten',
+    'destinations': 'Reiseziele',
+    'appointment': 'Termin',
+    'about': 'Über uns',
+    'contact': 'Kontakt',
   }
 };
 
