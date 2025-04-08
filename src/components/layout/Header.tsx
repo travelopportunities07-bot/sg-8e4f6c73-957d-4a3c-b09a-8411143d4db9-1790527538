@@ -27,11 +27,8 @@ export function Header() {
             <Link href='/rendez-vous' className='text-lg font-medium hover:text-primary transition-colors'>
               Rendez-vous
             </Link>
-            <Link href='/calendly-direct' className='text-lg font-medium hover:text-primary transition-colors'>
-              Calendrier
-            </Link>
-            <Link href='/calendly-integration' className='text-lg font-medium hover:text-primary transition-colors'>
-              Calendly
+            <Link href='/calendly-widget' className='text-lg font-medium hover:text-primary transition-colors'>
+              Calendly Widget
             </Link>
             <Link href='/a-propos' className='text-lg font-medium hover:text-primary transition-colors'>
               À propos
@@ -64,11 +61,8 @@ export function Header() {
                 <Link href='/rendez-vous' className='text-base font-medium text-gray-900 hover:text-primary transition-colors'>
                   Rendez-vous
                 </Link>
-                <Link href='/calendly-direct' className='text-base font-medium text-gray-900 hover:text-primary transition-colors'>
-                  Calendrier
-                </Link>
-                <Link href='/calendly-integration' className='text-base font-medium text-gray-900 hover:text-primary transition-colors'>
-                  Calendly
+                <Link href='/calendly-widget' className='text-base font-medium text-gray-900 hover:text-primary transition-colors'>
+                  Calendly Widget
                 </Link>
                 <Link href='/a-propos' className='text-base font-medium text-gray-900 hover:text-primary transition-colors'>
                   À propos
