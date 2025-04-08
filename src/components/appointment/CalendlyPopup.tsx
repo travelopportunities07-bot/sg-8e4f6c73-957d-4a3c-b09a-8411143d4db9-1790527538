@@ -8,6 +8,13 @@ interface CalendlyPopupProps {
   buttonVariant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
 }
 
+// Déclaration pour TypeScript
+declare global {
+  interface Window {
+    Calendly?: any;
+  }
+}
+
 export function CalendlyPopup({ 
   url, 
   text = 'Prendre rendez-vous', 
@@ -32,7 +39,6 @@ export function CalendlyPopup({
   const openCalendly = () => {
     // Calendly est ajouté globalement par le script
     if (typeof window !== 'undefined' && window.Calendly) {
-      // @ts-ignore - Calendly est ajouté globalement par le script
       window.Calendly.initPopupWidget({ url });
       return false;
     }
