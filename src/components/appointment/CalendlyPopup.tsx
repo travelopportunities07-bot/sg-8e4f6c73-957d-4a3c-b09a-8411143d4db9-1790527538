@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -6,19 +5,19 @@ interface CalendlyPopupProps {
   url: string;
   text?: string;
   className?: string;
-  buttonVariant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link";
+  buttonVariant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
 }
 
 export function CalendlyPopup({ 
   url, 
-  text = "Prendre rendez-vous", 
-  className = "",
-  buttonVariant = "default"
+  text = 'Prendre rendez-vous', 
+  className = '',
+  buttonVariant = 'default'
 }: CalendlyPopupProps) {
   useEffect(() => {
     // Charger le script Calendly
-    const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
     script.async = true;
     document.body.appendChild(script);
 
@@ -31,8 +30,9 @@ export function CalendlyPopup({
   }, []);
 
   const openCalendly = () => {
-    // @ts-ignore - Calendly est ajouté globalement par le script
-    if (window.Calendly) {
+    // Calendly est ajouté globalement par le script
+    if (typeof window !== 'undefined' && window.Calendly) {
+      // @ts-ignore - Calendly est ajouté globalement par le script
       window.Calendly.initPopupWidget({ url });
       return false;
     }
