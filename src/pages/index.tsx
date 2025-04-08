@@ -10,12 +10,12 @@ import { CallToAction } from "@/components/home/CallToAction";
 export default function Home() {
   return (
     <Layout 
-      title="AfricaOpportunités | Opportunités Internationales pour Résidents Africains"
-      description="Découvrez des opportunités de travail, d'études, de volontariat et plus encore dans les pays les plus attractifs pour les résidents africains."
+      title="Aventure Sans Frontières | Votre Passerelle vers le Monde"
+      description="Découvrez des opportunités de voyages, études, volontariat, stages ou emplois à l'international. Explorez, osez, transformez votre avenir."
     >
       <Hero />
-      <FeaturedDestinations />
       <OpportunityTypes />
+      <FeaturedDestinations />
       <AboutSection />
       <Testimonials />
       <CallToAction />
