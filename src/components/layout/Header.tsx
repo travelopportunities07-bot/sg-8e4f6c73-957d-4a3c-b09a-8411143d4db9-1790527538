@@ -7,10 +7,10 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-primary text-white">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold">
+    <header className='bg-primary text-white'>
+      <div className='container mx-auto px-4 py-4'>
+        <div className='flex items-center justify-between'>
+          <Link href='/' className='text-2xl font-bold'>
             AfricaOpportunités
           </Link>
 
@@ -27,6 +27,9 @@ export function Header() {
             <Link href='/rendez-vous' className='text-lg font-medium hover:text-primary transition-colors'>
               Rendez-vous
             </Link>
+            <Link href='/calendly-direct' className='text-lg font-medium hover:text-primary transition-colors'>
+              Calendrier
+            </Link>
             <Link href='/a-propos' className='text-lg font-medium hover:text-primary transition-colors'>
               À propos
             </Link>
@@ -35,9 +38,9 @@ export function Header() {
             </Link>
           </nav>
 
-          <div className="md:hidden">
-            <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              <Menu className="h-6 w-6" />
+          <div className='md:hidden'>
+            <Button variant='ghost' size='icon' onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              <Menu className='h-6 w-6' />
             </Button>
           </div>
         </div>
@@ -57,6 +60,9 @@ export function Header() {
                 </Link>
                 <Link href='/rendez-vous' className='text-base font-medium text-gray-900 hover:text-primary transition-colors'>
                   Rendez-vous
+                </Link>
+                <Link href='/calendly-direct' className='text-base font-medium text-gray-900 hover:text-primary transition-colors'>
+                  Calendrier
                 </Link>
                 <Link href='/a-propos' className='text-base font-medium text-gray-900 hover:text-primary transition-colors'>
                   À propos
