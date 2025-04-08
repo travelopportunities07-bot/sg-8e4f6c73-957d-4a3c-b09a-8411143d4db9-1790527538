@@ -1,12 +1,13 @@
-
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import { LanguageSelector } from "./LanguageSelector";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <header className="bg-primary text-white">
@@ -18,22 +19,22 @@ export function Header() {
 
           <nav className="hidden md:flex items-center space-x-6">
             <Link href="/" className="text-lg font-medium hover:text-primary transition-colors">
-              Accueil
+              {t('home')}
             </Link>
             <Link href="/opportunites" className="text-lg font-medium hover:text-primary transition-colors">
-              Opportunités
+              {t('opportunities')}
             </Link>
             <Link href="/destinations" className="text-lg font-medium hover:text-primary transition-colors">
-              Destinations
+              {t('destinations')}
             </Link>
             <Link href="/rendez-vous" className="text-lg font-medium hover:text-primary transition-colors">
-              Rendez-vous
+              {t('appointment')}
             </Link>
             <Link href="/a-propos" className="text-lg font-medium hover:text-primary transition-colors">
-              À propos
+              {t('about')}
             </Link>
             <Link href="/contact" className="text-lg font-medium hover:text-primary transition-colors">
-              Contact
+              {t('contact')}
             </Link>
             <LanguageSelector />
           </nav>
@@ -55,22 +56,22 @@ export function Header() {
             <div className="pt-5 pb-6 px-5 space-y-6">
               <div className="grid grid-cols-1 gap-4">
                 <Link href="/" className="text-base font-medium text-gray-900 hover:text-primary transition-colors">
-                  Accueil
+                  {t('home')}
                 </Link>
                 <Link href="/opportunites" className="text-base font-medium text-gray-900 hover:text-primary transition-colors">
-                  Opportunités
+                  {t('opportunities')}
                 </Link>
                 <Link href="/destinations" className="text-base font-medium text-gray-900 hover:text-primary transition-colors">
-                  Destinations
+                  {t('destinations')}
                 </Link>
                 <Link href="/rendez-vous" className="text-base font-medium text-gray-900 hover:text-primary transition-colors">
-                  Rendez-vous
+                  {t('appointment')}
                 </Link>
                 <Link href="/a-propos" className="text-base font-medium text-gray-900 hover:text-primary transition-colors">
-                  À propos
+                  {t('about')}
                 </Link>
                 <Link href="/contact" className="text-base font-medium text-gray-900 hover:text-primary transition-colors">
-                  Contact
+                  {t('contact')}
                 </Link>
               </div>
             </div>
