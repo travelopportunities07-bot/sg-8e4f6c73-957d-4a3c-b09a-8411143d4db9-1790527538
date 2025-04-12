@@ -10,6 +10,7 @@ import { DestinationsMenu } from "./DestinationsMenu";
 const destinations = [
   { id: "allemagne", name: "Allemagne", flag: "🇩🇪" },
   { id: "australie", name: "Australie", flag: "🇦🇺" },
+  { id: "etats-unis", name: "États-Unis", flag: "🇺🇸" },
   { id: "norvege", name: "Norvège", flag: "🇳🇴" },
   { id: "finlande", name: "Finlande", flag: "🇫🇮" },
   { id: "irlande", name: "Irlande", flag: "🇮🇪" },
