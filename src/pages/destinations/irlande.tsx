@@ -8,6 +8,7 @@ import Link from "next/link";
 import { InterestSection } from '@/components/destinations/InterestSection';
 import { PaymentSection } from '@/components/destinations/PaymentSection';
 import { ContactForm } from '@/components/destinations/ContactForm';
+import { DestinationConsultation } from '@/components/destinations/DestinationConsultation';
 
 export default function IrlandePage() {
   return (
@@ -533,16 +534,8 @@ export default function IrlandePage() {
         </div>
       </section>
 
-      {/* Interest Section */}
-      <div className='container mx-auto px-4'>
-        <InterestSection />
-      </div>
-
-      {/* Payment Section */}
-      <PaymentSection />
-
-      {/* Contact Form */}
-      <ContactForm />
+      {/* Consultation Section - Includes Interest, Payment and Contact Form */}
+      <DestinationConsultation />
 
       {/* Call to Action */}
       <section className="py-12 bg-primary text-white">

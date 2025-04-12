@@ -1,9 +1,13 @@
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { HelpCircle } from "lucide-react";
+import { useState } from "react";
 
-export function InterestSection() {
+interface InterestSectionProps {
+  onInterestClick: () => void;
+}
+
+export function InterestSection({ onInterestClick }: InterestSectionProps) {
   return (
     <div className="bg-blue-50 p-6 rounded-lg shadow-sm my-8">
       <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
@@ -15,7 +19,10 @@ export function InterestSection() {
           <p className="text-blue-700 mb-4">
             Vous avez des questions ? Besoin d'un accompagnement ? Cliquez ici pour bénéficier de nos conseils et d'un suivi étape par étape.
           </p>
-          <Button className="bg-blue-600 hover:bg-blue-700">
+          <Button 
+            className="bg-blue-600 hover:bg-blue-700"
+            onClick={onInterestClick}
+          >
             Je suis intéressé(e)
           </Button>
         </div>

@@ -5,13 +5,27 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Upload, Send } from "lucide-react";
+import { Upload, Send, ArrowLeft } from "lucide-react";
 
-export function ContactForm() {
+interface ContactFormProps {
+  selectedPlan?: "basic" | "premium";
+  onBack: () => void;
+}
+
+export function ContactForm({ selectedPlan, onBack }: ContactFormProps) {
   return (
-    <section className="py-12 bg-white">
+    <section className="py-12 bg-white" id="contact-form">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center">📩 Contactez-nous</h2>
+        <h2 className="text-3xl font-bold mb-2 text-center">📩 Finalisez Votre Demande</h2>
+        
+        {selectedPlan && (
+          <p className="text-center mb-8 text-lg">
+            Vous avez choisi l'
+            <span className={selectedPlan === "basic" ? "text-blue-600 font-semibold" : "text-amber-600 font-semibold"}>
+              Accompagnement {selectedPlan === "basic" ? "Basic" : "Premium"}
+            </span>
+          </p>
+        )}
         
         <Card className="max-w-2xl mx-auto">
           <CardHeader>
@@ -73,20 +87,20 @@ export function ContactForm() {
               <div className="space-y-2">
                 <Label htmlFor="payment">Preuve de paiement</Label>
                 <div className="grid grid-cols-1 gap-4">
-                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
-                    <div className="flex flex-col items-center gap-2">
-                      <Upload className="h-8 w-8 text-gray-400" />
-                      <p className="text-sm text-gray-500">Cliquez pour télécharger ou glissez-déposez</p>
-                      <p className="text-xs text-gray-400">PNG, JPG ou PDF (max. 5MB)</p>
-                    </div>
+                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center cursor-pointer">
+                    <label htmlFor="payment-upload" className="cursor-pointer">
+                      <div className="flex flex-col items-center gap-2">
+                        <Upload className="h-8 w-8 text-gray-400" />
+                        <p className="text-sm text-gray-500">Cliquez pour télécharger ou glissez-déposez</p>
+                        <p className="text-xs text-gray-400">PNG, JPG ou PDF (max. 5MB)</p>
+                      </div>
+                    </label>
                     <Input id="payment-upload" type="file" className="hidden" />
                   </div>
-                  <div className="- or -">
-                    <div className="flex items-center gap-4">
-                      <div className="h-px bg-gray-300 flex-grow"></div>
-                      <span className="text-sm text-gray-500">OU</span>
-                      <div className="h-px bg-gray-300 flex-grow"></div>
-                    </div>
+                  <div className="flex items-center gap-4">
+                    <div className="h-px bg-gray-300 flex-grow"></div>
+                    <span className="text-sm text-gray-500">OU</span>
+                    <div className="h-px bg-gray-300 flex-grow"></div>
                   </div>
                   <div>
                     <Input id="payment-code" placeholder="Entrez votre code de paiement" />
@@ -100,8 +114,15 @@ export function ContactForm() {
               </div>
             </form>
           </CardContent>
-          <CardFooter>
-            <Button className="w-full flex items-center gap-2">
+          <CardFooter className="flex flex-col sm:flex-row gap-4">
+            <Button 
+              variant="outline" 
+              className="w-full sm:w-auto flex items-center gap-2"
+              onClick={onBack}
+            >
+              <ArrowLeft className="h-4 w-4" /> Retour aux options
+            </Button>
+            <Button className="w-full sm:flex-1 flex items-center gap-2">
               <Send className="h-4 w-4" /> Envoyer ma demande
             </Button>
           </CardFooter>
