@@ -1,4 +1,3 @@
-
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -6,6 +5,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Briefcase, GraduationCap, Globe, Heart, Award, Home, Building } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { InterestSection } from '@/components/destinations/InterestSection';
+import { PaymentSection } from '@/components/destinations/PaymentSection';
+import { ContactForm } from '@/components/destinations/ContactForm';
 
 export default function IrlandePage() {
   return (
@@ -469,32 +471,32 @@ export default function IrlandePage() {
       </section>
 
       {/* Resources */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Ressources Utiles</h2>
+      <section className='py-12 bg-white'>
+        <div className='container mx-auto px-4'>
+          <h2 className='text-3xl font-bold mb-8 text-center'>Ressources Utiles</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
             <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4">Sites Officiels</h3>
-                <ul className="space-y-3">
+              <CardContent className='p-6'>
+                <h3 className='text-xl font-bold mb-4'>Sites Officiels</h3>
+                <ul className='space-y-3'>
                   <li>
-                    <a href="https://www.irishimmigration.ie/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                    <a href='https://www.irishimmigration.ie/' target='_blank' rel='noopener noreferrer' className='text-blue-600 hover:underline'>
                       Service irlandais de naturalisation et d'immigration
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.citizensinformation.ie/en/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                    <a href='https://www.citizensinformation.ie/en/' target='_blank' rel='noopener noreferrer' className='text-blue-600 hover:underline'>
                       Citizens Information (informations sur la vie en Irlande)
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.educationinireland.com/en/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                    <a href='https://www.educationinireland.com/en/' target='_blank' rel='noopener noreferrer' className='text-blue-600 hover:underline'>
                       Education in Ireland
                     </a>
                   </li>
                   <li>
-                    <a href="https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                    <a href='https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/' target='_blank' rel='noopener noreferrer' className='text-blue-600 hover:underline'>
                       Department of Enterprise, Trade and Employment
                     </a>
                   </li>
@@ -503,26 +505,26 @@ export default function IrlandePage() {
             </Card>
             
             <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4">Communautés et Réseaux</h3>
-                <ul className="space-y-3">
+              <CardContent className='p-6'>
+                <h3 className='text-xl font-bold mb-4'>Communautés et Réseaux</h3>
+                <ul className='space-y-3'>
                   <li>
-                    <a href="https://www.internations.org/dublin-expats" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                    <a href='https://www.internations.org/dublin-expats' target='_blank' rel='noopener noreferrer' className='text-blue-600 hover:underline'>
                       InterNations Dublin
                     </a>
-                    <p className="text-gray-600 text-sm">Réseau d'expatriés en Irlande</p>
+                    <p className='text-gray-600 text-sm'>Réseau d'expatriés en Irlande</p>
                   </li>
                   <li>
-                    <a href="https://www.facebook.com/groups/africansinireland/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                    <a href='https://www.facebook.com/groups/africansinireland/' target='_blank' rel='noopener noreferrer' className='text-blue-600 hover:underline'>
                       Africains en Irlande (Facebook)
                     </a>
-                    <p className="text-gray-600 text-sm">Groupe communautaire pour les Africains vivant en Irlande</p>
+                    <p className='text-gray-600 text-sm'>Groupe communautaire pour les Africains vivant en Irlande</p>
                   </li>
                   <li>
-                    <a href="https://www.meetup.com/cities/ie/dublin/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                    <a href='https://www.meetup.com/cities/ie/dublin/' target='_blank' rel='noopener noreferrer' className='text-blue-600 hover:underline'>
                       Meetup Dublin
                     </a>
-                    <p className="text-gray-600 text-sm">Groupes et événements locaux</p>
+                    <p className='text-gray-600 text-sm'>Groupes et événements locaux</p>
                   </li>
                 </ul>
               </CardContent>
@@ -530,6 +532,17 @@ export default function IrlandePage() {
           </div>
         </div>
       </section>
+
+      {/* Interest Section */}
+      <div className='container mx-auto px-4'>
+        <InterestSection />
+      </div>
+
+      {/* Payment Section */}
+      <PaymentSection />
+
+      {/* Contact Form */}
+      <ContactForm />
 
       {/* Call to Action */}
       <section className="py-12 bg-primary text-white">
