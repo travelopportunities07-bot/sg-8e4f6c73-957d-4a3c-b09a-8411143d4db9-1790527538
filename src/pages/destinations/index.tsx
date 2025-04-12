@@ -1,4 +1,3 @@
-
 import { Layout } from "@/components/layout/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
@@ -26,6 +25,13 @@ const destinations: Destination[] = [
     flag: "🇦🇺",
     image: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be",
     description: "Explorez les possibilités de travail et d'études dans le pays des kangourous, connu pour sa qualité de vie exceptionnelle."
+  },
+  {
+    id: "etats-unis",
+    name: "États-Unis",
+    flag: "🇺🇸",
+    image: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29",
+    description: "Découvrez les innombrables opportunités dans la première puissance mondiale, pays d'innovation, d'entrepreneuriat et d'excellence académique."
   },
   {
     id: "norvege",
