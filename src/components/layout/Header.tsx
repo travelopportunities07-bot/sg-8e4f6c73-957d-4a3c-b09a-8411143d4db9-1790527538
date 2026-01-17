@@ -6,7 +6,6 @@ import { LanguageSelector } from "./LanguageSelector";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { DestinationsMenu } from "./DestinationsMenu";
 
-// Liste des destinations pour le menu déroulant
 const destinations = [
   { id: "allemagne", name: "Allemagne", flag: "🇩🇪" },
   { id: "australie", name: "Australie", flag: "🇦🇺" },
@@ -28,19 +27,18 @@ export function Header() {
   const { t } = useLanguage();
 
   return (
-    <header className='bg-green-600 text-white'>
+    <header className="bg-gradient-to-r from-indigo-700 to-blue-600 text-white shadow-lg">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold">
-            AfricaOpportunités
+          <Link href="/" className="text-2xl font-bold hover:text-indigo-100 transition-colors">
+            Aventures Sans Frontières
           </Link>
 
           <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/" className="text-lg font-medium hover:text-primary transition-colors">
+            <Link href="/" className="text-lg font-medium hover:text-indigo-100 transition-colors">
               {t("home")}
             </Link>
             
-            {/* Menu déroulant des destinations */}
             <div 
               className="relative"
               onMouseEnter={() => setShowDestinationsMenu(true)}
@@ -48,7 +46,7 @@ export function Header() {
             >
               <Link 
                 href="/destinations" 
-                className="text-lg font-medium hover:text-primary transition-colors flex items-center"
+                className="text-lg font-medium hover:text-indigo-100 transition-colors flex items-center"
               >
                 {t("destinations")}
                 <ChevronDown className="ml-1 h-4 w-4" />
@@ -59,13 +57,13 @@ export function Header() {
               )}
             </div>
             
-            <Link href="/rendez-vous" className="text-lg font-medium hover:text-primary transition-colors">
+            <Link href="/rendez-vous" className="text-lg font-medium hover:text-indigo-100 transition-colors">
               {t("appointment")}
             </Link>
-            <Link href="/a-propos" className="text-lg font-medium hover:text-primary transition-colors">
+            <Link href="/a-propos" className="text-lg font-medium hover:text-indigo-100 transition-colors">
               {t("about")}
             </Link>
-            <Link href="/contact" className="text-lg font-medium hover:text-primary transition-colors">
+            <Link href="/contact" className="text-lg font-medium hover:text-indigo-100 transition-colors">
               {t("contact")}
             </Link>
             <LanguageSelector />
@@ -87,13 +85,12 @@ export function Header() {
           <div className="md:hidden mt-4 pb-4 space-y-4">
             <div className="pt-5 pb-6 px-5 space-y-6">
               <div className="grid grid-cols-1 gap-4">
-                <Link href="/" className="text-base font-medium text-gray-900 hover:text-primary transition-colors">
+                <Link href="/" className="text-base font-medium hover:text-indigo-100 transition-colors">
                   {t("home")}
                 </Link>
                 
-                {/* Menu mobile des destinations */}
                 <div>
-                  <Link href="/destinations" className="text-base font-medium text-gray-900 hover:text-primary transition-colors">
+                  <Link href="/destinations" className="text-base font-medium hover:text-indigo-100 transition-colors">
                     {t("destinations")}
                   </Link>
                   <div className="pl-4 mt-2 space-y-2">
@@ -101,7 +98,7 @@ export function Header() {
                       <Link 
                         href={`/destinations/${destination.id}`} 
                         key={destination.id}
-                        className="text-sm text-gray-600 hover:text-primary transition-colors flex items-center"
+                        className="text-sm hover:text-indigo-100 transition-colors flex items-center"
                       >
                         <span className="mr-2">{destination.flag}</span>
                         <span>{destination.name}</span>
@@ -110,13 +107,13 @@ export function Header() {
                   </div>
                 </div>
                 
-                <Link href="/rendez-vous" className="text-base font-medium text-gray-900 hover:text-primary transition-colors">
+                <Link href="/rendez-vous" className="text-base font-medium hover:text-indigo-100 transition-colors">
                   {t("appointment")}
                 </Link>
-                <Link href="/a-propos" className="text-base font-medium text-gray-900 hover:text-primary transition-colors">
+                <Link href="/a-propos" className="text-base font-medium hover:text-indigo-100 transition-colors">
                   {t("about")}
                 </Link>
-                <Link href="/contact" className="text-base font-medium text-gray-900 hover:text-primary transition-colors">
+                <Link href="/contact" className="text-base font-medium hover:text-indigo-100 transition-colors">
                   {t("contact")}
                 </Link>
               </div>
