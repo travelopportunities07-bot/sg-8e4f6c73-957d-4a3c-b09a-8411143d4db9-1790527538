@@ -1,4 +1,3 @@
-
 import { createContext, useContext, useState, ReactNode, useEffect } from "react";
 
 export type Language = 'fr' | 'en' | 'de';
@@ -9,202 +8,255 @@ interface LanguageContextType {
   t: (key: string, params?: Record<string, string>) => string;
 }
 
-// Dictionnaire de traductions étendu
 const translations = {
   fr: {
     // Navigation
-    'home': 'Accueil',
-    'opportunities': 'Opportunités',
-    'destinations': 'Destinations',
-    'appointment': 'Rendez-vous',
-    'about': 'À propos',
-    'contact': 'Contact',
+    'nav.home': 'Accueil',
+    'nav.volunteering': 'Volontariat',
+    'nav.training': 'Formations',
+    'nav.studies': 'Études',
+    'nav.tourism': 'Tourisme',
+    'nav.support': 'Accompagnement',
+    'nav.blog': 'Blog & Guides',
+    'nav.contact': 'Contact',
     
-    // Hero Section
-    'hero.title': 'Découvrez le Monde, Transformez Votre Avenir',
-    'hero.subtitle': 'Explorez des opportunités internationales de voyage, d\'études, de volontariat et plus encore',
-    'hero.cta': 'Découvrir les opportunités',
+    // Hero
+    'hero.title': 'Votre Avenir en Allemagne Commence Ici',
+    'hero.subtitle': 'Découvrez des opportunités de volontariat, formation professionnelle, études et tourisme en Allemagne. Un accompagnement complet pour concrétiser votre projet.',
+    'hero.cta.primary': 'Demander un accompagnement',
+    'hero.cta.secondary': 'Découvrir les opportunités',
     
-    // Opportunity Types
-    'opportunity.title': 'Explorez Nos Opportunités',
-    'opportunity.subtitle': 'Découvrez diverses façons de vivre une expérience internationale enrichissante',
-    'opportunity.studies': 'Études',
-    'opportunity.studies.desc': 'Programmes d\'études à l\'étranger pour élargir vos horizons académiques',
-    'opportunity.internship': 'Stages',
-    'opportunity.internship.desc': 'Acquérir une expérience professionnelle internationale précieuse',
-    'opportunity.volunteer': 'Volontariat',
-    'opportunity.volunteer.desc': 'Contribuer à des projets significatifs tout en découvrant de nouvelles cultures',
-    'opportunity.work': 'Emploi',
-    'opportunity.work.desc': 'Opportunités de carrière à l\'international dans divers secteurs',
-    'opportunity.travel': 'Voyages',
-    'opportunity.travel.desc': 'Expériences de voyage immersives et culturellement enrichissantes',
+    // Opportunities Overview
+    'opportunities.title': 'Explorez Vos Opportunités en Allemagne',
+    'opportunities.subtitle': 'Des parcours adaptés à chaque profil et projet',
     
-    // Featured Destinations
-    'destinations.title': 'Destinations Populaires',
-    'destinations.subtitle': 'Explorez nos destinations les plus recherchées',
-    'destinations.viewAll': 'Voir toutes les destinations',
-    'destinations.austria': 'Autriche',
-    'destinations.lithuania': 'Lituanie',
+    'opportunities.volunteering.title': 'Volontariat (FSJ, BFD, FWD)',
+    'opportunities.volunteering.desc': 'Engagez-vous dans une mission de volontariat en Allemagne : social, écologique ou culturel. Une expérience enrichissante avec logement et indemnités.',
     
-    // About Section
-    'about.title': 'À Propos de Nous',
-    'about.subtitle': 'Votre partenaire de confiance pour les opportunités internationales',
-    'about.description': 'Aventure Sans Frontières est dédié à connecter les personnes avec des opportunités internationales transformatrices. Notre mission est de faciliter les expériences interculturelles qui enrichissent les vies et élargissent les perspectives.',
-    'about.mission': 'Notre Mission',
-    'about.mission.desc': 'Faciliter des expériences internationales accessibles et enrichissantes',
-    'about.vision': 'Notre Vision',
-    'about.vision.desc': 'Un monde où les échanges culturels sont à la portée de tous',
-    'about.values': 'Nos Valeurs',
-    'about.values.desc': 'Authenticité, diversité, croissance personnelle et impact positif',
+    'opportunities.training.title': 'Formations Professionnelles',
+    'opportunities.training.desc': 'Intégrez une formation professionnelle en Allemagne : soins infirmiers, artisanat, hôtellerie et bien plus. Diplôme reconnu et rémunération.',
     
-    // Testimonials
-    'testimonials.title': 'Ce Que Disent Nos Participants',
-    'testimonials.subtitle': 'Découvrez les expériences de ceux qui ont participé à nos programmes',
+    'opportunities.studies.title': 'Études Supérieures',
+    'opportunities.studies.desc': 'Étudiez dans une université allemande de renom. Frais réduits, qualité académique reconnue internationalement et vie étudiante dynamique.',
     
-    // Call to Action
-    'cta.title': 'Prêt à Commencer Votre Aventure?',
-    'cta.subtitle': 'Prenez rendez-vous avec nos conseillers pour discuter de vos options',
-    'cta.button': 'Prendre Rendez-vous',
+    'opportunities.tourism.title': 'Tourisme & Culture',
+    'opportunities.tourism.desc': 'Découvrez l\'Allemagne : châteaux, musées, festivals et nature. Des circuits organisés et des conseils pour voyager en toute sérénité.',
     
-    // Quick Appointment
-    'quick.title': 'Besoin d\'aide?',
-    'quick.subtitle': 'Planifiez un appel rapide de 30 minutes',
-    'quick.button': 'Réserver',
+    // Why Germany
+    'why.title': 'Pourquoi Choisir l\'Allemagne ?',
+    'why.subtitle': 'Un pays d\'opportunités au cœur de l\'Europe',
+    
+    'why.economy.title': 'Économie Dynamique',
+    'why.economy.desc': 'Première économie européenne avec d\'excellentes opportunités d\'emploi et de formation',
+    
+    'why.education.title': 'Éducation de Qualité',
+    'why.education.desc': 'Universités de renommée mondiale et système de formation professionnelle exemplaire',
+    
+    'why.culture.title': 'Richesse Culturelle',
+    'why.culture.desc': 'Histoire fascinante, patrimoine exceptionnel et scène culturelle vibrante',
+    
+    'why.quality.title': 'Qualité de Vie',
+    'why.quality.desc': 'Infrastructures modernes, sécurité, système de santé performant et environnement préservé',
+    
+    // Steps
+    'steps.title': 'Comment Ça Marche ?',
+    'steps.subtitle': 'Un parcours simple et accompagné',
+    
+    'steps.1.title': '1. Consultation Gratuite',
+    'steps.1.desc': 'Échangez avec nos conseillers pour définir votre projet et vérifier votre éligibilité',
+    
+    'steps.2.title': '2. Préparation du Dossier',
+    'steps.2.desc': 'Nous vous aidons à constituer votre dossier et à préparer votre départ',
+    
+    'steps.3.title': '3. Accompagnement sur Place',
+    'steps.3.desc': 'Support continu pendant votre séjour : logement, démarches, intégration',
+    
+    // CTA Section
+    'cta.title': 'Prêt à Démarrer Votre Projet ?',
+    'cta.subtitle': 'Contactez-nous pour un entretien personnalisé',
+    'cta.button': 'Demander une consultation',
     
     // Footer
+    'footer.about': 'À propos',
+    'footer.about.text': 'Votre partenaire de confiance pour réaliser vos projets en Allemagne : volontariat, formation, études et tourisme.',
+    'footer.links': 'Liens Rapides',
+    'footer.resources': 'Ressources',
+    'footer.contact': 'Contact',
     'footer.rights': 'Tous droits réservés',
     'footer.privacy': 'Politique de confidentialité',
-    'footer.terms': 'Conditions d\'utilisation'
+    'footer.terms': 'Conditions d\'utilisation',
+    
+    // Common
+    'common.learnMore': 'En savoir plus',
+    'common.apply': 'Postuler',
+    'common.contact': 'Nous contacter',
+    'common.readMore': 'Lire la suite'
   },
   en: {
     // Navigation
-    'home': 'Home',
-    'opportunities': 'Opportunities',
-    'destinations': 'Destinations',
-    'appointment': 'Appointment',
-    'about': 'About',
-    'contact': 'Contact',
+    'nav.home': 'Home',
+    'nav.volunteering': 'Volunteering',
+    'nav.training': 'Training',
+    'nav.studies': 'Studies',
+    'nav.tourism': 'Tourism',
+    'nav.support': 'Support',
+    'nav.blog': 'Blog & Guides',
+    'nav.contact': 'Contact',
     
-    // Hero Section
-    'hero.title': 'Discover the World, Transform Your Future',
-    'hero.subtitle': 'Explore international opportunities for travel, studies, volunteering and more',
-    'hero.cta': 'Discover opportunities',
+    // Hero
+    'hero.title': 'Your Future in Germany Starts Here',
+    'hero.subtitle': 'Discover volunteering, professional training, study and tourism opportunities in Germany. Complete support to make your project a reality.',
+    'hero.cta.primary': 'Request support',
+    'hero.cta.secondary': 'Explore opportunities',
     
-    // Opportunity Types
-    'opportunity.title': 'Explore Our Opportunities',
-    'opportunity.subtitle': 'Discover various ways to experience an enriching international experience',
-    'opportunity.studies': 'Studies',
-    'opportunity.studies.desc': 'Study abroad programs to broaden your academic horizons',
-    'opportunity.internship': 'Internships',
-    'opportunity.internship.desc': 'Gain valuable international professional experience',
-    'opportunity.volunteer': 'Volunteering',
-    'opportunity.volunteer.desc': 'Contribute to meaningful projects while discovering new cultures',
-    'opportunity.work': 'Employment',
-    'opportunity.work.desc': 'International career opportunities in various sectors',
-    'opportunity.travel': 'Travel',
-    'opportunity.travel.desc': 'Immersive and culturally enriching travel experiences',
+    // Opportunities Overview
+    'opportunities.title': 'Explore Your Opportunities in Germany',
+    'opportunities.subtitle': 'Pathways tailored to every profile and project',
     
-    // Featured Destinations
-    'destinations.title': 'Popular Destinations',
-    'destinations.subtitle': 'Explore our most sought-after destinations',
-    'destinations.viewAll': 'View all destinations',
-    'destinations.austria': 'Austria',
-    'destinations.lithuania': 'Lithuania',
+    'opportunities.volunteering.title': 'Volunteering (FSJ, BFD, FWD)',
+    'opportunities.volunteering.desc': 'Engage in a volunteer mission in Germany: social, ecological or cultural. An enriching experience with accommodation and allowances.',
     
-    // About Section
-    'about.title': 'About Us',
-    'about.subtitle': 'Your trusted partner for international opportunities',
-    'about.description': 'Adventure Without Borders is dedicated to connecting people with transformative international opportunities. Our mission is to facilitate cross-cultural experiences that enrich lives and broaden perspectives.',
-    'about.mission': 'Our Mission',
-    'about.mission.desc': 'Facilitate accessible and enriching international experiences',
-    'about.vision': 'Our Vision',
-    'about.vision.desc': 'A world where cultural exchanges are accessible to everyone',
-    'about.values': 'Our Values',
-    'about.values.desc': 'Authenticity, diversity, personal growth and positive impact',
+    'opportunities.training.title': 'Professional Training',
+    'opportunities.training.desc': 'Join professional training in Germany: nursing, crafts, hospitality and more. Recognized diploma and remuneration.',
     
-    // Testimonials
-    'testimonials.title': 'What Our Participants Say',
-    'testimonials.subtitle': 'Discover the experiences of those who have participated in our programs',
+    'opportunities.studies.title': 'Higher Education',
+    'opportunities.studies.desc': 'Study at a renowned German university. Reduced fees, internationally recognized academic quality and dynamic student life.',
     
-    // Call to Action
-    'cta.title': 'Ready to Start Your Adventure?',
-    'cta.subtitle': 'Schedule an appointment with our advisors to discuss your options',
-    'cta.button': 'Schedule Appointment',
+    'opportunities.tourism.title': 'Tourism & Culture',
+    'opportunities.tourism.desc': 'Discover Germany: castles, museums, festivals and nature. Organized tours and advice for peaceful travel.',
     
-    // Quick Appointment
-    'quick.title': 'Need help?',
-    'quick.subtitle': 'Schedule a quick 30-minute call',
-    'quick.button': 'Book Now',
+    // Why Germany
+    'why.title': 'Why Choose Germany?',
+    'why.subtitle': 'A land of opportunities in the heart of Europe',
+    
+    'why.economy.title': 'Dynamic Economy',
+    'why.economy.desc': 'Europe\'s leading economy with excellent employment and training opportunities',
+    
+    'why.education.title': 'Quality Education',
+    'why.education.desc': 'World-renowned universities and exemplary vocational training system',
+    
+    'why.culture.title': 'Cultural Richness',
+    'why.culture.desc': 'Fascinating history, exceptional heritage and vibrant cultural scene',
+    
+    'why.quality.title': 'Quality of Life',
+    'why.quality.desc': 'Modern infrastructure, safety, efficient healthcare system and preserved environment',
+    
+    // Steps
+    'steps.title': 'How Does It Work?',
+    'steps.subtitle': 'A simple and supported journey',
+    
+    'steps.1.title': '1. Free Consultation',
+    'steps.1.desc': 'Talk with our advisors to define your project and check your eligibility',
+    
+    'steps.2.title': '2. File Preparation',
+    'steps.2.desc': 'We help you build your file and prepare your departure',
+    
+    'steps.3.title': '3. On-Site Support',
+    'steps.3.desc': 'Ongoing support during your stay: accommodation, procedures, integration',
+    
+    // CTA Section
+    'cta.title': 'Ready to Start Your Project?',
+    'cta.subtitle': 'Contact us for a personalized interview',
+    'cta.button': 'Request a consultation',
     
     // Footer
+    'footer.about': 'About',
+    'footer.about.text': 'Your trusted partner to realize your projects in Germany: volunteering, training, studies and tourism.',
+    'footer.links': 'Quick Links',
+    'footer.resources': 'Resources',
+    'footer.contact': 'Contact',
     'footer.rights': 'All rights reserved',
     'footer.privacy': 'Privacy Policy',
-    'footer.terms': 'Terms of Use'
+    'footer.terms': 'Terms of Use',
+    
+    // Common
+    'common.learnMore': 'Learn more',
+    'common.apply': 'Apply',
+    'common.contact': 'Contact us',
+    'common.readMore': 'Read more'
   },
   de: {
     // Navigation
-    'home': 'Startseite',
-    'opportunities': 'Möglichkeiten',
-    'destinations': 'Reiseziele',
-    'appointment': 'Termin',
-    'about': 'Über uns',
-    'contact': 'Kontakt',
+    'nav.home': 'Startseite',
+    'nav.volunteering': 'Freiwilligendienst',
+    'nav.training': 'Ausbildung',
+    'nav.studies': 'Studium',
+    'nav.tourism': 'Tourismus',
+    'nav.support': 'Begleitung',
+    'nav.blog': 'Blog & Ratgeber',
+    'nav.contact': 'Kontakt',
     
-    // Hero Section
-    'hero.title': 'Entdecke die Welt, Verändere Deine Zukunft',
-    'hero.subtitle': 'Erkunde internationale Möglichkeiten für Reisen, Studium, Freiwilligenarbeit und mehr',
-    'hero.cta': 'Möglichkeiten entdecken',
+    // Hero
+    'hero.title': 'Ihre Zukunft in Deutschland Beginnt Hier',
+    'hero.subtitle': 'Entdecken Sie Möglichkeiten für Freiwilligendienst, Berufsausbildung, Studium und Tourismus in Deutschland. Umfassende Begleitung zur Verwirklichung Ihres Projekts.',
+    'hero.cta.primary': 'Begleitung anfragen',
+    'hero.cta.secondary': 'Möglichkeiten entdecken',
     
-    // Opportunity Types
-    'opportunity.title': 'Entdecke Unsere Möglichkeiten',
-    'opportunity.subtitle': 'Entdecke verschiedene Wege, um eine bereichernde internationale Erfahrung zu erleben',
-    'opportunity.studies': 'Studium',
-    'opportunity.studies.desc': 'Auslandsstudienprogramme zur Erweiterung deiner akademischen Horizonte',
-    'opportunity.internship': 'Praktika',
-    'opportunity.internship.desc': 'Sammle wertvolle internationale Berufserfahrung',
-    'opportunity.volunteer': 'Freiwilligenarbeit',
-    'opportunity.volunteer.desc': 'Trage zu bedeutsamen Projekten bei und entdecke neue Kulturen',
-    'opportunity.work': 'Beschäftigung',
-    'opportunity.work.desc': 'Internationale Karrieremöglichkeiten in verschiedenen Sektoren',
-    'opportunity.travel': 'Reisen',
-    'opportunity.travel.desc': 'Immersive und kulturell bereichernde Reiseerfahrungen',
+    // Opportunities Overview
+    'opportunities.title': 'Erkunden Sie Ihre Möglichkeiten in Deutschland',
+    'opportunities.subtitle': 'Wege für jedes Profil und Projekt',
     
-    // Featured Destinations
-    'destinations.title': 'Beliebte Reiseziele',
-    'destinations.subtitle': 'Erkunde unsere gefragtesten Reiseziele',
-    'destinations.viewAll': 'Alle Reiseziele anzeigen',
-    'destinations.austria': 'Österreich',
-    'destinations.lithuania': 'Litauen',
+    'opportunities.volunteering.title': 'Freiwilligendienst (FSJ, BFD, FWD)',
+    'opportunities.volunteering.desc': 'Engagieren Sie sich in einem Freiwilligendienst in Deutschland: sozial, ökologisch oder kulturell. Eine bereichernde Erfahrung mit Unterkunft und Vergütung.',
     
-    // About Section
-    'about.title': 'Über Uns',
-    'about.subtitle': 'Dein vertrauenswürdiger Partner für internationale Möglichkeiten',
-    'about.description': 'Abenteuer Ohne Grenzen widmet sich der Verbindung von Menschen mit transformativen internationalen Möglichkeiten. Unsere Mission ist es, interkulturelle Erfahrungen zu erleichtern, die Leben bereichern und Perspektiven erweitern.',
-    'about.mission': 'Unsere Mission',
-    'about.mission.desc': 'Zugängliche und bereichernde internationale Erfahrungen ermöglichen',
-    'about.vision': 'Unsere Vision',
-    'about.vision.desc': 'Eine Welt, in der kultureller Austausch für jeden zugänglich ist',
-    'about.values': 'Unsere Werte',
-    'about.values.desc': 'Authentizität, Vielfalt, persönliches Wachstum und positive Wirkung',
+    'opportunities.training.title': 'Berufsausbildung',
+    'opportunities.training.desc': 'Beginnen Sie eine Berufsausbildung in Deutschland: Krankenpflege, Handwerk, Gastgewerbe und mehr. Anerkanntes Diplom und Vergütung.',
     
-    // Testimonials
-    'testimonials.title': 'Was Unsere Teilnehmer Sagen',
-    'testimonials.subtitle': 'Entdecke die Erfahrungen derer, die an unseren Programmen teilgenommen haben',
+    'opportunities.studies.title': 'Hochschulstudium',
+    'opportunities.studies.desc': 'Studieren Sie an einer renommierten deutschen Universität. Reduzierte Gebühren, international anerkannte akademische Qualität und dynamisches Studentenleben.',
     
-    // Call to Action
-    'cta.title': 'Bereit, Dein Abenteuer zu Beginnen?',
-    'cta.subtitle': 'Vereinbare einen Termin mit unseren Beratern, um deine Optionen zu besprechen',
-    'cta.button': 'Termin Vereinbaren',
+    'opportunities.tourism.title': 'Tourismus & Kultur',
+    'opportunities.tourism.desc': 'Entdecken Sie Deutschland: Schlösser, Museen, Festivals und Natur. Organisierte Touren und Tipps für sorgenfreies Reisen.',
     
-    // Quick Appointment
-    'quick.title': 'Brauchst du Hilfe?',
-    'quick.subtitle': 'Plane einen schnellen 30-minütigen Anruf',
-    'quick.button': 'Jetzt Buchen',
+    // Why Germany
+    'why.title': 'Warum Deutschland Wählen?',
+    'why.subtitle': 'Ein Land voller Möglichkeiten im Herzen Europas',
+    
+    'why.economy.title': 'Dynamische Wirtschaft',
+    'why.economy.desc': 'Führende Wirtschaft Europas mit hervorragenden Beschäftigungs- und Ausbildungsmöglichkeiten',
+    
+    'why.education.title': 'Qualitätsbildung',
+    'why.education.desc': 'Weltbekannte Universitäten und vorbildliches Berufsbildungssystem',
+    
+    'why.culture.title': 'Kultureller Reichtum',
+    'why.culture.desc': 'Faszinierende Geschichte, außergewöhnliches Erbe und lebendige Kulturszene',
+    
+    'why.quality.title': 'Lebensqualität',
+    'why.quality.desc': 'Moderne Infrastruktur, Sicherheit, effizientes Gesundheitssystem und geschützte Umwelt',
+    
+    // Steps
+    'steps.title': 'Wie Funktioniert Es?',
+    'steps.subtitle': 'Ein einfacher und begleiteter Weg',
+    
+    'steps.1.title': '1. Kostenlose Beratung',
+    'steps.1.desc': 'Sprechen Sie mit unseren Beratern, um Ihr Projekt zu definieren und Ihre Eignung zu überprüfen',
+    
+    'steps.2.title': '2. Vorbereitung der Unterlagen',
+    'steps.2.desc': 'Wir helfen Ihnen bei der Erstellung Ihrer Unterlagen und bei der Vorbereitung Ihrer Abreise',
+    
+    'steps.3.title': '3. Begleitung vor Ort',
+    'steps.3.desc': 'Kontinuierliche Unterstützung während Ihres Aufenthalts: Unterkunft, Formalitäten, Integration',
+    
+    // CTA Section
+    'cta.title': 'Bereit, Ihr Projekt zu Starten?',
+    'cta.subtitle': 'Kontaktieren Sie uns für ein persönliches Gespräch',
+    'cta.button': 'Beratung anfragen',
     
     // Footer
+    'footer.about': 'Über uns',
+    'footer.about.text': 'Ihr vertrauenswürdiger Partner zur Verwirklichung Ihrer Projekte in Deutschland: Freiwilligendienst, Ausbildung, Studium und Tourismus.',
+    'footer.links': 'Schnelllinks',
+    'footer.resources': 'Ressourcen',
+    'footer.contact': 'Kontakt',
     'footer.rights': 'Alle Rechte vorbehalten',
     'footer.privacy': 'Datenschutzrichtlinie',
-    'footer.terms': 'Nutzungsbedingungen'
+    'footer.terms': 'Nutzungsbedingungen',
+    
+    // Common
+    'common.learnMore': 'Mehr erfahren',
+    'common.apply': 'Bewerben',
+    'common.contact': 'Kontaktieren Sie uns',
+    'common.readMore': 'Weiterlesen'
   }
 };
 
@@ -213,7 +265,6 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>("fr");
 
-  // Fonction de traduction améliorée avec support pour les paramètres
   const t = (key: string, params?: Record<string, string>): string => {
     const translation = translations[language][key as keyof typeof translations.fr] || key;
     
@@ -226,19 +277,15 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     return translation;
   };
 
-  // Sauvegarde de la langue dans le localStorage
   useEffect(() => {
-    // Récupérer la langue depuis localStorage au chargement
     const savedLanguage = localStorage.getItem("language") as Language;
     if (savedLanguage && (savedLanguage === "fr" || savedLanguage === "en" || savedLanguage === "de")) {
       setLanguage(savedLanguage);
     }
   }, []);
 
-  // Mettre à jour localStorage quand la langue change
   useEffect(() => {
     localStorage.setItem("language", language);
-    // Mettre à jour l'attribut lang du document HTML
     document.documentElement.lang = language;
   }, [language]);
 
