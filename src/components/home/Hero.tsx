@@ -12,20 +12,20 @@ export function Hero() {
       
       <div className="container relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 animate-fade-in">
             <Globe className="h-5 w-5 text-accent-green" />
             <span className="text-sm font-medium">{t("hero.badge")}</span>
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight animate-fade-in">
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight animate-fade-in-delay-1">
             {t("hero.title")}
           </h1>
           
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto animate-fade-in-delay-2">
             {t("hero.subtitle")}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-delay-3">
             <Link href="/contact">
               <Button size="lg" className="bg-accent-green hover:bg-accent-green/90 text-white text-lg px-8 py-6 rounded-lg shadow-xl hover:shadow-2xl transition-all">
                 {t("hero.cta.primary")}
@@ -39,7 +39,7 @@ export function Hero() {
             </Link>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 animate-fade-in-delay-4">
             {[
               { icon: Briefcase, label: t("hero.stats.volunteering") },
               { icon: GraduationCap, label: t("hero.stats.training") },
