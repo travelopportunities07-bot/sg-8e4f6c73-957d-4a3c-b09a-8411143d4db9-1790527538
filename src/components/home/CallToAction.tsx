@@ -1,23 +1,40 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { ArrowRight, Phone } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function CallToAction() {
+  const { t } = useLanguage();
+  
   return (
-    <section className="bg-primary py-16 text-white">
-      <div className="container mx-auto px-4 md:px-6 text-center">
-        <h2 className="text-3xl font-bold mb-4">
-          Prêt à commencer votre aventure ?
-        </h2>
-        <p className="text-xl mb-8 max-w-2xl mx-auto">
-          Rejoignez notre communauté et découvrez un monde d'opportunités qui vous attendent.
-        </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-white hover:bg-gray-100 transition-colors">
-            Nous contacter
-          </Link>
-          <Link href="/rendez-vous" className="inline-flex items-center justify-center px-6 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-white/10 transition-colors">
-            Prendre rendez-vous
-          </Link>
+    <section className="py-16 md:py-24 bg-gradient-to-r from-institutional-blue to-blue-900 text-white relative overflow-hidden">
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1600')] bg-cover bg-center opacity-5"></div>
+      
+      <div className="container relative z-10">
+        <div className="max-w-3xl mx-auto text-center space-y-8">
+          <h2 className="text-3xl md:text-5xl font-bold">
+            {t("cta.title")}
+          </h2>
+          
+          <p className="text-xl text-blue-100">
+            {t("cta.subtitle")}
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link href="/contact">
+              <Button size="lg" className="bg-accent-green hover:bg-accent-green/90 text-white text-lg px-8 py-6 rounded-lg shadow-xl hover:shadow-2xl transition-all">
+                {t("cta.button")}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+            
+            <Link href="/rendez-vous">
+              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-institutional-blue text-lg px-8 py-6 rounded-lg transition-all">
+                <Phone className="mr-2 h-5 w-5" />
+                {t("cta.appointment")}
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

@@ -1,69 +1,67 @@
-
-import { Card, CardContent } from "@/components/ui/card";
-
-interface Testimonial {
-  id: number;
-  name: string;
-  country: string;
-  destination: string;
-  quote: string;
-  opportunityType: string;
-}
-
-const testimonials: Testimonial[] = [
-  {
-    id: 1,
-    name: "Aminata Diallo",
-    country: "Sénégal",
-    destination: "Allemagne",
-    quote: "Grâce à AfricaOpportunités, j'ai pu trouver un programme de master en ingénierie en Allemagne avec une bourse complète. Le processus a été simplifié et les conseils fournis ont été précieux.",
-    opportunityType: "Formations"
-  },
-  {
-    id: 2,
-    name: "Kofi Mensah",
-    country: "Ghana",
-    destination: "Australie",
-    quote: "J'ai découvert un programme de volontariat en Australie qui correspondait parfaitement à mes compétences. Aujourd'hui, j'ai un emploi permanent et une nouvelle vie grâce aux informations trouvées sur ce site.",
-    opportunityType: "Volontariat"
-  },
-  {
-    id: 3,
-    name: "Fatima Ouedraogo",
-    country: "Burkina Faso",
-    destination: "Norvège",
-    quote: "Le guide sur les opportunités de travail en Norvège m'a permis de préparer efficacement ma candidature. Je travaille maintenant comme infirmière à Oslo et je suis très reconnaissante.",
-    opportunityType: "Travail"
-  }
-];
+import { Card } from "@/components/ui/card";
+import { Star, Quote } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Testimonials() {
+  const { t } = useLanguage();
+  
+  const testimonials = [
+    {
+      nameKey: "testimonials.1.name",
+      roleKey: "testimonials.1.role",
+      textKey: "testimonials.1.text"
+    },
+    {
+      nameKey: "testimonials.2.name",
+      roleKey: "testimonials.2.role",
+      textKey: "testimonials.2.text"
+    },
+    {
+      nameKey: "testimonials.3.name",
+      roleKey: "testimonials.3.role",
+      textKey: "testimonials.3.text"
+    }
+  ];
+  
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Témoignages de Réussite</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Découvrez les histoires inspirantes de personnes qui ont réalisé leurs rêves internationaux grâce à nos services.
+    <section className="py-16 md:py-24 bg-section-gray">
+      <div className="container">
+        <div className="text-center mb-12 space-y-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-institutional-blue">
+            {t("testimonials.title")}
+          </h2>
+          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+            {t("testimonials.subtitle")}
           </p>
         </div>
-
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial) => (
-            <Card key={testimonial.id} className="h-full">
-              <CardContent className="p-6">
-                <div className="mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-xl">★</span>
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-6 italic">"{testimonial.quote}"</p>
-                <div>
-                  <p className="font-bold">{testimonial.name}</p>
-                  <p className="text-gray-600">{testimonial.country} → {testimonial.destination}</p>
-                  <p className="text-primary mt-1">{testimonial.opportunityType}</p>
-                </div>
-              </CardContent>
+          {testimonials.map((testimonial, index) => (
+            <Card 
+              key={index} 
+              className="p-8 bg-white border-2 border-gray-200 hover:border-accent-green hover:shadow-xl transition-all duration-300 animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <Quote className="h-10 w-10 text-accent-green mb-4 opacity-50" />
+              
+              <div className="flex gap-1 mb-4">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star key={star} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              
+              <p className="text-text-secondary mb-6 italic">
+                "{t(testimonial.textKey)}"
+              </p>
+              
+              <div className="border-t border-gray-200 pt-4">
+                <p className="font-bold text-institutional-blue">
+                  {t(testimonial.nameKey)}
+                </p>
+                <p className="text-sm text-text-secondary">
+                  {t(testimonial.roleKey)}
+                </p>
+              </div>
             </Card>
           ))}
         </div>

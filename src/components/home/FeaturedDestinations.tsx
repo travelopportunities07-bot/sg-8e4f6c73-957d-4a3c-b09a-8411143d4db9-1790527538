@@ -1,113 +1,72 @@
-import Link from "next/link";
-import { Card, CardContent } from "@/components/ui/card";
-import Image from "next/image";
+import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { CheckCircle, Users, Clock, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-interface Destination {
-  id: string;
-  nameKey?: string;
-  name: string;
-  flag: string;
-  image: string;
-  descriptionKey?: string;
-  description: string;
-}
-
 export function FeaturedDestinations() {
-  const { t, language } = useLanguage();
-
-  const destinations: Destination[] = [
+  const { t } = useLanguage();
+  
+  const steps = [
     {
-      id: 'canada',
-      name: 'Canada',
-      flag: '🇨🇦',
-      image: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce',
-      description: language === 'fr' 
-        ? 'Un pays accueillant offrant d\'excellentes opportunités d\'études et de travail.'
-        : language === 'de'
-        ? 'Ein einladendes Land, das hervorragende Studien- und Arbeitsmöglichkeiten bietet.'
-        : 'A welcoming country offering excellent study and work opportunities.'
+      icon: Users,
+      titleKey: "steps.1.title",
+      descKey: "steps.1.desc"
     },
     {
-      id: 'japon',
-      name: 'Japon',
-      flag: '🇯🇵',
-      image: 'https://images.unsplash.com/photo-1528164344705-47542687000d',
-      description: language === 'fr'
-        ? 'Découvrez une culture fascinante et des programmes d\'échange enrichissants.'
-        : language === 'de'
-        ? 'Entdecken Sie eine faszinierende Kultur und bereichernde Austauschprogramme.'
-        : 'Discover a fascinating culture and enriching exchange programs.'
+      icon: CheckCircle,
+      titleKey: "steps.2.title",
+      descKey: "steps.2.desc"
     },
     {
-      id: 'allemagne',
-      name: 'Allemagne',
-      flag: '🇩🇪',
-      image: 'https://images.unsplash.com/photo-1599946347371-68eb71b16afc',
-      description: language === 'fr'
-        ? 'Un pays à la pointe de l\'innovation avec des formations de qualité.'
-        : language === 'de'
-        ? 'Ein Land an der Spitze der Innovation mit hochwertigen Ausbildungsmöglichkeiten.'
-        : 'A country at the forefront of innovation with quality training programs.'
-    },
-    {
-      id: 'australie',
-      name: 'Australie',
-      flag: '🇦🇺',
-      image: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be',
-      description: language === 'fr'
-        ? 'Combinez aventure et opportunités professionnelles dans un cadre exceptionnel.'
-        : language === 'de'
-        ? 'Kombinieren Sie Abenteuer und berufliche Möglichkeiten in einem außergewöhnlichen Umfeld.'
-        : 'Combine adventure and professional opportunities in an exceptional setting.'
+      icon: MapPin,
+      titleKey: "steps.3.title",
+      descKey: "steps.3.desc"
     }
   ];
-
+  
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">{t('destinations.title')}</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {t('destinations.subtitle')}
+    <section className="py-16 md:py-24 bg-white">
+      <div className="container">
+        <div className="text-center mb-12 space-y-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-institutional-blue">
+            {t("steps.title")}
+          </h2>
+          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+            {t("steps.subtitle")}
           </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {destinations.map((destination) => (
-            <Link href={`/destinations/${destination.id}`} key={destination.id}>
-              <Card className="overflow-hidden h-full transition-transform hover:scale-105 shadow-sm">
-                <div className="relative h-56">
-                  <Image 
-                    src={destination.image} 
-                    alt={destination.nameKey ? t(destination.nameKey) : destination.name}
-                    fill
-                    style={{ objectFit: "cover" }}
-                  />
-                  <div className="absolute top-3 right-3 bg-white rounded-full px-2 py-1 text-sm font-bold">
-                    {destination.flag}
-                  </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          {steps.map((step, index) => (
+            <div key={index} className="relative">
+              {index < steps.length - 1 && (
+                <div className="hidden md:block absolute top-16 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-accent-green to-transparent"></div>
+              )}
+              
+              <Card className="p-8 text-center border-2 border-gray-200 hover:border-accent-green hover:shadow-xl transition-all duration-300 relative bg-white">
+                <div className="bg-gradient-to-br from-accent-green to-green-600 rounded-full p-4 w-20 h-20 flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <step.icon className="h-10 w-10 text-white" />
                 </div>
-                <CardContent className="p-5">
-                  <h3 className="text-xl font-bold mb-2">
-                    {destination.nameKey ? t(destination.nameKey) : destination.name}
-                  </h3>
-                  <p className="text-gray-600">
-                    {destination.descriptionKey ? t(destination.descriptionKey) : destination.description}
-                  </p>
-                </CardContent>
+                
+                <h3 className="text-xl font-bold text-institutional-blue mb-3">
+                  {t(step.titleKey)}
+                </h3>
+                
+                <p className="text-text-secondary">
+                  {t(step.descKey)}
+                </p>
               </Card>
-            </Link>
+            </div>
           ))}
         </div>
-
-        <div className="text-center mt-12">
-          <Button asChild>
-            <Link href="/destinations">
-              {t('destinations.viewAll')}
-            </Link>
-          </Button>
+        
+        <div className="text-center">
+          <Link href="/demarches">
+            <Button size="lg" className="bg-institutional-blue hover:bg-blue-900 text-white text-lg px-8 py-6 rounded-lg shadow-lg">
+              {t("common.learnMore")}
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

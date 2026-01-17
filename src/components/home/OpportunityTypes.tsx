@@ -1,98 +1,86 @@
-
-import { Card, CardContent } from "@/components/ui/card";
-import Link from "next/link";
+import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Briefcase, GraduationCap, Globe, Heart, Award, Home } from "lucide-react";
+import Link from "next/link";
+import { Heart, Wrench, GraduationCap, Camera, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-
-interface OpportunityType {
-  id: string;
-  nameKey: string;
-  descriptionKey: string;
-  icon: React.ReactNode;
-  color: string;
-}
 
 export function OpportunityTypes() {
   const { t } = useLanguage();
-
-  const opportunityTypes: OpportunityType[] = [
+  
+  const opportunities = [
     {
-      id: "etudes",
-      nameKey: "opportunity.studies",
-      descriptionKey: "opportunity.studies.desc",
-      icon: <GraduationCap className="h-12 w-12 text-blue-600" />,
-      color: "#2563eb"
+      icon: Heart,
+      titleKey: "opportunities.volunteering.title",
+      descKey: "opportunities.volunteering.desc",
+      href: "/volontariat",
+      color: "bg-red-50 text-red-600",
+      borderColor: "border-red-200"
     },
     {
-      id: "travail",
-      nameKey: "opportunity.work",
-      descriptionKey: "opportunity.work.desc",
-      icon: <Briefcase className="h-12 w-12 text-indigo-600" />,
-      color: "#4f46e5"
+      icon: Wrench,
+      titleKey: "opportunities.training.title",
+      descKey: "opportunities.training.desc",
+      href: "/formations",
+      color: "bg-orange-50 text-orange-600",
+      borderColor: "border-orange-200"
     },
     {
-      id: "volontariat",
-      nameKey: "opportunity.volunteer",
-      descriptionKey: "opportunity.volunteer.desc",
-      icon: <Heart className="h-12 w-12 text-red-600" />,
-      color: "#dc2626"
+      icon: GraduationCap,
+      titleKey: "opportunities.studies.title",
+      descKey: "opportunities.studies.desc",
+      href: "/etudes",
+      color: "bg-blue-50 text-blue-600",
+      borderColor: "border-blue-200"
     },
     {
-      id: "stages",
-      nameKey: "opportunity.internship",
-      descriptionKey: "opportunity.internship.desc",
-      icon: <Award className="h-12 w-12 text-amber-600" />,
-      color: "#d97706"
-    },
-    {
-      id: "voyages",
-      nameKey: "opportunity.travel",
-      descriptionKey: "opportunity.travel.desc",
-      icon: <Globe className="h-12 w-12 text-green-600" />,
-      color: "#16a34a"
-    },
-    {
-      id: "echanges",
-      nameKey: "opportunity.exchange",
-      descriptionKey: "opportunity.exchange.desc",
-      icon: <Home className="h-12 w-12 text-purple-600" />,
-      color: "#9333ea"
+      icon: Camera,
+      titleKey: "opportunities.tourism.title",
+      descKey: "opportunities.tourism.desc",
+      href: "/tourisme",
+      color: "bg-green-50 text-green-600",
+      borderColor: "border-green-200"
     }
   ];
-
+  
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">{t('opportunity.title')}</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {t('opportunity.subtitle')}
+    <section className="py-16 md:py-24 bg-white">
+      <div className="container">
+        <div className="text-center mb-12 space-y-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-institutional-blue">
+            {t("opportunities.title")}
+          </h2>
+          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+            {t("opportunities.subtitle")}
           </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {opportunityTypes.map((type) => (
-            <Link href={`/opportunites/${type.id}`} key={type.id}>
-              <Card className="h-full transition-all hover:shadow-md border-t-4" style={{ borderTopColor: type.color }}>
-                <CardContent className="p-8 flex flex-col items-center text-center">
-                  <div className="mb-6 p-4 rounded-full bg-gray-50">
-                    {type.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold mb-3">{t(type.nameKey)}</h3>
-                  <p className="text-gray-600">{t(type.descriptionKey)}</p>
-                </CardContent>
-              </Card>
-            </Link>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {opportunities.map((opportunity, index) => (
+            <Card 
+              key={index} 
+              className="p-6 border-2 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className={`${opportunity.color} ${opportunity.borderColor} border-2 rounded-xl p-4 w-16 h-16 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                <opportunity.icon className="h-8 w-8" />
+              </div>
+              
+              <h3 className="text-xl font-bold text-institutional-blue mb-3">
+                {t(opportunity.titleKey)}
+              </h3>
+              
+              <p className="text-text-secondary mb-4 min-h-[80px]">
+                {t(opportunity.descKey)}
+              </p>
+              
+              <Link href={opportunity.href}>
+                <Button variant="ghost" className="text-accent-green hover:text-accent-green/90 p-0 h-auto font-semibold group/btn">
+                  {t("common.learnMore")}
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+            </Card>
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Button asChild size="lg">
-            <Link href="/opportunites">
-              {t('opportunities')}
-            </Link>
-          </Button>
         </div>
       </div>
     </section>
