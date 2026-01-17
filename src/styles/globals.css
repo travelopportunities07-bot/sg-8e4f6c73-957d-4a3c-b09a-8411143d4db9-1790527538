@@ -12,7 +12,7 @@
     --card-foreground: 220 13% 23%;
     --popover: 0 0% 100%;
     --popover-foreground: 220 13% 23%;
-    --primary: 221 83% 33%;
+    --primary: 221 67% 32%;
     --primary-foreground: 0 0% 100%;
     --secondary: 220 14% 96%;
     --secondary-foreground: 220 13% 23%;
@@ -24,10 +24,10 @@
     --destructive-foreground: 0 0% 100%;
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 221 83% 33%;
+    --ring: 221 67% 32%;
     --radius: 0.5rem;
     
-    --institutional-blue: 221 83% 33%;
+    --institutional-blue: 221 67% 32%;
     --trust-green: 142 71% 45%;
     --light-gray: 220 14% 96%;
     --dark-gray: 220 13% 23%;

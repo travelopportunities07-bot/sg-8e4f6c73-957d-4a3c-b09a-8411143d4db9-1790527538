@@ -1,100 +1,99 @@
 import Link from "next/link";
-import { Globe, Mail, Phone, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Footer() {
+  const { t } = useLanguage();
+  
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-indigo-900 text-white py-12">
+    <footer className="bg-primary text-white py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-indigo-400 to-blue-400 bg-clip-text text-transparent">
-              Aventures Sans Frontières
+            <h3 className="text-xl font-bold mb-4">
+              Allemagne<span className="text-accent">Mobilité</span>
             </h3>
-            <p className="text-gray-300 mb-4">
-              Votre passerelle vers des opportunités internationales exceptionnelles. Explorez le monde, transformez votre avenir.
+            <p className="text-gray-200 mb-4">
+              {t("footer.about.text")}
             </p>
-            <div className="flex items-center gap-2 text-gray-300">
-              <Globe className="h-5 w-5" />
-              <span>Opportunités mondiales depuis 2026</span>
-            </div>
           </div>
           
           <div>
-            <h3 className="text-xl font-bold mb-4">Liens Rapides</h3>
+            <h4 className="text-lg font-semibold mb-4">{t("footer.links")}</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-gray-300 hover:text-indigo-400 transition-colors">
-                  Accueil
+                <Link href="/" className="text-gray-200 hover:text-accent transition-colors">
+                  {t("nav.home")}
                 </Link>
               </li>
               <li>
-                <Link href="/destinations" className="text-gray-300 hover:text-indigo-400 transition-colors">
-                  Destinations
+                <Link href="/volontariat" className="text-gray-200 hover:text-accent transition-colors">
+                  {t("nav.volunteering")}
                 </Link>
               </li>
               <li>
-                <Link href="/opportunites" className="text-gray-300 hover:text-indigo-400 transition-colors">
-                  Types d'Opportunités
+                <Link href="/formations" className="text-gray-200 hover:text-accent transition-colors">
+                  {t("nav.training")}
                 </Link>
               </li>
               <li>
-                <Link href="/a-propos" className="text-gray-300 hover:text-indigo-400 transition-colors">
-                  À Propos
+                <Link href="/etudes" className="text-gray-200 hover:text-accent transition-colors">
+                  {t("nav.studies")}
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-indigo-400 transition-colors">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link href="/rendez-vous" className="text-gray-300 hover:text-indigo-400 transition-colors">
-                  Prendre Rendez-vous
+                <Link href="/tourisme" className="text-gray-200 hover:text-accent transition-colors">
+                  {t("nav.tourism")}
                 </Link>
               </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-xl font-bold mb-4">Contact</h3>
+            <h4 className="text-lg font-semibold mb-4">{t("footer.resources")}</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/accompagnement" className="text-gray-200 hover:text-accent transition-colors">
+                  {t("nav.support")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="text-gray-200 hover:text-accent transition-colors">
+                  {t("nav.blog")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-gray-200 hover:text-accent transition-colors">
+                  {t("nav.contact")}
+                </Link>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 className="text-lg font-semibold mb-4">{t("footer.contact")}</h4>
             <div className="space-y-3">
-              <div className="flex items-center gap-2 text-gray-300">
-                <Mail className="h-5 w-5" />
-                <a href="mailto:contact@aventuressansfrontieres.com" className="hover:text-indigo-400 transition-colors">
-                  contact@aventuressansfrontieres.com
+              <div className="flex items-start gap-2 text-gray-200">
+                <Mail className="h-5 w-5 mt-0.5 flex-shrink-0" />
+                <a href="mailto:contact@allemagne-mobilite.fr" className="hover:text-accent transition-colors">
+                  contact@allemagne-mobilite.fr
                 </a>
               </div>
-              <div className="flex items-center gap-2 text-gray-300">
-                <Phone className="h-5 w-5" />
+              <div className="flex items-start gap-2 text-gray-200">
+                <Phone className="h-5 w-5 mt-0.5 flex-shrink-0" />
                 <span>+33 1 23 45 67 89</span>
               </div>
-            </div>
-            <div className="mt-6">
-              <h4 className="text-sm font-semibold mb-3">Suivez-nous</h4>
-              <div className="flex gap-4">
-                <a href="#" className="text-gray-300 hover:text-indigo-400 transition-colors" aria-label="Facebook">
-                  <Facebook className="h-6 w-6" />
-                </a>
-                <a href="#" className="text-gray-300 hover:text-indigo-400 transition-colors" aria-label="Twitter">
-                  <Twitter className="h-6 w-6" />
-                </a>
-                <a href="#" className="text-gray-300 hover:text-indigo-400 transition-colors" aria-label="Instagram">
-                  <Instagram className="h-6 w-6" />
-                </a>
-                <a href="#" className="text-gray-300 hover:text-indigo-400 transition-colors" aria-label="LinkedIn">
-                  <Linkedin className="h-6 w-6" />
-                </a>
+              <div className="flex items-start gap-2 text-gray-200">
+                <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0" />
+                <span>Paris, France</span>
               </div>
             </div>
           </div>
         </div>
         
-        <div className="mt-8 pt-8 border-t border-gray-700 text-center">
-          <p className="text-gray-400">
-            &copy; {new Date().getFullYear()} Aventures Sans Frontières. Tous droits réservés.
-          </p>
-          <p className="text-gray-500 text-sm mt-2">
-            Votre partenaire de confiance pour les opportunités internationales
+        <div className="mt-8 pt-8 border-t border-primary-foreground/20 text-center">
+          <p className="text-gray-200">
+            &copy; {new Date().getFullYear()} AllemagneMobilité. {t("footer.rights")}
           </p>
         </div>
       </div>

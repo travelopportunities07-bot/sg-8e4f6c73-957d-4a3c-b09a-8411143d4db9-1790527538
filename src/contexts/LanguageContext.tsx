@@ -10,7 +10,6 @@ interface LanguageContextType {
 
 const translations = {
   fr: {
-    // Navigation
     'nav.home': 'Accueil',
     'nav.volunteering': 'Volontariat',
     'nav.training': 'Formations',
@@ -20,13 +19,11 @@ const translations = {
     'nav.blog': 'Blog & Guides',
     'nav.contact': 'Contact',
     
-    // Hero
     'hero.title': 'Votre Avenir en Allemagne Commence Ici',
     'hero.subtitle': 'Découvrez des opportunités de volontariat, formation professionnelle, études et tourisme en Allemagne. Un accompagnement complet pour concrétiser votre projet.',
     'hero.cta.primary': 'Demander un accompagnement',
     'hero.cta.secondary': 'Découvrir les opportunités',
     
-    // Opportunities Overview
     'opportunities.title': 'Explorez Vos Opportunités en Allemagne',
     'opportunities.subtitle': 'Des parcours adaptés à chaque profil et projet',
     
@@ -42,7 +39,6 @@ const translations = {
     'opportunities.tourism.title': 'Tourisme & Culture',
     'opportunities.tourism.desc': 'Découvrez l\'Allemagne : châteaux, musées, festivals et nature. Des circuits organisés et des conseils pour voyager en toute sérénité.',
     
-    // Why Germany
     'why.title': 'Pourquoi Choisir l\'Allemagne ?',
     'why.subtitle': 'Un pays d\'opportunités au cœur de l\'Europe',
     
@@ -58,7 +54,6 @@ const translations = {
     'why.quality.title': 'Qualité de Vie',
     'why.quality.desc': 'Infrastructures modernes, sécurité, système de santé performant et environnement préservé',
     
-    // Steps
     'steps.title': 'Comment Ça Marche ?',
     'steps.subtitle': 'Un parcours simple et accompagné',
     
@@ -71,12 +66,10 @@ const translations = {
     'steps.3.title': '3. Accompagnement sur Place',
     'steps.3.desc': 'Support continu pendant votre séjour : logement, démarches, intégration',
     
-    // CTA Section
     'cta.title': 'Prêt à Démarrer Votre Projet ?',
     'cta.subtitle': 'Contactez-nous pour un entretien personnalisé',
     'cta.button': 'Demander une consultation',
     
-    // Footer
     'footer.about': 'À propos',
     'footer.about.text': 'Votre partenaire de confiance pour réaliser vos projets en Allemagne : volontariat, formation, études et tourisme.',
     'footer.links': 'Liens Rapides',
@@ -86,14 +79,17 @@ const translations = {
     'footer.privacy': 'Politique de confidentialité',
     'footer.terms': 'Conditions d\'utilisation',
     
-    // Common
     'common.learnMore': 'En savoir plus',
     'common.apply': 'Postuler',
     'common.contact': 'Nous contacter',
-    'common.readMore': 'Lire la suite'
+    'common.readMore': 'Lire la suite',
+    
+    'home': 'Accueil',
+    'about': 'À Propos',
+    'contact': 'Contact',
+    'appointment': 'Rendez-vous'
   },
   en: {
-    // Navigation
     'nav.home': 'Home',
     'nav.volunteering': 'Volunteering',
     'nav.training': 'Training',
@@ -103,13 +99,11 @@ const translations = {
     'nav.blog': 'Blog & Guides',
     'nav.contact': 'Contact',
     
-    // Hero
     'hero.title': 'Your Future in Germany Starts Here',
     'hero.subtitle': 'Discover volunteering, professional training, study and tourism opportunities in Germany. Complete support to make your project a reality.',
     'hero.cta.primary': 'Request support',
     'hero.cta.secondary': 'Explore opportunities',
     
-    // Opportunities Overview
     'opportunities.title': 'Explore Your Opportunities in Germany',
     'opportunities.subtitle': 'Pathways tailored to every profile and project',
     
@@ -125,7 +119,6 @@ const translations = {
     'opportunities.tourism.title': 'Tourism & Culture',
     'opportunities.tourism.desc': 'Discover Germany: castles, museums, festivals and nature. Organized tours and advice for peaceful travel.',
     
-    // Why Germany
     'why.title': 'Why Choose Germany?',
     'why.subtitle': 'A land of opportunities in the heart of Europe',
     
@@ -141,7 +134,6 @@ const translations = {
     'why.quality.title': 'Quality of Life',
     'why.quality.desc': 'Modern infrastructure, safety, efficient healthcare system and preserved environment',
     
-    // Steps
     'steps.title': 'How Does It Work?',
     'steps.subtitle': 'A simple and supported journey',
     
@@ -154,12 +146,10 @@ const translations = {
     'steps.3.title': '3. On-Site Support',
     'steps.3.desc': 'Ongoing support during your stay: accommodation, procedures, integration',
     
-    // CTA Section
     'cta.title': 'Ready to Start Your Project?',
     'cta.subtitle': 'Contact us for a personalized interview',
     'cta.button': 'Request a consultation',
     
-    // Footer
     'footer.about': 'About',
     'footer.about.text': 'Your trusted partner to realize your projects in Germany: volunteering, training, studies and tourism.',
     'footer.links': 'Quick Links',
@@ -169,14 +159,17 @@ const translations = {
     'footer.privacy': 'Privacy Policy',
     'footer.terms': 'Terms of Use',
     
-    // Common
     'common.learnMore': 'Learn more',
     'common.apply': 'Apply',
     'common.contact': 'Contact us',
-    'common.readMore': 'Read more'
+    'common.readMore': 'Read more',
+    
+    'home': 'Home',
+    'about': 'About',
+    'contact': 'Contact',
+    'appointment': 'Appointment'
   },
   de: {
-    // Navigation
     'nav.home': 'Startseite',
     'nav.volunteering': 'Freiwilligendienst',
     'nav.training': 'Ausbildung',
@@ -186,13 +179,11 @@ const translations = {
     'nav.blog': 'Blog & Ratgeber',
     'nav.contact': 'Kontakt',
     
-    // Hero
     'hero.title': 'Ihre Zukunft in Deutschland Beginnt Hier',
     'hero.subtitle': 'Entdecken Sie Möglichkeiten für Freiwilligendienst, Berufsausbildung, Studium und Tourismus in Deutschland. Umfassende Begleitung zur Verwirklichung Ihres Projekts.',
     'hero.cta.primary': 'Begleitung anfragen',
     'hero.cta.secondary': 'Möglichkeiten entdecken',
     
-    // Opportunities Overview
     'opportunities.title': 'Erkunden Sie Ihre Möglichkeiten in Deutschland',
     'opportunities.subtitle': 'Wege für jedes Profil und Projekt',
     
@@ -208,7 +199,6 @@ const translations = {
     'opportunities.tourism.title': 'Tourismus & Kultur',
     'opportunities.tourism.desc': 'Entdecken Sie Deutschland: Schlösser, Museen, Festivals und Natur. Organisierte Touren und Tipps für sorgenfreies Reisen.',
     
-    // Why Germany
     'why.title': 'Warum Deutschland Wählen?',
     'why.subtitle': 'Ein Land voller Möglichkeiten im Herzen Europas',
     
@@ -224,7 +214,6 @@ const translations = {
     'why.quality.title': 'Lebensqualität',
     'why.quality.desc': 'Moderne Infrastruktur, Sicherheit, effizientes Gesundheitssystem und geschützte Umwelt',
     
-    // Steps
     'steps.title': 'Wie Funktioniert Es?',
     'steps.subtitle': 'Ein einfacher und begleiteter Weg',
     
@@ -237,12 +226,10 @@ const translations = {
     'steps.3.title': '3. Begleitung vor Ort',
     'steps.3.desc': 'Kontinuierliche Unterstützung während Ihres Aufenthalts: Unterkunft, Formalitäten, Integration',
     
-    // CTA Section
     'cta.title': 'Bereit, Ihr Projekt zu Starten?',
     'cta.subtitle': 'Kontaktieren Sie uns für ein persönliches Gespräch',
     'cta.button': 'Beratung anfragen',
     
-    // Footer
     'footer.about': 'Über uns',
     'footer.about.text': 'Ihr vertrauenswürdiger Partner zur Verwirklichung Ihrer Projekte in Deutschland: Freiwilligendienst, Ausbildung, Studium und Tourismus.',
     'footer.links': 'Schnelllinks',
@@ -252,11 +239,15 @@ const translations = {
     'footer.privacy': 'Datenschutzrichtlinie',
     'footer.terms': 'Nutzungsbedingungen',
     
-    // Common
     'common.learnMore': 'Mehr erfahren',
     'common.apply': 'Bewerben',
     'common.contact': 'Kontaktieren Sie uns',
-    'common.readMore': 'Weiterlesen'
+    'common.readMore': 'Weiterlesen',
+    
+    'home': 'Startseite',
+    'about': 'Über uns',
+    'contact': 'Kontakt',
+    'appointment': 'Termin'
   }
 };
 
