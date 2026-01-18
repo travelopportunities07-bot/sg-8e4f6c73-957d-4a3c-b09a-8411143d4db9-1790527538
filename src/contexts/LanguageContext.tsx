@@ -6,6 +6,7 @@ interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string, params?: Record<string, string>) => string;
+  isLoaded: boolean;
 }
 
 const translations = {
@@ -429,6 +430,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>("fr");
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const t = (key: string, params?: Record<string, string>): string => {
     const translation = translations[language][key as keyof typeof translations.fr] || key;
@@ -443,19 +445,23 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   };
 
   useEffect(() => {
+    // Charger la langue depuis localStorage uniquement côté client
     const savedLanguage = localStorage.getItem("language") as Language;
     if (savedLanguage && (savedLanguage === "fr" || savedLanguage === "en" || savedLanguage === "de")) {
       setLanguage(savedLanguage);
     }
+    setIsLoaded(true);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("language", language);
-    document.documentElement.lang = language;
-  }, [language]);
+    if (isLoaded) {
+      localStorage.setItem("language", language);
+      document.documentElement.lang = language;
+    }
+  }, [language, isLoaded]);
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, isLoaded }}>
       {children}
     </LanguageContext.Provider>
   );

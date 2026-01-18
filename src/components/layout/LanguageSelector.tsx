@@ -1,7 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
 import { Globe } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { 
   DropdownMenu,
   DropdownMenuContent,
@@ -14,8 +14,13 @@ interface LanguageSelectorProps {
 }
 
 export function LanguageSelector({ className }: LanguageSelectorProps) {
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, isLoaded } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const languageLabels = {
     fr: 'Français',
@@ -31,9 +36,25 @@ export function LanguageSelector({ className }: LanguageSelectorProps) {
 
   const handleLanguageChange = (lang: 'fr' | 'en' | 'de') => {
     setLanguage(lang);
-    // Fermer le menu après la sélection
     setIsOpen(false);
   };
+
+  // Éviter le mismatch d'hydratation en attendant le montage côté client
+  if (!mounted || !isLoaded) {
+    return (
+      <div className={`flex items-center gap-2 ${className}`}>
+        <Button 
+          variant='ghost' 
+          size='sm' 
+          className='flex items-center gap-1 text-white hover:text-white hover:bg-primary-dark'
+          disabled
+        >
+          <Globe className='h-4 w-4' />
+          <span>FR</span>
+        </Button>
+      </div>
+    );
+  }
 
   return (
     <div className={`flex items-center gap-2 ${className}`}>

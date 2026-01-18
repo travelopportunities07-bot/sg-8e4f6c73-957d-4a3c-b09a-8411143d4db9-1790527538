@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="fr" suppressHydrationWarning>
       <Head>
         {/* Softgen AI monitoring script */}
         <script 
@@ -11,7 +11,7 @@ export default function Document() {
           data-softgen-monitoring="true"
         />
       </Head>
-      <body className="antialiased">
+      <body className="antialiased" suppressHydrationWarning>
         <Main />
         <NextScript />
       </body>
