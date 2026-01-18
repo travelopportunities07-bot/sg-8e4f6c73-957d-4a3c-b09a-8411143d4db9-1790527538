@@ -14,40 +14,42 @@ export function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold text-primary">
-              Allemagne<span className="text-accent">Mobilité</span>
+            <div className="text-2xl font-bold text-institutional-blue">
+              Allemagne<span className="text-success">Mobilité</span>
             </div>
           </Link>
 
           <nav className="hidden lg:flex items-center space-x-8">
-            <Link href="/" className="text-base font-medium text-dark-gray hover:text-primary transition-colors">
-              {t("nav.home")}
+            <Link href="/" className="text-base font-medium text-dark-gray hover:text-institutional-blue transition-colors">
+              {t("nav.accueil")}
             </Link>
-            <Link href="/volontariat" className="text-base font-medium text-dark-gray hover:text-primary transition-colors">
-              {t("nav.volunteering")}
+            <Link href="/volontariat" className="text-base font-medium text-dark-gray hover:text-institutional-blue transition-colors">
+              {t("nav.volontariat")}
             </Link>
-            <Link href="/formations" className="text-base font-medium text-dark-gray hover:text-primary transition-colors">
-              {t("nav.training")}
+            <Link href="/formations" className="text-base font-medium text-dark-gray hover:text-institutional-blue transition-colors">
+              {t("nav.formations")}
             </Link>
-            <Link href="/etudes" className="text-base font-medium text-dark-gray hover:text-primary transition-colors">
-              {t("nav.studies")}
+            <Link href="/etudes" className="text-base font-medium text-dark-gray hover:text-institutional-blue transition-colors">
+              {t("nav.etudes")}
             </Link>
-            <Link href="/tourisme" className="text-base font-medium text-dark-gray hover:text-primary transition-colors">
-              {t("nav.tourism")}
+            <Link href="/tourisme" className="text-base font-medium text-dark-gray hover:text-institutional-blue transition-colors">
+              {t("nav.tourisme")}
             </Link>
-            <Link href="/accompagnement" className="text-base font-medium text-dark-gray hover:text-primary transition-colors">
-              {t("nav.support")}
+            <Link href="/demarches" className="text-base font-medium text-dark-gray hover:text-institutional-blue transition-colors">
+              {t("nav.accompagnement")}
             </Link>
-            <Link href="/blog" className="text-base font-medium text-dark-gray hover:text-primary transition-colors">
+            <Link href="/blog" className="text-base font-medium text-dark-gray hover:text-institutional-blue transition-colors">
               {t("nav.blog")}
             </Link>
-            <Link href="/contact" className="text-base font-medium text-dark-gray hover:text-primary transition-colors">
+            <Link href="/contact" className="text-base font-medium text-dark-gray hover:text-institutional-blue transition-colors">
               {t("nav.contact")}
             </Link>
             <LanguageSelector />
-            <Button className="bg-accent hover:bg-accent/90 text-white">
-              {t("cta.button")}
-            </Button>
+            <Link href="/contact">
+              <Button className="bg-success hover:bg-success/90 text-white">
+                {t("cta.bouton")}
+              </Button>
+            </Link>
           </nav>
 
           <div className="flex items-center gap-2 lg:hidden">
@@ -61,33 +63,35 @@ export function Header() {
         {isMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 space-y-4">
             <div className="grid grid-cols-1 gap-4">
-              <Link href="/" className="text-base font-medium text-dark-gray hover:text-primary transition-colors">
-                {t("nav.home")}
+              <Link href="/" className="text-base font-medium text-dark-gray hover:text-institutional-blue transition-colors">
+                {t("nav.accueil")}
               </Link>
-              <Link href="/volontariat" className="text-base font-medium text-dark-gray hover:text-primary transition-colors">
-                {t("nav.volunteering")}
+              <Link href="/volontariat" className="text-base font-medium text-dark-gray hover:text-institutional-blue transition-colors">
+                {t("nav.volontariat")}
               </Link>
-              <Link href="/formations" className="text-base font-medium text-dark-gray hover:text-primary transition-colors">
-                {t("nav.training")}
+              <Link href="/formations" className="text-base font-medium text-dark-gray hover:text-institutional-blue transition-colors">
+                {t("nav.formations")}
               </Link>
-              <Link href="/etudes" className="text-base font-medium text-dark-gray hover:text-primary transition-colors">
-                {t("nav.studies")}
+              <Link href="/etudes" className="text-base font-medium text-dark-gray hover:text-institutional-blue transition-colors">
+                {t("nav.etudes")}
               </Link>
-              <Link href="/tourisme" className="text-base font-medium text-dark-gray hover:text-primary transition-colors">
-                {t("nav.tourism")}
+              <Link href="/tourisme" className="text-base font-medium text-dark-gray hover:text-institutional-blue transition-colors">
+                {t("nav.tourisme")}
               </Link>
-              <Link href="/accompagnement" className="text-base font-medium text-dark-gray hover:text-primary transition-colors">
-                {t("nav.support")}
+              <Link href="/demarches" className="text-base font-medium text-dark-gray hover:text-institutional-blue transition-colors">
+                {t("nav.accompagnement")}
               </Link>
-              <Link href="/blog" className="text-base font-medium text-dark-gray hover:text-primary transition-colors">
+              <Link href="/blog" className="text-base font-medium text-dark-gray hover:text-institutional-blue transition-colors">
                 {t("nav.blog")}
               </Link>
-              <Link href="/contact" className="text-base font-medium text-dark-gray hover:text-primary transition-colors">
+              <Link href="/contact" className="text-base font-medium text-dark-gray hover:text-institutional-blue transition-colors">
                 {t("nav.contact")}
               </Link>
-              <Button className="bg-accent hover:bg-accent/90 text-white w-full">
-                {t("cta.button")}
-              </Button>
+              <Link href="/contact">
+                <Button className="bg-success hover:bg-success/90 text-white w-full">
+                  {t("cta.bouton")}
+                </Button>
+              </Link>
             </div>
           </div>
         )}

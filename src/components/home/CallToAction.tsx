@@ -13,17 +13,17 @@ export function CallToAction() {
       <div className="container relative z-10">
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <h2 className="text-3xl md:text-5xl font-bold">
-            {t("cta.title")}
+            {t("appel.titre")}
           </h2>
           
           <p className="text-xl text-blue-100">
-            {t("cta.subtitle")}
+            {t("appel.soustitre")}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link href="/contact">
               <Button size="lg" className="bg-accent-green hover:bg-accent-green/90 text-white text-lg px-8 py-6 rounded-lg shadow-xl hover:shadow-2xl transition-all">
-                {t("cta.button")}
+                {t("appel.bouton")}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
@@ -31,7 +31,7 @@ export function CallToAction() {
             <Link href="/rendez-vous">
               <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-institutional-blue text-lg px-8 py-6 rounded-lg transition-all">
                 <Phone className="mr-2 h-5 w-5" />
-                {t("cta.appointment")}
+                {t("appel.rendezvous")}
               </Button>
             </Link>
           </div>

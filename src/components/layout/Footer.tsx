@@ -6,15 +6,15 @@ export function Footer() {
   const { t } = useLanguage();
   
   return (
-    <footer className="bg-primary text-white py-12">
+    <footer className="bg-institutional-blue text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4">
-              Aventures Sans <span className="text-success">Frontières</span>
+              Allemagne<span className="text-success">Mobilité</span>
             </h3>
             <p className="text-gray-200 mb-4">
-              {t("footer.about.text")}
+              {t("footer.apropos.texte")}
             </p>
             <div className="text-sm text-gray-300 mt-4">
               <p className="font-semibold">Aisso International Ltd</p>
@@ -23,42 +23,42 @@ export function Footer() {
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">{t("footer.links")}</h4>
+            <h4 className="text-lg font-semibold mb-4">{t("footer.liens")}</h4>
             <ul className="space-y-2">
               <li>
                 <Link href="/" className="text-gray-200 hover:text-success transition-colors">
-                  {t("nav.home")}
+                  {t("nav.accueil")}
                 </Link>
               </li>
               <li>
                 <Link href="/volontariat" className="text-gray-200 hover:text-success transition-colors">
-                  {t("nav.volunteering")}
+                  {t("nav.volontariat")}
                 </Link>
               </li>
               <li>
                 <Link href="/formations" className="text-gray-200 hover:text-success transition-colors">
-                  {t("nav.training")}
+                  {t("nav.formations")}
                 </Link>
               </li>
               <li>
                 <Link href="/etudes" className="text-gray-200 hover:text-success transition-colors">
-                  {t("nav.studies")}
+                  {t("nav.etudes")}
                 </Link>
               </li>
               <li>
                 <Link href="/tourisme" className="text-gray-200 hover:text-success transition-colors">
-                  {t("nav.tourism")}
+                  {t("nav.tourisme")}
                 </Link>
               </li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">{t("footer.resources")}</h4>
+            <h4 className="text-lg font-semibold mb-4">{t("footer.ressources")}</h4>
             <ul className="space-y-2">
               <li>
                 <Link href="/demarches" className="text-gray-200 hover:text-success transition-colors">
-                  {t("nav.support")}
+                  {t("nav.accompagnement")}
                 </Link>
               </li>
               <li>
@@ -96,9 +96,9 @@ export function Footer() {
           </div>
         </div>
         
-        <div className="mt-8 pt-8 border-t border-primary-foreground/20 text-center">
+        <div className="mt-8 pt-8 border-t border-white/20 text-center">
           <p className="text-gray-200">
-            &copy; {new Date().getFullYear()} Aisso International Ltd. {t("footer.rights")}
+            &copy; {new Date().getFullYear()} Aisso International Ltd. {t("footer.droits")}
           </p>
         </div>
       </div>

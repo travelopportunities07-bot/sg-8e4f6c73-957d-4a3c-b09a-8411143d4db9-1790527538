@@ -17,34 +17,34 @@ export function Hero() {
             <span className="text-sm font-medium">{t("hero.badge")}</span>
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight animate-fade-in-delay-1">
-            {t("hero.title")}
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight animate-fade-in">
+            {t("hero.titre")}
           </h1>
           
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto animate-fade-in-delay-2">
-            {t("hero.subtitle")}
+          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto animate-fade-in">
+            {t("hero.soustitre")}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-delay-3">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in">
             <Link href="/contact">
               <Button size="lg" className="bg-accent-green hover:bg-accent-green/90 text-white text-lg px-8 py-6 rounded-lg shadow-xl hover:shadow-2xl transition-all">
-                {t("hero.cta.primary")}
+                {t("hero.bouton.principal")}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
             <Link href="/opportunites">
               <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-institutional-blue text-lg px-8 py-6 rounded-lg transition-all">
-                {t("hero.cta.secondary")}
+                {t("hero.bouton.secondaire")}
               </Button>
             </Link>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 animate-fade-in-delay-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 animate-fade-in">
             {[
-              { icon: Briefcase, label: t("hero.stats.volunteering") },
-              { icon: GraduationCap, label: t("hero.stats.training") },
-              { icon: GraduationCap, label: t("hero.stats.studies") },
-              { icon: Map, label: t("hero.stats.tourism") }
+              { icon: Briefcase, label: t("hero.stats.volontariat") },
+              { icon: GraduationCap, label: t("hero.stats.formations") },
+              { icon: GraduationCap, label: t("hero.stats.etudes") },
+              { icon: Map, label: t("hero.stats.tourisme") }
             ].map((item, index) => (
               <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
                 <item.icon className="h-8 w-8 text-accent-green mx-auto mb-2" />

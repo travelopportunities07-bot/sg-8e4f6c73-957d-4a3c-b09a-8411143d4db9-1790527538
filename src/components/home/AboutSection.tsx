@@ -7,23 +7,23 @@ export function AboutSection() {
   const benefits = [
     {
       icon: TrendingUp,
-      titleKey: "why.economy.title",
-      descKey: "why.economy.desc"
+      titleKey: "pourquoi.economie.titre",
+      descKey: "pourquoi.economie.desc"
     },
     {
       icon: Award,
-      titleKey: "why.education.title",
-      descKey: "why.education.desc"
+      titleKey: "pourquoi.education.titre",
+      descKey: "pourquoi.education.desc"
     },
     {
       icon: Globe,
-      titleKey: "why.culture.title",
-      descKey: "why.culture.desc"
+      titleKey: "pourquoi.culture.titre",
+      descKey: "pourquoi.culture.desc"
     },
     {
       icon: Shield,
-      titleKey: "why.quality.title",
-      descKey: "why.quality.desc"
+      titleKey: "pourquoi.qualite.titre",
+      descKey: "pourquoi.qualite.desc"
     }
   ];
   
@@ -32,10 +32,10 @@ export function AboutSection() {
       <div className="container">
         <div className="text-center mb-12 space-y-4">
           <h2 className="text-3xl md:text-4xl font-bold text-institutional-blue">
-            {t("why.title")}
+            {t("pourquoi.titre")}
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            {t("why.subtitle")}
+            {t("pourquoi.soustitre")}
           </p>
         </div>
         
@@ -44,7 +44,6 @@ export function AboutSection() {
             <div 
               key={index} 
               className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="bg-gradient-to-br from-institutional-blue to-blue-700 rounded-lg p-3 w-14 h-14 flex items-center justify-center mb-4">
                 <benefit.icon className="h-7 w-7 text-white" />

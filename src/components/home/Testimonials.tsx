@@ -7,19 +7,19 @@ export function Testimonials() {
   
   const testimonials = [
     {
-      nameKey: "testimonials.1.name",
-      roleKey: "testimonials.1.role",
-      textKey: "testimonials.1.text"
+      nameKey: "temoignages.1.nom",
+      roleKey: "temoignages.1.programme",
+      textKey: "temoignages.1.texte"
     },
     {
-      nameKey: "testimonials.2.name",
-      roleKey: "testimonials.2.role",
-      textKey: "testimonials.2.text"
+      nameKey: "temoignages.2.nom",
+      roleKey: "temoignages.2.programme",
+      textKey: "temoignages.2.texte"
     },
     {
-      nameKey: "testimonials.3.name",
-      roleKey: "testimonials.3.role",
-      textKey: "testimonials.3.text"
+      nameKey: "temoignages.3.nom",
+      roleKey: "temoignages.3.programme",
+      textKey: "temoignages.3.texte"
     }
   ];
   
@@ -28,10 +28,10 @@ export function Testimonials() {
       <div className="container">
         <div className="text-center mb-12 space-y-4">
           <h2 className="text-3xl md:text-4xl font-bold text-institutional-blue">
-            {t("testimonials.title")}
+            {t("temoignages.titre")}
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            {t("testimonials.subtitle")}
+            {t("temoignages.soustitre")}
           </p>
         </div>
         
@@ -40,7 +40,6 @@ export function Testimonials() {
             <Card 
               key={index} 
               className="p-8 bg-white border-2 border-gray-200 hover:border-accent-green hover:shadow-xl transition-all duration-300 animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <Quote className="h-10 w-10 text-accent-green mb-4 opacity-50" />
               

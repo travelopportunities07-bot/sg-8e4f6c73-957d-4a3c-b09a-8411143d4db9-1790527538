@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { CheckCircle, Users, Clock, MapPin } from "lucide-react";
+import { CheckCircle, Users, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export function FeaturedDestinations() {
@@ -10,18 +10,18 @@ export function FeaturedDestinations() {
   const steps = [
     {
       icon: Users,
-      titleKey: "steps.1.title",
-      descKey: "steps.1.desc"
+      titleKey: "etapes.1.titre",
+      descKey: "etapes.1.desc"
     },
     {
       icon: CheckCircle,
-      titleKey: "steps.2.title",
-      descKey: "steps.2.desc"
+      titleKey: "etapes.2.titre",
+      descKey: "etapes.2.desc"
     },
     {
       icon: MapPin,
-      titleKey: "steps.3.title",
-      descKey: "steps.3.desc"
+      titleKey: "etapes.3.titre",
+      descKey: "etapes.3.desc"
     }
   ];
   
@@ -30,10 +30,10 @@ export function FeaturedDestinations() {
       <div className="container">
         <div className="text-center mb-12 space-y-4">
           <h2 className="text-3xl md:text-4xl font-bold text-institutional-blue">
-            {t("steps.title")}
+            {t("etapes.titre")}
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            {t("steps.subtitle")}
+            {t("etapes.soustitre")}
           </p>
         </div>
         
@@ -64,7 +64,7 @@ export function FeaturedDestinations() {
         <div className="text-center">
           <Link href="/demarches">
             <Button size="lg" className="bg-institutional-blue hover:bg-blue-900 text-white text-lg px-8 py-6 rounded-lg shadow-lg">
-              {t("common.learnMore")}
+              {t("commun.enSavoirPlus")}
             </Button>
           </Link>
         </div>
