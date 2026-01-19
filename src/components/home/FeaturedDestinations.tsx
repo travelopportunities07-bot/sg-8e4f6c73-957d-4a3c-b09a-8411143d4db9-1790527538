@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { CheckCircle, Users, MapPin } from "lucide-react";
+import { CheckCircle, Users, MapPin, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export function FeaturedDestinations() {
@@ -11,49 +11,67 @@ export function FeaturedDestinations() {
     {
       icon: Users,
       titleKey: "etapes.1.titre",
-      descKey: "etapes.1.desc"
+      descKey: "etapes.1.desc",
+      gradient: "from-vibrant-coral to-rose-500",
+      number: "01"
     },
     {
       icon: CheckCircle,
       titleKey: "etapes.2.titre",
-      descKey: "etapes.2.desc"
+      descKey: "etapes.2.desc",
+      gradient: "from-ocean-teal to-blue-500",
+      number: "02"
     },
     {
       icon: MapPin,
       titleKey: "etapes.3.titre",
-      descKey: "etapes.3.desc"
+      descKey: "etapes.3.desc",
+      gradient: "from-sage-green to-emerald-500",
+      number: "03"
     }
   ];
   
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="container">
-        <div className="text-center mb-12 space-y-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-institutional-blue">
+    <section className="py-20 md:py-28 bg-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-ocean-teal/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-vibrant-coral/5 rounded-full blur-3xl"></div>
+      
+      <div className="container relative z-10">
+        <div className="text-center mb-16 space-y-4 animate-fade-in">
+          <div className="inline-block">
+            <span className="text-sage-green font-bold text-sm uppercase tracking-wider bg-sage-green/10 px-4 py-2 rounded-full">
+              Notre Méthode
+            </span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-deep-navy">
             {t("etapes.titre")}
           </h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+          <p className="text-xl text-charcoal/80 max-w-2xl mx-auto leading-relaxed">
             {t("etapes.soustitre")}
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16">
           {steps.map((step, index) => (
-            <div key={index} className="relative">
+            <div key={index} className="relative animate-fade-in" style={{ animationDelay: `${index * 0.15}s` }}>
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-16 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-accent-green to-transparent"></div>
+                <div className="hidden md:block absolute top-24 left-[60%] w-[80%] h-1 bg-gradient-to-r from-ocean-teal/30 via-warm-gold/30 to-transparent rounded-full"></div>
               )}
               
-              <Card className="p-8 text-center border-2 border-gray-200 hover:border-accent-green hover:shadow-xl transition-all duration-300 relative bg-white">
-                <div className="bg-gradient-to-br from-accent-green to-green-600 rounded-full p-4 w-20 h-20 flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <step.icon className="h-10 w-10 text-white" />
+              <Card className="p-10 text-center border-2 border-gray-100 hover:border-ocean-teal/30 hover:shadow-2xl transition-all duration-500 relative bg-white group hover:-translate-y-2">
+                <div className="absolute top-6 right-6 text-6xl font-bold text-gray-100 group-hover:text-ocean-teal/10 transition-colors">
+                  {step.number}
                 </div>
                 
-                <h3 className="text-xl font-bold text-institutional-blue mb-3">
+                <div className={`bg-gradient-to-br ${step.gradient} rounded-2xl p-5 w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
+                  <step.icon className="h-12 w-12 text-white" />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-deep-navy mb-4 group-hover:text-ocean-teal transition-colors">
                   {t(step.titleKey)}
                 </h3>
                 
-                <p className="text-text-secondary">
+                <p className="text-charcoal/80 leading-relaxed">
                   {t(step.descKey)}
                 </p>
               </Card>
@@ -61,10 +79,11 @@ export function FeaturedDestinations() {
           ))}
         </div>
         
-        <div className="text-center">
+        <div className="text-center animate-fade-in">
           <Link href="/demarches">
-            <Button size="lg" className="bg-institutional-blue hover:bg-blue-900 text-white text-lg px-8 py-6 rounded-lg shadow-lg">
+            <Button size="lg" className="bg-gradient-to-r from-ocean-teal to-blue-600 hover:from-ocean-teal/90 hover:to-blue-600/90 text-white text-lg font-bold px-12 py-7 rounded-2xl shadow-2xl hover:shadow-ocean-teal/50 transition-all duration-300 hover:scale-105 group">
               {t("commun.enSavoirPlus")}
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>
         </div>
