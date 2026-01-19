@@ -9,8 +9,8 @@ import { CallToAction } from "@/components/home/CallToAction";
 export default function Home() {
   return (
     <Layout 
-      title="AllemagneMobilité | Votre Passerelle vers l'Allemagne"
-      description="Découvrez des opportunités de volontariat, formation professionnelle, études et tourisme en Allemagne. Accompagnement personnalisé pour votre projet de mobilité."
+      title="Aventures Sans Frontières | Votre Passerelle vers le Monde"
+      description="Découvrez des opportunités de volontariat, formation professionnelle, études et tourisme à l'international. Accompagnement personnalisé pour votre projet de mobilité."
     >
       <Hero />
       <OpportunityTypes />

@@ -1,89 +1,120 @@
-
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { Target, Users, Award, TrendingUp } from "lucide-react";
 
 export default function AProposPage() {
   return (
     <Layout 
-      title="À Propos | AfricaOpportunités"
-      description="Découvrez notre mission et notre vision pour faciliter l'accès des résidents africains aux opportunités internationales."
+      title="À Propos | Aventures Sans Frontières"
+      description="Découvrez notre mission et notre vision pour faciliter l'accès aux opportunités internationales de mobilité."
     >
       {/* Hero Section */}
-      <div className="bg-primary text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold mb-6">À Propos de Nous</h1>
-          <p className="text-xl max-w-3xl mx-auto">
-            Nous créons des ponts entre l'Afrique et le monde pour faciliter l'accès aux opportunités internationales.
+      <div className="relative bg-gradient-to-br from-ocean-blue via-primary to-deep-teal text-white py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-20" />
+        <div className="relative container mx-auto px-4 text-center animate-fade-in">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 font-heading">À Propos de Nous</h1>
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto text-white/90">
+            Nous créons des ponts entre les continents pour faciliter votre mobilité internationale
           </p>
         </div>
       </div>
 
       {/* Mission and Vision */}
-      <section className="py-16">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Notre Mission</h2>
-              <p className="text-lg text-gray-700 mb-6">
-                Chez AfricaOpportunités, notre mission est de démocratiser l'accès aux opportunités internationales pour les résidents africains. Nous croyons que chaque personne mérite d'avoir accès aux possibilités qui correspondent à ses aspirations, indépendamment de sa localisation géographique.
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="animate-slide-left">
+              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
+                <Target className="h-5 w-5" />
+                <span className="font-semibold">Notre Mission</span>
+              </div>
+              <h2 className="text-4xl font-bold mb-6 font-heading text-dark-navy">
+                Faciliter votre mobilité internationale
+              </h2>
+              <p className="text-lg text-charcoal mb-6 leading-relaxed">
+                Chez Aventures Sans Frontières, notre mission est de démocratiser l'accès aux opportunités internationales. Nous croyons que chaque personne mérite d'avoir accès aux possibilités qui correspondent à ses aspirations, indépendamment de sa localisation géographique.
               </p>
-              <p className="text-lg text-gray-700">
-                Nous nous engageons à fournir des informations fiables, actualisées et pertinentes sur les opportunités de travail, d'études, de volontariat et plus encore dans les pays les plus attractifs pour les résidents africains.
+              <p className="text-lg text-charcoal leading-relaxed">
+                Nous nous engageons à fournir des informations fiables, actualisées et un accompagnement personnalisé pour concrétiser vos projets de volontariat, formation, études ou tourisme à l'étranger.
               </p>
             </div>
-            <div className="relative h-80 rounded-lg overflow-hidden">
+            <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl animate-slide-right">
               <Image 
-                src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8" 
+                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644" 
                 alt="Notre mission" 
                 fill 
                 style={{ objectFit: "cover" }}
+                className="hover:scale-105 transition-transform duration-700"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-16 bg-gray-50">
+      {/* Stats Section */}
+      <section className="py-16 bg-gradient-to-r from-ocean-blue to-deep-teal text-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Nos Valeurs</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center animate-fade-in">
+              <div className="text-5xl font-bold mb-2">13+</div>
+              <div className="text-white/80">Destinations</div>
+            </div>
+            <div className="text-center animate-fade-in-delay-1">
+              <div className="text-5xl font-bold mb-2">500+</div>
+              <div className="text-white/80">Candidats accompagnés</div>
+            </div>
+            <div className="text-center animate-fade-in-delay-2">
+              <div className="text-5xl font-bold mb-2">95%</div>
+              <div className="text-white/80">Taux de satisfaction</div>
+            </div>
+            <div className="text-center animate-fade-in-delay-3">
+              <div className="text-5xl font-bold mb-2">24/7</div>
+              <div className="text-white/80">Support disponible</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="py-20 bg-soft-cream">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 font-heading text-dark-navy">Nos Valeurs</h2>
+            <p className="text-xl text-charcoal max-w-2xl mx-auto">
+              Les principes qui guident notre accompagnement au quotidien
+            </p>
+          </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <div className="bg-primary/10 p-4 rounded-full inline-block mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-fade-in">
+              <div className="bg-gradient-to-br from-ocean-blue to-primary p-4 rounded-2xl inline-block mb-6">
+                <Target className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Transparence</h3>
-              <p className="text-gray-600">
-                Nous nous engageons à fournir des informations claires, précises et vérifiées sur toutes les opportunités que nous présentons.
+              <h3 className="text-2xl font-bold mb-4 font-heading text-dark-navy">Transparence</h3>
+              <p className="text-charcoal leading-relaxed">
+                Nous fournissons des informations claires, précises et vérifiées sur toutes les opportunités et démarches.
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <div className="bg-primary/10 p-4 rounded-full inline-block mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-                </svg>
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-delay-1">
+              <div className="bg-gradient-to-br from-vibrant-coral to-accent p-4 rounded-2xl inline-block mb-6">
+                <Users className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Accessibilité</h3>
-              <p className="text-gray-600">
-                Nous travaillons à rendre l'information accessible à tous, en simplifiant les procédures complexes et en fournissant des guides pratiques.
+              <h3 className="text-2xl font-bold mb-4 font-heading text-dark-navy">Accompagnement</h3>
+              <p className="text-charcoal leading-relaxed">
+                Un suivi personnalisé à chaque étape de votre projet, de la préparation au départ et au-delà.
               </p>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <div className="bg-primary/10 p-4 rounded-full inline-block mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-delay-2">
+              <div className="bg-gradient-to-br from-deep-teal to-success p-4 rounded-2xl inline-block mb-6">
+                <Award className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Inclusion</h3>
-              <p className="text-gray-600">
-                Nous croyons que chaque personne, indépendamment de son origine, mérite d'avoir accès aux opportunités qui lui permettront de réaliser son potentiel.
+              <h3 className="text-2xl font-bold mb-4 font-heading text-dark-navy">Excellence</h3>
+              <p className="text-charcoal leading-relaxed">
+                Nous sélectionnons rigoureusement nos partenaires et programmes pour garantir la meilleure expérience.
               </p>
             </div>
           </div>
@@ -91,75 +122,23 @@ export default function AProposPage() {
       </section>
 
       {/* Our Story */}
-      <section className="py-16">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6 text-center">Notre Histoire</h2>
-            <p className="text-lg text-gray-700 mb-6">
-              AfricaOpportunités est né d'un constat simple : malgré le talent et le potentiel des résidents africains, l'accès aux opportunités internationales reste souvent limité par le manque d'information fiable et le manque de guidance dans les démarches administratives.
-            </p>
-            <p className="text-lg text-gray-700 mb-6">
-              Notre fondateur, ayant lui-même vécu les défis liés à la recherche d'opportunités à l'étranger, a décidé de créer une plateforme qui centraliserait toutes les informations nécessaires et accompagnerait les candidats dans leur projet international.
-            </p>
-            <p className="text-lg text-gray-700">
-              Aujourd'hui, notre équipe multiculturelle travaille avec passion pour identifier les meilleures opportunités et fournir des conseils pratiques à notre communauté grandissante.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Notre Équipe</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Team member placeholders - replace with actual team members */}
-            <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-              <div className="relative h-40 w-40 mx-auto mb-4 rounded-full overflow-hidden">
-                <Image 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d" 
-                  alt="Membre de l'équipe" 
-                  fill 
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <h3 className="text-xl font-bold">Thomas Mensah</h3>
-              <p className="text-primary mb-3">Fondateur & Directeur</p>
-              <p className="text-gray-600">
-                Passionné par l'éducation internationale et le développement des compétences.
-              </p>
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold mb-4 font-heading text-dark-navy">Notre Histoire</h2>
+              <div className="h-1 w-24 bg-gradient-to-r from-ocean-blue to-vibrant-coral mx-auto rounded-full" />
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-              <div className="relative h-40 w-40 mx-auto mb-4 rounded-full overflow-hidden">
-                <Image 
-                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e" 
-                  alt="Membre de l'équipe" 
-                  fill 
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <h3 className="text-xl font-bold">Aminata Diallo</h3>
-              <p className="text-primary mb-3">Responsable des Partenariats</p>
-              <p className="text-gray-600">
-                Experte en relations internationales avec une expérience dans plusieurs pays européens.
+            <div className="space-y-6 text-lg text-charcoal leading-relaxed">
+              <p>
+                Aventures Sans Frontières est né de la vision d'Aisso International Ltd, une entreprise britannique dédiée à faciliter la mobilité internationale. Nous avons constaté que malgré le talent et la motivation de nombreux candidats, l'accès aux opportunités internationales reste souvent limité par le manque d'information fiable et la complexité des démarches administratives.
               </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-sm text-center">
-              <div className="relative h-40 w-40 mx-auto mb-4 rounded-full overflow-hidden">
-                <Image 
-                  src="https://images.unsplash.com/photo-1531384441138-2736e62e0919" 
-                  alt="Membre de l'équipe" 
-                  fill 
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <h3 className="text-xl font-bold">Jean-Paul Nkosi</h3>
-              <p className="text-primary mb-3">Conseiller en Immigration</p>
-              <p className="text-gray-600">
-                Spécialiste des procédures de visa avec plus de 10 ans d'expérience dans le domaine.
+              <p>
+                Notre équipe, ayant elle-même vécu les défis liés aux projets de mobilité internationale, a décidé de créer une plateforme qui centraliserait toutes les informations nécessaires et accompagnerait les candidats dans leur projet, de A à Z.
+              </p>
+              <p>
+                Aujourd'hui, notre équipe multiculturelle travaille avec passion pour identifier les meilleures opportunités dans plus de 13 pays et fournir un accompagnement personnalisé à notre communauté grandissante.
               </p>
             </div>
           </div>
@@ -167,19 +146,20 @@ export default function AProposPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-primary text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Rejoignez Notre Communauté</h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Découvrez des opportunités adaptées à votre profil et bénéficiez de conseils personnalisés pour réaliser votre projet international.
+      <section className="py-20 bg-gradient-to-br from-dark-navy via-ocean-blue to-deep-teal text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-20" />
+        <div className="relative container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-6 font-heading">Prêt à démarrer votre aventure ?</h2>
+          <p className="text-xl mb-10 max-w-3xl mx-auto text-white/90">
+            Découvrez des opportunités adaptées à votre profil et bénéficiez d'un accompagnement personnalisé pour réaliser votre projet international.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button asChild variant="outline" className="text-white border-white hover:bg-white hover:text-primary">
+            <Button asChild size="lg" className="bg-vibrant-coral hover:bg-vibrant-coral/90 text-white font-semibold px-8 py-6 text-lg rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
               <Link href="/destinations">
                 Découvrir les Destinations
               </Link>
             </Button>
-            <Button asChild className="bg-white text-primary hover:bg-gray-100">
+            <Button asChild size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-ocean-blue font-semibold px-8 py-6 text-lg rounded-xl transition-all duration-300 hover:scale-105">
               <Link href="/contact">
                 Nous Contacter
               </Link>
