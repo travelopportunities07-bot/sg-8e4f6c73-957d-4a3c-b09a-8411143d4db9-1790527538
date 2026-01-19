@@ -1,5 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
-import { Shield, Lock, Eye, UserCheck, Database, Cookie, FileText, AlertCircle } from "lucide-react";
+import { Shield, Lock, Eye, UserCheck, Database, Cookie, FileText, AlertCircle, Mail } from "lucide-react";
 
 export default function PolitiqueConfidentialite() {
   return (
