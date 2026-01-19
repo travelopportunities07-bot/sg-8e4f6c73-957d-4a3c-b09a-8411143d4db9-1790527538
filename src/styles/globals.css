@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,52 +7,62 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 13% 23%;
+    --foreground: 215 25% 15%;
     --card: 0 0% 100%;
-    --card-foreground: 220 13% 23%;
+    --card-foreground: 215 25% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 220 13% 23%;
-    --primary: 221 67% 32%;
+    --popover-foreground: 215 25% 15%;
+    --primary: 214 84% 56%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 220 13% 23%;
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
-    --accent: 142 71% 45%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 215 25% 15%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 168 76% 42%;
     --accent-foreground: 0 0% 100%;
-    --destructive: 0 84.2% 60.2%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 221 67% 32%;
-    --radius: 0.5rem;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 214 84% 56%;
+    --radius: 0.75rem;
     
-    --institutional-blue: 221 67% 32%;
-    --trust-green: 142 71% 45%;
-    --light-gray: 220 14% 96%;
-    --dark-gray: 220 13% 23%;
+    --institutional-blue: 214 84% 56%;
+    --trust-green: 168 76% 42%;
+    --success-green: 142 71% 45%;
+    --light-gray: 210 40% 96%;
+    --dark-gray: 215 25% 15%;
+    --ocean-blue: 203 89% 53%;
   }
  
   .dark {
     --background: 222 47% 11%;
     --foreground: 210 40% 98%;
-    --card: 222 47% 11%;
+    --card: 222 47% 14%;
     --card-foreground: 210 40% 98%;
-    --popover: 222 47% 11%;
+    --popover: 222 47% 14%;
     --popover-foreground: 210 40% 98%;
-    --primary: 217 91% 60%;
-    --primary-foreground: 222 47% 11%;
+    --primary: 214 84% 56%;
+    --primary-foreground: 0 0% 100%;
     --secondary: 217 33% 18%;
     --secondary-foreground: 210 40% 98%;
     --muted: 217 33% 18%;
     --muted-foreground: 215 20% 65%;
-    --accent: 142 71% 45%;
+    --accent: 168 76% 42%;
     --accent-foreground: 0 0% 100%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
     --border: 217 33% 18%;
     --input: 217 33% 18%;
-    --ring: 217 91% 60%;
+    --ring: 214 84% 56%;
   }
 }
 
@@ -61,12 +71,21 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold text-primary;
+    @apply font-bold;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  h1 {
+    @apply text-primary;
+  }
+  
+  h2, h3, h4 {
+    @apply text-dark-gray;
   }
 }
 
@@ -83,16 +102,37 @@
     @apply bg-muted;
   }
   
+  .section-gradient {
+    @apply bg-gradient-to-br from-primary/5 via-accent/5 to-success/5;
+  }
+  
   .btn-primary {
-    @apply bg-accent hover:bg-accent/90 text-white font-medium px-6 py-3 rounded-lg transition-all duration-200;
+    @apply bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg;
   }
   
   .btn-secondary {
-    @apply bg-primary hover:bg-primary/90 text-white font-medium px-6 py-3 rounded-lg transition-all duration-200;
+    @apply bg-accent hover:bg-accent/90 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg;
+  }
+  
+  .btn-success {
+    @apply bg-success hover:bg-success/90 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg;
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+    @apply transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02];
+  }
+  
+  .nav-link {
+    @apply text-base font-medium text-dark-gray hover:text-primary transition-all duration-200 relative;
+  }
+  
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
   }
 }
 
@@ -112,8 +152,53 @@
     }
   }
   
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
   .animate-fade-in {
     animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-right {
+    animation: slideInRight 0.6s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
   }
   
   .animate-fade-in-delay-1 {
@@ -154,5 +239,16 @@
   .animate-stagger-4 {
     animation: fadeIn 0.5s ease-out 0.4s forwards;
     opacity: 0;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-accent to-success bg-clip-text text-transparent;
+  }
+  
+  .gradient-border {
+    position: relative;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent))) border-box;
+    border: 2px solid transparent;
   }
 }
