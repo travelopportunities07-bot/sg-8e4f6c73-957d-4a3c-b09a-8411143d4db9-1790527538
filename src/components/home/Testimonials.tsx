@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import Image from "next/image";
 
 export function Testimonials() {
   const { t } = useLanguage();
@@ -9,17 +10,20 @@ export function Testimonials() {
     {
       nameKey: "temoignages.1.nom",
       roleKey: "temoignages.1.programme",
-      textKey: "temoignages.1.texte"
+      textKey: "temoignages.1.texte",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80"
     },
     {
       nameKey: "temoignages.2.nom",
       roleKey: "temoignages.2.programme",
-      textKey: "temoignages.2.texte"
+      textKey: "temoignages.2.texte",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
     },
     {
       nameKey: "temoignages.3.nom",
       roleKey: "temoignages.3.programme",
-      textKey: "temoignages.3.texte"
+      textKey: "temoignages.3.texte",
+      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80"
     }
   ];
   
@@ -41,6 +45,24 @@ export function Testimonials() {
               key={index} 
               className="p-8 bg-white border-2 border-gray-200 hover:border-accent-green hover:shadow-xl transition-all duration-300 animate-fade-in"
             >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden border-4 border-accent-green/20">
+                  <img 
+                    src={testimonial.image}
+                    alt={t(testimonial.nameKey)}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-bold text-institutional-blue">
+                    {t(testimonial.nameKey)}
+                  </p>
+                  <p className="text-sm text-text-secondary">
+                    {t(testimonial.roleKey)}
+                  </p>
+                </div>
+              </div>
+              
               <Quote className="h-10 w-10 text-accent-green mb-4 opacity-50" />
               
               <div className="flex gap-1 mb-4">
@@ -52,15 +74,6 @@ export function Testimonials() {
               <p className="text-text-secondary mb-6 italic">
                 "{t(testimonial.textKey)}"
               </p>
-              
-              <div className="border-t border-gray-200 pt-4">
-                <p className="font-bold text-institutional-blue">
-                  {t(testimonial.nameKey)}
-                </p>
-                <p className="text-sm text-text-secondary">
-                  {t(testimonial.roleKey)}
-                </p>
-              </div>
             </Card>
           ))}
         </div>

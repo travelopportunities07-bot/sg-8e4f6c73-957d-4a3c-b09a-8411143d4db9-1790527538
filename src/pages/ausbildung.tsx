@@ -593,8 +593,13 @@ export default function AusbildungPage() {
             <Card className="hover:shadow-xl transition-shadow">
               <CardContent className="p-6">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-2xl font-bold text-green-600">
-                    AM
+                  <div className="relative w-16 h-16 rounded-full overflow-hidden">
+                    <Image 
+                      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400" 
+                      alt="Aminata M." 
+                      fill
+                      style={{ objectFit: "cover" }}
+                    />
                   </div>
                   <div>
                     <p className="font-bold text-blue-900">Aminata M.</p>
@@ -616,8 +621,13 @@ export default function AusbildungPage() {
             <Card className="hover:shadow-xl transition-shadow">
               <CardContent className="p-6">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-2xl font-bold text-blue-600">
-                    KD
+                  <div className="relative w-16 h-16 rounded-full overflow-hidden">
+                    <Image 
+                      src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400" 
+                      alt="Kofi D." 
+                      fill
+                      style={{ objectFit: "cover" }}
+                    />
                   </div>
                   <div>
                     <p className="font-bold text-blue-900">Kofi D.</p>
@@ -639,8 +649,13 @@ export default function AusbildungPage() {
             <Card className="hover:shadow-xl transition-shadow">
               <CardContent className="p-6">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center text-2xl font-bold text-purple-600">
-                    FN
+                  <div className="relative w-16 h-16 rounded-full overflow-hidden">
+                    <Image 
+                      src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400" 
+                      alt="Fatou N." 
+                      fill
+                      style={{ objectFit: "cover" }}
+                    />
                   </div>
                   <div>
                     <p className="font-bold text-blue-900">Fatou N.</p>
