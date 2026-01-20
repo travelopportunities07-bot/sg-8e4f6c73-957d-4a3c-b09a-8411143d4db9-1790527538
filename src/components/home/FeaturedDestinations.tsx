@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { CheckCircle, Users, MapPin, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -64,10 +65,13 @@ export function FeaturedDestinations() {
               <Card className="overflow-hidden p-0 text-center border-2 border-gray-100 hover:border-ocean-teal/30 hover:shadow-2xl transition-all duration-500 relative bg-white group hover:-translate-y-2">
                 {/* Image d'illustration */}
                 <div className="relative h-48 overflow-hidden">
-                  <img 
+                  <Image 
                     src={step.image} 
                     alt={t(step.titleKey)}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   <div className="absolute bottom-4 right-4 text-6xl font-bold text-white/20">

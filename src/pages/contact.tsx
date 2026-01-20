@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Calendar, Video, Users, Clock, ArrowRight, Send } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Contact() {
   const [calendlyUrl, setCalendlyUrl] = useState("");
@@ -19,6 +20,16 @@ export default function Contact() {
     <Layout>
       {/* Section Hero */}
       <section className="relative py-20 bg-gradient-to-br from-deep-navy via-ocean to-sage overflow-hidden">
+        <div className="absolute inset-0">
+          <Image 
+            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902"
+            alt="Contact et communication"
+            fill
+            style={{ objectFit: "cover" }}
+            priority
+            className="opacity-20"
+          />
+        </div>
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">

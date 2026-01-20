@@ -1,5 +1,6 @@
 import { TrendingUp, Award, Globe, Shield } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import Image from "next/image";
 
 export function AboutSection() {
   const { t } = useLanguage();
@@ -29,6 +30,17 @@ export function AboutSection() {
   
   return (
     <section className="py-16 md:py-24 bg-section-gray relative overflow-hidden">
+      {/* Image de fond subtile */}
+      <div className="absolute inset-0 opacity-5">
+        <Image 
+          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80"
+          alt="Background"
+          fill
+          style={{ objectFit: "cover" }}
+          priority={false}
+        />
+      </div>
+      
       <div className="container relative z-10">
         <div className="text-center mb-12 space-y-4">
           <h2 className="text-3xl md:text-4xl font-bold text-institutional-blue">

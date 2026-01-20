@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
+import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Testimonials() {
@@ -10,19 +11,22 @@ export function Testimonials() {
       nameKey: "temoignages.1.nom",
       roleKey: "temoignages.1.programme",
       textKey: "temoignages.1.texte",
-      initials: "SA"
+      initials: "SA",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80"
     },
     {
       nameKey: "temoignages.2.nom",
       roleKey: "temoignages.2.programme",
       textKey: "temoignages.2.texte",
-      initials: "JM"
+      initials: "JM",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
     },
     {
       nameKey: "temoignages.3.nom",
       roleKey: "temoignages.3.programme",
       textKey: "temoignages.3.texte",
-      initials: "LB"
+      initials: "LB",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80"
     }
   ];
   
@@ -45,8 +49,14 @@ export function Testimonials() {
               className="p-8 bg-white border-2 border-gray-200 hover:border-accent-green hover:shadow-xl transition-all duration-300 animate-fade-in"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent-green to-institutional-blue flex items-center justify-center text-white font-bold text-xl border-4 border-accent-green/20">
-                  {testimonial.initials}
+                <div className="relative w-16 h-16 rounded-full overflow-hidden border-4 border-accent-green/20">
+                  <Image
+                    src={testimonial.image}
+                    alt={t(testimonial.nameKey)}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="64px"
+                  />
                 </div>
                 <div>
                   <p className="font-bold text-institutional-blue">

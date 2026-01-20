@@ -40,8 +40,14 @@ export default function AProposPage() {
                 Nous nous engageons à fournir des informations fiables, actualisées et un accompagnement personnalisé pour concrétiser vos projets de volontariat, formation, études ou tourisme à l'étranger.
               </p>
             </div>
-            <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl animate-slide-right bg-gradient-to-br from-ocean-blue/10 to-primary/10 flex items-center justify-center">
-              <Users className="w-32 h-32 text-ocean-blue opacity-20" />
+            <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl animate-slide-right">
+              <Image 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c"
+                alt="Équipe collaborative internationale"
+                fill
+                style={{ objectFit: "cover" }}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Globe, GraduationCap, Briefcase, Map, Sparkles } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -8,10 +9,23 @@ export function Hero() {
   
   return (
     <section className="relative bg-gradient-to-br from-deep-navy via-ocean-teal to-vibrant-coral text-white py-24 md:py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-40 z-0"></div>
+      {/* Image de fond */}
+      <div className="absolute inset-0 z-0">
+        <Image 
+          src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920&q=80"
+          alt="Étudiants internationaux"
+          fill
+          style={{ objectFit: "cover" }}
+          priority
+          className="opacity-20"
+        />
+      </div>
       
-      <div className="absolute top-20 left-10 w-72 h-72 bg-ocean-teal/30 rounded-full blur-3xl animate-pulse z-0"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-vibrant-coral/20 rounded-full blur-3xl animate-pulse z-0" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-deep-navy/90 via-ocean-teal/85 to-vibrant-coral/90 z-[1]"></div>
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-40 z-[2]"></div>
+      
+      <div className="absolute top-20 left-10 w-72 h-72 bg-ocean-teal/30 rounded-full blur-3xl animate-pulse z-[3]"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-vibrant-coral/20 rounded-full blur-3xl animate-pulse z-[3]" style={{ animationDelay: '1s' }}></div>
       
       <div className="container relative z-10">
         <div className="max-w-5xl mx-auto text-center space-y-8">
