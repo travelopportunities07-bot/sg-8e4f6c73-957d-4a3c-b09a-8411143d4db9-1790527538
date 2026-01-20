@@ -2,7 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Briefcase, GraduationCap, Globe, Heart, Award, Home, Building } from "lucide-react";
+import { Briefcase, GraduationCap, Globe, Heart, Award, Home, Building, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { DestinationConsultation } from '@/components/destinations/DestinationConsultation';
@@ -351,6 +351,167 @@ export default function AllemagnePage() {
               </Button>
             </TabsContent>
           </Tabs>
+        </div>
+      </section>
+
+      {/* Section Ausbildung - Formation en alternance */}
+      <section className="py-16 bg-gradient-to-br from-blue-50 via-white to-green-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <div className="inline-block bg-green-500 text-white px-6 py-3 rounded-full text-sm font-bold mb-6">
+                ⭐ Spécial Allemagne : L'Ausbildung
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-6">
+                Formation professionnelle en alternance
+              </h2>
+              <p className="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                Le système <span className="font-bold text-blue-600">Ausbildung</span> allemand est reconnu dans toute l'Europe comme le meilleur modèle de formation professionnelle. 
+                Apprenez un métier concret, <span className="text-green-600 font-bold">soyez rémunéré pendant votre formation</span>, 
+                et décrochez un <span className="text-green-600 font-bold">diplôme reconnu en Europe</span>.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <Card className="bg-white hover:shadow-xl transition-shadow">
+                <CardContent className="p-6 text-center">
+                  <div className="flex items-center justify-center w-16 h-16 bg-green-100 text-green-600 rounded-full mx-auto mb-4">
+                    <Award className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-bold text-blue-900 mb-2">100% Rémunéré</h3>
+                  <p className="text-gray-600">
+                    Toutes les formations en alternance sont payées dès le premier jour, de 800€ à 1.300€/mois selon le secteur
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white hover:shadow-xl transition-shadow">
+                <CardContent className="p-6 text-center">
+                  <div className="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mx-auto mb-4">
+                    <Briefcase className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-bold text-blue-900 mb-2">90% d'embauche</h3>
+                  <p className="text-gray-600">
+                    Plus de 9 apprentis sur 10 trouvent un emploi immédiatement après leur formation
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-white hover:shadow-xl transition-shadow">
+                <CardContent className="p-6 text-center">
+                  <div className="flex items-center justify-center w-16 h-16 bg-purple-100 text-purple-600 rounded-full mx-auto mb-4">
+                    <GraduationCap className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-bold text-blue-900 mb-2">Diplôme européen</h3>
+                  <p className="text-gray-600">
+                    Diplômes reconnus partout en Europe et valorisés internationalement
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+              <h3 className="text-2xl md:text-3xl font-bold text-blue-900 mb-6">
+                Secteurs de formation disponibles
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                <div className="flex items-start gap-4">
+                  <div className="flex items-center justify-center w-12 h-12 bg-red-100 text-red-600 rounded-lg flex-shrink-0">
+                    <Heart className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-blue-900 mb-2">Santé et soins</h4>
+                    <p className="text-sm text-gray-600">Infirmier, aide-soignant, assistant médical, assistant dentaire, assistant en pharmacie</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="flex items-center justify-center w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex-shrink-0">
+                    <Briefcase className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-blue-900 mb-2">Techniques industrielles</h4>
+                    <p className="text-sm text-gray-600">Électrotechnicien, mécanicien industriel, mécatronique</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="flex items-center justify-center w-12 h-12 bg-green-100 text-green-600 rounded-lg flex-shrink-0">
+                    <Building className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-blue-900 mb-2">Commerce et gestion</h4>
+                    <p className="text-sm text-gray-600">Employé de commerce, comptable, banque/assurance, commerce de détail</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="flex items-center justify-center w-12 h-12 bg-purple-100 text-purple-600 rounded-lg flex-shrink-0">
+                    <Globe className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-blue-900 mb-2">Informatique</h4>
+                    <p className="text-sm text-gray-600">Développeur logiciel, systèmes informatiques, cybersécurité</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="flex items-center justify-center w-12 h-12 bg-orange-100 text-orange-600 rounded-lg flex-shrink-0">
+                    <Home className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-blue-900 mb-2">Hôtellerie & Restauration</h4>
+                    <p className="text-sm text-gray-600">Cuisinier, serveur, employé en hôtellerie, management hôtelier</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="flex items-center justify-center w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex-shrink-0">
+                    <Award className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-blue-900 mb-2">Logistique</h4>
+                    <p className="text-sm text-gray-600">Logisticien, magasinier, supply chain, e-commerce</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-xl p-6 mb-8">
+                <h4 className="font-bold text-blue-900 mb-3 text-lg">💡 Le système dual : théorie + pratique</h4>
+                <p className="text-gray-700 mb-4">
+                  L'Ausbildung combine cours théoriques à l'école professionnelle (1-2 jours/semaine) et formation pratique en entreprise (3-4 jours/semaine). 
+                  Vous apprenez un métier réel tout en étant payé, avec un diplôme reconnu à la clé.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 font-bold">✓</span>
+                    <span className="text-gray-700">Formation de 2 à 3,5 ans selon le métier</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 font-bold">✓</span>
+                    <span className="text-gray-700">Salaire mensuel progressif (augmente chaque année)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 font-bold">✓</span>
+                    <span className="text-gray-700">Plus de 350 métiers accessibles en Ausbildung</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 font-bold">✓</span>
+                    <span className="text-gray-700">Accompagnement complet par Aventures Sans Frontières</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="text-center">
+                <Button asChild size="lg" className="bg-green-500 hover:bg-green-600 text-white text-lg px-8">
+                  <Link href="/ausbildung">
+                    Découvrir toutes les formations en détail
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
