@@ -1,7 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import Image from "next/image";
 
 export function Testimonials() {
   const { t } = useLanguage();
@@ -11,19 +10,19 @@ export function Testimonials() {
       nameKey: "temoignages.1.nom",
       roleKey: "temoignages.1.programme",
       textKey: "temoignages.1.texte",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80"
+      initials: "SA"
     },
     {
       nameKey: "temoignages.2.nom",
       roleKey: "temoignages.2.programme",
       textKey: "temoignages.2.texte",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+      initials: "JM"
     },
     {
       nameKey: "temoignages.3.nom",
       roleKey: "temoignages.3.programme",
       textKey: "temoignages.3.texte",
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80"
+      initials: "LB"
     }
   ];
   
@@ -46,12 +45,8 @@ export function Testimonials() {
               className="p-8 bg-white border-2 border-gray-200 hover:border-accent-green hover:shadow-xl transition-all duration-300 animate-fade-in"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="relative w-16 h-16 rounded-full overflow-hidden border-4 border-accent-green/20">
-                  <img 
-                    src={testimonial.image}
-                    alt={t(testimonial.nameKey)}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent-green to-institutional-blue flex items-center justify-center text-white font-bold text-xl border-4 border-accent-green/20">
+                  {testimonial.initials}
                 </div>
                 <div>
                   <p className="font-bold text-institutional-blue">

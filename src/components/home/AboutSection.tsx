@@ -29,15 +29,6 @@ export function AboutSection() {
   
   return (
     <section className="py-16 md:py-24 bg-section-gray relative overflow-hidden">
-      {/* Background image with overlay */}
-      <div className="absolute inset-0 opacity-5">
-        <img 
-          src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&q=80" 
-          alt="Background"
-          className="w-full h-full object-cover"
-        />
-      </div>
-      
       <div className="container relative z-10">
         <div className="text-center mb-12 space-y-4">
           <h2 className="text-3xl md:text-4xl font-bold text-institutional-blue">
