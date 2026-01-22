@@ -15,6 +15,7 @@ export function Header() {
     { href: "/formations", label: t("nav.formations") },
     { href: "/etudes", label: t("nav.etudes") },
     { href: "/tourisme", label: t("nav.tourisme") },
+    { href: "/au-pair", label: t("nav.aupair") },
   ];
 
   return (
