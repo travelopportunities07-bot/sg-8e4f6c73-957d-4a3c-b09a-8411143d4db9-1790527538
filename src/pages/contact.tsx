@@ -3,12 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { PhoneInput } from "@/components/ui/phone-input";
 import { Mail, Phone, MapPin, Calendar, Video, Users, Clock, ArrowRight, Send } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 
 export default function Contact() {
   const [calendlyUrl, setCalendlyUrl] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   const handleOpenCalendly = () => {
     if (calendlyUrl) {
@@ -231,10 +233,10 @@ export default function Contact() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Téléphone (optionnel)
                     </label>
-                    <Input
-                      type="tel"
-                      placeholder="+33 X XX XX XX XX"
-                      className="w-full"
+                    <PhoneInput
+                      value={phoneNumber}
+                      onChange={setPhoneNumber}
+                      placeholder="X XX XX XX XX"
                     />
                   </div>
 
