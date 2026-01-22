@@ -32,13 +32,13 @@ export default function VolontariatPage() {
       couleur: "text-blue-500"
     },
     {
-      titre: "FWD - Freiwilliger Wehrdienst",
-      soustitre: "Service Volontaire Militaire",
-      description: "Engagement volontaire dans la Bundeswehr. Formation militaire et professionnelle avec perspectives de carrière.",
-      duree: "7 à 23 mois",
-      argent: "Salaire + logement + formation",
-      age: "17-32 ans",
-      domaines: ["Formation militaire", "Logistique", "Technique", "Administration", "Santé militaire"],
+      titre: "Freiwilligendienst",
+      soustitre: "Service Volontaire Général",
+      description: "Programme de volontariat flexible permettant de s'engager dans divers secteurs. Idéal pour acquérir une expérience internationale tout en contribuant à des projets significatifs.",
+      duree: "6 à 18 mois",
+      argent: "Indemnité + couverture sociale",
+      age: "18+ ans",
+      domaines: ["Projets sociaux", "Environnement", "Éducation", "Santé", "Culture et arts"],
       icone: Globe,
       couleur: "text-green-600"
     }
