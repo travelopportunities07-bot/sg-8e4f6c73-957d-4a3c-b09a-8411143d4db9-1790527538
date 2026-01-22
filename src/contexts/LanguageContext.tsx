@@ -45,6 +45,9 @@ const translations = {
     'opportunites.tourisme.titre': 'Tourisme & Culture',
     'opportunites.tourisme.desc': 'Découvrez l\'Allemagne : châteaux, musées, festivals et nature. Des circuits organisés et des conseils pour voyager en toute sérénité.',
     
+    'opportunites.aupair.titre': 'Au Pair',
+    'opportunites.aupair.desc': 'Vivez une immersion culturelle unique en Allemagne en participant à la vie de famille. Hébergement, repas et argent de poche assurés tout en apprenant l\'allemand.',
+    
     'pourquoi.titre': 'Pourquoi Choisir l\'Allemagne ?',
     'pourquoi.soustitre': 'Un pays d\'opportunités au cœur de l\'Europe',
     
@@ -183,6 +186,9 @@ const translations = {
     'opportunites.tourisme.titre': 'Tourism & Culture',
     'opportunites.tourisme.desc': 'Discover Germany: castles, museums, festivals and nature. Organized tours and advice for peaceful travel.',
     
+    'opportunites.aupair.titre': 'Au Pair',
+    'opportunites.aupair.desc': 'Experience a unique cultural immersion in Germany by participating in family life. Accommodation, meals and pocket money provided while learning German.',
+    
     'pourquoi.titre': 'Why Choose Germany?',
     'pourquoi.soustitre': 'A land of opportunities in the heart of Europe',
     
@@ -320,6 +326,9 @@ const translations = {
     
     'opportunites.tourisme.titre': 'Tourismus & Kultur',
     'opportunites.tourisme.desc': 'Entdecken Sie Deutschland: Schlösser, Museen, Festivals und Natur. Organisierte Touren und Tipps für sorgenfreies Reisen.',
+    
+    'opportunites.aupair.titre': 'Au Pair',
+    'opportunites.aupair.desc': 'Erleben Sie ein einzigartiges kulturelles Eintauchen in Deutschland durch Teilnahme am Familienleben. Unterkunft, Verpflegung und Taschengeld werden bereitgestellt, während Sie Deutsch lernen.',
     
     'pourquoi.titre': 'Warum Deutschland Wählen?',
     'pourquoi.soustitre': 'Ein Land voller Möglichkeiten im Herzen Europas',

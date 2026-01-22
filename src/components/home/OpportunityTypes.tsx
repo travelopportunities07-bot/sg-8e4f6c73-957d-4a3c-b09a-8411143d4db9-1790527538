@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Heart, Wrench, GraduationCap, Camera, ArrowRight } from "lucide-react";
+import { Heart, Wrench, GraduationCap, Camera, Home, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export function OpportunityTypes() {
@@ -43,6 +43,15 @@ export function OpportunityTypes() {
       gradient: "from-sage-green to-emerald-500",
       bgColor: "bg-sage-green/5",
       iconBg: "bg-gradient-to-br from-sage-green to-emerald-500"
+    },
+    {
+      icon: Home,
+      titleKey: "opportunites.aupair.titre",
+      descKey: "opportunites.aupair.desc",
+      href: "/au-pair",
+      gradient: "from-purple-500 to-pink-500",
+      bgColor: "bg-purple-500/5",
+      iconBg: "bg-gradient-to-br from-purple-500 to-pink-500"
     }
   ];
   
@@ -63,7 +72,7 @@ export function OpportunityTypes() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {opportunities.map((opportunity, index) => (
             <Link href={opportunity.href} key={index}>
               <Card className={`h-full p-8 ${opportunity.bgColor} border-2 border-transparent hover:border-opacity-50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 group cursor-pointer animate-fade-in`} style={{ animationDelay: `${index * 0.1}s` }}>
