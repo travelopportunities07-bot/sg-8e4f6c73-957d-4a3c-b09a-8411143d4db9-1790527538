@@ -4,7 +4,7 @@ import { AppointmentSection } from "@/components/appointment/AppointmentSection"
 
 export default function AppointmentPage() {
   // URL Calendly réelle
-  const calendlyUrl = "https://calendly.com/travelopportunities07/30min?hide_event_type_details=1&hide_gdpr_banner=1";
+  const calendlyUrl = "https://calendly.com/travelopportunities07/nouvelle-reunion";
   
   return (
     <Layout
