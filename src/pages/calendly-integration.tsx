@@ -22,7 +22,7 @@ export default function CalendlyIntegrationPage() {
       <div className="container mx-auto px-4 md:px-6 pb-16">
         <div className="bg-white rounded-xl shadow-sm p-4 max-w-4xl mx-auto">
           {/* Intégration directe du widget Calendly avec le code exact fourni */}
-          <div className="calendly-inline-widget" data-url="https://calendly.com/travelopportunities07/30min?hide_event_type_details=1&hide_gdpr_banner=1" style={{ minWidth: "320px", height: "700px" }}></div>
+          <div className="calendly-inline-widget" data-url="https://calendly.com/travelopportunities07/nouvelle-reunion" style={{ minWidth: "320px", height: "700px" }}></div>
           <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
         </div>
       </div>

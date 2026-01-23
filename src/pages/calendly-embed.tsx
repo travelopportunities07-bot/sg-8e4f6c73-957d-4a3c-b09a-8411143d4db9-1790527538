@@ -24,7 +24,7 @@ export default function CalendlyEmbedPage() {
           {/* Intégration directe du widget Calendly */}
           <div 
             className="calendly-inline-widget" 
-            data-url="https://calendly.com/travelopportunities07/30min?hide_event_type_details=1&hide_gdpr_banner=1" 
+            data-url="https://calendly.com/travelopportunities07/nouvelle-reunion" 
             style={{ minWidth: "320px", height: "700px" }} 
           />
           
