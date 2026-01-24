@@ -195,7 +195,7 @@ export function FeaturedDestinations() {
         
         <div className="text-center">
           <Link href="/demarches">
-            <Button size="lg" className="bg-gradient-to-r from-ocean-teal to-blue-600 hover:from-ocean-teal/90 hover:to-blue-600/90 text-white text-lg font-bold px-12 py-7 rounded-2xl shadow-2xl hover:shadow-ocean-teal/50 transition-all duration-300 hover:scale-105 group">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-lg font-bold px-12 py-7 rounded-2xl shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105 group">
               {t("commun.enSavoirPlus")}
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>

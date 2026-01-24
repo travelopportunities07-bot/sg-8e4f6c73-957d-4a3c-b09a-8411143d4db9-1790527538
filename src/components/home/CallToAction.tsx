@@ -22,14 +22,14 @@ export function CallToAction() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link href="/rendez-vous">
-              <Button size="lg" className="bg-accent-green hover:bg-accent-green/90 text-white text-lg px-8 py-6 rounded-lg shadow-xl hover:shadow-2xl transition-all">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-6 rounded-lg shadow-xl hover:shadow-2xl transition-all hover:scale-105">
                 Planifiez votre aventure internationale
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
             
             <Link href="/rendez-vous">
-              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-institutional-blue text-lg px-8 py-6 rounded-lg transition-all">
+              <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-6 rounded-lg shadow-xl hover:shadow-2xl transition-all hover:scale-105">
                 <Phone className="mr-2 h-5 w-5" />
                 {t("appel.rendezvous")}
               </Button>
