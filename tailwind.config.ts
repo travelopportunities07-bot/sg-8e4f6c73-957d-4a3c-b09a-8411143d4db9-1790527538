@@ -52,7 +52,7 @@ const config: Config = {
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
   			'deep-blue': 'hsl(var(--deep-blue))',
-  			'emerald-green': 'hsl(var(--emerald-green))',
+  			'sky-blue': 'hsl(var(--sky-blue))',
   			'trust-blue': 'hsl(var(--trust-blue))',
   			'dark-gray': 'hsl(var(--dark-gray))',
   			'light-gray': 'hsl(var(--light-gray))'
@@ -143,8 +143,7 @@ const config: Config = {
   		},
   		boxShadow: {
   			'glow-blue': '0 0 20px rgba(59, 130, 246, 0.5)',
-  			'glow-emerald': '0 0 20px rgba(16, 185, 129, 0.5)',
-  			'glow-green': '0 0 20px rgba(34, 197, 94, 0.5)'
+  			'glow-sky': '0 0 20px rgba(96, 165, 250, 0.5)'
   		}
   	}
   },

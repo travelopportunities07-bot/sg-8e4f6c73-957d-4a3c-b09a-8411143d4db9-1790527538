@@ -16,9 +16,9 @@ const buttonVariants = cva(
         outline:
           "border-2 border-primary bg-transparent text-primary shadow-sm hover:bg-primary hover:text-white hover:scale-105",
         secondary:
-          "bg-secondary text-white shadow-lg hover:brightness-110 hover:scale-105 hover:shadow-glow-emerald",
+          "bg-secondary text-white shadow-lg hover:brightness-110 hover:scale-105 hover:shadow-glow-sky",
         success:
-          "bg-success text-white shadow-lg hover:brightness-110 hover:scale-105 hover:shadow-glow-green",
+          "bg-primary text-white shadow-lg hover:brightness-110 hover:scale-105 hover:shadow-glow-blue",
         ghost: "hover:bg-primary/10 hover:text-primary text-primary hover:scale-105",
         link: "text-primary underline-offset-4 hover:underline font-semibold hover:brightness-110",
       },
