@@ -190,9 +190,9 @@ export default function DemarchesPage() {
               Aisso International Ltd vous accompagne à chaque étape de votre projet en Allemagne. De la première consultation jusqu'à votre installation, nous sommes à vos côtés.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/rendez-vous">
                 <Button size="lg" className="bg-green-500 hover:bg-green-600 text-white text-lg px-8">
-                  Consultation gratuite
+                  Planifiez votre aventure internationale
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
@@ -360,7 +360,7 @@ export default function DemarchesPage() {
                       </li>
                     ))}
                   </ul>
-                  <Link href="/contact">
+                  <Link href="/rendez-vous">
                     <Button className={`w-full ${index === 2 ? 'bg-green-500 hover:bg-green-600' : 'bg-blue-900 hover:bg-blue-800'}`}>
                       {index === 0 ? 'Demander' : 'Choisir cette formule'}
                     </Button>
@@ -421,7 +421,7 @@ export default function DemarchesPage() {
               </div>
 
               <div className="mt-8 text-center">
-                <Link href="/contact">
+                <Link href="/rendez-vous">
                   <Button size="lg" className="bg-green-500 hover:bg-green-600 text-white text-lg px-8">
                     Prendre rendez-vous maintenant
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -443,9 +443,9 @@ export default function DemarchesPage() {
             Ne laissez pas les démarches administratives vous freiner. Avec Aisso International Ltd, votre projet en Allemagne devient simple et accessible.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
+            <Link href="/rendez-vous">
               <Button size="lg" className="bg-green-500 hover:bg-green-600 text-white text-lg px-8">
-                Consultation gratuite
+                Planifiez votre aventure internationale
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>

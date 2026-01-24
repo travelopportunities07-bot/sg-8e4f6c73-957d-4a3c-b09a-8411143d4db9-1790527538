@@ -126,9 +126,9 @@ export default function EtudesPage() {
               Rejoignez l'un des meilleurs systèmes universitaires au monde. Frais de scolarité très bas, excellence académique et opportunités professionnelles exceptionnelles.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/rendez-vous">
                 <Button size="lg" className="bg-green-500 hover:bg-green-600 text-white text-lg px-8">
-                  Consultation gratuite
+                  Planifiez votre aventure internationale
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
@@ -316,7 +316,7 @@ export default function EtudesPage() {
             Contactez Aisso International Ltd pour une évaluation gratuite de votre profil et découvrez les universités qui vous correspondent
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
+            <Link href="/rendez-vous">
               <Button size="lg" className="bg-green-500 hover:bg-green-600 text-white text-lg px-8">
                 Commencer mon projet
                 <ArrowRight className="ml-2 h-5 w-5" />

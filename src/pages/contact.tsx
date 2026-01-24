@@ -7,6 +7,7 @@ import { PhoneInput } from "@/components/ui/phone-input";
 import { Mail, Phone, MapPin, Calendar, Video, Users, Clock, ArrowRight, Send } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Contact() {
   const [calendlyUrl, setCalendlyUrl] = useState("");
@@ -117,29 +118,12 @@ export default function Contact() {
                     Choisissez un créneau qui vous convient et réservez votre consultation gratuite en quelques clics.
                   </p>
                   <div className="space-y-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Lien Calendly
-                      </label>
-                      <Input
-                        type="url"
-                        placeholder="https://calendly.com/votre-lien"
-                        value={calendlyUrl}
-                        onChange={(e) => setCalendlyUrl(e.target.value)}
-                        className="w-full"
-                      />
-                      <p className="text-xs text-gray-500 mt-2">
-                        Entrez votre lien Calendly personnel pour permettre la prise de rendez-vous
-                      </p>
-                    </div>
-                    <Button
-                      onClick={handleOpenCalendly}
-                      disabled={!calendlyUrl}
-                      className="w-full bg-gradient-to-r from-ocean to-sage hover:from-ocean/90 hover:to-sage/90 text-white font-semibold py-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      <Calendar className="w-5 h-5 mr-2" />
-                      Ouvrir le Calendrier
-                    </Button>
+                    <Link href="/rendez-vous">
+                      <Button className="w-full bg-gradient-to-r from-ocean to-sage hover:from-ocean/90 hover:to-sage/90 text-white font-semibold py-6 text-lg">
+                        <Calendar className="w-5 h-5 mr-2" />
+                        Planifiez votre aventure internationale
+                      </Button>
+                    </Link>
                     <div className="flex items-center justify-center gap-4 text-sm text-gray-600">
                       <span className="flex items-center gap-1">
                         <Clock className="w-4 h-4" />

@@ -57,9 +57,9 @@ export function Hero() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Link href="/opportunites">
+            <Link href="/rendez-vous">
               <Button size="lg" variant="outline" className="border-2 border-white bg-white/15 backdrop-blur-sm text-white hover:bg-white hover:text-deep-navy text-lg font-bold px-10 py-7 rounded-2xl transition-all duration-300 hover:scale-105 shadow-xl">
-                {t("hero.bouton.secondaire")}
+                Planifiez votre aventure internationale
               </Button>
             </Link>
           </div>

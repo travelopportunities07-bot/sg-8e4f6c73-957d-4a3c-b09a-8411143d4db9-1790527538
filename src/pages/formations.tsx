@@ -174,9 +174,9 @@ export default function FormationsPage() {
               Formez-vous dans un métier d'avenir avec le système dual allemand. Formation gratuite, rémunérée et diplôme reconnu en Europe.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/rendez-vous">
                 <Button size="lg" className="bg-green-500 hover:bg-green-600 text-white text-lg px-8">
-                  Demander des informations
+                  Planifiez votre aventure internationale
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
@@ -391,7 +391,7 @@ export default function FormationsPage() {
             Aisso International Ltd vous accompagne de A à Z : choix de formation, dossier de candidature, cours d'allemand, et suivi personnalisé
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
+            <Link href="/rendez-vous">
               <Button size="lg" className="bg-green-500 hover:bg-green-600 text-white text-lg px-8">
                 Commencer mon projet
                 <ArrowRight className="ml-2 h-5 w-5" />

@@ -113,9 +113,9 @@ export default function TourismePage() {
               Partez à la découverte de l'Allemagne : histoire fascinante, culture riche, paysages spectaculaires et gastronomie savoureuse. Voyages organisés sur mesure.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/rendez-vous">
                 <Button size="lg" className="bg-green-500 hover:bg-green-600 text-white text-lg px-8">
-                  Demander un devis
+                  Planifiez votre aventure internationale
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
@@ -304,7 +304,7 @@ export default function TourismePage() {
             Contactez Aisso International Ltd pour organiser votre voyage sur mesure en Allemagne. Devis gratuit et personnalisé !
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
+            <Link href="/rendez-vous">
               <Button size="lg" className="bg-green-500 hover:bg-green-600 text-white text-lg px-8">
                 Planifier mon voyage
                 <ArrowRight className="ml-2 h-5 w-5" />

@@ -106,9 +106,9 @@ export default function VolontariatPage() {
               Engagez-vous dans un programme de volontariat en Allemagne. Une expérience humaine unique avec indemnité, logement et formation linguistique.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
-              <Link href="/contact">
+              <Link href="/rendez-vous">
                 <Button size="lg" className="bg-green-500 hover:bg-green-600 text-white text-lg px-8">
-                  Consultation gratuite
+                  Planifiez votre aventure internationale
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
@@ -267,7 +267,7 @@ export default function VolontariatPage() {
             Contactez Aisso International Ltd dès aujourd'hui pour une consultation gratuite et démarrez votre aventure en Allemagne
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
+            <Link href="/rendez-vous">
               <Button size="lg" className="bg-green-500 hover:bg-green-600 text-white text-lg px-8">
                 Demander des informations
                 <ArrowRight className="ml-2 h-5 w-5" />
