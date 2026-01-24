@@ -119,7 +119,7 @@ export function Footer() {
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 mb-6">
             <p className="text-gray-400 text-sm text-center lg:text-left">
-              &copy; {new Date().getFullYear()} Aisso International Ltd. {t("footer.droits")}
+              &copy; {new Date().getFullYear()} Aventures Sans Frontières. {t("footer.droits")}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-gray-400">
               {legal.map((item, index) => (
