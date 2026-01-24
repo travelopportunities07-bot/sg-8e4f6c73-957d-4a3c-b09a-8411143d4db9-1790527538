@@ -51,15 +51,9 @@ const config: Config = {
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
-  			institutional: {
-  				blue: 'hsl(var(--institutional-blue))'
-  			},
-  			trust: {
-  				green: 'hsl(var(--trust-green))'
-  			},
-  			ocean: {
-  				blue: 'hsl(var(--ocean-blue))'
-  			},
+  			'deep-blue': 'hsl(var(--deep-blue))',
+  			'emerald-green': 'hsl(var(--emerald-green))',
+  			'trust-blue': 'hsl(var(--trust-blue))',
   			'dark-gray': 'hsl(var(--dark-gray))',
   			'light-gray': 'hsl(var(--light-gray))'
   		},
@@ -128,6 +122,14 @@ const config: Config = {
   					opacity: '1',
   					transform: 'scale(1)'
   				}
+  			},
+  			'glow': {
+  				'0%, 100%': {
+  					filter: 'drop-shadow(0 0 8px rgba(59, 130, 246, 0.4))'
+  				},
+  				'50%': {
+  					filter: 'drop-shadow(0 0 16px rgba(59, 130, 246, 0.6))'
+  				}
   			}
   		},
   		animation: {
@@ -136,7 +138,13 @@ const config: Config = {
   			'fade-in': 'fade-in 0.6s ease-out',
   			'slide-in-left': 'slide-in-left 0.6s ease-out',
   			'slide-in-right': 'slide-in-right 0.6s ease-out',
-  			'scale-in': 'scale-in 0.5s ease-out'
+  			'scale-in': 'scale-in 0.5s ease-out',
+  			'glow': 'glow 2s ease-in-out infinite'
+  		},
+  		boxShadow: {
+  			'glow-blue': '0 0 20px rgba(59, 130, 246, 0.5)',
+  			'glow-emerald': '0 0 20px rgba(16, 185, 129, 0.5)',
+  			'glow-green': '0 0 20px rgba(34, 197, 94, 0.5)'
   		}
   	}
   },
