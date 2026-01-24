@@ -55,7 +55,7 @@ export function Hero() {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-deep-navy via-ocean-teal to-vibrant-coral text-white py-24 md:py-32 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-blue-50 via-white to-emerald-50 py-24 md:py-32 overflow-hidden">
       {/* Diaporama animé avec haute qualité */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
@@ -64,11 +64,11 @@ export function Hero() {
             initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 1, ease: [0.43, 0.13, 0.23, 0.96] }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
             className="absolute inset-0"
           >
             <motion.div
-              animate={{ scale: 1.08 }}
+              animate={{ scale: 1.05 }}
               transition={{ duration: 7, ease: "linear" }}
               className="relative w-full h-full"
             >
@@ -89,14 +89,14 @@ export function Hero() {
       {/* Contrôles de navigation */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/60 backdrop-blur-md p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-xl"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-primary/90 hover:bg-primary backdrop-blur-md p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-xl"
         aria-label="Slide précédent"
       >
         <ChevronLeft className="h-6 w-6 text-white" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/60 backdrop-blur-md p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-xl"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-primary/90 hover:bg-primary backdrop-blur-md p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-xl"
         aria-label="Slide suivant"
       >
         <ChevronRight className="h-6 w-6 text-white" />
@@ -110,8 +110,8 @@ export function Hero() {
             onClick={() => goToSlide(index)}
             className={`transition-all duration-300 rounded-full shadow-lg ${
               index === currentSlide
-                ? "w-12 h-3 bg-warm-gold"
-                : "w-3 h-3 bg-white/60 hover:bg-white/80"
+                ? "w-12 h-3 bg-primary"
+                : "w-3 h-3 bg-primary/40 hover:bg-primary/60"
             }`}
             aria-label={`Aller au slide ${index + 1}`}
           />
@@ -119,14 +119,14 @@ export function Hero() {
       </div>
       
       {/* Overlay optimisé pour meilleure visibilité */}
-      <div className="absolute inset-0 bg-gradient-to-br from-deep-navy/70 via-ocean-teal/60 to-deep-navy/70 z-[1]"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white/70 via-blue-50/60 to-white/70 z-[1]"></div>
       
       {/* Motif de points subtil */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-20 z-[2]"></div>
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMzAsNTgsMTM4LDAuMDUpIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30 z-[2]"></div>
       
       {/* Effets lumineux subtils */}
-      <div className="absolute top-20 left-10 w-96 h-96 bg-ocean-teal/15 rounded-full blur-3xl animate-pulse z-[3]"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-warm-gold/10 rounded-full blur-3xl animate-pulse z-[3]" style={{ animationDelay: "1.5s" }}></div>
+      <div className="absolute top-20 left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse z-[3]"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse z-[3]" style={{ animationDelay: "1.5s" }}></div>
       
       <div className="container relative z-10">
         <div className="max-w-5xl mx-auto text-center space-y-8">
@@ -135,10 +135,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-3 bg-black/50 backdrop-blur-xl px-6 py-3 rounded-full border border-white/50 shadow-2xl"
+            className="inline-flex items-center gap-3 bg-white/90 backdrop-blur-xl px-6 py-3 rounded-full border-2 border-primary shadow-2xl"
           >
-            <Sparkles className="h-5 w-5 text-warm-gold drop-shadow-lg" />
-            <span className="text-sm font-bold tracking-wide text-white drop-shadow-lg">{t("hero.badge")}</span>
+            <Sparkles className="h-5 w-5 text-primary drop-shadow-lg" />
+            <span className="text-sm font-bold tracking-wide text-primary drop-shadow-lg">{t("hero.badge")}</span>
           </motion.div>
           
           {/* Titre principal avec ombres renforcées */}
@@ -146,9 +146,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-5xl md:text-7xl font-bold leading-tight text-white"
+            className="text-5xl md:text-7xl font-bold leading-tight text-primary"
             style={{
-              textShadow: '0 4px 12px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.9), 0 8px 24px rgba(0,0,0,0.6)'
+              textShadow: '0 2px 4px rgba(30,58,138,0.2), 0 4px 8px rgba(30,58,138,0.1)'
             }}
           >
             {t("hero.titre")}
@@ -162,9 +162,9 @@ export function Hero() {
             className="max-w-3xl mx-auto"
           >
             <p
-              className="text-xl md:text-2xl text-white font-medium leading-relaxed px-6 py-3 rounded-2xl bg-black/30 backdrop-blur-sm"
+              className="text-xl md:text-2xl text-primary font-medium leading-relaxed px-6 py-3 rounded-2xl bg-white/80 backdrop-blur-sm"
               style={{
-                textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 1px 3px rgba(0,0,0,0.9)'
+                textShadow: '0 1px 2px rgba(30,58,138,0.1)'
               }}
             >
               {t("hero.soustitre")}
@@ -179,13 +179,13 @@ export function Hero() {
             className="flex flex-col sm:flex-row gap-5 justify-center items-center pt-4"
           >
             <Link href="/contact">
-              <Button size="lg" className="bg-warm-gold hover:bg-warm-gold/90 text-deep-navy text-lg font-bold px-10 py-7 rounded-2xl shadow-2xl hover:shadow-warm-gold/60 transition-all duration-300 hover:scale-105">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-lg font-bold px-10 py-7 rounded-xl shadow-lg hover:shadow-glow-primary transition-all duration-300 hover:scale-105">
                 {t("hero.bouton.principal")}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
             <Link href="/rendez-vous">
-              <Button size="lg" variant="outline" className="border-2 border-white bg-black/40 backdrop-blur-md text-white hover:bg-white hover:text-deep-navy text-lg font-bold px-10 py-7 rounded-2xl transition-all duration-300 hover:scale-105 shadow-2xl">
+              <Button size="lg" variant="secondary" className="bg-secondary hover:bg-secondary/90 text-white text-lg font-bold px-10 py-7 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-glow-secondary">
                 Planifiez votre aventure internationale
               </Button>
             </Link>
@@ -199,25 +199,25 @@ export function Hero() {
             className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-16"
           >
             {[
-              { icon: Briefcase, label: t("hero.stats.volontariat"), gradient: "from-vibrant-coral to-orange-500", delay: 0 },
-              { icon: GraduationCap, label: t("hero.stats.formations"), gradient: "from-ocean-teal to-blue-500", delay: 0.1 },
-              { icon: GraduationCap, label: t("hero.stats.etudes"), gradient: "from-sage-green to-green-500", delay: 0.2 },
-              { icon: Map, label: t("hero.stats.tourisme"), gradient: "from-warm-gold to-yellow-500", delay: 0.3 }
+              { icon: Briefcase, label: t("hero.stats.volontariat"), gradient: "from-primary to-blue-600", delay: 0 },
+              { icon: GraduationCap, label: t("hero.stats.formations"), gradient: "from-primary to-blue-500", delay: 0.1 },
+              { icon: GraduationCap, label: t("hero.stats.etudes"), gradient: "from-secondary to-emerald-600", delay: 0.2 },
+              { icon: Map, label: t("hero.stats.tourisme"), gradient: "from-secondary to-green-500", delay: 0.3 }
             ].map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.2 + item.delay }}
-                className="bg-black/40 backdrop-blur-xl rounded-2xl p-6 border border-white/40 hover:bg-black/50 transition-all duration-300 hover:scale-105 group shadow-2xl"
+                className="bg-white/90 backdrop-blur-xl rounded-2xl p-6 border-2 border-primary/20 hover:border-primary/40 hover:bg-white transition-all duration-300 hover:scale-105 group shadow-xl"
               >
-                <div className={`bg-gradient-to-br ${item.gradient} p-3 rounded-xl inline-block mb-3 group-hover:scale-110 transition-transform shadow-xl`}>
+                <div className={`bg-gradient-to-br ${item.gradient} p-3 rounded-xl inline-block mb-3 group-hover:scale-110 transition-transform shadow-lg`}>
                   <item.icon className="h-7 w-7 text-white" />
                 </div>
                 <p 
-                  className="text-sm font-bold text-white"
+                  className="text-sm font-bold text-primary"
                   style={{
-                    textShadow: '0 2px 6px rgba(0,0,0,0.8)'
+                    textShadow: '0 1px 2px rgba(30,58,138,0.1)'
                   }}
                 >
                   {item.label}
