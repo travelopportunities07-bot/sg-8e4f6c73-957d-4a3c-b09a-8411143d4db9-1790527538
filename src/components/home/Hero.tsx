@@ -154,20 +154,20 @@ export function Hero() {
             {t("hero.titre")}
           </motion.h1>
           
-          {/* Sous-titre avec fond semi-transparent */}
+          {/* UPS Hook - Sous-titre percutant sur une ligne */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="max-w-3xl mx-auto"
+            className="max-w-4xl mx-auto"
           >
             <p
-              className="text-xl md:text-2xl text-primary font-medium leading-relaxed px-6 py-3 rounded-2xl bg-white/80 backdrop-blur-sm"
+              className="text-lg md:text-xl text-primary font-semibold leading-relaxed px-8 py-4 rounded-2xl bg-white/90 backdrop-blur-sm border-2 border-primary/20"
               style={{
                 textShadow: '0 1px 2px rgba(30,58,138,0.1)'
               }}
             >
-              {t("hero.soustitre")}
+              Volontariat • Formation • Études • Tourisme en Allemagne – Votre projet international, notre expertise
             </p>
           </motion.div>
           
