@@ -246,7 +246,7 @@ export default function TourismePage() {
               Nos services touristiques
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Aisso International Ltd organise votre voyage de A à Z pour une expérience sans stress
+              Aventures Sans Frontières organise votre voyage de A à Z pour une expérience sans stress
             </p>
           </div>
 
@@ -301,7 +301,7 @@ export default function TourismePage() {
             Prêt pour l'aventure allemande ?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Contactez Aisso International Ltd pour organiser votre voyage sur mesure en Allemagne. Devis gratuit et personnalisé !
+            Contactez Aventures Sans Frontières pour organiser votre voyage sur mesure en Allemagne. Devis gratuit et personnalisé !
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/rendez-vous">

@@ -43,8 +43,8 @@ export function Footer() {
               {t("footer.apropos.texte")}
             </p>
             <div className="pt-4 border-t border-white/10">
-              <p className="font-semibold text-white text-sm">Aisso International Ltd</p>
-              <p className="text-gray-400 text-xs mt-1">Private Limited Company (UK)</p>
+              <p className="font-semibold text-white text-sm">Aventures Sans Frontières</p>
+              <p className="text-gray-400 text-xs mt-1">Marque d'Aisso International Ltd (UK)</p>
             </div>
           </div>
           

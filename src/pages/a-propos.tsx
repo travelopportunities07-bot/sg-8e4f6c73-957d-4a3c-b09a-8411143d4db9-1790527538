@@ -132,7 +132,7 @@ export default function AProposPage() {
             
             <div className="space-y-6 text-lg text-charcoal leading-relaxed">
               <p>
-                Aventures Sans Frontières est né de la vision d'Aisso International Ltd, une entreprise britannique dédiée à faciliter la mobilité internationale. Nous avons constaté que malgré le talent et la motivation de nombreux candidats, l'accès aux opportunités internationales reste souvent limité par le manque d'information fiable et la complexité des démarches administratives.
+                Aventures Sans Frontières est né de la vision d'offrir un accès démocratisé aux opportunités internationales. Nous avons constaté que malgré le talent et la motivation de nombreux candidats, l'accès aux opportunités internationales reste souvent limité par le manque d'information fiable et la complexité des démarches administratives.
               </p>
               <p>
                 Notre équipe, ayant elle-même vécu les défis liés aux projets de mobilité internationale, a décidé de créer une plateforme qui centraliserait toutes les informations nécessaires et accompagnerait les candidats dans leur projet, de A à Z.

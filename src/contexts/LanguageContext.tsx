@@ -185,7 +185,7 @@ const translations = {
     'contact.faq.q4.question': 'Proposez-vous un accompagnement une fois sur place en Allemagne ?',
     'contact.faq.q4.reponse': 'Oui ! Nous assurons un suivi pendant toute la durée de votre séjour : aide au logement, démarches administratives, intégration et soutien en cas de besoin.',
     
-    'contact.meta.description': 'Contactez Aisso International Ltd pour toutes vos questions sur les opportunités de mobilité en Allemagne : volontariat, formation, études et tourisme.',
+    'contact.meta.description': 'Contactez Aventures Sans Frontières pour toutes vos questions sur les opportunités de mobilité en Allemagne : volontariat, formation, études et tourisme.',
     
     'footer.apropos': 'À propos',
     'footer.apropos.texte': 'Votre partenaire de confiance pour réaliser vos projets en Allemagne : volontariat, formation, études et tourisme.',

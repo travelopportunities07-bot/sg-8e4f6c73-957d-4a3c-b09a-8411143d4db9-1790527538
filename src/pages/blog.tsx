@@ -287,7 +287,7 @@ export default function BlogPage() {
             Besoin d'un accompagnement personnalisé ?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Les articles et guides sont utiles, mais rien ne remplace un accompagnement sur mesure. Contactez Aisso International Ltd pour bénéficier de notre expertise.
+            Les articles et guides sont utiles, mais rien ne remplace un accompagnement sur mesure. Contactez Aventures Sans Frontières pour bénéficier de notre expertise.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">

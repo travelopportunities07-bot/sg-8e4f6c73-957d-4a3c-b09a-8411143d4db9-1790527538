@@ -214,7 +214,7 @@ export default function FormationsPage() {
               Nos formations professionnelles
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Découvrez les principales formations professionnelles accessibles en Allemagne avec Aisso International Ltd
+              Découvrez les principales formations professionnelles accessibles en Allemagne avec Aventures Sans Frontières
             </p>
           </div>
 
@@ -388,7 +388,7 @@ export default function FormationsPage() {
             Lancez votre carrière en Allemagne
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Aisso International Ltd vous accompagne de A à Z : choix de formation, dossier de candidature, cours d'allemand, et suivi personnalisé
+            Aventures Sans Frontières vous accompagne de A à Z : choix de formation, dossier de candidature, cours d'allemand, et suivi personnalisé
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/rendez-vous">
