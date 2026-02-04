@@ -139,37 +139,69 @@ export default function DemarchesPage() {
 
   const tarifs = [
     {
-      formule: "Consultation gratuite",
-      prix: "0€",
-      description: "Premier rendez-vous d'évaluation",
+      formule: "Consultation initiale",
+      prix: "50€",
+      description: "Premier rendez-vous d'évaluation approfondie",
       inclus: [
-        "Entretien individuel 45 minutes",
-        "Analyse de votre profil",
+        "Entretien individuel de 60 minutes",
+        "Analyse détaillée de votre profil",
         "Recommandations personnalisées",
-        "Devis détaillé de nos services"
+        "Plan d'action et devis détaillé"
       ]
     },
     {
-      formule: "Accompagnement Essentiel",
-      prix: "À partir de 500€",
-      description: "Pour les candidatures simples",
+      formule: "Accompagnement Standard",
+      duree: "3 mois",
+      programmes: [
+        { nom: "Au Pair - FSJ - FWD - BFD", prix: "797€" },
+        { nom: "Études", prix: "697€" },
+        { nom: "Formations - Tourisme", prix: "997€" },
+        { nom: "Rapprochement Familial", prix: "597€" }
+      ],
+      description: "Accompagnement complet sur 3 mois",
       inclus: [
-        "Constitution du dossier",
-        "Traductions de base",
-        "Envoi des candidatures",
-        "Suivi administratif"
+        "Constitution du dossier complet",
+        "Candidatures et suivi des réponses",
+        "Assistance pour démarches administratives",
+        "Support continu pendant 3 mois"
       ]
     },
     {
-      formule: "Accompagnement Complet",
-      prix: "À partir de 1.200€",
-      description: "Prise en charge totale",
+      formule: "Accompagnement Premium",
+      duree: "6 mois",
+      programmes: [
+        { nom: "Au Pair - FSJ - FWD - BFD", prix: "997€" },
+        { nom: "Études", prix: "897€" },
+        { nom: "Formations - Tourisme", prix: "1497€" },
+        { nom: "Rapprochement Familial", prix: "797€" }
+      ],
+      description: "Accompagnement renforcé sur 6 mois",
       inclus: [
-        "Tous les services Essentiel",
-        "Cours de langue (40h minimum)",
-        "Assistance visa et démarches",
-        "Accompagnement sur place",
-        "Support continu 12 mois"
+        "Tous les services Standard",
+        "Cours de langue allemande (30h)",
+        "Préparation aux entretiens",
+        "Assistance visa renforcée",
+        "Support continu pendant 6 mois"
+      ],
+      populaire: true
+    },
+    {
+      formule: "Accompagnement VIP",
+      duree: "9 mois",
+      programmes: [
+        { nom: "Au Pair - FSJ - FWD - BFD", prix: "1397€" },
+        { nom: "Études", prix: "997€" },
+        { nom: "Formations - Tourisme", prix: "1997€" },
+        { nom: "Rapprochement Familial", prix: "997€" }
+      ],
+      description: "Accompagnement complet sur 9 mois",
+      inclus: [
+        "Tous les services Premium",
+        "Cours de langue allemande (60h)",
+        "Accompagnement sur place en Allemagne",
+        "Assistance logement et installation",
+        "Support prioritaire 24/7 pendant 9 mois",
+        "Réseau professionnel et communauté"
       ]
     }
   ];
@@ -330,13 +362,13 @@ export default function DemarchesPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {tarifs.map((tarif, index) => (
-              <Card key={index} className={`p-8 hover:shadow-2xl transition-all duration-300 ${index === 2 ? 'border-4 border-green-500 relative' : 'border-2'}`}>
-                {index === 2 && (
+              <Card key={index} className={`p-8 hover:shadow-2xl transition-all duration-300 ${tarif.populaire ? 'border-4 border-green-500 relative' : 'border-2'}`}>
+                {tarif.populaire && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <span className="bg-green-500 text-white px-4 py-1 rounded-full text-sm font-bold">
-                      Le plus complet
+                      Le plus populaire
                     </span>
                   </div>
                 )}
@@ -344,10 +376,26 @@ export default function DemarchesPage() {
                   <h3 className="text-2xl font-bold text-blue-900 mb-2">
                     {tarif.formule}
                   </h3>
-                  <div className="text-4xl font-bold text-green-600 mb-2">
-                    {tarif.prix}
-                  </div>
-                  <p className="text-gray-600">
+                  {tarif.duree && (
+                    <p className="text-lg text-gray-600 mb-4">
+                      Durée : {tarif.duree}
+                    </p>
+                  )}
+                  {tarif.prix ? (
+                    <div className="text-4xl font-bold text-green-600 mb-2">
+                      {tarif.prix}
+                    </div>
+                  ) : (
+                    <div className="space-y-2 mb-4">
+                      {tarif.programmes?.map((prog, idx) => (
+                        <div key={idx} className="text-sm">
+                          <span className="font-semibold text-gray-700">{prog.nom}</span>
+                          <span className="text-2xl font-bold text-green-600 block">{prog.prix}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  <p className="text-gray-600 text-sm">
                     {tarif.description}
                   </p>
                 </div>
@@ -361,8 +409,8 @@ export default function DemarchesPage() {
                     ))}
                   </ul>
                   <Link href="/rendez-vous">
-                    <Button className={`w-full ${index === 2 ? 'bg-green-500 hover:bg-green-600' : 'bg-blue-900 hover:bg-blue-800'}`}>
-                      {index === 0 ? 'Demander' : 'Choisir cette formule'}
+                    <Button className={`w-full ${tarif.populaire ? 'bg-green-500 hover:bg-green-600' : 'bg-blue-900 hover:bg-blue-800'}`}>
+                      {index === 0 ? 'Réserver' : 'Choisir cette formule'}
                     </Button>
                   </Link>
                 </div>
@@ -372,7 +420,7 @@ export default function DemarchesPage() {
 
           <div className="text-center mt-12">
             <p className="text-gray-600 text-lg mb-4">
-              💡 Tarifs indicatifs. Devis personnalisé gratuit après évaluation de votre profil.
+              💡 Tarifs selon le type de programme. Devis personnalisé après consultation initiale.
             </p>
             <p className="text-gray-600">
               Facilités de paiement disponibles • Paiement sécurisé • Garantie satisfaction
