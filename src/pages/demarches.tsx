@@ -351,20 +351,20 @@ export default function DemarchesPage() {
       </section>
 
       {/* Tarifs Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Nos formules d'accompagnement
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Des solutions adaptées à tous les budgets et tous les besoins
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {tarifs.map((tarif, index) => (
-              <Card key={index} className={`p-8 hover:shadow-2xl transition-all duration-300 ${tarif.populaire ? 'border-4 border-green-500 relative' : 'border-2'}`}>
+              <Card key={index} className={`p-8 hover:shadow-2xl transition-all duration-300 bg-white ${tarif.populaire ? 'border-4 border-green-500 relative' : 'border-2 border-gray-200'}`}>
                 {tarif.populaire && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <span className="bg-green-500 text-white px-4 py-1 rounded-full text-sm font-bold">
@@ -419,10 +419,10 @@ export default function DemarchesPage() {
           </div>
 
           <div className="text-center mt-12">
-            <p className="text-gray-600 text-lg mb-4">
+            <p className="text-gray-300 text-lg mb-4">
               💡 Tarifs selon le type de programme. Devis personnalisé après consultation initiale.
             </p>
-            <p className="text-gray-600">
+            <p className="text-gray-400">
               Facilités de paiement disponibles • Paiement sécurisé • Garantie satisfaction
             </p>
           </div>
