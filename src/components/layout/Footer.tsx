@@ -35,15 +35,15 @@ export function Footer() {
             <div className="flex items-center space-x-2 group">
               <Globe className="h-10 w-10 text-gold transition-transform duration-300 group-hover:rotate-12" />
               <div className="text-2xl font-bold font-heading">
-                <div className="text-white">Aventures</div>
-                <div className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-coral to-ocean text-lg">Sans Frontières</div>
+                <div className="text-white">VivrEn</div>
+                <div className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-coral to-ocean text-lg">Allemagne</div>
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed max-w-md">
               {t("footer.apropos.texte")}
             </p>
             <div className="pt-4 border-t border-white/10">
-              <p className="font-semibold text-white text-sm">Aventures Sans Frontières</p>
+              <p className="font-semibold text-white text-sm">VivrEnAllemagne</p>
               <p className="text-gray-400 text-xs mt-1">Marque d'Aisso International Ltd (UK)</p>
             </div>
           </div>
@@ -119,7 +119,7 @@ export function Footer() {
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 mb-6">
             <p className="text-gray-400 text-sm text-center lg:text-left">
-              &copy; {new Date().getFullYear()} Aventures Sans Frontières. {t("footer.droits")}
+              &copy; {new Date().getFullYear()} VivrEnAllemagne. {t("footer.droits")}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-gray-400">
               {legal.map((item, index) => (
@@ -140,7 +140,7 @@ export function Footer() {
           
           <div className="text-center pt-6 border-t border-white/5">
             <p className="text-gray-500 text-xs">
-              Aventures Sans Frontières est une marque d'Aisso International Ltd, société de droit britannique.
+              VivrEnAllemagne est une marque d'Aisso International Ltd, société de droit britannique.
               <br className="hidden sm:block" />
               Tous droits réservés. Site hébergé par Vercel Inc.
             </p>

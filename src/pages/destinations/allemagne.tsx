@@ -10,7 +10,7 @@ import { DestinationConsultation } from '@/components/destinations/DestinationCo
 export default function AllemagnePage() {
   return (
     <Layout 
-      title="Allemagne | AfricaOpportunités"
+      title="Allemagne | VivrEnAllemagne"
       description="Découvrez les opportunités en Allemagne pour les résidents africains - travail, études, volontariat et plus."
     >
       {/* Hero Section */}
@@ -497,7 +497,7 @@ export default function AllemagnePage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-500 font-bold">✓</span>
-                    <span className="text-gray-700">Accompagnement complet par Aventures Sans Frontières</span>
+                    <span className="text-gray-700">Accompagnement complet par VivrEnAllemagne</span>
                   </li>
                 </ul>
               </div>

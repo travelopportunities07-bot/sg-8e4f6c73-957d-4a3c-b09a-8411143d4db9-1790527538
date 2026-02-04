@@ -226,7 +226,7 @@ export default function VolontariatPage() {
               Comment postuler ?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Aventures Sans Frontières vous accompagne à chaque étape de votre projet
+              VivrEnAllemagne vous accompagne à chaque étape de votre projet
             </p>
           </div>
 
@@ -264,7 +264,7 @@ export default function VolontariatPage() {
             Prêt à vivre une expérience inoubliable ?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Contactez Aventures Sans Frontières dès aujourd'hui pour une consultation gratuite et démarrez votre aventure en Allemagne
+            Contactez VivrEnAllemagne dès aujourd'hui pour une consultation gratuite et démarrez votre aventure en Allemagne
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/rendez-vous">

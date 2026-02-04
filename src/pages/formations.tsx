@@ -214,7 +214,7 @@ export default function FormationsPage() {
               Nos formations professionnelles
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Découvrez les principales formations professionnelles accessibles en Allemagne avec Aventures Sans Frontières
+              Découvrez les principales formations professionnelles accessibles en Allemagne avec VivrEnAllemagne
             </p>
           </div>
 
@@ -322,7 +322,7 @@ export default function FormationsPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-blue-900 mb-4">
-              Pourquoi choisir Aventures Sans Frontières ?
+              Pourquoi choisir VivrEnAllemagne ?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Un accompagnement complet pour réussir votre projet d'Ausbildung
@@ -388,7 +388,7 @@ export default function FormationsPage() {
             Lancez votre carrière en Allemagne
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Aventures Sans Frontières vous accompagne de A à Z : choix de formation, dossier de candidature, cours d'allemand, et suivi personnalisé
+            VivrEnAllemagne vous accompagne de A à Z : choix de formation, dossier de candidature, cours d'allemand, et suivi personnalisé
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/rendez-vous">

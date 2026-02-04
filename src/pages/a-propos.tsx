@@ -7,7 +7,7 @@ import { Target, Users, Award, TrendingUp } from "lucide-react";
 export default function AProposPage() {
   return (
     <Layout 
-      title="À Propos | Aventures Sans Frontières"
+      title="À Propos | VivrEnAllemagne"
       description="Découvrez notre mission et notre vision pour faciliter l'accès aux opportunités internationales de mobilité."
     >
       {/* Hero Section */}
@@ -34,7 +34,7 @@ export default function AProposPage() {
                 Faciliter votre mobilité internationale
               </h2>
               <p className="text-lg text-charcoal mb-6 leading-relaxed">
-                Chez Aventures Sans Frontières, notre mission est de démocratiser l'accès aux opportunités internationales. Nous croyons que chaque personne mérite d'avoir accès aux possibilités qui correspondent à ses aspirations, indépendamment de sa localisation géographique.
+                Chez VivrEnAllemagne, notre mission est de démocratiser l'accès aux opportunités internationales. Nous croyons que chaque personne mérite d'avoir accès aux possibilités qui correspondent à ses aspirations, indépendamment de sa localisation géographique.
               </p>
               <p className="text-lg text-charcoal leading-relaxed">
                 Nous nous engageons à fournir des informations fiables, actualisées et un accompagnement personnalisé pour concrétiser vos projets de volontariat, formation, études ou tourisme à l'étranger.
@@ -132,7 +132,7 @@ export default function AProposPage() {
             
             <div className="space-y-6 text-lg text-charcoal leading-relaxed">
               <p>
-                Aventures Sans Frontières est né de la vision d'offrir un accès démocratisé aux opportunités internationales. Nous avons constaté que malgré le talent et la motivation de nombreux candidats, l'accès aux opportunités internationales reste souvent limité par le manque d'information fiable et la complexité des démarches administratives.
+                VivrEnAllemagne est né de la vision d'offrir un accès démocratisé aux opportunités internationales. Nous avons constaté que malgré le talent et la motivation de nombreux candidats, l'accès aux opportunités internationales reste souvent limité par le manque d'information fiable et la complexité des démarches administratives.
               </p>
               <p>
                 Notre équipe, ayant elle-même vécu les défis liés aux projets de mobilité internationale, a décidé de créer une plateforme qui centraliserait toutes les informations nécessaires et accompagnerait les candidats dans leur projet, de A à Z.
