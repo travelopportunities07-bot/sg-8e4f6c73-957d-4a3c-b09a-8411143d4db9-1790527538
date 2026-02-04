@@ -4,7 +4,7 @@ import { Building2, Mail, MapPin, FileText, Scale } from "lucide-react";
 export default function MentionsLegales() {
   return (
     <Layout 
-      title="Mentions Légales | Aventures Sans Frontières"
+      title="Mentions Légales | VivrEnAllemagne"
       description="Informations légales et identification de l'entreprise Aisso International Ltd."
     >
       <div className="min-h-screen bg-gradient-to-b from-soft-cream via-white to-soft-cream">

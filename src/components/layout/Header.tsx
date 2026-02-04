@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Globe, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { LanguageSelector } from "./LanguageSelector";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -22,14 +22,19 @@ export function Header() {
     <header className="bg-white/95 backdrop-blur-sm shadow-sm border-b border-border sticky top-0 z-50 transition-all duration-300">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2 group">
+          <Link href="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <Globe className="h-8 w-8 text-primary transition-transform duration-300 group-hover:rotate-12" />
-              <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Drapeau allemand stylisé */}
+              <div className="w-10 h-10 rounded-lg overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-110">
+                <div className="w-full h-1/3 bg-[#000000]"></div>
+                <div className="w-full h-1/3 bg-[#DD0000]"></div>
+                <div className="w-full h-1/3 bg-[#FFCE00]"></div>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-red-600/20 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
             <div className="text-2xl font-bold font-heading">
-              <span className="text-primary">Aventures</span>
-              <span className="gradient-text ml-1">Sans Frontières</span>
+              <span className="text-primary">Vivr</span>
+              <span className="gradient-text">EnAllemagne</span>
             </div>
           </Link>
 

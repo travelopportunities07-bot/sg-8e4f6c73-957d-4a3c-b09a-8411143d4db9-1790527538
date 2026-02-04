@@ -37,7 +37,7 @@ export default function PolitiqueConfidentialite() {
               </div>
               <div className="space-y-4 text-deep-navy/80 text-lg leading-relaxed">
                 <p className="bg-ocean/5 p-5 rounded-xl border border-ocean/10">
-                  Aisso International Ltd (ci-après "Aventures Sans Frontières", "nous", "notre" ou "nos") s'engage à protéger la confidentialité et la sécurité de vos données personnelles.
+                  Aisso International Ltd (ci-après "VivrEnAllemagne", "nous", "notre" ou "nos") s'engage à protéger la confidentialité et la sécurité de vos données personnelles.
                 </p>
                 <p className="bg-sage/5 p-5 rounded-xl border border-sage/10">
                   Cette politique de confidentialité explique comment nous collectons, utilisons, stockons et protégeons vos informations personnelles lorsque vous utilisez notre site web et nos services, conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés.
