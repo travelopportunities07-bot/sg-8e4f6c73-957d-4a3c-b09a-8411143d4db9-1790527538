@@ -272,7 +272,7 @@ export default function EtudesPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
-              Comment postuler avec Aventures Sans Frontières ?
+              Comment postuler avec VivrEnAllemagne ?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Un accompagnement personnalisé de A à Z pour maximiser vos chances d'admission
@@ -313,7 +313,7 @@ export default function EtudesPage() {
             Réalisez votre rêve d'étudier en Allemagne
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Contactez Aventures Sans Frontières pour une évaluation gratuite de votre profil et découvrez les universités qui vous correspondent
+            Contactez VivrEnAllemagne pour une évaluation gratuite de votre profil et découvrez les universités qui vous correspondent
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/rendez-vous">

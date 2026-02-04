@@ -187,7 +187,7 @@ export default function DemarchesPage() {
               Démarches & Accompagnement
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 mb-8">
-              Aventures Sans Frontières vous accompagne à chaque étape de votre projet en Allemagne. De la première consultation jusqu'à votre installation, nous sommes à vos côtés.
+              VivrEnAllemagne vous accompagne à chaque étape de votre projet en Allemagne. De la première consultation jusqu'à votre installation, nous sommes à vos côtés.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/rendez-vous">
@@ -310,7 +310,7 @@ export default function DemarchesPage() {
                   📋 Note importante
                 </p>
                 <p className="text-gray-700">
-                  Aventures Sans Frontières vous aide à rassembler, traduire et certifier tous ces documents. Nous vérifions que votre dossier est complet avant l'envoi.
+                  VivrEnAllemagne vous aide à rassembler, traduire et certifier tous ces documents. Nous vérifions que votre dossier est complet avant l'envoi.
                 </p>
               </div>
             </Card>
@@ -388,7 +388,7 @@ export default function DemarchesPage() {
             <Card className="p-8 bg-gradient-to-br from-blue-50 to-green-50">
               <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold text-blue-900 mb-4">
-                  Contactez Aventures Sans Frontières
+                  Contactez VivrEnAllemagne
                 </h2>
                 <p className="text-xl text-gray-700">
                   Notre équipe d'experts est à votre disposition pour répondre à toutes vos questions
@@ -440,7 +440,7 @@ export default function DemarchesPage() {
             Prêt à démarrer votre projet ?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Ne laissez pas les démarches administratives vous freiner. Avec Aventures Sans Frontières, votre projet en Allemagne devient simple et accessible.
+            Ne laissez pas les démarches administratives vous freiner. Avec VivrEnAllemagne, votre projet en Allemagne devient simple et accessible.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/rendez-vous">

@@ -66,7 +66,7 @@ const opportunityTypes: OpportunityType[] = [
 export default function OpportunitesPage() {
   return (
     <Layout 
-      title="Types d'Opportunités | Aventures Sans Frontières"
+      title="Types d'Opportunités | VivrEnAllemagne"
       description="Découvrez les différents types d'opportunités internationales : volontariat, formations, études, tourisme et accompagnement personnalisé."
     >
       {/* Hero Section */}
