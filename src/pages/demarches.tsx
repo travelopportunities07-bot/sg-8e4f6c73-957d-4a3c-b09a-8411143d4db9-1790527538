@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 import { FileText, CheckCircle, Users, Headphones, ArrowRight, ClipboardCheck, Globe, BookOpen, Phone } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function DemarchesPage() {
   const { t } = useLanguage();
@@ -126,21 +127,10 @@ export default function DemarchesPage() {
     }
   ];
 
-  const documents = [
-    "Passeport ou carte d'identité valide",
-    "Diplômes et relevés de notes traduits",
-    "CV actualisé (format européen)",
-    "Lettre de motivation personnalisée",
-    "Certificats de langue (si disponibles)",
-    "Certificat médical",
-    "Photos d'identité récentes",
-    "Justificatifs de ressources financières"
-  ];
-
   const tarifs = [
     {
       formule: "Consultation initiale",
-      prix: "50€",
+      prix: "30€",
       description: "Premier rendez-vous d'évaluation approfondie",
       inclus: [
         "Entretien individuel de 60 minutes",
@@ -153,10 +143,10 @@ export default function DemarchesPage() {
       formule: "Accompagnement Standard",
       duree: "3 mois",
       programmes: [
-        { nom: "Au Pair - FSJ - FWD - BFD", prix: "797€" },
-        { nom: "Études", prix: "697€" },
-        { nom: "Formations - Tourisme", prix: "997€" },
-        { nom: "Rapprochement Familial", prix: "597€" }
+        { nom: "Au Pair - FSJ - FWD - BFD", prix: "897€" },
+        { nom: "Études", prix: "897€" },
+        { nom: "Formations - Tourisme", prix: "897€" },
+        { nom: "Rapprochement Familial", prix: "897€" }
       ],
       description: "Accompagnement complet sur 3 mois",
       inclus: [
@@ -170,10 +160,10 @@ export default function DemarchesPage() {
       formule: "Accompagnement Premium",
       duree: "6 mois",
       programmes: [
-        { nom: "Au Pair - FSJ - FWD - BFD", prix: "997€" },
-        { nom: "Études", prix: "897€" },
-        { nom: "Formations - Tourisme", prix: "1497€" },
-        { nom: "Rapprochement Familial", prix: "797€" }
+        { nom: "Au Pair - FSJ - FWD - BFD", prix: "1297€" },
+        { nom: "Études", prix: "1297€" },
+        { nom: "Formations - Tourisme", prix: "1297€" },
+        { nom: "Rapprochement Familial", prix: "1297€" }
       ],
       description: "Accompagnement renforcé sur 6 mois",
       inclus: [
@@ -189,10 +179,10 @@ export default function DemarchesPage() {
       formule: "Accompagnement VIP",
       duree: "9 mois",
       programmes: [
-        { nom: "Au Pair - FSJ - FWD - BFD", prix: "1397€" },
-        { nom: "Études", prix: "997€" },
-        { nom: "Formations - Tourisme", prix: "1997€" },
-        { nom: "Rapprochement Familial", prix: "997€" }
+        { nom: "Au Pair - FSJ - FWD - BFD", prix: "1497€" },
+        { nom: "Études", prix: "1497€" },
+        { nom: "Formations - Tourisme", prix: "1497€" },
+        { nom: "Rapprochement Familial", prix: "1497€" }
       ],
       description: "Accompagnement complet sur 9 mois",
       inclus: [
@@ -203,6 +193,49 @@ export default function DemarchesPage() {
         "Support prioritaire 24/7 pendant 9 mois",
         "Réseau professionnel et communauté"
       ]
+    }
+  ];
+
+  const temoignages = [
+    {
+      nom: "Sophie M.",
+      programme: "Étudiante en Master Marketing",
+      ville: "Berlin",
+      note: 5,
+      couleur: "bg-blue-500",
+      initiales: "SM",
+      commentaire: "VivrEnAllemagne a transformé mon projet en réalité. Leur équipe a su me conseiller sur tous les aspects, de la préparation du dossier à l'installation. Je suis maintenant en train de vivre mes rêves !",
+      details: "Diplômée d'un Master en Marketing, Sophie a choisi de poursuivre ses études en Allemagne. Elle a bénéficié de l'accompagnement Premium."
+    },
+    {
+      nom: "Jean L.",
+      programme: "Au Pair",
+      ville: "Munich",
+      note: 4,
+      couleur: "bg-green-500",
+      initiales: "JL",
+      commentaire: "Leur aide pour les démarches administratives a été inestimable. J'ai reçu mon visa en moins de 2 semaines. Leur conseil sur la préparation du CV a été un atout majeur pour trouver un emploi.",
+      details: "Jean a choisi le programme Au Pair et a bénéficié de l'accompagnement Standard."
+    },
+    {
+      nom: "Marie P.",
+      programme: "Formations - Tourisme",
+      ville: "Hambourg",
+      note: 5,
+      couleur: "bg-purple-500",
+      initiales: "MP",
+      commentaire: "Les cours de langue ont été un véritable atout. J'ai acquis un niveau A2 en moins de 3 mois. Leur conseil sur la préparation aux entretiens a été très utile.",
+      details: "Marie a choisi le programme Formations - Tourisme et a bénéficié de l'accompagnement Premium."
+    },
+    {
+      nom: "Lucas R.",
+      programme: "Rapprochement Familial",
+      ville: "Dortmund",
+      note: 4,
+      couleur: "bg-orange-500",
+      initiales: "LR",
+      commentaire: "Leur accompagnement sur place a été incroyable. Ils ont su me trouver un logement idéal et m'aider à m'adapter rapidement. Je suis maintenant très à l'aise dans ma nouvelle ville.",
+      details: "Lucas a choisi le programme Rapprochement Familial et a bénéficié de l'accompagnement VIP."
     }
   ];
 
@@ -330,7 +363,16 @@ export default function DemarchesPage() {
           <div className="max-w-4xl mx-auto">
             <Card className="p-8">
               <div className="grid md:grid-cols-2 gap-4">
-                {documents.map((document, index) => (
+                {[
+                  "Passeport ou carte d'identité valide",
+                  "Diplômes et relevés de notes traduits",
+                  "CV actualisé (format européen)",
+                  "Lettre de motivation personnalisée",
+                  "Certificats de langue (si disponibles)",
+                  "Certificat médical",
+                  "Photos d'identité récentes",
+                  "Justificatifs de ressources financières"
+                ].map((document, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0" />
                     <span className="text-gray-700 font-medium">{document}</span>
@@ -425,6 +467,61 @@ export default function DemarchesPage() {
             <p className="text-gray-400">
               Facilités de paiement disponibles • Paiement sécurisé • Garantie satisfaction
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Carousel Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
+              Témoignages clients
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Découvrez les expériences de nos clients qui ont réussi leur projet en Allemagne avec VivrEnAllemagne
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {temoignages.map((temoignage, index) => (
+                <Card key={index} className="p-6 hover:shadow-2xl transition-all duration-300 border-2 hover:border-blue-500 hover:-translate-y-2">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className={`w-16 h-16 rounded-full flex items-center justify-center text-white text-xl font-bold ${temoignage.couleur}`}>
+                      {temoignage.initiales}
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-blue-900 text-lg">
+                        {temoignage.nom}
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        {temoignage.programme}
+                      </p>
+                      <p className="text-xs text-gray-500">
+                        📍 {temoignage.ville}
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(temoignage.note)].map((_, i) => (
+                      <span key={i} className="text-yellow-400 text-xl">⭐</span>
+                    ))}
+                  </div>
+                  
+                  <p className="text-gray-700 italic mb-4">
+                    "{temoignage.commentaire}"
+                  </p>
+                  
+                  <div className="pt-4 border-t border-gray-200">
+                    <p className="text-sm text-gray-600">
+                      {temoignage.details}
+                    </p>
+                  </div>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
