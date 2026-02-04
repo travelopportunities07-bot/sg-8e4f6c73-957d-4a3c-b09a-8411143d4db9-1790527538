@@ -142,12 +142,7 @@ export default function DemarchesPage() {
     {
       formule: "Accompagnement Standard",
       duree: "3 mois",
-      programmes: [
-        { nom: "Au Pair - FSJ - FWD - BFD", prix: "897€" },
-        { nom: "Études", prix: "897€" },
-        { nom: "Formations - Tourisme", prix: "897€" },
-        { nom: "Rapprochement Familial", prix: "897€" }
-      ],
+      prix: "897€",
       description: "Accompagnement complet sur 3 mois",
       inclus: [
         "Constitution du dossier complet",
@@ -159,12 +154,7 @@ export default function DemarchesPage() {
     {
       formule: "Accompagnement Premium",
       duree: "6 mois",
-      programmes: [
-        { nom: "Au Pair - FSJ - FWD - BFD", prix: "1297€" },
-        { nom: "Études", prix: "1297€" },
-        { nom: "Formations - Tourisme", prix: "1297€" },
-        { nom: "Rapprochement Familial", prix: "1297€" }
-      ],
+      prix: "1297€",
       description: "Accompagnement renforcé sur 6 mois",
       inclus: [
         "Tous les services Standard",
@@ -178,12 +168,7 @@ export default function DemarchesPage() {
     {
       formule: "Accompagnement VIP",
       duree: "9 mois",
-      programmes: [
-        { nom: "Au Pair - FSJ - FWD - BFD", prix: "1497€" },
-        { nom: "Études", prix: "1497€" },
-        { nom: "Formations - Tourisme", prix: "1497€" },
-        { nom: "Rapprochement Familial", prix: "1497€" }
-      ],
+      prix: "1497€",
       description: "Accompagnement complet sur 9 mois",
       inclus: [
         "Tous les services Premium",
@@ -423,20 +408,9 @@ export default function DemarchesPage() {
                       Durée : {tarif.duree}
                     </p>
                   )}
-                  {tarif.prix ? (
-                    <div className="text-4xl font-bold text-green-600 mb-2">
-                      {tarif.prix}
-                    </div>
-                  ) : (
-                    <div className="space-y-2 mb-4">
-                      {tarif.programmes?.map((prog, idx) => (
-                        <div key={idx} className="text-sm">
-                          <span className="font-semibold text-gray-700">{prog.nom}</span>
-                          <span className="text-2xl font-bold text-green-600 block">{prog.prix}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                  <div className="text-4xl font-bold text-green-600 mb-2">
+                    {tarif.prix}
+                  </div>
                   <p className="text-gray-600 text-sm">
                     {tarif.description}
                   </p>
@@ -462,7 +436,7 @@ export default function DemarchesPage() {
 
           <div className="text-center mt-12">
             <p className="text-gray-300 text-lg mb-4">
-              💡 Tarifs selon le type de programme. Devis personnalisé après consultation initiale.
+              💡 Devis personnalisé disponible après consultation initiale.
             </p>
             <p className="text-gray-400">
               Facilités de paiement disponibles • Paiement sécurisé • Garantie satisfaction
