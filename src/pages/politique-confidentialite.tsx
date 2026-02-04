@@ -4,7 +4,7 @@ import { Shield, Lock, Eye, UserCheck, Database, Cookie, FileText, AlertCircle, 
 export default function PolitiqueConfidentialite() {
   return (
     <Layout 
-      title="Politique de Confidentialité | Aventures Sans Frontières"
+      title="Politique de Confidentialité | VivrEnAllemagne"
       description="Découvrez comment nous collectons, utilisons et protégeons vos données personnelles conformément au RGPD."
     >
       <div className="min-h-screen bg-gradient-to-b from-soft-cream via-white to-soft-cream">

@@ -4,8 +4,8 @@ import { FileCheck, Shield, AlertTriangle, Scale, CheckCircle2 } from "lucide-re
 export default function ConditionsUtilisation() {
   return (
     <Layout 
-      title="Conditions d'Utilisation | Aventures Sans Frontières"
-      description="Conditions générales d'utilisation du site Aventures Sans Frontières et de ses services."
+      title="Conditions d'Utilisation | VivrEnAllemagne"
+      description="Conditions générales d'utilisation du site VivrEnAllemagne et de ses services."
     >
       <div className="min-h-screen bg-gradient-to-b from-soft-cream via-white to-soft-cream">
         <div className="relative bg-gradient-to-br from-vibrant-coral via-warm-gold to-ocean py-24 overflow-hidden">
@@ -37,7 +37,7 @@ export default function ConditionsUtilisation() {
               </div>
               <div className="space-y-4">
                 <p className="text-deep-navy/80 text-lg bg-ocean/5 p-5 rounded-xl border border-ocean/10 leading-relaxed">
-                  En accédant et en utilisant le site web d'Aventures Sans Frontières (exploité par Aisso International Ltd), vous acceptez d'être lié par les présentes conditions d'utilisation, toutes les lois et réglementations applicables.
+                  En accédant et en utilisant le site web de VivrEnAllemagne (exploité par Aisso International Ltd), vous acceptez d'être lié par les présentes conditions d'utilisation, toutes les lois et réglementations applicables.
                 </p>
                 <p className="text-deep-navy/80 text-lg bg-sage/5 p-5 rounded-xl border border-sage/10 leading-relaxed">
                   Si vous n'acceptez pas l'une de ces conditions, vous n'êtes pas autorisé à utiliser ou accéder à ce site.
@@ -124,7 +124,7 @@ export default function ConditionsUtilisation() {
               </div>
               <div className="space-y-4">
                 <p className="text-deep-navy/80 text-lg bg-warm-gold/5 p-5 rounded-xl border border-warm-gold/10">
-                  Aventures Sans Frontières propose des services d'accompagnement et de conseil pour :
+                  VivrEnAllemagne propose des services d'accompagnement et de conseil pour :
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="bg-gradient-to-br from-ocean/10 to-ocean/5 p-6 rounded-xl border-l-4 border-ocean hover:shadow-lg transition-all hover:scale-105">

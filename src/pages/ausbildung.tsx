@@ -284,7 +284,7 @@ export default function AusbildungPage() {
 
   return (
     <Layout 
-      title="Ausbildung - Formation en Alternance en Allemagne | Aventures Sans Frontières"
+      title="Ausbildung - Formation en Alternance en Allemagne | VivrEnAllemagne"
       description="Découvrez les formations professionnelles (Ausbildung) en Allemagne : rémunérées, reconnues, avec 90% d'embauche. Santé, technique, commerce, IT et plus."
     >
       {/* Hero Section */}
@@ -682,7 +682,7 @@ export default function AusbildungPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-4xl font-bold text-blue-900 mb-4">
-              Aventures Sans Frontières vous accompagne de A à Z
+              VivrEnAllemagne vous accompagne de A à Z
             </h2>
             <p className="text-xl text-gray-700">
               Nous vous guidons à chaque étape de votre projet d'Ausbildung en Allemagne
