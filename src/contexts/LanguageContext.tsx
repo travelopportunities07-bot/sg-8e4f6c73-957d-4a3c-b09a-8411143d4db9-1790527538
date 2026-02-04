@@ -49,7 +49,7 @@ const translations = {
     'opportunites.aupair.titre': 'Au Pair',
     'opportunites.aupair.desc': 'Vivez une immersion culturelle unique en Allemagne en participant à la vie de famille. Hébergement, repas et argent de poche assurés tout en apprenant l\'allemand.',
     
-    'aupair.meta.titre': 'Programme Au Pair en Allemagne | Aventures Sans Frontières',
+    'aupair.meta.titre': 'Programme Au Pair en Allemagne | VivrEnAllemagne',
     'aupair.meta.description': 'Devenez Au Pair en Allemagne et vivez une immersion culturelle unique. Hébergement, repas, argent de poche et cours d\'allemand inclus.',
     
     'aupair.hero.badge': 'Programme Au Pair',
@@ -183,9 +183,9 @@ const translations = {
     'contact.faq.q3.question': 'Combien de temps avant mon départ dois-je vous contacter ?',
     'contact.faq.q3.reponse': 'Idéalement 6 à 12 mois avant votre départ souhaité pour avoir le temps de préparer votre dossier, obtenir les documents nécessaires et trouver la meilleure opportunité.',
     'contact.faq.q4.question': 'Proposez-vous un accompagnement une fois sur place en Allemagne ?',
-    'contact.faq.q4.reponse': 'Oui ! Nous assurons un suivi pendant toute la durée de votre séjour : aide au logement, démarches administratives, intégration et soutien en cas de besoin.',
+    'contact.faq.q4.reponse': 'Oui ! Nous assurons un suivi pendant toute la durée de votre séjour : aide au logement, démarches, intégration et soutien en cas de besoin.',
     
-    'contact.meta.description': 'Contactez Aventures Sans Frontières pour toutes vos questions sur les opportunités de mobilité en Allemagne : volontariat, formation, études et tourisme.',
+    'contact.meta.description': 'Contactez VivrEnAllemagne pour toutes vos questions sur les opportunités de mobilité en Allemagne : volontariat, formation, études et tourisme.',
     
     'footer.apropos': 'À propos',
     'footer.apropos.texte': 'Votre partenaire de confiance pour réaliser vos projets en Allemagne : volontariat, formation, études et tourisme.',
@@ -245,7 +245,7 @@ const translations = {
     'opportunites.aupair.titre': 'Au Pair',
     'opportunites.aupair.desc': 'Experience a unique cultural immersion in Germany by participating in family life. Accommodation, meals and pocket money provided while learning German.',
     
-    'aupair.meta.titre': 'Au Pair Program in Germany | Aventures Sans Frontières',
+    'aupair.meta.titre': 'Au Pair Program in Germany | VivrEnAllemagne',
     'aupair.meta.description': 'Become an Au Pair in Germany and experience unique cultural immersion. Accommodation, meals, pocket money and German courses included.',
     
     'aupair.hero.badge': 'Au Pair Program',
@@ -441,7 +441,7 @@ const translations = {
     'opportunites.aupair.titre': 'Au Pair',
     'opportunites.aupair.desc': 'Erleben Sie ein einzigartiges kulturelles Eintauchen in Deutschland durch Teilnahme am Familienleben. Unterkunft, Verpflegung und Taschengeld werden bereitgestellt, während Sie Deutsch lernen.',
     
-    'aupair.meta.titre': 'Au-Pair-Programm in Deutschland | Aventures Sans Frontières',
+    'aupair.meta.titre': 'Au-Pair-Programm in Deutschland | VivrEnAllemagne',
     'aupair.meta.description': 'Werden Sie Au Pair in Deutschland und erleben Sie einzigartiges kulturelles Eintauchen. Unterkunft, Verpflegung, Taschengeld und Deutschkurse inklusive.',
     
     'aupair.hero.badge': 'Au-Pair-Programm',
