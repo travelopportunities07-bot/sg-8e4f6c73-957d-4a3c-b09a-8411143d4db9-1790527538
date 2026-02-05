@@ -8,16 +8,20 @@ import { useState, useEffect } from "react";
 
 const slides = [
   {
-    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=90",
-    alt: "Opportunités internationales - Voyages et formation"
+    image: "/hero-vivrenallemagne.png",
+    alt: "VivrEnAllemagne - Votre guide pour vivre, travailler et étudier en Allemagne"
   },
   {
-    image: "https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=1920&q=90",
-    alt: "Voyageur découvrant Berlin"
+    image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1920&q=90",
+    alt: "Brandenburg Gate Berlin - Symbole de l'Allemagne"
   },
   {
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=90",
-    alt: "Étudiants internationaux"
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&q=90",
+    alt: "Étudiants internationaux en Allemagne"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=1920&q=90",
+    alt: "Opportunités professionnelles en Allemagne"
   }
 ];
 
