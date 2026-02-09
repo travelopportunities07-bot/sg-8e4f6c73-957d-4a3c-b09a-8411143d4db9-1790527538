@@ -165,6 +165,33 @@ export default function AProposPage() {
               </Link>
             </Button>
           </div>
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-12 text-center text-white">
+            <h2 className="text-3xl font-bold mb-4">
+              Prêt à démarrer votre aventure ?
+            </h2>
+            <p className="text-xl mb-8 text-blue-100">
+              Prenez rendez-vous avec nos experts pour discuter de votre projet
+            </p>
+            <Link
+              href="/rendez-vous"
+              className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              Prendre Rendez-vous
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
+            </Link>
+          </div>
         </div>
       </section>
     </Layout>
