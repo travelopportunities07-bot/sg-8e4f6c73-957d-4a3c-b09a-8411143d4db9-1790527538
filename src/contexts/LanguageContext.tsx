@@ -36,6 +36,7 @@ const translations = {
       badge: "Nos Services",
       titre: "Explorez Nos Opportunités",
       soustitre: "Découvrez différentes façons de réaliser votre projet international",
+      learnMore: "En savoir plus",
       volontariat: {
         titre: "Programmes de Volontariat",
         desc: "Participez à des projets significatifs et découvrez de nouvelles cultures"
@@ -141,7 +142,8 @@ const translations = {
     opportunites: {
       badge: "Unsere Dienstleistungen",
       titre: "Entdecken Sie Unsere Möglichkeiten",
-      soustitre: "Entdecken Sie verschiedene Wege, Ihr internationales Projekt zu verwirklichen",
+      soustitre: "Erkunden Sie die verschiedenen Möglichkeiten, im Ausland zu leben und zu arbeiten",
+      learnMore: "Mehr erfahren",
       volontariat: {
         titre: "Freiwilligenprogramme",
         desc: "Nehmen Sie an bedeutungsvollen Projekten teil und entdecken Sie neue Kulturen"

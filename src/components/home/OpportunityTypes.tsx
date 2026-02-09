@@ -83,9 +83,11 @@ export function OpportunityTypes() {
               </p>
               
               <div className="mt-auto w-full flex justify-center">
-                <Link href={opportunity.href} className="w-full">
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white transition-all shadow-md hover:shadow-lg">
-                    {t("opportunites.bouton")}
+                <Link href={opportunity.href}>
+                  <Button 
+                    className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group"
+                  >
+                    En savoir plus
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>

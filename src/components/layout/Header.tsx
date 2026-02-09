@@ -1,184 +1,290 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { LanguageSelector } from "./LanguageSelector";
+import { DestinationsMenu } from "./DestinationsMenu";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const { t } = useLanguage();
+  const [isAccompagnementOpen, setIsAccompagnementOpen] = useState(false);
 
-  const services = [
-    { href: "/volontariat", label: t("nav.volontariat") },
-    { href: "/formations", label: t("nav.formations") },
-    { href: "/etudes", label: t("nav.etudes") },
-    { href: "/tourisme", label: t("nav.tourisme") },
-    { href: "/au-pair", label: t("nav.aupair") },
-  ];
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="bg-white/95 backdrop-blur-sm shadow-sm border-b border-border sticky top-0 z-50 transition-all duration-300">
-      <div className="container mx-auto px-4 py-4">
+    <header className="bg-white shadow-md sticky top-0 z-50">
+      <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-3 group">
-            <div className="relative">
-              {/* Drapeau allemand stylisé */}
-              <div className="w-10 h-10 rounded-lg overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-110">
-                <div className="w-full h-1/3 bg-[#000000]"></div>
-                <div className="w-full h-1/3 bg-[#DD0000]"></div>
-                <div className="w-full h-1/3 bg-[#FFCE00]"></div>
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-red-600/20 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-            <div className="text-2xl font-bold font-heading">
-              <span className="text-primary">Vivr</span>
-              <span className="gradient-text">EnAllemagne</span>
-            </div>
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-2 group">
+            <span className="text-2xl font-bold bg-gradient-to-r from-red-600 via-yellow-500 to-black bg-clip-text text-transparent">
+              VivrEnAllemagne
+            </span>
+            <span className="text-2xl group-hover:scale-110 transition-transform">
+              🇩🇪
+            </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center space-x-6">
-            <Link href="/" className="nav-link">
-              {t("nav.accueil")}
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-6">
+            <Link
+              href="/"
+              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+            >
+              Accueil
             </Link>
-            
+
+            {/* Destinations Dropdown */}
+            <DestinationsMenu />
+
+            {/* À Propos with Accompagnement submenu */}
             <div className="relative group">
-              <button
-                className="nav-link flex items-center gap-1"
-                onMouseEnter={() => setIsServicesOpen(true)}
-                onMouseLeave={() => setIsServicesOpen(false)}
-              >
-                Nos Services
-                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
+              <button className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors font-medium">
+                <span>À Propos</span>
+                <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
               </button>
-              
-              {isServicesOpen && (
-                <div
-                  className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-border py-2 animate-fade-in"
-                  onMouseEnter={() => setIsServicesOpen(true)}
-                  onMouseLeave={() => setIsServicesOpen(false)}
-                >
-                  {services.map((service, index) => (
+
+              <div className="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2 pb-2">
+                <div className="py-2">
+                  <Link
+                    href="/a-propos"
+                    className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                  >
+                    Notre Mission
+                  </Link>
+
+                  {/* Accompagnement submenu */}
+                  <div className="relative group/submenu">
+                    <div className="flex items-center justify-between px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors cursor-pointer group-hover/submenu:bg-blue-50 group-hover/submenu:text-blue-600">
+                      <span>Accompagnement</span>
+                      <ChevronRight className="w-4 h-4" />
+                    </div>
+
+                    {/* Nested submenu */}
+                    <div className="absolute left-full top-0 ml-0 w-64 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover/submenu:opacity-100 group-hover/submenu:visible transition-all duration-200 -mt-2">
+                      <div className="py-2">
+                        <Link
+                          href="/volontariat"
+                          className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                        >
+                          🤝 Volontariat International
+                        </Link>
+                        <Link
+                          href="/formations"
+                          className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                        >
+                          📚 Formations Professionnelles
+                        </Link>
+                        <Link
+                          href="/etudes"
+                          className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                        >
+                          🎓 Études Supérieures
+                        </Link>
+                        <Link
+                          href="/tourisme"
+                          className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                        >
+                          ✈️ Tourisme
+                        </Link>
+                        <Link
+                          href="/ausbildung"
+                          className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                        >
+                          🎯 Ausbildung
+                        </Link>
+                        <Link
+                          href="/au-pair"
+                          className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                        >
+                          👶 Au Pair
+                        </Link>
+                        <Link
+                          href="/demarches"
+                          className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                        >
+                          📋 Démarches Administratives
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <Link
+              href="/blog"
+              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+            >
+              Blog
+            </Link>
+
+            <Link
+              href="/contact"
+              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+            >
+              Contact
+            </Link>
+
+            <Link
+              href="/devenir-partenaire"
+              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+            >
+              Devenir Partenaire
+            </Link>
+
+            <LanguageSelector />
+
+            <Link href="/rendez-vous">
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                Prendre RDV
+              </Button>
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={toggleMenu}
+            className="lg:hidden text-gray-700 hover:text-blue-600 transition-colors"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="lg:hidden mt-4 pb-4 space-y-3 animate-in slide-in-from-top duration-200">
+            <Link
+              href="/"
+              className="block text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              onClick={toggleMenu}
+            >
+              Accueil
+            </Link>
+
+            <Link
+              href="/destinations"
+              className="block text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              onClick={toggleMenu}
+            >
+              Destinations
+            </Link>
+
+            {/* À Propos Mobile with Accompagnement */}
+            <div>
+              <button
+                onClick={() => setIsAccompagnementOpen(!isAccompagnementOpen)}
+                className="flex items-center justify-between w-full text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              >
+                <span>À Propos</span>
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform ${
+                    isAccompagnementOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {isAccompagnementOpen && (
+                <div className="ml-4 mt-2 space-y-2 animate-in slide-in-from-top duration-200">
+                  <Link
+                    href="/a-propos"
+                    className="block text-gray-600 hover:text-blue-600 transition-colors"
+                    onClick={toggleMenu}
+                  >
+                    Notre Mission
+                  </Link>
+                  <div className="space-y-2 pl-4 border-l-2 border-gray-200">
+                    <p className="text-sm font-semibold text-gray-500">Accompagnement</p>
                     <Link
-                      key={service.href}
-                      href={service.href}
-                      className={`block px-4 py-3 text-sm font-medium text-dark-gray hover:bg-primary/5 hover:text-primary transition-all duration-200 animate-stagger-${index + 1}`}
+                      href="/volontariat"
+                      className="block text-gray-600 hover:text-blue-600 transition-colors text-sm"
+                      onClick={toggleMenu}
                     >
-                      {service.label}
+                      🤝 Volontariat International
                     </Link>
-                  ))}
+                    <Link
+                      href="/formations"
+                      className="block text-gray-600 hover:text-blue-600 transition-colors text-sm"
+                      onClick={toggleMenu}
+                    >
+                      📚 Formations Professionnelles
+                    </Link>
+                    <Link
+                      href="/etudes"
+                      className="block text-gray-600 hover:text-blue-600 transition-colors text-sm"
+                      onClick={toggleMenu}
+                    >
+                      🎓 Études Supérieures
+                    </Link>
+                    <Link
+                      href="/tourisme"
+                      className="block text-gray-600 hover:text-blue-600 transition-colors text-sm"
+                      onClick={toggleMenu}
+                    >
+                      ✈️ Tourisme
+                    </Link>
+                    <Link
+                      href="/ausbildung"
+                      className="block text-gray-600 hover:text-blue-600 transition-colors text-sm"
+                      onClick={toggleMenu}
+                    >
+                      🎯 Ausbildung
+                    </Link>
+                    <Link
+                      href="/au-pair"
+                      className="block text-gray-600 hover:text-blue-600 transition-colors text-sm"
+                      onClick={toggleMenu}
+                    >
+                      👶 Au Pair
+                    </Link>
+                    <Link
+                      href="/demarches"
+                      className="block text-gray-600 hover:text-blue-600 transition-colors text-sm"
+                      onClick={toggleMenu}
+                    >
+                      📋 Démarches Administratives
+                    </Link>
+                  </div>
                 </div>
               )}
             </div>
 
-            <Link href="/demarches" className="nav-link">
-              {t("nav.accompagnement")}
+            <Link
+              href="/blog"
+              className="block text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              onClick={toggleMenu}
+            >
+              Blog
             </Link>
-            
-            <Link href="/blog" className="nav-link">
-              {t("nav.blog")}
+
+            <Link
+              href="/contact"
+              className="block text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              onClick={toggleMenu}
+            >
+              Contact
             </Link>
-            
-            <Link href="/devenir-partenaire" className="nav-link">
+
+            <Link
+              href="/devenir-partenaire"
+              className="block text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              onClick={toggleMenu}
+            >
               Devenir Partenaire
             </Link>
-            
-            <Link href="/contact" className="nav-link">
-              {t("nav.contact")}
-            </Link>
-            
-            <div className="h-6 w-px bg-border mx-2" />
-            
-            <Link href="/contact">
-              <Button className="btn-primary">
-                {t("cta.bouton")}
+
+            <div className="pt-3 border-t border-gray-200">
+              <LanguageSelector />
+            </div>
+
+            <Link href="/rendez-vous" onClick={toggleMenu}>
+              <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                Prendre RDV
               </Button>
             </Link>
-          </nav>
-
-          <div className="flex items-center gap-3 lg:hidden">
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="relative"
-            >
-              {isMenuOpen ? (
-                <X className="h-6 w-6 text-primary" />
-              ) : (
-                <Menu className="h-6 w-6 text-primary" />
-              )}
-            </Button>
-          </div>
-        </div>
-
-        {isMenuOpen && (
-          <div className="lg:hidden mt-6 pb-6 space-y-1 animate-fade-in border-t border-border pt-6">
-            <Link 
-              href="/" 
-              className="block px-4 py-3 text-base font-medium text-dark-gray hover:bg-primary/5 hover:text-primary rounded-lg transition-all duration-200"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t("nav.accueil")}
-            </Link>
-            
-            <div className="px-4 py-2 text-sm font-semibold text-muted-foreground uppercase tracking-wide">
-              Nos Services
-            </div>
-            
-            {services.map((service) => (
-              <Link
-                key={service.href}
-                href={service.href}
-                className="block pl-8 pr-4 py-3 text-base font-medium text-dark-gray hover:bg-primary/5 hover:text-primary rounded-lg transition-all duration-200"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {service.label}
-              </Link>
-            ))}
-            
-            <Link 
-              href="/demarches" 
-              className="block px-4 py-3 text-base font-medium text-dark-gray hover:bg-primary/5 hover:text-primary rounded-lg transition-all duration-200"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t("nav.accompagnement")}
-            </Link>
-            
-            <Link 
-              href="/blog" 
-              className="block px-4 py-3 text-base font-medium text-dark-gray hover:bg-primary/5 hover:text-primary rounded-lg transition-all duration-200"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t("nav.blog")}
-            </Link>
-            
-            <Link 
-              href="/devenir-partenaire" 
-              className="block px-4 py-3 text-base font-medium text-dark-gray hover:bg-primary/5 hover:text-primary rounded-lg transition-all duration-200"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Devenir Partenaire
-            </Link>
-            
-            <Link 
-              href="/contact" 
-              className="block px-4 py-3 text-base font-medium text-dark-gray hover:bg-primary/5 hover:text-primary rounded-lg transition-all duration-200"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t("nav.contact")}
-            </Link>
-            
-            <div className="pt-4">
-              <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-                <Button className="btn-primary w-full">
-                  {t("cta.bouton")}
-                </Button>
-              </Link>
-            </div>
           </div>
         )}
-      </div>
+      </nav>
     </header>
   );
 }
