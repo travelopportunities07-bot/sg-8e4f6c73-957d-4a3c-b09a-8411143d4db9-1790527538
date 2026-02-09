@@ -58,20 +58,20 @@ const translations = {
       }
     },
     about: {
-      badge: "Pourquoi Nous Choisir",
+      badge: "À Propos de Nous",
       titre: "Votre Partenaire de Confiance",
-      soustitre: "Nous vous accompagnons dans chaque étape de votre projet international",
-      experience: {
-        titre: "Expertise Prouvée",
-        description: "Plus de 10 ans d'expérience dans l'accompagnement de projets internationaux"
-      },
-      support: {
-        titre: "Support Personnalisé",
-        description: "Un accompagnement sur mesure adapté à vos besoins et objectifs"
-      },
-      network: {
-        titre: "Réseau International",
-        description: "Des partenaires fiables dans plus de 15 pays à travers le monde"
+      soustitre: "Depuis plus de 10 ans, nous accompagnons des milliers de personnes dans la réalisation de leurs projets internationaux. Notre expertise et notre réseau mondial font de nous le partenaire idéal pour votre aventure.",
+      experience: "Expertise Reconnue",
+      experienceDesc: "Plus de 10 ans d'expérience dans l'accompagnement de projets internationaux, avec une connaissance approfondie des destinations et des opportunités.",
+      support: "Accompagnement Personnalisé",
+      supportDesc: "Un suivi individualisé à chaque étape de votre projet, de la préparation au départ jusqu'à votre installation dans votre nouveau pays.",
+      network: "Réseau International",
+      networkDesc: "Des partenaires de confiance dans plus de 15 pays pour vous garantir les meilleures opportunités et un accompagnement local.",
+      stats: {
+        clients: "Clients Accompagnés",
+        destinations: "Destinations",
+        satisfaction: "Taux de Satisfaction",
+        experience: "Ans d'Expérience"
       }
     },
     testimonials: {
@@ -99,11 +99,17 @@ const translations = {
       }
     },
     cta: {
-      badge: "Commencez Maintenant",
+      badge: "Prêt à Partir ?",
       titre: "Prêt à Commencer Votre Aventure ?",
-      soustitre: "Réservez une consultation gratuite et découvrez comment nous pouvons vous aider",
-      bouton: "Réserver une Consultation",
-      contact: "Nous Contacter"
+      soustitre: "Réservez une consultation gratuite et découvrez comment nous pouvons vous aider à réaliser vos rêves",
+      bouton: "Réserver un Rendez-vous",
+      contact: "Nous Contacter",
+      badges: {
+        verified: "Vérifié et Certifié",
+        secure: "100% Sécurisé",
+        clients: "500+ Clients Satisfaits",
+        excellence: "Excellence Garantie"
+      }
     },
     commun: {
       enSavoirPlus: "En savoir plus"
@@ -201,9 +207,15 @@ const translations = {
     cta: {
       badge: "Jetzt Beginnen",
       titre: "Bereit, Ihr Abenteuer zu Beginnen?",
-      soustitre: "Buchen Sie eine kostenlose Beratung und erfahren Sie, wie wir Ihnen helfen können",
-      bouton: "Beratung Buchen",
-      contact: "Kontaktieren Sie uns"
+      soustitre: "Buchen Sie eine kostenlose Beratung und erfahren Sie, wie wir Ihnen helfen können, Ihre Träume zu verwirklichen",
+      bouton: "Termin Buchen",
+      contact: "Kontaktieren Sie Uns",
+      badges: {
+        verified: "Verifiziert und Zertifiziert",
+        secure: "100% Sicher",
+        clients: "500+ Zufriedene Kunden",
+        excellence: "Exzellenz Garantiert"
+      }
     },
     commun: {
       enSavoirPlus: "Mehr erfahren"
