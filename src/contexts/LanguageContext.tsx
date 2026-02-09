@@ -1,602 +1,175 @@
-import { createContext, useContext, useState, ReactNode, useEffect } from "react";
+import React, { createContext, useContext, useState, ReactNode } from "react";
 
-export type Language = 'fr' | 'en' | 'de';
+type Language = "fr" | "de";
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string, params?: Record<string, string>) => string;
-  isLoaded: boolean;
+  t: (key: string) => string;
 }
 
 const translations = {
   fr: {
-    'nav.accueil': 'Accueil',
-    'nav.volontariat': 'Volontariat',
-    'nav.formations': 'Formations',
-    'nav.etudes': 'Études',
-    'nav.tourisme': 'Tourisme',
-    'nav.aupair': 'Au Pair',
-    'nav.accompagnement': 'Démarches & Accompagnement',
-    'nav.blog': 'Blog & Guides',
-    'nav.contact': 'Contact',
-    
-    'hero.badge': 'Votre partenaire mobilité en Allemagne',
-    'hero.titre': 'Votre Référence pour Vivre En Allemagne',
-    'hero.soustitre': 'Découvrez des opportunités de volontariat, formation professionnelle, études et tourisme en Allemagne. Un accompagnement complet pour concrétiser votre projet.',
-    'hero.bouton.principal': 'Demander un accompagnement',
-    'hero.bouton.secondaire': 'Découvrir les opportunités',
-    'hero.stats.volontariat': 'Volontariat',
-    'hero.stats.formations': 'Formations',
-    'hero.stats.etudes': 'Études',
-    'hero.stats.tourisme': 'Tourisme',
-    
-    'opportunites.titre': 'Explorez Vos Opportunités en Allemagne',
-    'opportunites.soustitre': 'Des parcours adaptés à chaque profil et projet',
-    
-    'opportunites.volontariat.titre': 'Volontariat (FSJ, BFD, FWD)',
-    'opportunites.volontariat.desc': 'Engagez-vous dans une mission de volontariat en Allemagne : social, écologique ou culturel. Une expérience enrichissante avec logement et indemnités.',
-    
-    'opportunites.formations.titre': 'Formations Professionnelles',
-    'opportunites.formations.desc': 'Intégrez une formation professionnelle en Allemagne : soins infirmiers, artisanat, hôtellerie et bien plus. Diplôme reconnu et rémunération.',
-    
-    'opportunites.etudes.titre': 'Études Supérieures',
-    'opportunites.etudes.desc': 'Étudiez dans une université allemande de renom. Frais réduits, qualité académique reconnue internationalement et vie étudiante dynamique.',
-    
-    'opportunites.tourisme.titre': 'Tourisme & Culture',
-    'opportunites.tourisme.desc': 'Découvrez l\'Allemagne : châteaux, musées, festivals et nature. Des circuits organisés et des conseils pour voyager en toute sérénité.',
-    
-    'opportunites.aupair.titre': 'Au Pair',
-    'opportunites.aupair.desc': 'Vivez une immersion culturelle unique en Allemagne en participant à la vie de famille. Hébergement, repas et argent de poche assurés tout en apprenant l\'allemand.',
-    
-    'aupair.meta.titre': 'Programme Au Pair en Allemagne | VivrEnAllemagne',
-    'aupair.meta.description': 'Devenez Au Pair en Allemagne et vivez une immersion culturelle unique. Hébergement, repas, argent de poche et cours d\'allemand inclus.',
-    
-    'aupair.hero.badge': 'Programme Au Pair',
-    'aupair.hero.titre': 'Vivez en Famille en Allemagne',
-    'aupair.hero.soustitre': 'Une immersion culturelle unique avec hébergement, repas et argent de poche tout en apprenant l\'allemand.',
-    'aupair.hero.bouton.principal': 'Postuler maintenant',
-    'aupair.hero.bouton.secondaire': 'En savoir plus',
-    
-    'aupair.description.titre': 'Qu\'est-ce que le Programme Au Pair ?',
-    'aupair.description.texte1': 'Le programme Au Pair offre une opportunité unique de vivre en immersion totale dans une famille allemande. Vous participez à la vie quotidienne, aidez avec les enfants et les tâches ménagères légères, tout en découvrant la culture allemande de l\'intérieur.',
-    'aupair.description.texte2': 'En échange de votre aide (environ 25-30 heures par semaine), vous bénéficiez d\'un hébergement complet, de tous vos repas, d\'un argent de poche mensuel et du temps libre pour suivre des cours d\'allemand et explorer le pays.',
-    'aupair.description.texte3': 'C\'est une expérience enrichissante qui vous permet d\'améliorer considérablement votre allemand, de créer des liens durables et de développer votre autonomie dans un environnement sécurisé et accueillant.',
-    
-    'aupair.avantages.badge': 'Avantages',
-    'aupair.avantages.titre': 'Pourquoi Devenir Au Pair ?',
-    'aupair.avantages.immersion.titre': 'Immersion Totale',
-    'aupair.avantages.immersion.desc': 'Vivez comme un membre de la famille et découvrez la culture allemande authentique au quotidien.',
-    'aupair.avantages.langue.titre': 'Apprentissage de l\'Allemand',
-    'aupair.avantages.langue.desc': 'Pratiquez l\'allemand tous les jours et suivez des cours de langue financés par votre famille d\'accueil.',
-    'aupair.avantages.famille.titre': 'Vie de Famille',
-    'aupair.avantages.famille.desc': 'Créez des liens profonds avec votre famille d\'accueil et les enfants dont vous vous occupez.',
-    'aupair.avantages.culture.titre': 'Découverte Culturelle',
-    'aupair.avantages.culture.desc': 'Explorez l\'Allemagne pendant votre temps libre : voyages, festivals, rencontres internationales.',
-    
-    'aupair.inclus.titre': 'Ce qui est Inclus',
-    'aupair.inclus.chambre': 'Chambre privée dans la maison familiale',
-    'aupair.inclus.repas': 'Tous les repas avec la famille',
-    'aupair.inclus.argent': 'Argent de poche mensuel (280€ minimum)',
-    'aupair.inclus.assurance': 'Assurance santé et accident',
-    'aupair.inclus.cours': 'Budget pour cours d\'allemand',
-    'aupair.inclus.conges': '4 semaines de congés payés par an',
-    
-    'aupair.conditions.badge': 'Conditions',
-    'aupair.conditions.titre': 'Qui Peut Devenir Au Pair ?',
-    'aupair.conditions.age': 'Avoir entre 18 et 26 ans',
-    'aupair.conditions.langue': 'Niveau d\'allemand A1-A2 minimum (débutant accepté)',
-    'aupair.conditions.experience': 'Expérience avec les enfants (baby-sitting, animation, fratrie)',
-    'aupair.conditions.duree': 'Engagement de 6 à 12 mois',
-    'aupair.conditions.disponibilite': 'Être disponible pour 25-30 heures de travail par semaine',
-    
-    'aupair.processus.titre': 'Comment Devenir Au Pair ?',
-    'aupair.processus.soustitre': 'Un processus simple en 3 étapes',
-    'aupair.processus.etape1.titre': 'Candidature',
-    'aupair.processus.etape1.desc': 'Remplissez votre dossier et créez votre profil. Nous vous aidons à le rendre attractif pour les familles.',
-    'aupair.processus.etape2.titre': 'Matching Famille',
-    'aupair.processus.etape2.desc': 'Nous trouvons la famille qui correspond à votre profil. Entretiens vidéo et décision mutuelle.',
-    'aupair.processus.etape3.titre': 'Préparation & Départ',
-    'aupair.processus.etape3.desc': 'Nous vous accompagnons dans toutes les démarches : visa, voyage, et intégration dans votre famille.',
-    
-    'aupair.cta.titre': 'Prêt à Vivre l\'Aventure Au Pair ?',
-    'aupair.cta.soustitre': 'Rejoignez des centaines de jeunes qui ont vécu une expérience inoubliable en famille allemande.',
-    'aupair.cta.bouton': 'Commencer ma candidature',
-    
-    'pourquoi.titre': 'Pourquoi Choisir l\'Allemagne ?',
-    'pourquoi.soustitre': 'Un pays d\'opportunités au cœur de l\'Europe',
-    
-    'pourquoi.economie.titre': 'Économie Dynamique',
-    'pourquoi.economie.desc': 'Première économie européenne avec d\'excellentes opportunités d\'emploi et de formation',
-    
-    'pourquoi.education.titre': 'Éducation de Qualité',
-    'pourquoi.education.desc': 'Universités de renommée mondiale et système de formation professionnelle exemplaire',
-    
-    'pourquoi.culture.titre': 'Richesse Culturelle',
-    'pourquoi.culture.desc': 'Histoire fascinante, patrimoine exceptionnel et scène culturelle vibrante',
-    
-    'pourquoi.qualite.titre': 'Qualité de Vie',
-    'pourquoi.qualite.desc': 'Infrastructures modernes, sécurité, système de santé performant et environnement préservé',
-    
-    'etapes.titre': 'Comment Ça Marche ?',
-    'etapes.soustitre': 'Un parcours simple et accompagné',
-    
-    'etapes.1.titre': '1. Consultation Gratuite',
-    'etapes.1.desc': 'Échangez avec nos conseillers pour définir votre projet et vérifier votre éligibilité',
-    
-    'etapes.2.titre': '2. Préparation du Dossier',
-    'etapes.2.desc': 'Nous vous aidons à constituer votre dossier et à préparer votre départ',
-    
-    'etapes.3.titre': '3. Accompagnement sur Place',
-    'etapes.3.desc': 'Support continu pendant votre séjour : logement, démarches, intégration',
-    
-    'appel.titre': 'Prêt à Démarrer Votre Projet ?',
-    'appel.soustitre': 'Contactez-nous pour un entretien personnalisé et gratuit',
-    'appel.bouton': 'Demander une consultation',
-    
-    'temoignages.titre': 'Ils Ont Réussi Leur Projet',
-    'temoignages.soustitre': 'Découvrez les témoignages de nos participants',
-    
-    'temoignages.1.nom': 'Marie Dupont',
-    'temoignages.1.programme': 'Volontariat FSJ - Services sociaux',
-    'temoignages.1.texte': 'Une expérience incroyable ! L\'accompagnement d\'AllemagneMobilité m\'a permis de réaliser mon rêve de découvrir l\'Allemagne tout en m\'engageant dans une cause qui me tient à cœur.',
-    
-    'temoignages.2.nom': 'Thomas Martin',
-    'temoignages.2.programme': 'Formation en soins infirmiers',
-    'temoignages.2.texte': 'Grâce à leur aide, j\'ai pu intégrer une excellente formation en Allemagne. Le suivi est professionnel et rassurant du début à la fin.',
-    
-    'temoignages.3.nom': 'Sophie Bernard',
-    'temoignages.3.programme': 'Études universitaires à Berlin',
-    'temoignages.3.texte': 'L\'équipe m\'a guidée dans toutes les démarches. Aujourd\'hui, je vis mon rêve d\'étudier dans une université allemande prestigieuse.',
-    
-    'contact.hero.titre': 'Contactez-nous',
-    'contact.hero.soustitre': 'Notre équipe est à votre écoute pour répondre à toutes vos questions et vous accompagner dans votre projet de mobilité en Allemagne.',
-    
-    'contact.formulaire.titre': 'Envoyez-nous un message',
-    'contact.formulaire.nom': 'Nom complet',
-    'contact.formulaire.nom.placeholder': 'Votre nom',
-    'contact.formulaire.email': 'Email',
-    'contact.formulaire.email.placeholder': 'votre@email.com',
-    'contact.formulaire.sujet': 'Sujet',
-    'contact.formulaire.sujet.placeholder': 'Objet de votre demande',
-    'contact.formulaire.message': 'Message',
-    'contact.formulaire.message.placeholder': 'Décrivez votre projet ou posez vos questions...',
-    'contact.formulaire.envoyer': 'Envoyer le message',
-    'contact.formulaire.envoi': 'Envoi en cours...',
-    'contact.formulaire.succes.titre': 'Message envoyé !',
-    'contact.formulaire.succes.message': 'Nous avons bien reçu votre message et vous répondrons dans les plus brefs délais.',
-    'contact.formulaire.succes.bouton': 'Envoyer un autre message',
-    
-    'contact.info.titre': 'Nos coordonnées',
-    'contact.info.entreprise': 'Entreprise',
-    'contact.info.adresse': 'Adresse',
-    'contact.info.email': 'Email',
-    'contact.info.horaires': 'Horaires',
-    'contact.info.horaires.semaine': 'Lun - Ven : 9h00 - 18h00',
-    'contact.info.horaires.weekend': 'Sam - Dim : Fermé',
-    
-    'contact.faq.titre': 'Questions fréquentes',
-    'contact.faq.q1.question': 'Combien coûtent vos services d\'accompagnement ?',
-    'contact.faq.q1.reponse': 'Nos tarifs varient selon le type de programme et le niveau d\'accompagnement souhaité. Contactez-nous pour un devis personnalisé gratuit.',
-    'contact.faq.q2.question': 'Dois-je parler allemand pour partir ?',
-    'contact.faq.q2.reponse': 'Cela dépend du programme. Pour le volontariat (FSJ/BFD), un niveau A2-B1 est généralement requis. Pour les études et formations, B2-C1 est recommandé. Nous proposons des cours préparatoires.',
-    'contact.faq.q3.question': 'Combien de temps avant mon départ dois-je vous contacter ?',
-    'contact.faq.q3.reponse': 'Idéalement 6 à 12 mois avant votre départ souhaité pour avoir le temps de préparer votre dossier, obtenir les documents nécessaires et trouver la meilleure opportunité.',
-    'contact.faq.q4.question': 'Proposez-vous un accompagnement une fois sur place en Allemagne ?',
-    'contact.faq.q4.reponse': 'Oui ! Nous assurons un suivi pendant toute la durée de votre séjour : aide au logement, démarches, intégration et soutien en cas de besoin.',
-    
-    'contact.meta.description': 'Contactez VivrEnAllemagne pour toutes vos questions sur les opportunités de mobilité en Allemagne : volontariat, formation, études et tourisme.',
-    
-    'footer.apropos': 'À propos',
-    'footer.apropos.texte': 'Votre partenaire de confiance pour réaliser vos projets en Allemagne : volontariat, formation, études et tourisme.',
-    'footer.liens': 'Liens Rapides',
-    'footer.ressources': 'Ressources',
-    'footer.contact': 'Contact',
-    'footer.droits': 'Tous droits réservés',
-    'footer.confidentialite': 'Politique de confidentialité',
-    'footer.conditions': 'Conditions d\'utilisation',
-    
-    'commun.enSavoirPlus': 'En savoir plus',
-    'commun.postuler': 'Postuler',
-    'commun.nousContacter': 'Nous contacter',
-    'commun.lireLaSuite': 'Lire la suite',
-    
-    'accueil': 'Accueil',
-    'apropos': 'À Propos',
-    'contact': 'Contact',
-    'rendezvous': 'Rendez-vous'
-  },
-  en: {
-    'nav.accueil': 'Home',
-    'nav.volontariat': 'Volunteering',
-    'nav.formations': 'Training',
-    'nav.etudes': 'Studies',
-    'nav.tourisme': 'Tourism',
-    'nav.aupair': 'Au Pair',
-    'nav.accompagnement': 'Procedures & Support',
-    'nav.blog': 'Blog & Guides',
-    'nav.contact': 'Contact',
-    
-    'hero.badge': 'Your mobility partner in Germany',
-    'hero.titre': 'Your Future in Germany Starts Here',
-    'hero.soustitre': 'Discover volunteering, professional training, study and tourism opportunities in Germany. Complete support to make your project a reality.',
-    'hero.bouton.principal': 'Request support',
-    'hero.bouton.secondaire': 'Explore opportunities',
-    'hero.stats.volontariat': 'Volunteering',
-    'hero.stats.formations': 'Training',
-    'hero.stats.etudes': 'Studies',
-    'hero.stats.tourisme': 'Tourism',
-    
-    'opportunites.titre': 'Explore Your Opportunities in Germany',
-    'opportunites.soustitre': 'Pathways tailored to every profile and project',
-    
-    'opportunites.volontariat.titre': 'Volunteering (FSJ, BFD, FWD)',
-    'opportunites.volontariat.desc': 'Engage in a volunteer mission in Germany: social, ecological or cultural. An enriching experience with accommodation and allowances.',
-    
-    'opportunites.formations.titre': 'Professional Training',
-    'opportunites.formations.desc': 'Join professional training in Germany: nursing, crafts, hospitality and more. Recognized diploma and remuneration.',
-    
-    'opportunites.etudes.titre': 'Higher Education',
-    'opportunites.etudes.desc': 'Study at a renowned German university. Reduced fees, internationally recognized academic quality and dynamic student life.',
-    
-    'opportunites.tourisme.titre': 'Tourism & Culture',
-    'opportunites.tourisme.desc': 'Discover Germany: castles, museums, festivals and nature. Organized tours and advice for peaceful travel.',
-    
-    'opportunites.aupair.titre': 'Au Pair',
-    'opportunites.aupair.desc': 'Experience a unique cultural immersion in Germany by participating in family life. Accommodation, meals and pocket money provided while learning German.',
-    
-    'aupair.meta.titre': 'Au Pair Program in Germany | VivrEnAllemagne',
-    'aupair.meta.description': 'Become an Au Pair in Germany and experience unique cultural immersion. Accommodation, meals, pocket money and German courses included.',
-    
-    'aupair.hero.badge': 'Au Pair Program',
-    'aupair.hero.titre': 'Live with a Family in Germany',
-    'aupair.hero.soustitre': 'A unique cultural immersion with accommodation, meals and pocket money while learning German.',
-    'aupair.hero.bouton.principal': 'Apply now',
-    'aupair.hero.bouton.secondaire': 'Learn more',
-    
-    'aupair.description.titre': 'What is the Au Pair Program?',
-    'aupair.description.texte1': 'The Au Pair program offers a unique opportunity to live fully immersed in a German family. You participate in daily life, help with children and light household tasks, while discovering German culture from the inside.',
-    'aupair.description.texte2': 'In exchange for your help (about 25-30 hours per week), you receive full accommodation, all your meals, monthly pocket money and free time to attend German courses and explore the country.',
-    'aupair.description.texte3': 'It is an enriching experience that allows you to significantly improve your German, create lasting bonds and develop your independence in a safe and welcoming environment.',
-    
-    'aupair.avantages.badge': 'Benefits',
-    'aupair.avantages.titre': 'Why Become an Au Pair?',
-    'aupair.avantages.immersion.titre': 'Total Immersion',
-    'aupair.avantages.immersion.desc': 'Live as a family member and discover authentic German culture every day.',
-    'aupair.avantages.langue.titre': 'Learning German',
-    'aupair.avantages.langue.desc': 'Practice German every day and attend language courses funded by your host family.',
-    'aupair.avantages.famille.titre': 'Family Life',
-    'aupair.avantages.famille.desc': 'Create deep bonds with your host family and the children you care for.',
-    'aupair.avantages.culture.titre': 'Cultural Discovery',
-    'aupair.avantages.culture.desc': 'Explore Germany during your free time: travel, festivals, international meetings.',
-    
-    'aupair.inclus.titre': 'What\'s Included',
-    'aupair.inclus.chambre': 'Private room in the family home',
-    'aupair.inclus.repas': 'All meals with the family',
-    'aupair.inclus.argent': 'Monthly pocket money (€280 minimum)',
-    'aupair.inclus.assurance': 'Health and accident insurance',
-    'aupair.inclus.cours': 'Budget for German courses',
-    'aupair.inclus.conges': '4 weeks of paid vacation per year',
-    
-    'aupair.conditions.badge': 'Requirements',
-    'aupair.conditions.titre': 'Who Can Become an Au Pair?',
-    'aupair.conditions.age': 'Be between 18 and 26 years old',
-    'aupair.conditions.langue': 'Minimum German level A1-A2 (beginners accepted)',
-    'aupair.conditions.experience': 'Experience with children (babysitting, activities, siblings)',
-    'aupair.conditions.duree': 'Commitment of 6 to 12 months',
-    'aupair.conditions.disponibilite': 'Be available for 25-30 hours of work per week',
-    
-    'aupair.processus.titre': 'How to Become an Au Pair?',
-    'aupair.processus.soustitre': 'A simple 3-step process',
-    'aupair.processus.etape1.titre': 'Application',
-    'aupair.processus.etape1.desc': 'Complete your file and create your profile. We help you make it attractive to families.',
-    'aupair.processus.etape2.titre': 'Family Matching',
-    'aupair.processus.etape2.desc': 'We find the family that matches your profile. Video interviews and mutual decision.',
-    'aupair.processus.etape3.titre': 'Preparation & Departure',
-    'aupair.processus.etape3.desc': 'We support you through all the steps: visa, travel, and integration into your family.',
-    
-    'aupair.cta.titre': 'Ready to Live the Au Pair Adventure?',
-    'aupair.cta.soustitre': 'Join hundreds of young people who have had an unforgettable experience with a German family.',
-    'aupair.cta.bouton': 'Start my application',
-    
-    'pourquoi.titre': 'Why Choose Germany?',
-    'pourquoi.soustitre': 'A land of opportunities in the heart of Europe',
-    
-    'pourquoi.economie.titre': 'Dynamic Economy',
-    'pourquoi.economie.desc': 'Europe\'s leading economy with excellent employment and training opportunities',
-    
-    'pourquoi.education.titre': 'Quality Education',
-    'pourquoi.education.desc': 'World-renowned universities and exemplary vocational training system',
-    
-    'pourquoi.culture.titre': 'Cultural Richness',
-    'pourquoi.culture.desc': 'Fascinating history, exceptional heritage and vibrant cultural scene',
-    
-    'pourquoi.qualite.titre': 'Quality of Life',
-    'pourquoi.qualite.desc': 'Modern infrastructure, safety, efficient healthcare system and preserved environment',
-    
-    'etapes.titre': 'How Does It Work?',
-    'etapes.soustitre': 'A simple and supported journey',
-    
-    'etapes.1.titre': '1. Free Consultation',
-    'etapes.1.desc': 'Talk with our advisors to define your project and check your eligibility',
-    
-    'etapes.2.titre': '2. File Preparation',
-    'etapes.2.desc': 'We help you build your file and prepare your departure',
-    
-    'etapes.3.titre': '3. On-Site Support',
-    'etapes.3.desc': 'Ongoing support during your stay: accommodation, procedures, integration',
-    
-    'appel.titre': 'Ready to Start Your Project?',
-    'appel.soustitre': 'Contact us for a free personalized interview',
-    'appel.bouton': 'Request a consultation',
-    
-    'temoignages.titre': 'They Succeeded in Their Project',
-    'temoignages.soustitre': 'Discover testimonials from our participants',
-    
-    'temoignages.1.nom': 'Marie Dupont',
-    'temoignages.1.programme': 'FSJ Volunteering - Social Services',
-    'temoignages.1.texte': 'An incredible experience! The support from AllemagneMobilité allowed me to realize my dream of discovering Germany while engaging in a cause close to my heart.',
-    
-    'temoignages.2.nom': 'Thomas Martin',
-    'temoignages.2.programme': 'Nursing Training',
-    'temoignages.2.texte': 'Thanks to their help, I was able to join an excellent training program in Germany. The follow-up is professional and reassuring from start to finish.',
-    
-    'temoignages.3.nom': 'Sophie Bernard',
-    'temoignages.3.programme': 'University Studies in Berlin',
-    'temoignages.3.texte': 'The team guided me through all the procedures. Today, I am living my dream of studying at a prestigious German university.',
-    
-    'contact.hero.titre': 'Contact Us',
-    'contact.hero.soustitre': 'Our team is here to answer all your questions and support you in your mobility project in Germany.',
-    
-    'contact.formulaire.titre': 'Send us a message',
-    'contact.formulaire.nom': 'Full name',
-    'contact.formulaire.nom.placeholder': 'Your name',
-    'contact.formulaire.email': 'Email',
-    'contact.formulaire.email.placeholder': 'your@email.com',
-    'contact.formulaire.sujet': 'Subject',
-    'contact.formulaire.sujet.placeholder': 'Subject of your request',
-    'contact.formulaire.message': 'Message',
-    'contact.formulaire.message.placeholder': 'Describe your project or ask your questions...',
-    'contact.formulaire.envoyer': 'Send message',
-    'contact.formulaire.envoi': 'Sending...',
-    'contact.formulaire.succes.titre': 'Message sent!',
-    'contact.formulaire.succes.message': 'We have received your message and will respond as soon as possible.',
-    'contact.formulaire.succes.bouton': 'Send another message',
-    
-    'contact.info.titre': 'Our contact details',
-    'contact.info.entreprise': 'Company',
-    'contact.info.adresse': 'Address',
-    'contact.info.email': 'Email',
-    'contact.info.horaires': 'Hours',
-    'contact.info.horaires.semaine': 'Mon - Fri: 9:00 AM - 6:00 PM',
-    'contact.info.horaires.weekend': 'Sat - Sun: Closed',
-    
-    'contact.faq.titre': 'Frequently asked questions',
-    'contact.faq.q1.question': 'How much do your support services cost?',
-    'contact.faq.q1.reponse': 'Our rates vary depending on the type of program and level of support desired. Contact us for a free personalized quote.',
-    'contact.faq.q2.question': 'Do I need to speak German to go?',
-    'contact.faq.q2.reponse': 'It depends on the program. For volunteering (FSJ/BFD), an A2-B1 level is generally required. For studies and training, B2-C1 is recommended. We offer preparatory courses.',
-    'contact.faq.q3.question': 'How far in advance should I contact you before my departure?',
-    'contact.faq.q3.reponse': 'Ideally 6 to 12 months before your desired departure to have time to prepare your file, obtain necessary documents and find the best opportunity.',
-    'contact.faq.q4.question': 'Do you provide support once in Germany?',
-    'contact.faq.q4.reponse': 'Yes! We provide follow-up throughout your stay: help with accommodation, administrative procedures, integration and support when needed.',
-    
-    'contact.meta.description': 'Contact Aisso International Ltd for all your questions about mobility opportunities in Germany: volunteering, training, studies and tourism.',
-    
-    'footer.apropos': 'About',
-    'footer.apropos.texte': 'Your trusted partner to realize your projects in Germany: volunteering, training, studies and tourism.',
-    'footer.liens': 'Quick Links',
-    'footer.ressources': 'Resources',
-    'footer.contact': 'Contact',
-    'footer.droits': 'All rights reserved',
-    'footer.confidentialite': 'Privacy Policy',
-    'footer.conditions': 'Terms of Use',
-    
-    'commun.enSavoirPlus': 'Learn more',
-    'commun.postuler': 'Apply',
-    'commun.nousContacter': 'Contact us',
-    'commun.lireLaSuite': 'Read more',
-    
-    'accueil': 'Home',
-    'apropos': 'About',
-    'contact': 'Contact',
-    'rendezvous': 'Appointment'
+    nav: {
+      home: "Accueil",
+      destinations: "Destinations",
+      opportunities: "Opportunités",
+      about: "À Propos",
+      contact: "Contact",
+      appointment: "Rendez-vous",
+      partner: "Devenir Partenaire"
+    },
+    hero: {
+      title: "Votre Voyage Commence Ici",
+      subtitle: "Découvrez des opportunités uniques de volontariat, d'études et de travail à travers le monde",
+      cta: "Prendre rendez-vous",
+      learnMore: "En savoir plus"
+    },
+    destinations: {
+      title: "Destinations Populaires",
+      subtitle: "Explorez nos destinations les plus prisées et trouvez celle qui correspond à vos aspirations",
+      viewAll: "Voir toutes les destinations",
+      germany: "Allemagne",
+      germanyDesc: "Leader européen en formation professionnelle et opportunités académiques",
+      usa: "États-Unis",
+      usaDesc: "Terre d'opportunités pour l'éducation et le développement professionnel",
+      australia: "Australie",
+      australiaDesc: "Qualité de vie exceptionnelle et programmes de travail-vacances",
+      ireland: "Irlande",
+      irelandDesc: "Hub technologique européen avec une culture accueillante"
+    },
+    opportunities: {
+      title: "Nos Services",
+      subtitle: "Découvrez les différentes façons de réaliser votre projet international",
+      volunteer: "Volontariat",
+      volunteerDesc: "Engagez-vous dans des projets significatifs tout en découvrant une nouvelle culture",
+      study: "Études",
+      studyDesc: "Accédez aux meilleures institutions académiques internationales",
+      work: "Travail",
+      workDesc: "Développez votre carrière avec des opportunités professionnelles à l'étranger",
+      training: "Formation",
+      trainingDesc: "Perfectionnez vos compétences avec des programmes de formation reconnus"
+    },
+    about: {
+      badge: "Pourquoi Nous Choisir",
+      title: "Référence Allemagne",
+      subtitle: "Expert en mobilité internationale depuis 2010",
+      feature1Title: "Conseils Fiables",
+      feature1Desc: "Accompagnement personnalisé par des experts certifiés",
+      feature2Title: "Suivi Pro",
+      feature2Desc: "De la candidature jusqu'à votre installation",
+      feature3Title: "Support dédié",
+      feature3Desc: "Assistance 24/7 pour votre tranquillité d'esprit"
+    },
+    testimonials: {
+      title: "Témoignages",
+      subtitle: "Découvrez les expériences de ceux qui nous ont fait confiance",
+      testimonial1Name: "Aïssatou Diallo",
+      testimonial1Title: "Volontariat réussi",
+      testimonial1Text: "Une expérience humaine enrichissante et un accompagnement sérieux du début à la fin.",
+      testimonial2Name: "Kevin N'Guessan",
+      testimonial2Title: "Aventure AuPair",
+      testimonial2Text: "J'ai appris l'allemand, découvert une nouvelle culture et gagné en confiance.",
+      testimonial3Name: "Mariam Traoré",
+      testimonial3Title: "Formation concrète",
+      testimonial3Text: "Une formation pratique, bien encadrée et très utile pour mon avenir.",
+      testimonial4Name: "Samuel Kouamé",
+      testimonial4Title: "Nouvel avenir",
+      testimonial4Text: "Un vrai tremplin pour étudier, se former et construire son projet en Allemagne."
+    },
+    cta: {
+      title: "Planifiez votre aventure internationale",
+      subtitle: "Prenez rendez-vous avec nos conseillers pour discuter de votre projet",
+      button: "Commencer votre procédure"
+    },
+    common: {
+      learnMore: "En savoir plus",
+      readMore: "Lire la suite",
+      contactUs: "Nous contacter",
+      getStarted: "Commencer",
+      bookNow: "Réserver maintenant"
+    }
   },
   de: {
-    'nav.accueil': 'Startseite',
-    'nav.volontariat': 'Freiwilligendienst',
-    'nav.formations': 'Ausbildung',
-    'nav.etudes': 'Studium',
-    'nav.tourisme': 'Tourismus',
-    'nav.aupair': 'Au Pair',
-    'nav.accompagnement': 'Verfahren & Unterstützung',
-    'nav.blog': 'Blog & Ratgeber',
-    'nav.contact': 'Kontakt',
-    
-    'hero.badge': 'Ihr Mobilitätspartner in Deutschland',
-    'hero.titre': 'Ihre Zukunft in Deutschland Beginnt Hier',
-    'hero.soustitre': 'Entdecken Sie Möglichkeiten für Freiwilligendienst, Berufsausbildung, Studium und Tourismus in Deutschland. Umfassende Begleitung zur Verwirklichung Ihres Projekts.',
-    'hero.bouton.principal': 'Begleitung anfragen',
-    'hero.bouton.secondaire': 'Möglichkeiten entdecken',
-    'hero.stats.volontariat': 'Freiwilligendienst',
-    'hero.stats.formations': 'Ausbildung',
-    'hero.stats.etudes': 'Studium',
-    'hero.stats.tourisme': 'Tourismus',
-    
-    'opportunites.titre': 'Erkunden Sie Ihre Möglichkeiten in Deutschland',
-    'opportunites.soustitre': 'Wege für jedes Profil und Projekt',
-    
-    'opportunites.volontariat.titre': 'Freiwilligendienst (FSJ, BFD, FWD)',
-    'opportunites.volontariat.desc': 'Engagieren Sie sich in einem Freiwilligendienst in Deutschland: sozial, ökologisch oder kulturell. Eine bereichernde Erfahrung mit Unterkunft und Vergütung.',
-    
-    'opportunites.formations.titre': 'Berufsausbildung',
-    'opportunites.formations.desc': 'Beginnen Sie eine Berufsausbildung in Deutschland: Krankenpflege, Handwerk, Gastgewerbe und mehr. Anerkanntes Diplom und Vergütung.',
-    
-    'opportunites.etudes.titre': 'Hochschulstudium',
-    'opportunites.etudes.desc': 'Studieren Sie an einer renommierten deutschen Universität. Reduzierte Gebühren, international anerkannte akademische Qualität und dynamisches Studentenleben.',
-    
-    'opportunites.tourisme.titre': 'Tourismus & Kultur',
-    'opportunites.tourisme.desc': 'Entdecken Sie Deutschland: Schlösser, Museen, Festivals und Natur. Organisierte Touren und Tipps für sorgenfreies Reisen.',
-    
-    'opportunites.aupair.titre': 'Au Pair',
-    'opportunites.aupair.desc': 'Erleben Sie ein einzigartiges kulturelles Eintauchen in Deutschland durch Teilnahme am Familienleben. Unterkunft, Verpflegung und Taschengeld werden bereitgestellt, während Sie Deutsch lernen.',
-    
-    'aupair.meta.titre': 'Au-Pair-Programm in Deutschland | VivrEnAllemagne',
-    'aupair.meta.description': 'Werden Sie Au Pair in Deutschland und erleben Sie einzigartiges kulturelles Eintauchen. Unterkunft, Verpflegung, Taschengeld und Deutschkurse inklusive.',
-    
-    'aupair.hero.badge': 'Au-Pair-Programm',
-    'aupair.hero.titre': 'Leben Sie in einer Familie in Deutschland',
-    'aupair.hero.soustitre': 'Ein einzigartiges kulturelles Eintauchen mit Unterkunft, Verpflegung und Taschengeld beim Deutschlernen.',
-    'aupair.hero.bouton.principal': 'Jetzt bewerben',
-    'aupair.hero.bouton.secondaire': 'Mehr erfahren',
-    
-    'aupair.description.titre': 'Was ist das Au-Pair-Programm?',
-    'aupair.description.texte1': 'Das Au-Pair-Programm bietet eine einzigartige Gelegenheit, vollständig in eine deutsche Familie einzutauchen. Sie nehmen am täglichen Leben teil, helfen mit den Kindern und leichten Haushaltsaufgaben und entdecken dabei die deutsche Kultur von innen.',
-    'aupair.description.texte2': 'Im Austausch für Ihre Hilfe (etwa 25-30 Stunden pro Woche) erhalten Sie volle Unterkunft, alle Ihre Mahlzeiten, monatliches Taschengeld und Freizeit, um Deutschkurse zu besuchen und das Land zu erkunden.',
-    'aupair.description.texte3': 'Es ist eine bereichernde Erfahrung, die es Ihnen ermöglicht, Ihr Deutsch erheblich zu verbessern, dauerhafte Bindungen zu schaffen und Ihre Unabhängigkeit in einer sicheren und einladenden Umgebung zu entwickeln.',
-    
-    'aupair.avantages.badge': 'Vorteile',
-    'aupair.avantages.titre': 'Warum Au Pair Werden?',
-    'aupair.avantages.immersion.titre': 'Vollständiges Eintauchen',
-    'aupair.avantages.immersion.desc': 'Leben Sie als Familienmitglied und entdecken Sie jeden Tag authentische deutsche Kultur.',
-    'aupair.avantages.langue.titre': 'Deutsch Lernen',
-    'aupair.avantages.langue.desc': 'Üben Sie jeden Tag Deutsch und besuchen Sie Sprachkurse, die von Ihrer Gastfamilie finanziert werden.',
-    'aupair.avantages.famille.titre': 'Familienleben',
-    'aupair.avantages.famille.desc': 'Schaffen Sie tiefe Bindungen mit Ihrer Gastfamilie und den Kindern, um die Sie sich kümmern.',
-    'aupair.avantages.culture.titre': 'Kulturelle Entdeckung',
-    'aupair.avantages.culture.desc': 'Erkunden Sie Deutschland während Ihrer Freizeit: Reisen, Festivals, internationale Begegnungen.',
-    
-    'aupair.inclus.titre': 'Was ist Enthalten',
-    'aupair.inclus.chambre': 'Privatzimmer im Familienhaus',
-    'aupair.inclus.repas': 'Alle Mahlzeiten mit der Familie',
-    'aupair.inclus.argent': 'Monatliches Taschengeld (280€ Minimum)',
-    'aupair.inclus.assurance': 'Kranken- und Unfallversicherung',
-    'aupair.inclus.cours': 'Budget für Deutschkurse',
-    'aupair.inclus.conges': '4 Wochen bezahlter Urlaub pro Jahr',
-    
-    'aupair.conditions.badge': 'Voraussetzungen',
-    'aupair.conditions.titre': 'Wer Kann Au Pair Werden?',
-    'aupair.conditions.age': 'Zwischen 18 und 26 Jahre alt sein',
-    'aupair.conditions.langue': 'Deutschkenntnisse mindestens A1-A2 (Anfänger akzeptiert)',
-    'aupair.conditions.experience': 'Erfahrung mit Kindern (Babysitting, Aktivitäten, Geschwister)',
-    'aupair.conditions.duree': 'Verpflichtung von 6 bis 12 Monaten',
-    'aupair.conditions.disponibilite': 'Verfügbarkeit für 25-30 Arbeitsstunden pro Woche',
-    
-    'aupair.processus.titre': 'Wie Wird Man Au Pair?',
-    'aupair.processus.soustitre': 'Ein einfacher 3-Schritte-Prozess',
-    'aupair.processus.etape1.titre': 'Bewerbung',
-    'aupair.processus.etape1.desc': 'Vervollständigen Sie Ihre Unterlagen und erstellen Sie Ihr Profil. Wir helfen Ihnen, es für Familien attraktiv zu machen.',
-    'aupair.processus.etape2.titre': 'Familien-Matching',
-    'aupair.processus.etape2.desc': 'Wir finden die Familie, die zu Ihrem Profil passt. Video-Interviews und gegenseitige Entscheidung.',
-    'aupair.processus.etape3.titre': 'Vorbereitung & Abreise',
-    'aupair.processus.etape3.desc': 'Wir unterstützen Sie bei allen Schritten: Visum, Reise und Integration in Ihre Familie.',
-    
-    'aupair.cta.titre': 'Bereit für das Au-Pair-Abenteuer?',
-    'aupair.cta.soustitre': 'Schließen Sie sich Hunderten von jungen Menschen an, die eine unvergessliche Erfahrung mit einer deutschen Familie gemacht haben.',
-    'aupair.cta.bouton': 'Meine Bewerbung starten',
-    
-    'pourquoi.titre': 'Warum Deutschland Wählen?',
-    'pourquoi.soustitre': 'Ein Land voller Möglichkeiten im Herzen Europas',
-    
-    'pourquoi.economie.titre': 'Dynamische Wirtschaft',
-    'pourquoi.economie.desc': 'Führende Wirtschaft Europas mit hervorragenden Beschäftigungs- und Ausbildungsmöglichkeiten',
-    
-    'pourquoi.education.titre': 'Qualitätsbildung',
-    'pourquoi.education.desc': 'Weltbekannte Universitäten und vorbildliches Berufsbildungssystem',
-    
-    'pourquoi.culture.titre': 'Kultureller Reichtum',
-    'pourquoi.culture.desc': 'Faszinierende Geschichte, außergewöhnliches Erbe und lebendige Kulturszene',
-    
-    'pourquoi.qualite.titre': 'Lebensqualität',
-    'pourquoi.qualite.desc': 'Moderne Infrastruktur, Sicherheit, effizientes Gesundheitssystem und geschützte Umwelt',
-    
-    'etapes.titre': 'Wie Funktioniert Es?',
-    'etapes.soustitre': 'Ein einfacher und begleiteter Weg',
-    
-    'etapes.1.titre': '1. Kostenlose Beratung',
-    'etapes.1.desc': 'Sprechen Sie mit unseren Beratern, um Ihr Projekt zu definieren und Ihre Eignung zu überprüfen',
-    
-    'etapes.2.titre': '2. Vorbereitung der Unterlagen',
-    'etapes.2.desc': 'Wir helfen Ihnen bei der Erstellung Ihrer Unterlagen und bei der Vorbereitung Ihrer Abreise',
-    
-    'etapes.3.titre': '3. Begleitung vor Ort',
-    'etapes.3.desc': 'Kontinuierliche Unterstützung während Ihres Aufenthalts: Unterkunft, Formalitäten, Integration',
-    
-    'appel.titre': 'Bereit, Ihr Projekt zu Starten?',
-    'appel.soustitre': 'Kontaktieren Sie uns für ein kostenloses persönliches Gespräch',
-    'appel.bouton': 'Beratung anfragen',
-    
-    'temoignages.titre': 'Sie Haben Ihr Projekt Erfolgreich Umgesetzt',
-    'temoignages.soustitre': 'Entdecken Sie die Erfahrungsberichte unserer Teilnehmer',
-    
-    'temoignages.1.nom': 'Marie Dupont',
-    'temoignages.1.programme': 'FSJ Freiwilligendienst - Soziale Dienste',
-    'temoignages.1.texte': 'Eine unglaubliche Erfahrung! Die Unterstützung von AllemagneMobilité ermöglichte es mir, meinen Traum zu verwirklichen, Deutschland zu entdecken und mich für eine Sache einzusetzen, die mir am Herzen liegt.',
-    
-    'temoignages.2.nom': 'Thomas Martin',
-    'temoignages.2.programme': 'Krankenpflege-Ausbildung',
-    'temoignages.2.texte': 'Dank ihrer Hilfe konnte ich eine hervorragende Ausbildung in Deutschland beginnen. Die Betreuung ist professionell und beruhigend von Anfang bis Ende.',
-    
-    'temoignages.3.nom': 'Sophie Bernard',
-    'temoignages.3.programme': 'Universitätsstudium in Berlin',
-    'temoignages.3.texte': 'Das Team hat mich durch alle Verfahren geführt. Heute lebe ich meinen Traum, an einer renommierten deutschen Universität zu studieren.',
-    
-    'contact.hero.titre': 'Kontaktieren Sie uns',
-    'contact.hero.soustitre': 'Unser Team steht Ihnen zur Verfügung, um alle Ihre Fragen zu beantworten und Sie bei Ihrem Mobilitätsprojekt in Deutschland zu unterstützen.',
-    
-    'contact.formulaire.titre': 'Senden Sie uns eine Nachricht',
-    'contact.formulaire.nom': 'Vollständiger Name',
-    'contact.formulaire.nom.placeholder': 'Ihr Name',
-    'contact.formulaire.email': 'E-Mail',
-    'contact.formulaire.email.placeholder': 'ihre@email.de',
-    'contact.formulaire.sujet': 'Betreff',
-    'contact.formulaire.sujet.placeholder': 'Betreff Ihrer Anfrage',
-    'contact.formulaire.message': 'Nachricht',
-    'contact.formulaire.message.placeholder': 'Beschreiben Sie Ihr Projekt oder stellen Sie Ihre Fragen...',
-    'contact.formulaire.envoyer': 'Nachricht senden',
-    'contact.formulaire.envoi': 'Wird gesendet...',
-    'contact.formulaire.succes.titre': 'Nachricht gesendet!',
-    'contact.formulaire.succes.message': 'Wir haben Ihre Nachricht erhalten und werden Ihnen so schnell wie möglich antworten.',
-    'contact.formulaire.succes.bouton': 'Weitere Nachricht senden',
-    
-    'contact.info.titre': 'Unsere Kontaktdaten',
-    'contact.info.entreprise': 'Unternehmen',
-    'contact.info.adresse': 'Adresse',
-    'contact.info.email': 'E-Mail',
-    'contact.info.horaires': 'Öffnungszeiten',
-    'contact.info.horaires.semaine': 'Mo - Fr: 9:00 - 18:00 Uhr',
-    'contact.info.horaires.weekend': 'Sa - So: Geschlossen',
-    
-    'contact.faq.titre': 'Häufig gestellte Fragen',
-    'contact.faq.q1.question': 'How much do your support services cost?',
-    'contact.faq.q1.reponse': 'Our rates vary depending on the type of program and level of support desired. Contact us for a free personalized quote.',
-    'contact.faq.q2.question': 'Do I need to speak German to go?',
-    'contact.faq.q2.reponse': 'It depends on the program. For volunteering (FSJ/BFD), an A2-B1 level is generally required. For studies and training, B2-C1 is recommended. We offer preparatory courses.',
-    'contact.faq.q3.question': 'How far in advance should I contact you before my departure?',
-    'contact.faq.q3.reponse': 'Ideally 6 to 12 months before your desired departure to have time to prepare your file, obtain necessary documents and find the best opportunity.',
-    'contact.faq.q4.question': 'Do you provide support once in Germany?',
-    'contact.faq.q4.reponse': 'Yes! We provide follow-up throughout your stay: help with accommodation, administrative procedures, integration and support when needed.',
-    
-    'contact.meta.description': 'Contact Aisso International Ltd for all your questions about mobility opportunities in Germany: volunteering, training, studies and tourism.',
-    
-    'footer.apropos': 'Über uns',
-    'footer.apropos.texte': 'Ihr vertrauenswürdiger Partner zur Verwirklichung Ihrer Projekte in Deutschland: Freiwilligendienst, Ausbildung, Studium und Tourismus.',
-    'footer.liens': 'Schnelllinks',
-    'footer.ressources': 'Ressourcen',
-    'footer.contact': 'Kontakt',
-    'footer.droits': 'Alle Rechte vorbehalten',
-    'footer.confidentialite': 'Datenschutzrichtlinie',
-    'footer.conditions': 'Nutzungsbedingungen',
-    
-    'commun.enSavoirPlus': 'Mehr erfahren',
-    'commun.postuler': 'Bewerben',
-    'commun.nousContacter': 'Kontaktieren Sie uns',
-    'commun.lireLaSuite': 'Weiterlesen',
-    
-    'accueil': 'Startseite',
-    'apropos': 'Über uns',
-    'contact': 'Kontakt',
-    'rendezvous': 'Termin'
+    nav: {
+      home: "Startseite",
+      destinations: "Reiseziele",
+      opportunities: "Möglichkeiten",
+      about: "Über uns",
+      contact: "Kontakt",
+      appointment: "Termin",
+      partner: "Partner werden"
+    },
+    hero: {
+      title: "Ihre Reise Beginnt Hier",
+      subtitle: "Entdecken Sie einzigartige Möglichkeiten für Freiwilligenarbeit, Studium und Arbeit weltweit",
+      cta: "Termin vereinbaren",
+      learnMore: "Mehr erfahren"
+    },
+    destinations: {
+      title: "Beliebte Reiseziele",
+      subtitle: "Erkunden Sie unsere beliebtesten Ziele und finden Sie das, was zu Ihren Zielen passt",
+      viewAll: "Alle Reiseziele anzeigen",
+      germany: "Deutschland",
+      germanyDesc: "Europäischer Marktführer in beruflicher Bildung und akademischen Möglichkeiten",
+      usa: "Vereinigte Staaten",
+      usaDesc: "Land der Möglichkeiten für Bildung und berufliche Entwicklung",
+      australia: "Australien",
+      australiaDesc: "Außergewöhnliche Lebensqualität und Work-Holiday-Programme",
+      ireland: "Irland",
+      irelandDesc: "Europäischer Tech-Hub mit einladender Kultur"
+    },
+    opportunities: {
+      title: "Unsere Dienstleistungen",
+      subtitle: "Entdecken Sie verschiedene Wege, Ihr internationales Projekt zu verwirklichen",
+      volunteer: "Freiwilligenarbeit",
+      volunteerDesc: "Engagieren Sie sich in bedeutungsvollen Projekten und entdecken Sie eine neue Kultur",
+      study: "Studium",
+      studyDesc: "Zugang zu den besten internationalen akademischen Institutionen",
+      work: "Arbeit",
+      workDesc: "Entwickeln Sie Ihre Karriere mit beruflichen Möglichkeiten im Ausland",
+      training: "Ausbildung",
+      trainingDesc: "Verbessern Sie Ihre Fähigkeiten mit anerkannten Schulungsprogrammen"
+    },
+    about: {
+      badge: "Warum Uns Wählen",
+      title: "Deutschland Referenz",
+      subtitle: "Experte für internationale Mobilität seit 2010",
+      feature1Title: "Zuverlässige Beratung",
+      feature1Desc: "Persönliche Begleitung durch zertifizierte Experten",
+      feature2Title: "Professionelle Betreuung",
+      feature2Desc: "Von der Bewerbung bis zu Ihrer Niederlassung",
+      feature3Title: "Dedizierter Support",
+      feature3Desc: "24/7-Unterstützung für Ihre Sicherheit"
+    },
+    testimonials: {
+      title: "Erfahrungsberichte",
+      subtitle: "Entdecken Sie die Erfahrungen derer, die uns vertraut haben",
+      testimonial1Name: "Aïssatou Diallo",
+      testimonial1Title: "Erfolgreiche Freiwilligenarbeit",
+      testimonial1Text: "Eine bereichernde menschliche Erfahrung und ernsthafte Begleitung von Anfang bis Ende.",
+      testimonial2Name: "Kevin N'Guessan",
+      testimonial2Title: "AuPair-Abenteuer",
+      testimonial2Text: "Ich habe Deutsch gelernt, eine neue Kultur entdeckt und Selbstvertrauen gewonnen.",
+      testimonial3Name: "Mariam Traoré",
+      testimonial3Title: "Konkrete Ausbildung",
+      testimonial3Text: "Eine praktische, gut betreute und sehr nützliche Ausbildung für meine Zukunft.",
+      testimonial4Name: "Samuel Kouamé",
+      testimonial4Title: "Neue Zukunft",
+      testimonial4Text: "Ein echtes Sprungbrett zum Studieren, Lernen und Aufbauen meines Projekts in Deutschland."
+    },
+    cta: {
+      title: "Planen Sie Ihr internationales Abenteuer",
+      subtitle: "Vereinbaren Sie einen Termin mit unseren Beratern, um Ihr Projekt zu besprechen",
+      button: "Starten Sie Ihr Verfahren"
+    },
+    common: {
+      learnMore: "Mehr erfahren",
+      readMore: "Weiterlesen",
+      contactUs: "Kontaktieren Sie uns",
+      getStarted: "Loslegen",
+      bookNow: "Jetzt buchen"
+    }
   }
 };
 
@@ -604,38 +177,20 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>("fr");
-  const [isLoaded, setIsLoaded] = useState(false);
 
-  const t = (key: string, params?: Record<string, string>): string => {
-    const translation = translations[language][key as keyof typeof translations.fr] || key;
+  const t = (key: string): string => {
+    const keys = key.split(".");
+    let value: any = translations[language];
     
-    if (params) {
-      return Object.entries(params).reduce((acc, [paramKey, paramValue]) => {
-        return acc.replace(`{{${paramKey}}}`, paramValue);
-      }, translation);
+    for (const k of keys) {
+      value = value?.[k];
     }
     
-    return translation;
+    return value || key;
   };
 
-  useEffect(() => {
-    // Charger la langue depuis localStorage uniquement côté client
-    const savedLanguage = localStorage.getItem("language") as Language;
-    if (savedLanguage && (savedLanguage === "fr" || savedLanguage === "en" || savedLanguage === "de")) {
-      setLanguage(savedLanguage);
-    }
-    setIsLoaded(true);
-  }, []);
-
-  useEffect(() => {
-    if (isLoaded) {
-      localStorage.setItem("language", language);
-      document.documentElement.lang = language;
-    }
-  }, [language, isLoaded]);
-
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t, isLoaded }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );

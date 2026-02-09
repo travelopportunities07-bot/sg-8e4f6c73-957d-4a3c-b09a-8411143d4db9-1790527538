@@ -1,84 +1,203 @@
 import { Card } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
-import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { motion } from "framer-motion";
 
 export function Testimonials() {
   const { t } = useLanguage();
-  
+
   const testimonials = [
     {
-      name: "Marie Kamara",
-      role: t("testimonials.student"),
-      image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=400&fit=crop",
-      text: t("testimonials.text1")
+      name: t("testimonials.testimonial1.name"),
+      role: t("testimonials.testimonial1.role"),
+      image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=400&fit=crop&q=80",
+      text: t("testimonials.testimonial1.text")
     },
     {
-      name: "Jean-Baptiste Nkosi",
-      role: t("testimonials.professional"),
-      image: "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=400&h=400&fit=crop",
-      text: t("testimonials.text2")
+      name: t("testimonials.testimonial2.name"),
+      role: t("testimonials.testimonial2.role"),
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&q=80",
+      text: t("testimonials.testimonial2.text")
     },
     {
-      name: "Amina Diallo",
-      role: t("testimonials.volunteer"),
-      image: "https://images.unsplash.com/photo-1589156280159-27698a70f29e?w=400&h=400&fit=crop",
-      text: t("testimonials.text3")
+      name: t("testimonials.testimonial3.name"),
+      role: t("testimonials.testimonial3.role"),
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&q=80",
+      text: t("testimonials.testimonial3.text")
+    },
+    {
+      name: t("testimonials.testimonial4.name"),
+      role: t("testimonials.testimonial4.role"),
+      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&q=80",
+      text: t("testimonials.testimonial4.text")
     }
   ];
-  
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 50,
+      scale: 0.95
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 12
+      }
+    }
+  };
+
+  const titleVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-    <section className="py-16 md:py-24 bg-section-gray">
-      <div className="container">
-        <div className="text-center mb-12 space-y-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-institutional-blue">
-            {t("temoignages.titre")}
+    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <div className="container mx-auto px-4">
+        <motion.div 
+          className="text-center mb-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={titleVariants}
+        >
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            {t("testimonials.title")}
           </h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            {t("temoignages.soustitre")}
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            {t("testimonials.subtitle")}
           </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        </motion.div>
+
+        <motion.div 
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={containerVariants}
+        >
           {testimonials.map((testimonial, index) => (
-            <Card 
-              key={index} 
-              className="p-8 bg-white border-2 border-gray-200 hover:border-accent-green hover:shadow-xl transition-all duration-300 animate-fade-in"
+            <motion.div
+              key={index}
+              variants={cardVariants}
+              whileHover={{ 
+                y: -10, 
+                scale: 1.02,
+                transition: { duration: 0.3 }
+              }}
             >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="relative w-16 h-16 rounded-full overflow-hidden border-4 border-accent-green/20">
-                  <Image
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    fill
-                    style={{ objectFit: "cover" }}
-                    sizes="64px"
-                  />
-                </div>
-                <div>
-                  <p className="font-bold text-institutional-blue">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-sm text-text-secondary">
-                    {testimonial.role}
-                  </p>
-                </div>
-              </div>
-              
-              <Quote className="h-10 w-10 text-accent-green mb-4 opacity-50" />
-              
-              <div className="flex gap-1 mb-4">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <Star key={star} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              
-              <p className="text-text-secondary mb-6 italic">
-                "{testimonial.text}"
-              </p>
-            </Card>
+              <Card className="p-6 h-full flex flex-col relative overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100 bg-white">
+                <motion.div
+                  className="absolute top-4 right-4 text-red-100 opacity-30"
+                  initial={{ rotate: -15, scale: 0 }}
+                  whileInView={{ rotate: 0, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ 
+                    delay: index * 0.2 + 0.3,
+                    type: "spring",
+                    stiffness: 200
+                  }}
+                >
+                  <Quote className="w-16 h-16" />
+                </motion.div>
+
+                <motion.div 
+                  className="flex gap-1 mb-4 relative z-10"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 + 0.4 }}
+                >
+                  {[...Array(5)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ scale: 0, rotate: -180 }}
+                      whileInView={{ scale: 1, rotate: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        delay: index * 0.2 + 0.5 + (i * 0.1),
+                        type: "spring",
+                        stiffness: 200,
+                        damping: 10
+                      }}
+                    >
+                      <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    </motion.div>
+                  ))}
+                </motion.div>
+
+                <motion.p 
+                  className="text-gray-700 mb-6 flex-grow italic relative z-10 leading-relaxed"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 + 0.6 }}
+                >
+                  &ldquo;{testimonial.text}&rdquo;
+                </motion.p>
+
+                <motion.div 
+                  className="flex items-center gap-4 relative z-10"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 + 0.7 }}
+                >
+                  <motion.div 
+                    className="relative"
+                    whileHover={{ 
+                      scale: 1.1, 
+                      rotate: 5,
+                      transition: { duration: 0.3 }
+                    }}
+                  >
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-14 h-14 rounded-full object-cover border-2 border-red-500 shadow-md"
+                    />
+                  </motion.div>
+                  <div>
+                    <motion.p 
+                      className="font-semibold text-gray-900"
+                      whileHover={{ 
+                        color: "#DC2626",
+                        transition: { duration: 0.2 }
+                      }}
+                    >
+                      {testimonial.name}
+                    </motion.p>
+                    <p className="text-sm text-red-600 font-medium">
+                      {testimonial.role}
+                    </p>
+                  </div>
+                </motion.div>
+              </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
