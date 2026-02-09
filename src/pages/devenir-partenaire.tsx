@@ -12,9 +12,11 @@ import { Mail, Building2, User, Phone, MessageSquare, CheckCircle2, Briefcase, C
 export default function DevenirPartenaire() {
   const { t } = useLanguage();
   const [formData, setFormData] = useState({
+    titre: "",
     prenom: "",
     nom: "",
     email: "",
+    codePhone: "+49",
     telephone: "",
     entreprise: "",
     secteur: "",
@@ -36,9 +38,11 @@ export default function DevenirPartenaire() {
 
     setTimeout(() => {
       setFormData({
+        titre: "",
         prenom: "",
         nom: "",
         email: "",
+        codePhone: "+49",
         telephone: "",
         entreprise: "",
         secteur: "",
@@ -72,6 +76,48 @@ export default function DevenirPartenaire() {
         : prev.partenariats.filter(p => p !== value)
     }));
   };
+
+  const titreOptions = [
+    { value: "herr", label: "Herr" },
+    { value: "frau", label: "Frau" },
+    { value: "dr", label: "Dr." },
+    { value: "prof-dr", label: "Prof. Dr." },
+    { value: "dipl-ing", label: "Dipl.-Ing." },
+    { value: "mag", label: "Mag." },
+    { value: "msc", label: "M.Sc." },
+    { value: "ba", label: "B.A." }
+  ];
+
+  const codesTelephone = [
+    { value: "+49", label: "🇩🇪 +49", country: "Allemagne" },
+    { value: "+33", label: "🇫🇷 +33", country: "France" },
+    { value: "+43", label: "🇦🇹 +43", country: "Autriche" },
+    { value: "+41", label: "🇨🇭 +41", country: "Suisse" },
+    { value: "+32", label: "🇧🇪 +32", country: "Belgique" },
+    { value: "+31", label: "🇳🇱 +31", country: "Pays-Bas" },
+    { value: "+352", label: "🇱🇺 +352", country: "Luxembourg" },
+    { value: "+39", label: "🇮🇹 +39", country: "Italie" },
+    { value: "+34", label: "🇪🇸 +34", country: "Espagne" },
+    { value: "+351", label: "🇵🇹 +351", country: "Portugal" },
+    { value: "+44", label: "🇬🇧 +44", country: "Royaume-Uni" },
+    { value: "+353", label: "🇮🇪 +353", country: "Irlande" },
+    { value: "+45", label: "🇩🇰 +45", country: "Danemark" },
+    { value: "+46", label: "🇸🇪 +46", country: "Suède" },
+    { value: "+47", label: "🇳🇴 +47", country: "Norvège" },
+    { value: "+358", label: "🇫🇮 +358", country: "Finlande" },
+    { value: "+48", label: "🇵🇱 +48", country: "Pologne" },
+    { value: "+420", label: "🇨🇿 +420", country: "République tchèque" },
+    { value: "+421", label: "🇸🇰 +421", country: "Slovaquie" },
+    { value: "+36", label: "🇭🇺 +36", country: "Hongrie" },
+    { value: "+40", label: "🇷🇴 +40", country: "Roumanie" },
+    { value: "+359", label: "🇧🇬 +359", country: "Bulgarie" },
+    { value: "+30", label: "🇬🇷 +30", country: "Grèce" },
+    { value: "+385", label: "🇭🇷 +385", country: "Croatie" },
+    { value: "+386", label: "🇸🇮 +386", country: "Slovénie" },
+    { value: "+372", label: "🇪🇪 +372", country: "Estonie" },
+    { value: "+371", label: "🇱🇻 +371", country: "Lettonie" },
+    { value: "+370", label: "🇱🇹 +370", country: "Lituanie" }
+  ];
 
   const partenarisOptions = [
     { value: "fsj", label: "Volontaires: FSJ" },
@@ -159,7 +205,30 @@ export default function DevenirPartenaire() {
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid md:grid-cols-3 gap-6">
+                      <div className="space-y-2">
+                        <Label htmlFor="titre" className="text-slate-700 font-medium flex items-center gap-2">
+                          <User className="w-4 h-4 text-blue-600" />
+                          Titre *
+                        </Label>
+                        <Select
+                          value={formData.titre}
+                          onValueChange={(value) => handleSelectChange("titre", value)}
+                          required
+                        >
+                          <SelectTrigger className="h-12 border-2 border-slate-200 focus:border-blue-500 rounded-xl">
+                            <SelectValue placeholder="Sélectionner" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {titreOptions.map((option) => (
+                              <SelectItem key={option.value} value={option.value}>
+                                {option.label}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </div>
+
                       <div className="space-y-2">
                         <Label htmlFor="prenom" className="text-slate-700 font-medium flex items-center gap-2">
                           <User className="w-4 h-4 text-blue-600" />
@@ -195,29 +264,44 @@ export default function DevenirPartenaire() {
                       </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <Label htmlFor="email" className="text-slate-700 font-medium flex items-center gap-2">
-                          <Mail className="w-4 h-4 text-blue-600" />
-                          Adresse E-Mail *
-                        </Label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          required
-                          value={formData.email}
-                          onChange={handleChange}
-                          placeholder="votreemail@entreprise.de"
-                          className="h-12 border-2 border-slate-200 focus:border-blue-500 rounded-xl"
-                        />
-                      </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email" className="text-slate-700 font-medium flex items-center gap-2">
+                        <Mail className="w-4 h-4 text-blue-600" />
+                        Adresse E-Mail *
+                      </Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="votreemail@entreprise.de"
+                        className="h-12 border-2 border-slate-200 focus:border-blue-500 rounded-xl"
+                      />
+                    </div>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="telephone" className="text-slate-700 font-medium flex items-center gap-2">
-                          <Phone className="w-4 h-4 text-blue-600" />
-                          Numéro de Téléphone *
-                        </Label>
+                    <div className="space-y-2">
+                      <Label htmlFor="telephone" className="text-slate-700 font-medium flex items-center gap-2">
+                        <Phone className="w-4 h-4 text-blue-600" />
+                        Numéro de Téléphone *
+                      </Label>
+                      <div className="flex gap-3">
+                        <Select
+                          value={formData.codePhone}
+                          onValueChange={(value) => handleSelectChange("codePhone", value)}
+                        >
+                          <SelectTrigger className="h-12 w-32 border-2 border-slate-200 focus:border-blue-500 rounded-xl">
+                            <SelectValue />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {codesTelephone.map((code) => (
+                              <SelectItem key={code.value} value={code.value}>
+                                {code.label}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
                         <Input
                           id="telephone"
                           name="telephone"
@@ -225,8 +309,8 @@ export default function DevenirPartenaire() {
                           required
                           value={formData.telephone}
                           onChange={handleChange}
-                          placeholder="+49 123 456 789"
-                          className="h-12 border-2 border-slate-200 focus:border-blue-500 rounded-xl"
+                          placeholder="123 456 789"
+                          className="h-12 flex-1 border-2 border-slate-200 focus:border-blue-500 rounded-xl"
                         />
                       </div>
                     </div>
