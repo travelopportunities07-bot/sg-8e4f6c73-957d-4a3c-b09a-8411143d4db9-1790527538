@@ -145,17 +145,15 @@ export function Hero() {
             {t("hero.titre")}
           </motion.h1>
           
-          {/* Sous-titre élégant - Style bouton supprimé, texte conservé */}
+          {/* Sous-titre élégant */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
             className="max-w-4xl mx-auto"
           >
-            <p
-              className="text-xl md:text-2xl text-white font-medium leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
-            >
-              Volontariat • Formation • Études • Tourisme en Allemagne – Votre projet international, notre expertise
+            <p className="text-xl md:text-2xl text-white font-medium leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+              {t("hero.soustitre")}
             </p>
           </motion.div>
           
@@ -168,7 +166,7 @@ export function Hero() {
           >
             <Link href="/rendez-vous">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-lg font-bold px-12 py-8 rounded-2xl shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105">
-                Prendre rendez-vous
+                {t("hero.boutonRendezVous")}
                 <ArrowRight className="ml-3 h-6 w-6" />
               </Button>
             </Link>

@@ -8,28 +8,28 @@ export function Testimonials() {
 
   const testimonials = [
     {
-      name: t("testimonials.testimonial1.name"),
+      name: t("testimonials.testimonial1.nom"),
       role: t("testimonials.testimonial1.role"),
       image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=400&fit=crop&q=80",
-      text: t("testimonials.testimonial1.text")
+      text: t("testimonials.testimonial1.texte")
     },
     {
-      name: t("testimonials.testimonial2.name"),
+      name: t("testimonials.testimonial2.nom"),
       role: t("testimonials.testimonial2.role"),
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&q=80",
-      text: t("testimonials.testimonial2.text")
+      text: t("testimonials.testimonial2.texte")
     },
     {
-      name: t("testimonials.testimonial3.name"),
+      name: t("testimonials.testimonial3.nom"),
       role: t("testimonials.testimonial3.role"),
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&q=80",
-      text: t("testimonials.testimonial3.text")
+      text: t("testimonials.testimonial3.texte")
     },
     {
-      name: t("testimonials.testimonial4.name"),
+      name: t("testimonials.testimonial4.nom"),
       role: t("testimonials.testimonial4.role"),
       image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&q=80",
-      text: t("testimonials.testimonial4.text")
+      text: t("testimonials.testimonial4.texte")
     }
   ];
 
@@ -84,10 +84,10 @@ export function Testimonials() {
           variants={titleVariants}
         >
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            {t("testimonials.title")}
+            {t("testimonials.titre")}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            {t("testimonials.subtitle")}
+            {t("testimonials.soustitre")}
           </p>
         </motion.div>
 
