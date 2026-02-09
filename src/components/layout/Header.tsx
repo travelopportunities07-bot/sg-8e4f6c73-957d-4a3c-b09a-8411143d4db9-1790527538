@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
-import { LanguageSelector } from "./LanguageSelector";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Header() {
@@ -90,8 +89,6 @@ export function Header() {
             
             <div className="h-6 w-px bg-border mx-2" />
             
-            <LanguageSelector />
-            
             <Link href="/contact">
               <Button className="btn-primary">
                 {t("cta.bouton")}
@@ -100,7 +97,6 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-3 lg:hidden">
-            <LanguageSelector />
             <Button 
               variant="ghost" 
               size="icon" 
