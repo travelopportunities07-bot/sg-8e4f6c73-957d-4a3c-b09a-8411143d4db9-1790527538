@@ -8,25 +8,22 @@ export function Testimonials() {
   
   const testimonials = [
     {
-      nameKey: "temoignages.1.nom",
-      roleKey: "temoignages.1.programme",
-      textKey: "temoignages.1.texte",
-      initials: "SA",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80"
+      name: "Marie Kamara",
+      role: t("testimonials.student"),
+      image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=400&fit=crop",
+      text: t("testimonials.text1")
     },
     {
-      nameKey: "temoignages.2.nom",
-      roleKey: "temoignages.2.programme",
-      textKey: "temoignages.2.texte",
-      initials: "JM",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+      name: "Jean-Baptiste Nkosi",
+      role: t("testimonials.professional"),
+      image: "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=400&h=400&fit=crop",
+      text: t("testimonials.text2")
     },
     {
-      nameKey: "temoignages.3.nom",
-      roleKey: "temoignages.3.programme",
-      textKey: "temoignages.3.texte",
-      initials: "LB",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80"
+      name: "Amina Diallo",
+      role: t("testimonials.volunteer"),
+      image: "https://images.unsplash.com/photo-1589156280159-27698a70f29e?w=400&h=400&fit=crop",
+      text: t("testimonials.text3")
     }
   ];
   
@@ -52,7 +49,7 @@ export function Testimonials() {
                 <div className="relative w-16 h-16 rounded-full overflow-hidden border-4 border-accent-green/20">
                   <Image
                     src={testimonial.image}
-                    alt={t(testimonial.nameKey)}
+                    alt={testimonial.name}
                     fill
                     style={{ objectFit: "cover" }}
                     sizes="64px"
@@ -60,10 +57,10 @@ export function Testimonials() {
                 </div>
                 <div>
                   <p className="font-bold text-institutional-blue">
-                    {t(testimonial.nameKey)}
+                    {testimonial.name}
                   </p>
                   <p className="text-sm text-text-secondary">
-                    {t(testimonial.roleKey)}
+                    {testimonial.role}
                   </p>
                 </div>
               </div>
@@ -77,7 +74,7 @@ export function Testimonials() {
               </div>
               
               <p className="text-text-secondary mb-6 italic">
-                "{t(testimonial.textKey)}"
+                "{testimonial.text}"
               </p>
             </Card>
           ))}

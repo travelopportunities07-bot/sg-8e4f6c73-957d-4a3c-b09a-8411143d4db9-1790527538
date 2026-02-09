@@ -306,11 +306,12 @@ export default function DevenirPartenaire() {
                           id="telephone"
                           name="telephone"
                           type="tel"
-                          required
+                          placeholder="1234567890"
                           value={formData.telephone}
                           onChange={handleChange}
-                          placeholder="123 456 789"
-                          className="h-12 flex-1 border-2 border-slate-200 focus:border-blue-500 rounded-xl"
+                          required
+                          maxLength={11}
+                          className="flex-1"
                         />
                       </div>
                     </div>
