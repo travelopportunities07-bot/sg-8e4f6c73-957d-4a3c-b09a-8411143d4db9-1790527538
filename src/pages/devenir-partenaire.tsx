@@ -5,14 +5,21 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Building2, User, MessageSquare, CheckCircle2 } from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Mail, Building2, User, Phone, MessageSquare, CheckCircle2, Briefcase, Calendar } from "lucide-react";
 
 export default function DevenirPartenaire() {
   const { t } = useLanguage();
   const [formData, setFormData] = useState({
-    email: "",
+    prenom: "",
     nom: "",
+    email: "",
+    telephone: "",
     entreprise: "",
+    secteur: "",
+    partenariats: [] as string[],
+    delai: "",
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -22,15 +29,23 @@ export default function DevenirPartenaire() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1500));
 
     setIsSubmitting(false);
     setIsSubmitted(true);
 
-    // Reset form after 3 seconds
     setTimeout(() => {
-      setFormData({ email: "", nom: "", entreprise: "", message: "" });
+      setFormData({
+        prenom: "",
+        nom: "",
+        email: "",
+        telephone: "",
+        entreprise: "",
+        secteur: "",
+        partenariats: [],
+        delai: "",
+        message: ""
+      });
       setIsSubmitted(false);
     }, 3000);
   };
@@ -42,10 +57,32 @@ export default function DevenirPartenaire() {
     }));
   };
 
+  const handleSelectChange = (name: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleCheckboxChange = (value: string, checked: boolean) => {
+    setFormData(prev => ({
+      ...prev,
+      partenariats: checked
+        ? [...prev.partenariats, value]
+        : prev.partenariats.filter(p => p !== value)
+    }));
+  };
+
+  const partenarisOptions = [
+    { value: "fsj", label: "Volontaires: FSJ" },
+    { value: "fwd", label: "FWD" },
+    { value: "bfd", label: "BFD" },
+    { value: "formation", label: "Formation" }
+  ];
+
   return (
     <Layout>
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
-        {/* Hero Section */}
         <section className="relative py-20 px-4 overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100 via-transparent to-transparent opacity-40"></div>
           
@@ -65,7 +102,6 @@ export default function DevenirPartenaire() {
               </p>
             </div>
 
-            {/* Benefits Section */}
             <div className="grid md:grid-cols-3 gap-6 mb-16">
               <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
                 <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
@@ -98,7 +134,6 @@ export default function DevenirPartenaire() {
               </div>
             </div>
 
-            {/* Form Section */}
             <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-slate-200">
               {isSubmitted ? (
                 <div className="text-center py-12">
@@ -125,7 +160,42 @@ export default function DevenirPartenaire() {
 
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
-                      {/* Email */}
+                      <div className="space-y-2">
+                        <Label htmlFor="prenom" className="text-slate-700 font-medium flex items-center gap-2">
+                          <User className="w-4 h-4 text-blue-600" />
+                          Prénom *
+                        </Label>
+                        <Input
+                          id="prenom"
+                          name="prenom"
+                          type="text"
+                          required
+                          value={formData.prenom}
+                          onChange={handleChange}
+                          placeholder="Votre prénom"
+                          className="h-12 border-2 border-slate-200 focus:border-blue-500 rounded-xl"
+                        />
+                      </div>
+
+                      <div className="space-y-2">
+                        <Label htmlFor="nom" className="text-slate-700 font-medium flex items-center gap-2">
+                          <User className="w-4 h-4 text-blue-600" />
+                          Nom *
+                        </Label>
+                        <Input
+                          id="nom"
+                          name="nom"
+                          type="text"
+                          required
+                          value={formData.nom}
+                          onChange={handleChange}
+                          placeholder="Votre nom"
+                          className="h-12 border-2 border-slate-200 focus:border-blue-500 rounded-xl"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="email" className="text-slate-700 font-medium flex items-center gap-2">
                           <Mail className="w-4 h-4 text-blue-600" />
@@ -143,43 +213,106 @@ export default function DevenirPartenaire() {
                         />
                       </div>
 
-                      {/* Nom */}
                       <div className="space-y-2">
-                        <Label htmlFor="nom" className="text-slate-700 font-medium flex items-center gap-2">
-                          <User className="w-4 h-4 text-blue-600" />
-                          Nom Complet *
+                        <Label htmlFor="telephone" className="text-slate-700 font-medium flex items-center gap-2">
+                          <Phone className="w-4 h-4 text-blue-600" />
+                          Numéro de Téléphone *
                         </Label>
                         <Input
-                          id="nom"
-                          name="nom"
-                          type="text"
+                          id="telephone"
+                          name="telephone"
+                          type="tel"
                           required
-                          value={formData.nom}
+                          value={formData.telephone}
                           onChange={handleChange}
-                          placeholder="Prénom Nom"
+                          placeholder="+49 123 456 789"
                           className="h-12 border-2 border-slate-200 focus:border-blue-500 rounded-xl"
                         />
                       </div>
                     </div>
 
-                    {/* Entreprise */}
-                    <div className="space-y-2">
-                      <Label htmlFor="entreprise" className="text-slate-700 font-medium flex items-center gap-2">
-                        <Building2 className="w-4 h-4 text-blue-600" />
-                        Nom de l'Entreprise
-                      </Label>
-                      <Input
-                        id="entreprise"
-                        name="entreprise"
-                        type="text"
-                        value={formData.entreprise}
-                        onChange={handleChange}
-                        placeholder="Votre entreprise"
-                        className="h-12 border-2 border-slate-200 focus:border-blue-500 rounded-xl"
-                      />
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <Label htmlFor="entreprise" className="text-slate-700 font-medium flex items-center gap-2">
+                          <Building2 className="w-4 h-4 text-blue-600" />
+                          Nom de l'Entreprise *
+                        </Label>
+                        <Input
+                          id="entreprise"
+                          name="entreprise"
+                          type="text"
+                          required
+                          value={formData.entreprise}
+                          onChange={handleChange}
+                          placeholder="Votre entreprise"
+                          className="h-12 border-2 border-slate-200 focus:border-blue-500 rounded-xl"
+                        />
+                      </div>
+
+                      <div className="space-y-2">
+                        <Label htmlFor="secteur" className="text-slate-700 font-medium flex items-center gap-2">
+                          <Briefcase className="w-4 h-4 text-blue-600" />
+                          Secteur d'Activité *
+                        </Label>
+                        <Input
+                          id="secteur"
+                          name="secteur"
+                          type="text"
+                          required
+                          value={formData.secteur}
+                          onChange={handleChange}
+                          placeholder="Ex: Santé, IT, Industrie..."
+                          className="h-12 border-2 border-slate-200 focus:border-blue-500 rounded-xl"
+                        />
+                      </div>
                     </div>
 
-                    {/* Message */}
+                    <div className="space-y-3">
+                      <Label className="text-slate-700 font-medium flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-blue-600" />
+                        Partenariat dans le cadre de recrutement de : *
+                      </Label>
+                      <div className="grid md:grid-cols-2 gap-4 p-4 bg-slate-50 rounded-xl border border-slate-200">
+                        {partenarisOptions.map((option) => (
+                          <div key={option.value} className="flex items-center space-x-3">
+                            <Checkbox
+                              id={option.value}
+                              checked={formData.partenariats.includes(option.value)}
+                              onCheckedChange={(checked) => handleCheckboxChange(option.value, checked as boolean)}
+                              className="border-2 border-slate-300 data-[state=checked]:bg-blue-600 data-[state=checked]:border-blue-600"
+                            />
+                            <Label
+                              htmlFor={option.value}
+                              className="text-sm font-medium text-slate-700 cursor-pointer"
+                            >
+                              {option.label}
+                            </Label>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="delai" className="text-slate-700 font-medium flex items-center gap-2">
+                        <Calendar className="w-4 h-4 text-blue-600" />
+                        Jusqu'à quand voulez-vous recruter ? *
+                      </Label>
+                      <Select
+                        value={formData.delai}
+                        onValueChange={(value) => handleSelectChange("delai", value)}
+                        required
+                      >
+                        <SelectTrigger className="h-12 border-2 border-slate-200 focus:border-blue-500 rounded-xl">
+                          <SelectValue placeholder="Sélectionnez un délai" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="maintenant">Maintenant</SelectItem>
+                          <SelectItem value="1-2-mois">Dans 1-2 mois</SelectItem>
+                          <SelectItem value="3-mois-plus">Après 3 mois</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+
                     <div className="space-y-2">
                       <Label htmlFor="message" className="text-slate-700 font-medium flex items-center gap-2">
                         <MessageSquare className="w-4 h-4 text-blue-600" />
@@ -196,7 +329,6 @@ export default function DevenirPartenaire() {
                       />
                     </div>
 
-                    {/* Submit Button */}
                     <Button
                       type="submit"
                       disabled={isSubmitting}
@@ -220,7 +352,6 @@ export default function DevenirPartenaire() {
               )}
             </div>
 
-            {/* Contact Info */}
             <div className="mt-12 text-center">
               <p className="text-slate-600 mb-4">
                 Des questions ? Contactez-nous directement :
