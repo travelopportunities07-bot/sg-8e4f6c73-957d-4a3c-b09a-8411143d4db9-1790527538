@@ -235,10 +235,12 @@ export default function BlogPage() {
                       <p className="text-sm text-gray-500 mb-4">
                         📄 {guide.pages}
                       </p>
-                      <Button className="bg-green-500 hover:bg-green-600">
-                        Télécharger gratuitement
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
+                      <Link href="/rendez-vous">
+                        <Button className="bg-green-500 hover:bg-green-600">
+                          En Savoir Plus
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </Card>

@@ -22,7 +22,7 @@ const translations = {
     'nav.contact': 'Contact',
     
     'hero.badge': 'Votre partenaire mobilité en Allemagne',
-    'hero.titre': 'Votre Avenir en Allemagne Commence Ici',
+    'hero.titre': 'Votre Référence pour Vivre En Allemagne',
     'hero.soustitre': 'Découvrez des opportunités de volontariat, formation professionnelle, études et tourisme en Allemagne. Un accompagnement complet pour concrétiser votre projet.',
     'hero.bouton.principal': 'Demander un accompagnement',
     'hero.bouton.secondaire': 'Découvrir les opportunités',

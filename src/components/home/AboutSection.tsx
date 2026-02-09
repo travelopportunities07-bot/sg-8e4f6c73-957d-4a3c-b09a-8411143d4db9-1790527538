@@ -1,8 +1,9 @@
-import { TrendingUp, Award, Globe, Shield, ChevronLeft, ChevronRight } from "lucide-react";
+import { TrendingUp, Award, Globe, Shield, ChevronLeft, ChevronRight, Star, ShieldCheck, UserCheck, Headphones } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 export function AboutSection() {
   const { t } = useLanguage();
@@ -183,34 +184,26 @@ export function AboutSection() {
           </div>
         </div>
 
-        {/* Mini Preview Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-5xl mx-auto">
-          {benefits.map((benefit, index) => (
-            <button
+        {/* Badges Premium & Pro (Remplacement des Mini Preview Cards) */}
+        <div className="flex flex-wrap justify-center gap-4 mt-12 max-w-6xl mx-auto">
+          {[
+            { icon: Star, label: "Référence Allemagne" },
+            { icon: ShieldCheck, label: "Conseils Fiables" },
+            { icon: UserCheck, label: "Suivi Pro" },
+            { icon: Headphones, label: "Support dédié" }
+          ].map((item, index) => (
+            <motion.div
               key={index}
-              onClick={() => goToSlide(index)}
-              className={`group relative overflow-hidden rounded-xl transition-all duration-300 ${
-                currentSlide === index 
-                  ? "ring-4 ring-institutional-blue shadow-2xl scale-105" 
-                  : "hover:scale-105 shadow-lg"
-              }`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-default flex-1 min-w-[200px] justify-center"
             >
-              <div className="relative h-24 overflow-hidden">
-                <Image 
-                  src={benefit.image}
-                  alt={t(benefit.titleKey)}
-                  fill
-                  style={{ objectFit: "cover" }}
-                  className="transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className={`absolute inset-0 bg-gradient-to-br ${benefit.gradient} ${
-                  currentSlide === index ? "opacity-40" : "opacity-60"
-                } transition-opacity`}></div>
-              </div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <benefit.icon className="h-8 w-8 text-white drop-shadow-lg" />
-              </div>
-            </button>
+              <item.icon className="h-6 w-6" />
+              <span className="font-bold text-lg whitespace-nowrap">{item.label}</span>
+            </motion.div>
           ))}
         </div>
       </div>

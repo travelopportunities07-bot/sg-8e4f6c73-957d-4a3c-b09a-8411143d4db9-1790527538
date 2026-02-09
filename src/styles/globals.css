@@ -263,4 +263,19 @@
                 linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent))) border-box;
     border: 2px solid transparent;
   }
+  
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  .animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+  }
+  
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
 }

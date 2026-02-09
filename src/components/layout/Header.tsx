@@ -80,6 +80,10 @@ export function Header() {
               {t("nav.blog")}
             </Link>
             
+            <Link href="/devenir-partenaire" className="nav-link">
+              Devenir Partenaire
+            </Link>
+            
             <Link href="/contact" className="nav-link">
               {t("nav.contact")}
             </Link>
@@ -151,6 +155,14 @@ export function Header() {
               onClick={() => setIsMenuOpen(false)}
             >
               {t("nav.blog")}
+            </Link>
+            
+            <Link 
+              href="/devenir-partenaire" 
+              className="block px-4 py-3 text-base font-medium text-dark-gray hover:bg-primary/5 hover:text-primary rounded-lg transition-all duration-200"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Devenir Partenaire
             </Link>
             
             <Link 

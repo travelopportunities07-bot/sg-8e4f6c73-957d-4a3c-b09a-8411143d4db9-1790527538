@@ -32,11 +32,19 @@ export function Footer() {
       <div className="relative container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           <div className="lg:col-span-2 space-y-6 animate-fade-in">
-            <div className="flex items-center space-x-2 group">
-              <Globe className="h-10 w-10 text-gold transition-transform duration-300 group-hover:rotate-12" />
-              <div className="text-2xl font-bold font-heading">
-                <div className="text-white">VivrEn</div>
-                <div className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-coral to-ocean text-lg">Allemagne</div>
+            <div className="flex items-center space-x-3 group">
+              <div className="relative">
+                {/* Drapeau allemand stylisé */}
+                <div className="w-10 h-10 rounded-lg overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-110">
+                  <div className="w-full h-1/3 bg-[#000000]"></div>
+                  <div className="w-full h-1/3 bg-[#DD0000]"></div>
+                  <div className="w-full h-1/3 bg-[#FFCE00]"></div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-red-600/20 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+              <div className="text-2xl font-bold font-heading flex flex-row items-baseline">
+                <span className="text-white">VivrEn</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-coral to-ocean">Allemagne</span>
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed max-w-md">

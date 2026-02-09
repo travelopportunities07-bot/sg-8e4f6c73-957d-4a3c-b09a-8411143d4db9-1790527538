@@ -5,6 +5,7 @@ import { OpportunityTypes } from "@/components/home/OpportunityTypes";
 import { AboutSection } from "@/components/home/AboutSection";
 import { Testimonials } from "@/components/home/Testimonials";
 import { CallToAction } from "@/components/home/CallToAction";
+import { TopBanner } from "@/components/layout/TopBanner";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
     >
       <Hero />
       <OpportunityTypes />
+      <TopBanner />
       <AboutSection />
       <FeaturedDestinations />
       <Testimonials />

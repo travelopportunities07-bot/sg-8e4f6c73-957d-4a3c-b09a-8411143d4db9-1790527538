@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Briefcase, GraduationCap, Map, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -134,31 +134,18 @@ export function Hero() {
       
       <div className="container relative z-10">
         <div className="max-w-5xl mx-auto text-center space-y-10">
-          {/* Badge premium animé */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-amber-500/20 to-amber-300/20 backdrop-blur-xl px-8 py-4 rounded-full border-2 border-amber-400/30 shadow-2xl"
-          >
-            <Sparkles className="h-5 w-5 text-amber-300 animate-pulse" />
-            <span className="text-base font-bold tracking-wide text-amber-100">{t("hero.badge")}</span>
-          </motion.div>
           
           {/* Titre principal premium */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="text-6xl md:text-8xl font-bold leading-tight bg-gradient-to-br from-white via-blue-100 to-amber-100 bg-clip-text text-transparent"
-            style={{
-              textShadow: '0 0 60px rgba(251, 191, 36, 0.3)'
-            }}
+            className="text-6xl md:text-8xl font-bold leading-tight text-white drop-shadow-[0_5px_5px_rgba(0,0,0,0.5)]"
           >
             {t("hero.titre")}
           </motion.h1>
           
-          {/* Sous-titre élégant */}
+          {/* Sous-titre élégant - Style bouton supprimé, texte conservé */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -166,7 +153,7 @@ export function Hero() {
             className="max-w-4xl mx-auto"
           >
             <p
-              className="text-xl md:text-2xl text-blue-100 font-medium leading-relaxed px-8 py-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10"
+              className="text-xl md:text-2xl text-white font-medium leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
             >
               Volontariat • Formation • Études • Tourisme en Allemagne – Votre projet international, notre expertise
             </p>
@@ -179,47 +166,12 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-6"
           >
-            <Link href="/contact">
-              <Button size="lg" className="bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-slate-900 text-lg font-bold px-12 py-8 rounded-2xl shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 hover:scale-105 border-2 border-amber-300">
-                {t("hero.bouton.principal")}
+            <Link href="/rendez-vous">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-lg font-bold px-12 py-8 rounded-2xl shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105">
+                Prendre rendez-vous
                 <ArrowRight className="ml-3 h-6 w-6" />
               </Button>
             </Link>
-            <Link href="/rendez-vous">
-              <Button size="lg" className="bg-white/10 hover:bg-white/20 backdrop-blur-xl text-white text-lg font-semibold px-12 py-8 rounded-2xl transition-all duration-300 hover:scale-105 shadow-2xl border-2 border-white/20 hover:border-white/40">
-                Planifiez votre aventure internationale
-              </Button>
-            </Link>
-          </motion.div>
-          
-          {/* Cartes services premium */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-20"
-          >
-            {[
-              { icon: Briefcase, label: t("hero.stats.volontariat"), gradient: "from-blue-500 to-blue-400", delay: 0 },
-              { icon: GraduationCap, label: t("hero.stats.formations"), gradient: "from-purple-500 to-purple-400", delay: 0.1 },
-              { icon: GraduationCap, label: t("hero.stats.etudes"), gradient: "from-amber-500 to-amber-400", delay: 0.2 },
-              { icon: Map, label: t("hero.stats.tourisme"), gradient: "from-emerald-500 to-emerald-400", delay: 0.3 }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.2 + item.delay }}
-                className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-300 hover:scale-105 group shadow-2xl"
-              >
-                <div className={`bg-gradient-to-br ${item.gradient} p-4 rounded-xl inline-block mb-4 group-hover:scale-110 transition-transform shadow-xl`}>
-                  <item.icon className="h-8 w-8 text-white" />
-                </div>
-                <p className="text-base font-bold text-white">
-                  {item.label}
-                </p>
-              </motion.div>
-            ))}
           </motion.div>
         </div>
       </div>

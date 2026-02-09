@@ -179,20 +179,20 @@ export default function TourismePage() {
       </section>
 
       {/* Formules Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-slate-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Nos formules de voyage
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
               Des séjours adaptés à tous les budgets et tous les rythmes de voyage
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {formules.map((formule, index) => (
-              <Card key={index} className="p-8 hover:shadow-2xl transition-all duration-300 border-2 hover:border-blue-500">
+              <Card key={index} className="bg-white p-8 hover:shadow-2xl transition-all duration-300 border-2 hover:border-blue-500">
                 <div className="text-center mb-6">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
                     <Compass className="h-8 w-8 text-blue-900" />
@@ -222,13 +222,9 @@ export default function TourismePage() {
                 </div>
 
                 <div className="border-t pt-6 text-center">
-                  <div className="flex items-center justify-center gap-2 text-2xl font-bold text-green-600 mb-4">
-                    <Euro className="h-6 w-6" />
-                    <span>{formule.prix}</span>
-                  </div>
                   <Link href="/contact">
                     <Button className="w-full bg-blue-900 hover:bg-blue-800">
-                      Demander un devis
+                      En Savoir Plus
                     </Button>
                   </Link>
                 </div>

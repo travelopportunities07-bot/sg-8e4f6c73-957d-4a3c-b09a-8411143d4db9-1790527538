@@ -227,7 +227,7 @@ export function FeaturedDestinations() {
         
         <div className="text-center">
           <Link href="/demarches">
-            <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-white text-lg font-bold px-10 py-6 rounded-2xl shadow-xl hover:shadow-amber-500/25 transition-all duration-300 hover:-translate-y-1">
+            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-lg font-bold px-10 py-6 rounded-2xl shadow-xl hover:shadow-blue-600/25 transition-all duration-300 hover:-translate-y-1">
               Commencer votre procédure
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
