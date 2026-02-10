@@ -186,7 +186,7 @@ export function Header() {
             </Link>
 
             <Link href="/rendez-vous">
-              <Button className="bg-gradient-to-r from-[#D4AF37] to-[#C19A6B] hover:from-[#C19A6B] hover:to-[#D4AF37] text-white px-6">
+              <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6">
                 Prendre RDV
               </Button>
             </Link>
@@ -401,6 +401,9 @@ export function Header() {
 
             {/* Bouton CTA Mobile */}
             <Link href="/rendez-vous" className="block mt-6">
+              <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white">
+                Prendre RDV
+              </Button>
             </Link>
           </div>
         )}
