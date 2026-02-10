@@ -144,10 +144,10 @@ export function Footer() {
                 <li className="flex items-start gap-3 text-gray-300 group">
                   <Mail className="h-5 w-5 mt-0.5 flex-shrink-0 text-gold group-hover:scale-110 transition-transform duration-200" />
                   <a 
-                    href="mailto:successprocompany@gmail.com" 
+                    href="mailto:contact@vivrenallemagne.de" 
                     className="hover:text-gold transition-colors break-all text-sm"
                   >
-                    successprocompany@gmail.com
+                    contact@vivrenallemagne.de
                   </a>
                 </li>
                 <li className="flex items-start gap-3 text-gray-300 group">

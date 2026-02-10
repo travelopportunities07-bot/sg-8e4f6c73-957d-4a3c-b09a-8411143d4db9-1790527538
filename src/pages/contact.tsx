@@ -263,7 +263,7 @@ export default function Contact() {
                       </div>
                       <div>
                         <h3 className="font-heading font-bold text-deep-navy mb-2">Email</h3>
-                        <p className="text-gray-600">successprocompany@gmail.com</p>
+                        <p className="text-gray-600">contact@vivrenallemagne.de</p>
                         <p className="text-sm text-gray-500 mt-1">Réponse sous 24h ouvrées</p>
                       </div>
                     </div>

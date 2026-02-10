@@ -10,7 +10,7 @@ interface SEOProps {
 // SEO elements that can be used in _document.tsx (returns JSX without Head wrapper)
 export function SEOElements({
   title = "VivrEnAllemagne",
-  description = "",
+  description,
   image,
   url,
 }: SEOProps) {
