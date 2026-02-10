@@ -164,9 +164,9 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-6"
           >
-            <Link href="/rendez-vous">
+            <Link href="#services">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-lg font-bold px-12 py-8 rounded-2xl shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105">
-                {t("hero.boutonRendezVous")}
+                Découvrir
                 <ArrowRight className="ml-3 h-6 w-6" />
               </Button>
             </Link>

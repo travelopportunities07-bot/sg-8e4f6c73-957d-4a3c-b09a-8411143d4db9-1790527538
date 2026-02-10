@@ -9,7 +9,9 @@ export default function Home() {
   return (
     <Layout>
       <Hero />
-      <OpportunityTypes />
+      <div id="services">
+        <OpportunityTypes />
+      </div>
       <AboutSection />
       <Testimonials />
       <CallToAction />
