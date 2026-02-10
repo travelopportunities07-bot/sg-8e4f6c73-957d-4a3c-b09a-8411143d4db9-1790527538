@@ -60,20 +60,20 @@ export function Hero() {
 
   return (
     <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 py-24 md:py-32 overflow-hidden min-h-[90vh] flex items-center">
-      {/* Diaporama animé avec haute qualité */}
+      {/* Diaporama animé avec haute qualité et meilleure visibilité */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
-            initial={{ opacity: 0, scale: 1.05 }}
+            initial={{ opacity: 0, scale: 1.1 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 1.2, ease: "easeInOut" }}
+            transition={{ duration: 1, ease: [0.43, 0.13, 0.23, 0.96] }}
             className="absolute inset-0"
           >
             <motion.div
-              animate={{ scale: 1.05 }}
-              transition={{ duration: 7, ease: "linear" }}
+              animate={{ scale: 1.08 }}
+              transition={{ duration: 8, ease: "linear" }}
               className="relative w-full h-full"
             >
               <Image 
@@ -82,90 +82,92 @@ export function Hero() {
                 fill
                 style={{ objectFit: "cover" }}
                 priority
-                quality={90}
-                className="opacity-40"
+                quality={95}
+                className="opacity-75 brightness-110 contrast-110"
               />
             </motion.div>
           </motion.div>
         </AnimatePresence>
       </div>
 
-      {/* Contrôles de navigation */}
+      {/* Contrôles de navigation avec meilleur contraste */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-primary/90 hover:bg-primary backdrop-blur-md p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-xl"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-blue-600/95 hover:bg-blue-700 backdrop-blur-sm p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-2xl border border-white/20"
         aria-label="Slide précédent"
       >
         <ChevronLeft className="h-6 w-6 text-white" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-primary/90 hover:bg-primary backdrop-blur-md p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-xl"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-blue-600/95 hover:bg-blue-700 backdrop-blur-sm p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-2xl border border-white/20"
         aria-label="Slide suivant"
       >
         <ChevronRight className="h-6 w-6 text-white" />
       </button>
 
-      {/* Indicateurs de slides */}
+      {/* Indicateurs de slides avec meilleur contraste */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`transition-all duration-300 rounded-full shadow-lg ${
+            className={`transition-all duration-300 rounded-full shadow-xl border border-white/30 ${
               index === currentSlide
-                ? "w-12 h-3 bg-primary"
-                : "w-3 h-3 bg-primary/40 hover:bg-primary/60"
+                ? "w-12 h-3 bg-blue-600"
+                : "w-3 h-3 bg-white/60 hover:bg-white/80"
             }`}
             aria-label={`Aller au slide ${index + 1}`}
           />
         ))}
       </div>
       
-      {/* Overlay optimisé pour meilleure visibilité */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/70 via-blue-50/60 to-white/70 z-[1]"></div>
+      {/* Overlay optimisé - plus léger pour meilleure visibilité des images */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40 z-[1]"></div>
       
-      {/* Motif de points subtil */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMzAsNTgsMTM4LDAuMDUpIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30 z-[2]"></div>
+      {/* Vignette subtile pour focus au centre */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.2)_100%)] z-[2]"></div>
       
-      {/* Effets lumineux subtils */}
-      <div className="absolute top-20 left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse z-[3]"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse z-[3]" style={{ animationDelay: "1.5s" }}></div>
+      {/* Effets lumineux dynamiques */}
+      <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl animate-pulse z-[3]"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-400/15 rounded-full blur-3xl animate-pulse z-[3]" style={{ animationDelay: "1.5s" }}></div>
       
       <div className="container relative z-10">
         <div className="max-w-5xl mx-auto text-center space-y-10">
           
-          {/* Titre principal premium */}
+          {/* Titre principal avec ombre plus forte */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="text-6xl md:text-8xl font-bold leading-tight text-white drop-shadow-[0_5px_5px_rgba(0,0,0,0.5)]"
+            transition={{ duration: 1, delay: 0.4, ease: [0.43, 0.13, 0.23, 0.96] }}
+            className="text-6xl md:text-8xl font-bold leading-tight text-white drop-shadow-[0_8px_12px_rgba(0,0,0,0.8)]"
           >
             {t("hero.titre")}
           </motion.h1>
           
-          {/* Sous-titre élégant */}
+          {/* Sous-titre avec fond semi-transparent pour meilleure lisibilité */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.6 }}
+            transition={{ duration: 1, delay: 0.6, ease: [0.43, 0.13, 0.23, 0.96] }}
             className="max-w-4xl mx-auto"
           >
-            <p className="text-xl md:text-2xl text-white font-medium leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-              {t("hero.soustitre")}
-            </p>
+            <div className="bg-black/30 backdrop-blur-md rounded-2xl px-8 py-6 border border-white/20">
+              <p className="text-xl md:text-2xl text-white font-medium leading-relaxed drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]">
+                {t("hero.soustitre")}
+              </p>
+            </div>
           </motion.div>
           
-          {/* Boutons premium */}
+          {/* Bouton premium avec animation */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.8 }}
+            transition={{ duration: 1, delay: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }}
             className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-6"
           >
             <Link href="#services">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-lg font-bold px-12 py-8 rounded-2xl shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105">
+              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-lg font-bold px-12 py-8 rounded-2xl shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105 border border-white/20">
                 Découvrir
                 <ArrowRight className="ml-3 h-6 w-6" />
               </Button>
