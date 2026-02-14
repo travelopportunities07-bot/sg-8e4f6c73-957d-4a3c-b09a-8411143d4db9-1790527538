@@ -442,12 +442,8 @@ export default function DevenirPartenaire() {
                 Des questions ? Contactez-nous directement :
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm">
-                <a href="mailto:partenaires@vivrenallemagne.com" className="text-blue-600 hover:text-blue-700 font-medium">
-                  partenaires@vivrenallemagne.com
-                </a>
-                <span className="text-slate-400">•</span>
-                <a href="tel:+33123456789" className="text-blue-600 hover:text-blue-700 font-medium">
-                  +33 1 23 45 67 89
+                <a href="mailto:contact@vivrenallemagne.de" className="text-blue-600 hover:text-blue-700 font-medium">
+                  contact@vivrenallemagne.de
                 </a>
               </div>
             </div>

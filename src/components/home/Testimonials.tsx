@@ -16,7 +16,7 @@ export function Testimonials() {
     {
       name: t("testimonials.testimonial2.nom"),
       role: t("testimonials.testimonial2.role"),
-      image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=400&fit=crop&q=80",
+      image: "/sarah-j.png",
       text: t("testimonials.testimonial2.texte")
     },
     {
@@ -28,7 +28,7 @@ export function Testimonials() {
     {
       name: t("testimonials.testimonial4.nom"),
       role: t("testimonials.testimonial4.role"),
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&q=80",
+      image: "/elena-m.png",
       text: t("testimonials.testimonial4.texte")
     }
   ];
