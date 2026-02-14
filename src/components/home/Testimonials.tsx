@@ -22,7 +22,7 @@ export function Testimonials() {
     {
       name: t("testimonials.testimonial3.nom"),
       role: t("testimonials.testimonial3.role"),
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&q=80",
+      image: "/david-l.png",
       text: t("testimonials.testimonial3.texte")
     },
     {
