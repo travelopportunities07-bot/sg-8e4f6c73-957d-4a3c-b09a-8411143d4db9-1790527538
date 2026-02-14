@@ -10,25 +10,25 @@ export function Testimonials() {
     {
       name: t("testimonials.testimonial1.nom"),
       role: t("testimonials.testimonial1.role"),
-      image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=400&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1531384441138-2736e62e0919?w=400&h=400&fit=crop&q=80",
       text: t("testimonials.testimonial1.texte")
     },
     {
       name: t("testimonials.testimonial2.nom"),
       role: t("testimonials.testimonial2.role"),
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1506863530036-1efeddceb993?w=400&h=400&fit=crop&q=80",
       text: t("testimonials.testimonial2.texte")
     },
     {
       name: t("testimonials.testimonial3.nom"),
       role: t("testimonials.testimonial3.role"),
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=400&fit=crop&q=80",
       text: t("testimonials.testimonial3.texte")
     },
     {
       name: t("testimonials.testimonial4.nom"),
       role: t("testimonials.testimonial4.role"),
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&q=80",
       text: t("testimonials.testimonial4.texte")
     }
   ];
