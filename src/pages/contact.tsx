@@ -25,7 +25,7 @@ export default function Contact() {
       <section className="relative py-20 bg-gradient-to-br from-deep-navy via-ocean to-sage overflow-hidden">
         <div className="absolute inset-0">
           <Image 
-            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902"
+            src="/Gemini_Generated_Image_7fq8687fq8687fq8.png"
             alt="Contact et communication"
             fill
             style={{ objectFit: "cover" }}
