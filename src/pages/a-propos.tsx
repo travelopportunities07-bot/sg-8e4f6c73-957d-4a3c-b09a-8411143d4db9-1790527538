@@ -42,7 +42,7 @@ export default function AProposPage() {
             </div>
             <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl animate-slide-right">
               <Image 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c"
+                src="/Gemini_Generated_Image_wqt55ywqt55ywqt5.png"
                 alt="Équipe collaborative internationale"
                 fill
                 style={{ objectFit: "cover" }}
