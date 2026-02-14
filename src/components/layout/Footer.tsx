@@ -151,6 +151,18 @@ export function Footer() {
                   </a>
                 </li>
                 <li className="flex items-start gap-3 text-gray-300 group">
+                  <Phone className="h-5 w-5 mt-0.5 flex-shrink-0 text-ocean group-hover:scale-110 transition-transform duration-200" />
+                  <div className="text-sm">
+                    <a 
+                      href="tel:+4917969090280" 
+                      className="hover:text-ocean transition-colors font-semibold"
+                    >
+                      📞 +49 179 6909 280
+                    </a>
+                    <p className="text-gray-500 text-xs mt-0.5">WhatsApp uniquement</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3 text-gray-300 group">
                   <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0 text-sage group-hover:scale-110 transition-transform duration-200" />
                   <span className="text-sm leading-relaxed">
                     71–75 Shelton Street<br />

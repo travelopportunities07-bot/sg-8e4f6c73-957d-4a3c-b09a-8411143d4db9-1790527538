@@ -277,9 +277,11 @@ export default function Contact() {
                         <Phone className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-heading font-bold text-deep-navy mb-2">Téléphone</h3>
-                        <p className="text-gray-600">À venir</p>
-                        <p className="text-sm text-gray-500 mt-1">Préférez l'email ou Calendly pour l'instant</p>
+                        <h3 className="font-heading font-bold text-deep-navy mb-2">Téléphone / WhatsApp</h3>
+                        <a href="tel:+4917969090280" className="text-gray-600 hover:text-ocean transition-colors font-semibold">
+                          📞 +49 179 6909 280
+                        </a>
+                        <p className="text-sm text-gray-500 mt-1">Uniquement via WhatsApp</p>
                       </div>
                     </div>
                   </CardContent>
