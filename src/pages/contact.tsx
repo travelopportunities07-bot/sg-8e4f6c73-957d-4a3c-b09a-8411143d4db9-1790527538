@@ -37,24 +37,24 @@ export default function Contact() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-white/30">
-              <Mail className="w-5 h-5 text-white" />
-              <span className="text-white font-medium">Parlons de Votre Projet</span>
+              <Mail className="w-5 h-5 text-deep-navy" />
+              <span className="text-deep-navy font-medium">Parlons de Votre Projet</span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-heading font-bold text-white mb-6">
+            <h1 className="text-5xl md:text-6xl font-heading font-bold text-deep-navy mb-6">
               Contactez-Nous
             </h1>
-            <p className="text-xl text-white/90 mb-8 leading-relaxed">
+            <p className="text-xl text-ocean mb-8 leading-relaxed">
               Que vous ayez des questions sur nos services, que vous souhaitiez discuter d'un projet spécifique, 
               ou simplement en savoir plus sur les opportunités internationales, notre équipe est là pour vous aider.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/30">
-                <Clock className="w-4 h-4 text-white" />
-                <span className="text-white text-sm">Réponse sous 24h</span>
+                <Clock className="w-4 h-4 text-deep-navy" />
+                <span className="text-deep-navy text-sm">Réponse sous 24h</span>
               </div>
               <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/30">
-                <Users className="w-4 h-4 text-white" />
-                <span className="text-white text-sm">Accompagnement personnalisé</span>
+                <Users className="w-4 h-4 text-deep-navy" />
+                <span className="text-deep-navy text-sm">Accompagnement personnalisé</span>
               </div>
             </div>
           </div>
