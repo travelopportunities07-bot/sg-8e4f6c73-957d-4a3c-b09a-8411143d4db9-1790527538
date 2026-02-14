@@ -79,24 +79,24 @@ const translations = {
       titre: "Ce Que Disent Nos Clients",
       soustitre: "Découvrez les expériences de ceux qui ont réalisé leur rêve avec nous",
       testimonial1: {
-        nom: "Aïssatou Diallo",
-        role: "Volontariat en Allemagne",
-        texte: "Grâce à VivrEnAllemagne, j'ai pu réaliser mon rêve de volontariat en Allemagne. L'accompagnement a été exceptionnel du début à la fin!"
+        nom: "Marcelle K.",
+        role: "Volontariat (FSJ/BFD)",
+        texte: "Grâce à l'accompagnement de VivrEnAllemagne, j'ai trouvé une mission de volontariat qui me correspond parfaitement. Leur aide pour le visa et le contrat a été rapide et sans faille."
       },
       testimonial2: {
-        nom: "Kevin N'Guessan",
-        role: "Au Pair aux États-Unis",
-        texte: "Mon expérience Au Pair aux États-Unis a été incroyable. L'équipe m'a aidé à trouver la famille parfaite et à préparer tous les documents."
+        nom: "Sarah J.",
+        role: "Programme Au-Pair",
+        texte: "Je craignais les démarches administratives, mais l'équipe m'a guidée pas à pas. Je vis aujourd'hui une expérience culturelle incroyable en toute sécurité."
       },
       testimonial3: {
-        nom: "Mariam Traoré",
-        role: "Formation en Autriche",
-        texte: "J'ai obtenu une place en formation professionnelle en Autriche grâce à leur accompagnement. Le processus était simple et bien organisé."
+        nom: "David L.",
+        role: "Formation Professionnelle (Ausbildung)",
+        texte: "VivrEnAllemagne m'a aidé à décrocher une formation en alternance en soins infirmiers. Un service premium pour tous ceux qui veulent construire un avenir solide en Allemagne."
       },
       testimonial4: {
-        nom: "Samuel Kouamé",
-        role: "Études en Irlande",
-        texte: "Partir étudier en Irlande était un grand pas. Grâce à leur soutien, j'ai pu surmonter tous les obstacles et commencer une nouvelle vie."
+        nom: "Elena M.",
+        role: "Études Universitaires",
+        texte: "De la vérification de mes diplômes à l'admission à l'université, tout a été géré avec un professionnalisme exemplaire. Je recommande vivement leurs services !"
       }
     },
     cta: {
@@ -186,24 +186,24 @@ const translations = {
       titre: "Was Unsere Kunden Sagen",
       soustitre: "Entdecken Sie die Erfahrungen derer, die mit uns ihren Traum verwirklicht haben",
       testimonial1: {
-        nom: "Aïssatou Diallo",
-        role: "Freiwilligendienst in Deutschland",
-        texte: "Dank VivrEnAllemagne konnte ich meinen Traum von Freiwilligenarbeit in Deutschland verwirklichen. Die Begleitung war von Anfang bis Ende außergewöhnlich!"
+        nom: "Marcelle K.",
+        role: "Freiwilligendienst (FSJ/BFD)",
+        texte: "Dank der Begleitung von VivrEnAllemagne habe ich eine Freiwilligenmission gefunden, die perfekt zu mir passt. Ihre Hilfe bei Visum und Vertrag war schnell und einwandfrei."
       },
       testimonial2: {
-        nom: "Kevin N'Guessan",
-        role: "Au Pair in den USA",
-        texte: "Meine Au-Pair-Erfahrung in den USA war unglaublich. Das Team half mir, die perfekte Familie zu finden und alle Dokumente vorzubereiten."
+        nom: "Sarah J.",
+        role: "Au-Pair-Programm",
+        texte: "Ich hatte Angst vor den administrativen Schritten, aber das Team führte mich Schritt für Schritt. Ich erlebe heute eine unglaubliche kulturelle Erfahrung in völliger Sicherheit."
       },
       testimonial3: {
-        nom: "Mariam Traoré",
-        role: "Ausbildung in Österreich",
-        texte: "Ich bekam einen Platz in einer Berufsausbildung in Österreich dank ihrer Begleitung. Der Prozess war einfach und gut organisiert."
+        nom: "David L.",
+        role: "Berufsausbildung (Ausbildung)",
+        texte: "VivrEnAllemagne hat mir geholfen, eine duale Ausbildung in der Krankenpflege zu erhalten. Ein Premium-Service für alle, die eine solide Zukunft in Deutschland aufbauen wollen."
       },
       testimonial4: {
-        nom: "Samuel Kouamé",
-        role: "Studium in Irland",
-        texte: "Nach Irland zu gehen, um zu studieren, war ein großer Schritt. Dank ihrer Unterstützung konnte ich alle Hindernisse überwinden und ein neues Leben beginnen."
+        nom: "Elena M.",
+        role: "Hochschulstudium",
+        texte: "Von der Überprüfung meiner Diplome bis zur Universitätszulassung wurde alles mit beispielhafter Professionalität verwaltet. Ich empfehle ihre Dienste wärmstens!"
       }
     },
     cta: {
