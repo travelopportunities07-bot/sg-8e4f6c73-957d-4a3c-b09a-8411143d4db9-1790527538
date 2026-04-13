@@ -145,18 +145,16 @@ export function Hero() {
             {t("hero.titre")}
           </motion.h1>
           
-          {/* Sous-titre avec fond semi-transparent pour meilleure lisibilité */}
+          {/* Sous-titre sans fond */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6, ease: [0.43, 0.13, 0.23, 0.96] }}
             className="max-w-4xl mx-auto"
           >
-            <div className="bg-black/30 backdrop-blur-md rounded-2xl px-8 py-6 border border-white/20">
-              <p className="text-xl md:text-2xl text-white font-medium leading-relaxed drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]">
-                {t("hero.soustitre")}
-              </p>
-            </div>
+            <p className="text-xl md:text-2xl text-white font-medium leading-relaxed drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)]">
+              {t("hero.soustitre")}
+            </p>
           </motion.div>
           
           {/* Bouton premium avec animation */}
