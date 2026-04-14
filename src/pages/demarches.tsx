@@ -424,11 +424,20 @@ export default function DemarchesPage() {
                       </li>
                     ))}
                   </ul>
-                  <Link href="/rendez-vous">
-                    <Button className={`w-full ${tarif.populaire ? 'bg-green-500 hover:bg-green-600' : 'bg-blue-900 hover:bg-blue-800'}`}>
-                      {index === 0 ? 'Réserver' : 'Choisir cette formule'}
-                    </Button>
-                  </Link>
+                  <Button 
+                    className={`w-full ${tarif.populaire ? 'bg-green-500 hover:bg-green-600' : 'bg-blue-900 hover:bg-blue-800'}`}
+                    onClick={() => {
+                      const paymentLinks = [
+                        'https://buy.stripe.com/8x23cn1P9gJAeJt7Jt1sQ02', // Consultation initiale
+                        'https://buy.stripe.com/8x2fZ91P91OG6cXfbV1sQ03', // Standard
+                        'https://buy.stripe.com/00w4gr9hB0KCeJte7R1sQ04', // Premium
+                        'https://buy.stripe.com/8x2bITeBVfFwbxhfbV1sQ05'  // VIP
+                      ];
+                      window.location.href = paymentLinks[index];
+                    }}
+                  >
+                    {index === 0 ? 'Réserver' : 'Choisir cette formule'}
+                  </Button>
                 </div>
               </Card>
             ))}
