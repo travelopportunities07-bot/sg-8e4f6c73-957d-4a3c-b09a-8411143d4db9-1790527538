@@ -71,11 +71,20 @@ export default function GuideReussirAllemagne() {
         </div>
       </section>
 
+      {/* Bande défilante verte */}
+      <div className="bg-gradient-to-r from-green-600 to-emerald-600 py-3 overflow-hidden">
+        <div className="animate-scroll whitespace-nowrap">
+          <span className="inline-block px-8 text-white font-semibold">
+            ✅ Guide complet • 🎯 Stratégies éprouvées • 💼 Conseils pratiques • 🚀 Résultats rapides • ✅ Guide complet • 🎯 Stratégies éprouvées • 💼 Conseils pratiques • 🚀 Résultats rapides
+          </span>
+        </div>
+      </div>
+
       {/* Problème & Douleur */}
       <section className="py-20 bg-gray-900 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
               Vous êtes arrivé en Allemagne avec des <span className="text-[#D4AF37]">rêves</span>,
               <br />mais la réalité vous rattrape...
             </h2>
@@ -109,11 +118,20 @@ export default function GuideReussirAllemagne() {
         </div>
       </section>
 
+      {/* Bande défilante verte */}
+      <div className="bg-gradient-to-r from-green-600 to-emerald-600 py-3 overflow-hidden">
+        <div className="animate-scroll whitespace-nowrap">
+          <span className="inline-block px-8 text-white font-semibold">
+            ✅ Guide complet • 🎯 Stratégies éprouvées • 💼 Conseils pratiques • 🚀 Résultats rapides • ✅ Guide complet • 🎯 Stratégies éprouvées • 💼 Conseils pratiques • 🚀 Résultats rapides
+          </span>
+        </div>
+      </div>
+
       {/* Solution */}
       <section className="py-20 bg-gradient-to-br from-gray-800 to-gray-900 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-white">
               Ce que vous allez <span className="text-green-400">apprendre</span>
             </h2>
             <p className="text-xl text-center text-gray-300 mb-12">
@@ -184,10 +202,19 @@ export default function GuideReussirAllemagne() {
         </div>
       </section>
 
+      {/* Bande défilante verte */}
+      <div className="bg-gradient-to-r from-green-600 to-emerald-600 py-3 overflow-hidden">
+        <div className="animate-scroll whitespace-nowrap">
+          <span className="inline-block px-8 text-white font-semibold">
+            ✅ Guide complet • 🎯 Stratégies éprouvées • 💼 Conseils pratiques • 🚀 Résultats rapides • ✅ Guide complet • 🎯 Stratégies éprouvées • 💼 Conseils pratiques • 🚀 Résultats rapides
+          </span>
+        </div>
+      </div>
+
       {/* Témoignages */}
       <section className="py-20 bg-gray-900 text-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
             Ce que disent nos <span className="text-[#D4AF37]">clients</span>
           </h2>
 
@@ -255,11 +282,20 @@ export default function GuideReussirAllemagne() {
         </div>
       </section>
 
+      {/* Bande défilante verte */}
+      <div className="bg-gradient-to-r from-green-600 to-emerald-600 py-3 overflow-hidden">
+        <div className="animate-scroll whitespace-nowrap">
+          <span className="inline-block px-8 text-white font-semibold">
+            ✅ Guide complet • 🎯 Stratégies éprouvées • 💼 Conseils pratiques • 🚀 Résultats rapides • ✅ Guide complet • 🎯 Stratégies éprouvées • 💼 Conseils pratiques • 🚀 Résultats rapides
+          </span>
+        </div>
+      </div>
+
       {/* FAQ */}
       <section className="py-20 bg-gradient-to-br from-gray-800 to-gray-900 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
               Questions <span className="text-green-400">Fréquentes</span>
             </h2>
 
@@ -288,6 +324,15 @@ export default function GuideReussirAllemagne() {
         </div>
       </section>
 
+      {/* Bande défilante verte */}
+      <div className="bg-gradient-to-r from-green-600 to-emerald-600 py-3 overflow-hidden">
+        <div className="animate-scroll whitespace-nowrap">
+          <span className="inline-block px-8 text-white font-semibold">
+            ✅ Guide complet • 🎯 Stratégies éprouvées • 💼 Conseils pratiques • 🚀 Résultats rapides • ✅ Guide complet • 🎯 Stratégies éprouvées • 💼 Conseils pratiques • 🚀 Résultats rapides
+          </span>
+        </div>
+      </div>
+
       {/* Réassurance */}
       <section className="py-12 bg-gray-900 text-white border-y border-gray-800">
         <div className="container mx-auto px-4">
@@ -308,18 +353,18 @@ export default function GuideReussirAllemagne() {
         </div>
       </section>
 
-      {/* Checkout Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+      {/* Checkout Section - FOND BLANC */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
-            <div className="bg-gray-800 rounded-2xl border border-green-500/30 p-8 shadow-2xl">
-              <h2 className="text-3xl font-bold mb-8 text-center">Récapitulatif de votre commande</h2>
+            <div className="bg-gray-50 rounded-2xl border-2 border-gray-200 p-8 shadow-xl">
+              <h2 className="text-3xl font-bold mb-8 text-center text-gray-900">Récapitulatif de votre commande</h2>
 
-              <div className="bg-gray-700/50 p-6 rounded-xl mb-6">
+              <div className="bg-white p-6 rounded-xl mb-6 border border-gray-200">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-green-400">E-book "Réussir son intégration en Allemagne"</h3>
-                    <p className="text-sm text-gray-400 mt-1">Format PDF - Lecture immédiate sur mobile/PC</p>
+                    <h3 className="text-xl font-bold text-green-600">E-book "Réussir son intégration en Allemagne"</h3>
+                    <p className="text-sm text-gray-600 mt-1">Format PDF - Lecture immédiate sur mobile/PC</p>
                   </div>
                   <div className="text-2xl font-bold text-[#D4AF37]">19,97 €</div>
                 </div>
@@ -333,7 +378,7 @@ export default function GuideReussirAllemagne() {
                   height={80}
                   className="mx-auto"
                 />
-                <p className="text-center text-sm text-gray-400 mt-2">Paiement sécurisé et vérifié avec Stripe</p>
+                <p className="text-center text-sm text-gray-600 mt-2">Paiement sécurisé et vérifié avec Stripe</p>
               </div>
 
               <Button
@@ -343,7 +388,7 @@ export default function GuideReussirAllemagne() {
                 🔒 PAYER MAINTENANT - 19,97 €
               </Button>
 
-              <p className="text-center text-xs text-gray-400 mt-4">
+              <p className="text-center text-xs text-gray-500 mt-4">
                 Paiement sécurisé par Stripe. Vos données sont protégées.
               </p>
             </div>
@@ -351,52 +396,20 @@ export default function GuideReussirAllemagne() {
         </div>
       </section>
 
-      {/* Page de téléchargement simulée */}
-      <section className="py-20 bg-gradient-to-br from-green-900 via-emerald-800 to-green-900 text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="text-6xl mb-6">🎉</div>
-            <h2 className="text-4xl font-bold mb-6">
-              Félicitations !
-              <br />
-              <span className="text-green-300">Votre nouvelle vie en Allemagne commence ici.</span>
-            </h2>
-
-            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 mb-8">
-              <Button
-                size="lg"
-                className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-xl py-8 rounded-xl shadow-2xl mb-6"
-              >
-                📥 TÉLÉCHARGER L'E-BOOK ICI (PDF)
-              </Button>
-
-              <div className="text-left space-y-4 text-gray-200">
-                <h3 className="font-bold text-lg text-white mb-4">Instructions :</h3>
-                <div className="flex gap-3">
-                  <span className="text-green-400 font-bold">1.</span>
-                  <p>Enregistrez le fichier sur votre téléphone.</p>
-                </div>
-                <div className="flex gap-3">
-                  <span className="text-green-400 font-bold">2.</span>
-                  <p>Commencez par le Module 2 (Démarches Administratives) pour sécuriser vos papiers.</p>
-                </div>
-                <div className="flex gap-3">
-                  <span className="text-green-400 font-bold">3.</span>
-                  <p>Rejoignez notre grande Communauté "Réussir en Allemagne" pour être informé de nos offres et divers programmes.</p>
-                </div>
-              </div>
-            </div>
-
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-2 border-white text-white hover:bg-white hover:text-green-900 px-8"
-            >
-              Rejoindre la communauté
-            </Button>
-          </div>
-        </div>
-      </section>
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .animate-scroll {
+          animation: scroll 20s linear infinite;
+          display: inline-block;
+        }
+      `}</style>
     </Layout>
   );
 }
