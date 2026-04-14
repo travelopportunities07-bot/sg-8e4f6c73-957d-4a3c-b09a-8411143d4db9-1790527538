@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Mail, Building2, User, Phone, MessageSquare, CheckCircle2, Briefcase, Calendar } from "lucide-react";
+import Image from "next/image";
 
 export default function DevenirPartenaire() {
   const { t } = useLanguage();
@@ -130,6 +131,16 @@ export default function DevenirPartenaire() {
     <Layout>
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
         <section className="relative py-20 px-4 overflow-hidden">
+          <div className="absolute inset-0">
+            <Image 
+              src="/partner_werden.jpg"
+              alt="Devenir partenaire"
+              fill
+              style={{ objectFit: "cover" }}
+              priority
+              className="opacity-10"
+            />
+          </div>
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100 via-transparent to-transparent opacity-40"></div>
           
           <div className="max-w-4xl mx-auto relative z-10">

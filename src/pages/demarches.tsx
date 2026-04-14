@@ -5,6 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import Link from "next/link";
 import { FileText, CheckCircle, Users, Headphones, ArrowRight, ClipboardCheck, Globe, BookOpen, Phone } from "lucide-react";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function DemarchesPage() {
   const { t } = useLanguage();
@@ -228,7 +229,17 @@ export default function DemarchesPage() {
     <Layout>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-24">
-        <div className="container mx-auto px-4">
+        <div className="absolute inset-0">
+          <Image 
+            src="/de_marches_administratives.jpg"
+            alt="Démarches administratives en Allemagne"
+            fill
+            style={{ objectFit: "cover" }}
+            priority
+            className="opacity-20"
+          />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-block bg-green-500 text-white px-6 py-2 rounded-full text-sm font-semibold mb-6">
               Accompagnement complet
@@ -530,7 +541,7 @@ export default function DemarchesPage() {
                   </div>
                   <div>
                     <p className="font-semibold text-blue-900 mb-1">Par email</p>
-                    <p className="text-gray-700">successprocompany@gmail.com</p>
+                    <p className="text-gray-700">contact@vivrenallemagne.de</p>
                   </div>
                 </div>
 
