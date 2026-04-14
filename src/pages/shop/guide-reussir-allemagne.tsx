@@ -37,6 +37,7 @@ export default function GuideReussirAllemagne() {
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-lg px-8 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all"
+                  onClick={() => window.location.href = 'https://buy.stripe.com/3cI00b51ldxo7h16Fp1sQ06'}
                 >
                   OBTENIR MON GUIDE MAINTENANT - 19,97 €
                 </Button>
@@ -194,6 +195,7 @@ export default function GuideReussirAllemagne() {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-10 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all"
+                onClick={() => window.location.href = 'https://buy.stripe.com/3cI00b51ldxo7h16Fp1sQ06'}
               >
                 JE VEUX CE GUIDE MAINTENANT - 19,97 €
               </Button>
@@ -384,6 +386,7 @@ export default function GuideReussirAllemagne() {
               <Button
                 size="lg"
                 className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-xl py-8 rounded-xl shadow-2xl transform hover:scale-105 transition-all"
+                onClick={() => window.location.href = 'https://buy.stripe.com/3cI00b51ldxo7h16Fp1sQ06'}
               >
                 🔒 PAYER MAINTENANT - 19,97 €
               </Button>
