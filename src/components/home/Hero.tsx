@@ -8,20 +8,24 @@ import { useState, useEffect } from "react";
 
 const slides = [
   {
-    image: "/hero-vivrenallemagne.png",
-    alt: "VivrEnAllemagne - Votre guide pour vivre, travailler et étudier en Allemagne"
+    type: "image",
+    src: "/1a.jpg",
+    alt: "VivrEnAllemagne - Votre guide pour réussir en Allemagne"
   },
   {
-    image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1920&q=90",
-    alt: "Brandenburg Gate Berlin - Symbole de l'Allemagne"
+    type: "image",
+    src: "/1b.jpg",
+    alt: "Opportunités en Allemagne"
   },
   {
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&q=90",
-    alt: "Étudiants internationaux en Allemagne"
+    type: "video",
+    src: "/video1.mp4",
+    alt: "Découvrez la vie en Allemagne"
   },
   {
-    image: "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=1920&q=90",
-    alt: "Opportunités professionnelles en Allemagne"
+    type: "image",
+    src: "/1h.jpg",
+    alt: "Intégration réussie en Allemagne"
   }
 ];
 
@@ -76,15 +80,26 @@ export function Hero() {
               transition={{ duration: 8, ease: "linear" }}
               className="relative w-full h-full"
             >
-              <Image 
-                src={slides[currentSlide].image}
-                alt={slides[currentSlide].alt}
-                fill
-                style={{ objectFit: "cover" }}
-                priority
-                quality={95}
-                className="opacity-75 brightness-110 contrast-110"
-              />
+              {slides[currentSlide].type === "video" ? (
+                <video
+                  src={slides[currentSlide].src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover opacity-75 brightness-110 contrast-110"
+                />
+              ) : (
+                <Image 
+                  src={slides[currentSlide].src}
+                  alt={slides[currentSlide].alt}
+                  fill
+                  style={{ objectFit: "cover" }}
+                  priority
+                  quality={95}
+                  className="opacity-75 brightness-110 contrast-110"
+                />
+              )}
             </motion.div>
           </motion.div>
         </AnimatePresence>

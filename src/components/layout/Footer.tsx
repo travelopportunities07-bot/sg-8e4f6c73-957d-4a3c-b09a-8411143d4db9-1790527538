@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin, Globe, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -34,13 +35,16 @@ export function Footer() {
           <div className="lg:col-span-2 space-y-6 animate-fade-in">
             <div className="flex items-center space-x-3 group">
               <div className="relative">
-                {/* Drapeau allemand stylisé */}
-                <div className="w-10 h-10 rounded-lg overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-110">
-                  <div className="w-full h-1/3 bg-[#000000]"></div>
-                  <div className="w-full h-1/3 bg-[#DD0000]"></div>
-                  <div className="w-full h-1/3 bg-[#FFCE00]"></div>
+                <div className="w-12 h-12 rounded-full overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                  <Image
+                    src="/logo.jpeg"
+                    alt="VivrEnAllemagne Logo"
+                    width={48}
+                    height={48}
+                    className="object-cover"
+                  />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-red-600/20 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-red-600/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <div className="text-2xl font-bold font-heading flex flex-row items-baseline">
                 <span className="text-white">VivrEn</span>
