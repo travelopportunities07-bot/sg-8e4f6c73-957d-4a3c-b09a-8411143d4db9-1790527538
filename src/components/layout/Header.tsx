@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -27,8 +28,14 @@ export function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="relative w-10 h-10 overflow-hidden rounded-full border-2 border-gray-200 group-hover:border-[#D4AF37] transition-colors">
-              <div className="absolute inset-0 bg-gradient-to-br from-black via-red-600 to-yellow-400"></div>
+            <div className="relative w-10 h-10 overflow-hidden rounded-full">
+              <Image
+                src="/logo.jpeg"
+                alt="VivrEnAllemagne Logo"
+                width={40}
+                height={40}
+                className="object-cover"
+              />
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
               VivrEnAllemagne
