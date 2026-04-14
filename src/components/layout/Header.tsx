@@ -181,6 +181,46 @@ export function Header() {
               Contact
             </Link>
 
+            {/* Shop Menu */}
+            <div
+              className="relative group"
+              onMouseEnter={() => setOpenSubmenu("shop")}
+              onMouseLeave={() => setOpenSubmenu(null)}
+            >
+              <button className="flex items-center space-x-1 text-gray-700 hover:text-[#D4AF37] transition-colors font-medium">
+                <span>Shop</span>
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              {openSubmenu === "shop" && (
+                <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
+                  <Link
+                    href="/shop/guide-reussir-allemagne"
+                    className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#D4AF37] transition-colors"
+                  >
+                    📘 Guide "Réussir en Allemagne"
+                  </Link>
+                  <Link
+                    href="/shop/travail-integration"
+                    className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#D4AF37] transition-colors"
+                  >
+                    💼 Travail & Intégration
+                  </Link>
+                  <Link
+                    href="/shop/finances-vie-pratique"
+                    className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#D4AF37] transition-colors"
+                  >
+                    💰 Finances & Vie pratique
+                  </Link>
+                  <Link
+                    href="/shop/webinaire-conseils"
+                    className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#D4AF37] transition-colors"
+                  >
+                    🎓 Webinaire / Conseils en Intégration
+                  </Link>
+                </div>
+              )}
+            </div>
+
             <Link href="/devenir-partenaire" className="text-gray-700 hover:text-[#D4AF37] transition-colors font-medium">
               Devenir Partenaire
             </Link>
@@ -390,6 +430,53 @@ export function Header() {
             >
               Contact
             </Link>
+
+            {/* Mobile Shop */}
+            <div>
+              <button
+                onClick={() => toggleMobileSubmenu("shop")}
+                className="flex items-center justify-between w-full py-2 text-gray-700 hover:text-[#D4AF37] transition-colors"
+              >
+                <span>Shop</span>
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform ${
+                    openMobileSubmenu === "shop" ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {openMobileSubmenu === "shop" && (
+                <div className="ml-4 mt-2 space-y-2">
+                  <Link
+                    href="/shop/guide-reussir-allemagne"
+                    className="block py-2 text-gray-600 hover:text-[#D4AF37] transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    📘 Guide "Réussir en Allemagne"
+                  </Link>
+                  <Link
+                    href="/shop/travail-integration"
+                    className="block py-2 text-gray-600 hover:text-[#D4AF37] transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    💼 Travail & Intégration
+                  </Link>
+                  <Link
+                    href="/shop/finances-vie-pratique"
+                    className="block py-2 text-gray-600 hover:text-[#D4AF37] transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    💰 Finances & Vie pratique
+                  </Link>
+                  <Link
+                    href="/shop/webinaire-conseils"
+                    className="block py-2 text-gray-600 hover:text-[#D4AF37] transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    🎓 Webinaire / Conseils en Intégration
+                  </Link>
+                </div>
+              )}
+            </div>
 
             <Link
               href="/devenir-partenaire"
