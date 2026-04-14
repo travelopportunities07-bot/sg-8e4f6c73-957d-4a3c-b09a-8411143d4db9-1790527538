@@ -11,7 +11,7 @@ interface SEOProps {
 export function SEOElements({
   title = "VivrEnAllemagne",
   description,
-  image,
+  image = "/og-image.png",
   url,
 }: SEOProps) {
   return (
