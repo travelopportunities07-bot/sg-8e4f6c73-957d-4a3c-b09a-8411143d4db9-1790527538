@@ -72,12 +72,12 @@ export default function ReussirProjetVoyageAllemagne() {
                   </div>
 
                   {/* CTA Principal */}
-                  <Button
-                    onClick={scrollToOffer}
-                    className="w-full sm:w-auto bg-[#F5A623] hover:bg-[#F5A623]/90 text-[#2A3F54] font-bold text-lg px-8 py-6 rounded-lg transition-all hover:scale-105"
+                  <a
+                    href="https://buy.stripe.com/9B6dR1alF1OGgRB3td1sQ07"
+                    className="inline-block bg-[#F5A623] text-[#2A3F54] font-bold text-lg px-8 py-4 rounded-lg hover:scale-105 transition-transform shadow-lg"
                   >
                     👉 Je veux mon Guide — Accès Immédiat à 397€
-                  </Button>
+                  </a>
                 </div>
 
                 {/* Colonne droite - Visuel */}
@@ -218,14 +218,12 @@ export default function ReussirProjetVoyageAllemagne() {
             </div>
 
             {/* CTA */}
-            <div className="text-center">
-              <Button
-                onClick={scrollToOffer}
-                className="bg-[#F5A623] hover:bg-[#F5A623]/90 text-[#2A3F54] font-bold text-lg px-8 py-6 rounded-lg transition-all hover:scale-105"
-              >
-                👉 Je veux mon Guide — Accès Immédiat à 397€
-              </Button>
-            </div>
+            <a
+              href="https://buy.stripe.com/9B6dR1alF1OGgRB3td1sQ07"
+              className="inline-block bg-[#F5A623] text-[#2A3F54] font-bold text-lg px-8 py-4 rounded-lg hover:scale-105 transition-transform shadow-lg"
+            >
+              👉 Je veux mon Guide — Accès Immédiat à 397€
+            </a>
           </div>
         </section>
 
@@ -356,14 +354,12 @@ export default function ReussirProjetVoyageAllemagne() {
             </div>
 
             {/* CTA */}
-            <div className="text-center">
-              <Button
-                onClick={scrollToOffer}
-                className="bg-[#F5A623] hover:bg-[#F5A623]/90 text-[#2A3F54] font-bold text-lg px-8 py-6 rounded-lg transition-all hover:scale-105"
-              >
-                👉 Je choisis la Méthode Pro — Télécharger Maintenant
-              </Button>
-            </div>
+            <a
+              href="https://buy.stripe.com/9B6dR1alF1OGgRB3td1sQ07"
+              className="inline-block bg-[#F5A623] text-[#2A3F54] font-bold text-lg px-8 py-4 rounded-lg hover:scale-105 transition-transform shadow-lg"
+            >
+              👉 Je choisis la Méthode Pro — Télécharger Maintenant
+            </a>
           </div>
         </section>
 
@@ -455,8 +451,8 @@ export default function ReussirProjetVoyageAllemagne() {
               
               {/* CTA Principal */}
               <a
-                href={stripePaymentLink}
-                className="inline-block bg-[#F5A623] hover:bg-[#F5A623]/90 text-[#2A3F54] font-bold text-xl px-12 py-6 rounded-lg transition-all hover:scale-105 shadow-lg"
+                href="https://buy.stripe.com/9B6dR1alF1OGgRB3td1sQ07"
+                className="inline-block bg-[#F5A623] text-[#2A3F54] font-bold text-xl px-12 py-5 rounded-lg hover:scale-105 transition-transform shadow-xl"
               >
                 👉 Je veux mon Guide — Accès Immédiat à 397€
               </a>
