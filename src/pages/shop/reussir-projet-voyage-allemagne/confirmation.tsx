@@ -151,22 +151,6 @@ export default function ConfirmationGuideAllemagne() {
             </div>
           </Card>
 
-          {/* Card d'assistance */}
-          <Card className="bg-white/10 backdrop-blur border-white/20 p-8 rounded-xl text-center">
-            <Mail className="w-12 h-12 text-[#F5A623] mx-auto mb-4" />
-            <h3 className="text-xl font-bold text-white mb-3">
-              Besoin d'aide ?
-            </h3>
-            <p className="text-white/90 mb-6">
-              Notre équipe est là pour vous accompagner tout au long de votre parcours. N'hésitez pas à nous contacter si vous avez des questions.
-            </p>
-            <Link href="/contact">
-              <Button className="bg-[#F5A623] hover:bg-[#F5A623]/90 text-[#2A3F54] font-bold">
-                Contactez-nous
-              </Button>
-            </Link>
-          </Card>
-
           {/* Retour à l'accueil */}
           <div className="text-center mt-8">
             <Link href="/" className="text-white/80 hover:text-white underline">
