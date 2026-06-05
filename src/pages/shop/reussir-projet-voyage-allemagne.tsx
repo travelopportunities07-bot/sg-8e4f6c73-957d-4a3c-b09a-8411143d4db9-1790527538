@@ -135,11 +135,11 @@ export default function ReussirProjetVoyageAllemagne() {
                 {/* CTA Button */}
                 <a
                   href="https://buy.stripe.com/28E5kv65palc1WHbZJ1sQ0g"
-                  className="inline-block bg-[#F5A623] text-[#2A3F54] font-bold text-lg px-8 py-4 rounded-lg hover:scale-105 transition-transform shadow-lg"
+                  className="inline-block bg-[#F5A623] text-[#2A3F54] font-bold text-base md:text-lg px-6 md:px-8 py-4 rounded-lg hover:scale-105 transition-transform shadow-lg w-full md:w-auto"
                 >
-                  <div className="flex flex-col items-center">
-                    <span className="text-sm line-through text-[#2A3F54]/60">37,97 €</span>
-                    <span>👉 Je veux mon Guide — 19,97 €</span>
+                  <div className="flex flex-col items-center gap-1">
+                    <span className="text-xs md:text-sm line-through text-[#2A3F54]/60">37,97 €</span>
+                    <span className="text-base md:text-lg">👉 Je veux mon Guide — 19,97 €</span>
                   </div>
                 </a>
               </div>
@@ -290,11 +290,11 @@ export default function ReussirProjetVoyageAllemagne() {
             <div className="text-center">
               <a
                 href="https://buy.stripe.com/28E5kv65palc1WHbZJ1sQ0g"
-                className="inline-block bg-[#F5A623] text-[#2A3F54] font-bold text-lg px-8 py-4 rounded-lg hover:scale-105 transition-transform shadow-lg"
+                className="inline-block bg-[#F5A623] text-[#2A3F54] font-bold text-base md:text-lg px-6 md:px-8 py-4 rounded-lg hover:scale-105 transition-transform shadow-lg w-full md:w-auto"
               >
-                <div className="flex flex-col items-center">
-                  <span className="text-sm line-through text-[#2A3F54]/60">37,97 €</span>
-                  <span>👉 Je veux mon Guide — 19,97 €</span>
+                <div className="flex flex-col items-center gap-1">
+                  <span className="text-xs md:text-sm line-through text-[#2A3F54]/60">37,97 €</span>
+                  <span className="text-base md:text-lg">👉 Je veux mon Guide — 19,97 €</span>
                 </div>
               </a>
             </div>
@@ -423,11 +423,11 @@ export default function ReussirProjetVoyageAllemagne() {
             <div className="text-center mt-12">
               <a
                 href="https://buy.stripe.com/28E5kv65palc1WHbZJ1sQ0g"
-                className="inline-block bg-[#F5A623] text-[#2A3F54] font-bold text-lg px-8 py-4 rounded-lg hover:scale-105 transition-transform shadow-lg"
+                className="inline-block bg-[#F5A623] text-[#2A3F54] font-bold text-base md:text-lg px-6 md:px-8 py-4 rounded-lg hover:scale-105 transition-transform shadow-lg w-full md:w-auto"
               >
-                <div className="flex flex-col items-center">
-                  <span className="text-sm line-through text-[#2A3F54]/60">37,97 €</span>
-                  <span>👉 Je profite de l'offre - 19,97 €</span>
+                <div className="flex flex-col items-center gap-1">
+                  <span className="text-xs md:text-sm line-through text-[#2A3F54]/60">37,97 €</span>
+                  <span className="text-base md:text-lg">👉 Je profite de l'offre - 19,97 €</span>
                 </div>
               </a>
             </div>
@@ -527,31 +527,31 @@ export default function ReussirProjetVoyageAllemagne() {
             {/* Price */}
             <div className="text-center mb-8">
               <div className="inline-block">
-                <p className="text-2xl text-white/60 line-through mb-2">37,97€</p>
-                <p className="text-6xl md:text-7xl font-bold text-[#F5A623] mb-2">19,97€</p>
-                <p className="text-lg text-white/80">Accès à vie + mises à jour gratuites incluses</p>
+                <p className="text-xl md:text-2xl text-white/60 line-through mb-2">37,97€</p>
+                <p className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#F5A623] mb-2">19,97€</p>
+                <p className="text-base md:text-lg text-white/80">Accès à vie + mises à jour gratuites incluses</p>
               </div>
             </div>
 
             {/* Payment Options */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 mb-8">
               <div className="flex flex-col items-center space-y-6">
                 <div className="text-center">
-                  <p className="text-white font-semibold mb-4">Paiement sécurisé : Visa, Mastercard, Amex — via Stripe / PayPal</p>
+                  <p className="text-white font-semibold mb-4 text-sm md:text-base">Paiement sécurisé : Visa, Mastercard, Amex — via Stripe / PayPal</p>
                   <img 
                     src="/payment_trustbadge.png" 
                     alt="Moyens de paiement sécurisés" 
-                    className="mx-auto h-16 w-auto"
+                    className="mx-auto h-12 md:h-16 w-auto"
                   />
                 </div>
                 
                 <a
                   href="https://buy.stripe.com/28E5kv65palc1WHbZJ1sQ0g"
-                  className="w-full max-w-md bg-[#F5A623] text-[#2A3F54] font-bold text-xl px-12 py-5 rounded-lg hover:scale-105 transition-transform shadow-xl text-center"
+                  className="w-full max-w-md bg-[#F5A623] text-[#2A3F54] font-bold text-lg md:text-xl px-8 md:px-12 py-4 md:py-5 rounded-lg hover:scale-105 transition-transform shadow-xl text-center"
                 >
-                  <div className="flex flex-col items-center">
-                    <span className="text-sm line-through text-[#2A3F54]/60">37,97 €</span>
-                    <span>👉 Je veux mon Guide — 19,97 €</span>
+                  <div className="flex flex-col items-center gap-1">
+                    <span className="text-xs md:text-sm line-through text-[#2A3F54]/60">37,97 €</span>
+                    <span className="text-base md:text-xl">👉 Je veux mon Guide — 19,97 €</span>
                   </div>
                 </a>
               </div>
