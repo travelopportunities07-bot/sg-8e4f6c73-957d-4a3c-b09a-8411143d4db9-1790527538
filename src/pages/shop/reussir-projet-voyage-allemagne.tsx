@@ -1,10 +1,42 @@
 import { SEO } from "@/components/SEO";
 import { Layout } from "@/components/layout/Layout";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ReussirProjetVoyageAllemagne() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [timeLeft, setTimeLeft] = useState({
+    hours: 23,
+    minutes: 59,
+    seconds: 59
+  });
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(prev => {
+        let { hours, minutes, seconds } = prev;
+        
+        if (seconds > 0) {
+          seconds--;
+        } else if (minutes > 0) {
+          minutes--;
+          seconds = 59;
+        } else if (hours > 0) {
+          hours--;
+          minutes = 59;
+          seconds = 59;
+        } else {
+          hours = 23;
+          minutes = 59;
+          seconds = 59;
+        }
+        
+        return { hours, minutes, seconds };
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -13,8 +45,8 @@ export default function ReussirProjetVoyageAllemagne() {
   return (
     <Layout>
       <SEO
-        title="Guide Réussir Son Projet de Voyage en Allemagne - 397€"
-        description="La méthode utilisée par +157 candidats pour trouver emploi, visa et logement en Allemagne. Guide complet à 397€ avec accès à vie."
+        title="Guide Réussir Son Projet de Voyage en Allemagne - 19,97€"
+        description="La méthode utilisée par +157 candidats pour trouver emploi, visa et logement en Allemagne. Guide complet à 19,97€ avec accès à vie."
         image="/og-image.png"
       />
 
@@ -73,12 +105,42 @@ export default function ReussirProjetVoyageAllemagne() {
                   </div>
                 </div>
 
+                {/* Timer - Version Compact */}
+                <div className="bg-gradient-to-r from-red-600 to-orange-600 p-4 rounded-xl shadow-2xl border-2 border-red-400">
+                  <p className="text-center text-white font-bold text-sm mb-2">
+                    ⚠️ OFFRE SPÉCIALE SE TERMINE DANS :
+                  </p>
+                  <div className="flex justify-center gap-3">
+                    <div className="text-center">
+                      <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2 min-w-[60px]">
+                        <div className="text-2xl font-bold text-white">{String(timeLeft.hours).padStart(2, '0')}</div>
+                        <div className="text-[10px] text-white/90 uppercase font-semibold">H</div>
+                      </div>
+                    </div>
+                    <div className="text-center">
+                      <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2 min-w-[60px]">
+                        <div className="text-2xl font-bold text-white">{String(timeLeft.minutes).padStart(2, '0')}</div>
+                        <div className="text-[10px] text-white/90 uppercase font-semibold">M</div>
+                      </div>
+                    </div>
+                    <div className="text-center">
+                      <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2 min-w-[60px]">
+                        <div className="text-2xl font-bold text-white">{String(timeLeft.seconds).padStart(2, '0')}</div>
+                        <div className="text-[10px] text-white/90 uppercase font-semibold">S</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 {/* CTA Button */}
                 <a
-                  href="https://buy.stripe.com/9B6dR1alF1OGgRB3td1sQ07"
+                  href="https://buy.stripe.com/28E5kv65palc1WHbZJ1sQ0g"
                   className="inline-block bg-[#F5A623] text-[#2A3F54] font-bold text-lg px-8 py-4 rounded-lg hover:scale-105 transition-transform shadow-lg"
                 >
-                  👉 Je veux mon Guide — Accès Immédiat à 397€
+                  <div className="flex flex-col items-center">
+                    <span className="text-sm line-through text-[#2A3F54]/60">37,97 €</span>
+                    <span>👉 Je veux mon Guide — 19,97 €</span>
+                  </div>
                 </a>
               </div>
 
@@ -227,10 +289,13 @@ export default function ReussirProjetVoyageAllemagne() {
             {/* CTA */}
             <div className="text-center">
               <a
-                href="https://buy.stripe.com/9B6dR1alF1OGgRB3td1sQ07"
+                href="https://buy.stripe.com/28E5kv65palc1WHbZJ1sQ0g"
                 className="inline-block bg-[#F5A623] text-[#2A3F54] font-bold text-lg px-8 py-4 rounded-lg hover:scale-105 transition-transform shadow-lg"
               >
-                👉 Je veux mon Guide — Accès Immédiat à 397€
+                <div className="flex flex-col items-center">
+                  <span className="text-sm line-through text-[#2A3F54]/60">37,97 €</span>
+                  <span>👉 Je veux mon Guide — 19,97 €</span>
+                </div>
               </a>
             </div>
           </div>
@@ -320,7 +385,7 @@ export default function ReussirProjetVoyageAllemagne() {
         <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-4xl md:text-5xl font-bold text-center text-[#2A3F54] mb-12">
-              Pourquoi payer 2 000€ à une agence quand ce guide fait mieux pour 397€ ?
+              Pourquoi payer 2 000€ à une agence quand ce guide fait mieux pour 19,97€ ?
             </h2>
 
             <div className="overflow-x-auto">
@@ -335,7 +400,7 @@ export default function ReussirProjetVoyageAllemagne() {
                 </thead>
                 <tbody className="divide-y divide-gray-200">
                   {[
-                    { criterion: "Prix", guide: "397€ (accès à vie)", agencies: "500€–2 000€", generic: "10€–50€ (incomplet)" },
+                    { criterion: "Prix", guide: "19,97€ (accès à vie)", agencies: "500€–2 000€", generic: "10€–50€ (incomplet)" },
                     { criterion: "Contacts directs", guide: "Nombre d'employeurs illimité avec emails/tél", agencies: "Aucune transparence", generic: "Listes obsolètes" },
                     { criterion: "Modèles prêts", guide: "CV, lettres, scripts d'appel", agencies: "Vous devez tout faire", generic: "Modèles basiques" },
                     { criterion: "Stratégie", guide: "Méthode '20+/semaine'", agencies: "Aucune méthode", generic: "Conseils vagues" },
@@ -357,10 +422,13 @@ export default function ReussirProjetVoyageAllemagne() {
 
             <div className="text-center mt-12">
               <a
-                href="https://buy.stripe.com/9B6dR1alF1OGgRB3td1sQ07"
+                href="https://buy.stripe.com/28E5kv65palc1WHbZJ1sQ0g"
                 className="inline-block bg-[#F5A623] text-[#2A3F54] font-bold text-lg px-8 py-4 rounded-lg hover:scale-105 transition-transform shadow-lg"
               >
-                👉 Je profite de l'offre exceptionnelle - Accès Immédiat à 397 €
+                <div className="flex flex-col items-center">
+                  <span className="text-sm line-through text-[#2A3F54]/60">37,97 €</span>
+                  <span>👉 Je profite de l'offre - 19,97 €</span>
+                </div>
               </a>
             </div>
           </div>
@@ -437,10 +505,10 @@ export default function ReussirProjetVoyageAllemagne() {
         <div className="bg-[#F5A623] py-4 overflow-hidden">
           <div className="animate-scroll-reverse whitespace-nowrap">
             <span className="inline-block text-[#2A3F54] font-bold text-lg px-8">
-              🚀 Démarrez maintenant 🚀 Résultats rapides 🚀 Investissement unique 🚀 Valeur 597€ 🚀
+              🚀 Démarrez maintenant 🚀 Résultats rapides 🚀 Investissement unique 🚀 Prix exceptionnel 🚀
             </span>
             <span className="inline-block text-[#2A3F54] font-bold text-lg px-8">
-              🚀 Démarrez maintenant 🚀 Résultats rapides 🚀 Investissement unique 🚀 Valeur 597€ 🚀
+              🚀 Démarrez maintenant 🚀 Résultats rapides 🚀 Investissement unique 🚀 Prix exceptionnel 🚀
             </span>
           </div>
         </div>
@@ -449,7 +517,7 @@ export default function ReussirProjetVoyageAllemagne() {
         <section className="py-20 bg-[#2A3F54] text-white">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-8">
-              Votre Accès Immédiat au Guide — 397€ seulement
+              Votre Accès Immédiat au Guide — 19,97€ seulement
             </h2>
 
             <p className="text-xl text-center text-white/90 mb-12 max-w-3xl mx-auto">
@@ -459,8 +527,8 @@ export default function ReussirProjetVoyageAllemagne() {
             {/* Price */}
             <div className="text-center mb-8">
               <div className="inline-block">
-                <p className="text-2xl text-white/60 line-through mb-2">597€</p>
-                <p className="text-6xl md:text-7xl font-bold text-[#F5A623] mb-2">397€</p>
+                <p className="text-2xl text-white/60 line-through mb-2">37,97€</p>
+                <p className="text-6xl md:text-7xl font-bold text-[#F5A623] mb-2">19,97€</p>
                 <p className="text-lg text-white/80">Accès à vie + mises à jour gratuites incluses</p>
               </div>
             </div>
@@ -478,10 +546,13 @@ export default function ReussirProjetVoyageAllemagne() {
                 </div>
                 
                 <a
-                  href="https://buy.stripe.com/9B6dR1alF1OGgRB3td1sQ07"
+                  href="https://buy.stripe.com/28E5kv65palc1WHbZJ1sQ0g"
                   className="w-full max-w-md bg-[#F5A623] text-[#2A3F54] font-bold text-xl px-12 py-5 rounded-lg hover:scale-105 transition-transform shadow-xl text-center"
                 >
-                  👉 Je veux mon Guide — Accès Immédiat à 397€
+                  <div className="flex flex-col items-center">
+                    <span className="text-sm line-through text-[#2A3F54]/60">37,97 €</span>
+                    <span>👉 Je veux mon Guide — 19,97 €</span>
+                  </div>
                 </a>
               </div>
             </div>
