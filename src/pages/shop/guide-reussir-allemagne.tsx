@@ -1,6 +1,5 @@
 import { SEO } from "@/components/SEO";
 import { Layout } from "@/components/layout/Layout";
-import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -95,16 +94,15 @@ export default function GuideReussirAllemagne() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-lg px-8 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all"
-                  onClick={() => window.location.href = 'https://buy.stripe.com/28E5kv65palc1WHbZJ1sQ0g'}
+                <a
+                  href="https://buy.stripe.com/28E5kv65palc1WHbZJ1sQ0g"
+                  className="inline-block bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-lg px-8 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all text-center"
                 >
                   <div className="flex flex-col items-center">
                     <span className="text-sm line-through text-white/70">37,97 €</span>
                     <span className="text-xl font-bold">OBTENIR MON GUIDE - 19,97 €</span>
                   </div>
-                </Button>
+                </a>
               </div>
 
               <div className="flex items-center gap-3 pt-4">
@@ -283,16 +281,15 @@ export default function GuideReussirAllemagne() {
             </div>
 
             <div className="text-center">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-10 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all"
-                onClick={() => window.location.href = 'https://buy.stripe.com/28E5kv65palc1WHbZJ1sQ0g'}
+              <a
+                href="https://buy.stripe.com/28E5kv65palc1WHbZJ1sQ0g"
+                className="inline-block bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-10 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all"
               >
                 <div className="flex flex-col items-center">
                   <span className="text-sm line-through text-white/80">37,97 €</span>
                   <span>JE VEUX CE GUIDE MAINTENANT - 19,97 €</span>
                 </div>
-              </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -507,16 +504,15 @@ export default function GuideReussirAllemagne() {
                 <p className="text-center text-sm text-gray-600 mt-2">Paiement sécurisé et vérifié avec Stripe</p>
               </div>
 
-              <Button
-                size="lg"
-                className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-xl py-8 rounded-xl shadow-2xl transform hover:scale-105 transition-all"
-                onClick={() => window.location.href = 'https://buy.stripe.com/28E5kv65palc1WHbZJ1sQ0g'}
+              <a
+                href="https://buy.stripe.com/28E5kv65palc1WHbZJ1sQ0g"
+                className="block w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-xl py-8 rounded-xl shadow-2xl transform hover:scale-105 transition-all text-center"
               >
                 <div className="flex flex-col items-center">
                   <span className="text-sm line-through text-white/80">37,97 €</span>
                   <span>🔒 PAYER MAINTENANT - 19,97 €</span>
                 </div>
-              </Button>
+              </a>
 
               <p className="text-center text-xs text-gray-500 mt-4">
                 Paiement sécurisé par Stripe. Vos données sont protégées.
