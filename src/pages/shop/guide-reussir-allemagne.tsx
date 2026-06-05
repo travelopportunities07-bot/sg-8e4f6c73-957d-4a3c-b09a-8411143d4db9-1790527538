@@ -3,8 +3,42 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function GuideReussirAllemagne() {
+  const [timeLeft, setTimeLeft] = useState({
+    hours: 23,
+    minutes: 59,
+    seconds: 59
+  });
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(prev => {
+        let { hours, minutes, seconds } = prev;
+        
+        if (seconds > 0) {
+          seconds--;
+        } else if (minutes > 0) {
+          minutes--;
+          seconds = 59;
+        } else if (hours > 0) {
+          hours--;
+          minutes = 59;
+          seconds = 59;
+        } else {
+          hours = 23;
+          minutes = 59;
+          seconds = 59;
+        }
+        
+        return { hours, minutes, seconds };
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <Layout>
       <SEO
@@ -33,13 +67,43 @@ export default function GuideReussirAllemagne() {
                 Le guide complet pour les migrants africains : De l'arrivée à l'aéroport jusqu'à votre premier contrat de travail et vos premières allocations familiales.
               </p>
 
+              {/* Compteur à rebours */}
+              <div className="bg-gradient-to-r from-red-600 to-orange-600 p-6 rounded-xl shadow-2xl border-2 border-red-400">
+                <p className="text-center text-white font-bold text-lg mb-3">
+                  ⚠️ OFFRE SPÉCIALE SE TERMINE DANS :
+                </p>
+                <div className="flex justify-center gap-4">
+                  <div className="text-center">
+                    <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-3 min-w-[80px]">
+                      <div className="text-3xl font-bold text-white">{String(timeLeft.hours).padStart(2, '0')}</div>
+                      <div className="text-xs text-white/90 uppercase font-semibold">Heures</div>
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-3 min-w-[80px]">
+                      <div className="text-3xl font-bold text-white">{String(timeLeft.minutes).padStart(2, '0')}</div>
+                      <div className="text-xs text-white/90 uppercase font-semibold">Minutes</div>
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-3 min-w-[80px]">
+                      <div className="text-3xl font-bold text-white">{String(timeLeft.seconds).padStart(2, '0')}</div>
+                      <div className="text-xs text-white/90 uppercase font-semibold">Secondes</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-lg px-8 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all"
-                  onClick={() => window.location.href = 'https://buy.stripe.com/3cI00b51ldxo7h16Fp1sQ06'}
+                  onClick={() => window.location.href = 'https://buy.stripe.com/28E5kv65palc1WHbZJ1sQ0g'}
                 >
-                  OBTENIR MON GUIDE MAINTENANT - 19,97 €
+                  <div className="flex flex-col items-center">
+                    <span className="text-sm line-through text-white/70">37,97 €</span>
+                    <span className="text-xl font-bold">OBTENIR MON GUIDE - 19,97 €</span>
+                  </div>
                 </Button>
               </div>
 
@@ -191,13 +255,43 @@ export default function GuideReussirAllemagne() {
               </div>
             </div>
 
-            <div className="text-center mt-12">
+            {/* Compteur à rebours milieu de page */}
+            <div className="bg-gradient-to-r from-red-600 to-orange-600 p-6 rounded-xl shadow-2xl border-2 border-red-400 mt-12 mb-8">
+              <p className="text-center text-white font-bold text-lg mb-3">
+                ⏰ L'OFFRE EXPIRE DANS :
+              </p>
+              <div className="flex justify-center gap-4">
+                <div className="text-center">
+                  <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-3 min-w-[80px]">
+                    <div className="text-3xl font-bold text-white">{String(timeLeft.hours).padStart(2, '0')}</div>
+                    <div className="text-xs text-white/90 uppercase font-semibold">Heures</div>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-3 min-w-[80px]">
+                    <div className="text-3xl font-bold text-white">{String(timeLeft.minutes).padStart(2, '0')}</div>
+                    <div className="text-xs text-white/90 uppercase font-semibold">Minutes</div>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="bg-white/20 backdrop-blur-sm rounded-lg px-4 py-3 min-w-[80px]">
+                    <div className="text-3xl font-bold text-white">{String(timeLeft.seconds).padStart(2, '0')}</div>
+                    <div className="text-xs text-white/90 uppercase font-semibold">Secondes</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white text-lg px-10 py-6 rounded-xl shadow-2xl transform hover:scale-105 transition-all"
-                onClick={() => window.location.href = 'https://buy.stripe.com/3cI00b51ldxo7h16Fp1sQ06'}
+                onClick={() => window.location.href = 'https://buy.stripe.com/28E5kv65palc1WHbZJ1sQ0g'}
               >
-                JE VEUX CE GUIDE MAINTENANT - 19,97 €
+                <div className="flex flex-col items-center">
+                  <span className="text-sm line-through text-white/80">37,97 €</span>
+                  <span>JE VEUX CE GUIDE MAINTENANT - 19,97 €</span>
+                </div>
               </Button>
             </div>
           </div>
@@ -368,7 +462,37 @@ export default function GuideReussirAllemagne() {
                     <h3 className="text-xl font-bold text-green-600">E-book "Réussir son intégration en Allemagne"</h3>
                     <p className="text-sm text-gray-600 mt-1">Format PDF - Lecture immédiate sur mobile/PC</p>
                   </div>
-                  <div className="text-2xl font-bold text-[#D4AF37]">19,97 €</div>
+                  <div className="text-right">
+                    <div className="text-lg text-gray-400 line-through">37,97 €</div>
+                    <div className="text-2xl font-bold text-[#D4AF37]">19,97 €</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Compteur à rebours final */}
+              <div className="bg-gradient-to-r from-red-600 to-orange-600 p-4 rounded-xl shadow-xl border-2 border-red-400 mb-6">
+                <p className="text-center text-white font-bold text-sm mb-2">
+                  ⚠️ OFFRE EXPIRE DANS :
+                </p>
+                <div className="flex justify-center gap-3">
+                  <div className="text-center">
+                    <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2 min-w-[60px]">
+                      <div className="text-2xl font-bold text-white">{String(timeLeft.hours).padStart(2, '0')}</div>
+                      <div className="text-[10px] text-white/90 uppercase font-semibold">H</div>
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2 min-w-[60px]">
+                      <div className="text-2xl font-bold text-white">{String(timeLeft.minutes).padStart(2, '0')}</div>
+                      <div className="text-[10px] text-white/90 uppercase font-semibold">M</div>
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2 min-w-[60px]">
+                      <div className="text-2xl font-bold text-white">{String(timeLeft.seconds).padStart(2, '0')}</div>
+                      <div className="text-[10px] text-white/90 uppercase font-semibold">S</div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -386,9 +510,12 @@ export default function GuideReussirAllemagne() {
               <Button
                 size="lg"
                 className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-xl py-8 rounded-xl shadow-2xl transform hover:scale-105 transition-all"
-                onClick={() => window.location.href = 'https://buy.stripe.com/3cI00b51ldxo7h16Fp1sQ06'}
+                onClick={() => window.location.href = 'https://buy.stripe.com/28E5kv65palc1WHbZJ1sQ0g'}
               >
-                🔒 PAYER MAINTENANT - 19,97 €
+                <div className="flex flex-col items-center">
+                  <span className="text-sm line-through text-white/80">37,97 €</span>
+                  <span>🔒 PAYER MAINTENANT - 19,97 €</span>
+                </div>
               </Button>
 
               <p className="text-center text-xs text-gray-500 mt-4">
