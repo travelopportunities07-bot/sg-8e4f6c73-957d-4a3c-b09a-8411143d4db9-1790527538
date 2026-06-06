@@ -42,7 +42,24 @@ export default function GuideSuccess() {
               </h2>
 
               <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 mb-6 border border-green-200">
-                <h3 className="font-bold text-lg text-gray-900 mb-3">📧 Vérifiez votre email</h3>
+                <h3 className="font-bold text-lg text-gray-900 mb-3">📥 Téléchargez votre guide maintenant</h3>
+                <p className="text-gray-700 mb-4">
+                  Cliquez sur le bouton ci-dessous pour accéder à votre guide immédiatement :
+                </p>
+                
+                <a
+                  href="https://drive.google.com/file/d/1rd8lNR-6_Cz-_Bp2MZdXhMYrG-Zo2758/view?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold text-lg px-6 py-4 rounded-lg shadow-lg transition-all hover:scale-105"
+                >
+                  <Download className="w-5 h-5 mr-2" />
+                  Télécharger le Guide PDF
+                </a>
+              </div>
+
+              <div className="bg-blue-50 rounded-xl p-6 mb-6 border border-blue-200">
+                <h3 className="font-bold text-lg text-gray-900 mb-3">📧 Vous avez aussi reçu un email</h3>
                 <p className="text-gray-700 mb-4">
                   Nous venons de vous envoyer un email contenant :
                 </p>

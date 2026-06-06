@@ -135,6 +135,8 @@ export default function ReussirProjetVoyageAllemagne() {
                 {/* CTA Button */}
                 <a
                   href="https://buy.stripe.com/28E5kv65palc1WHbZJ1sQ0g"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block bg-[#F5A623] text-[#2A3F54] font-bold text-base md:text-lg px-6 md:px-8 py-4 rounded-lg hover:scale-105 transition-transform shadow-lg w-full md:w-auto"
                 >
                   <div className="flex flex-col items-center gap-1">
@@ -290,6 +292,8 @@ export default function ReussirProjetVoyageAllemagne() {
             <div className="text-center">
               <a
                 href="https://buy.stripe.com/28E5kv65palc1WHbZJ1sQ0g"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block bg-[#F5A623] text-[#2A3F54] font-bold text-base md:text-lg px-6 md:px-8 py-4 rounded-lg hover:scale-105 transition-transform shadow-lg w-full md:w-auto"
               >
                 <div className="flex flex-col items-center gap-1">
@@ -423,6 +427,8 @@ export default function ReussirProjetVoyageAllemagne() {
             <div className="text-center mt-12">
               <a
                 href="https://buy.stripe.com/28E5kv65palc1WHbZJ1sQ0g"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block bg-[#F5A623] text-[#2A3F54] font-bold text-base md:text-lg px-6 md:px-8 py-4 rounded-lg hover:scale-105 transition-transform shadow-lg w-full md:w-auto"
               >
                 <div className="flex flex-col items-center gap-1">
@@ -547,6 +553,8 @@ export default function ReussirProjetVoyageAllemagne() {
                 
                 <a
                   href="https://buy.stripe.com/28E5kv65palc1WHbZJ1sQ0g"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full max-w-md bg-[#F5A623] text-[#2A3F54] font-bold text-lg md:text-xl px-8 md:px-12 py-4 md:py-5 rounded-lg hover:scale-105 transition-transform shadow-xl text-center"
                 >
                   <div className="flex flex-col items-center gap-1">
