@@ -6,6 +6,9 @@ export default function Document() {
     <Html lang="fr" suppressHydrationWarning>
       <Head>
         <SEOElements />
+        <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta httpEquiv="Pragma" content="no-cache" />
+        <meta httpEquiv="Expires" content="0" />
         {/* Softgen AI monitoring script */}
         <script 
           src="https://cdn.softgen.ai/script.js" 
