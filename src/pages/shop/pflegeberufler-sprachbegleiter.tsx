@@ -112,7 +112,7 @@ export default function PflegeberuflerSprachbegleiter() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-indigo-500/20 blur-3xl rounded-full"></div>
               <Image
-                src="/pflegeberufler-cover.png"
+                src="/pflegeberufler-azubi.png"
                 alt="Pflegeberufler Sprachbegleiter"
                 width={500}
                 height={600}
