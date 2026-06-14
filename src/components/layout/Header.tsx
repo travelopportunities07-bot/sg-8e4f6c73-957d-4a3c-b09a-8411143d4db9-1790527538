@@ -201,16 +201,16 @@ export function Header() {
               {openSubmenu === "shop" && (
                 <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50">
                   <Link
-                    href="/shop/guide-reussir-allemagne"
+                    href="/shop/guides-ebooks"
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#D4AF37] transition-colors"
                   >
-                    📘 Guide "Réussir en Allemagne"
+                    📚 Guides_Ebooks
                   </Link>
                   <Link
-                    href="/shop/reussir-projet-voyage-allemagne"
+                    href="/shop/ebooks-pro"
                     className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#D4AF37] transition-colors"
                   >
-                    ✈️ Guide Réussir son projet de voyage en Allemagne
+                    💼 Ebooks Pro
                   </Link>
                   <Link
                     href="/shop/finances-vie-pratique"
@@ -454,18 +454,18 @@ export function Header() {
               {openMobileSubmenu === "shop" && (
                 <div className="ml-4 mt-2 space-y-2">
                   <Link
-                    href="/shop/guide-reussir-allemagne"
+                    href="/shop/guides-ebooks"
                     className="block py-2 text-gray-600 hover:text-[#D4AF37] transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    📘 Guide "Réussir en Allemagne"
+                    📚 Guides_Ebooks
                   </Link>
                   <Link
-                    href="/shop/reussir-projet-voyage-allemagne"
+                    href="/shop/ebooks-pro"
                     className="block py-2 text-gray-600 hover:text-[#D4AF37] transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    ✈️ Guide Réussir son projet de voyage en Allemagne
+                    💼 Ebooks Pro
                   </Link>
                   <Link
                     href="/shop/finances-vie-pratique"
