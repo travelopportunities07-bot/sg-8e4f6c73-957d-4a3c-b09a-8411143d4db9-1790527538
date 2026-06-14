@@ -1,6 +1,6 @@
 ---
 title: Pages Shop Ebooks - Guides & Ebooks Pro
-status: in_progress
+status: done
 priority: urgent
 type: feature
 tags: [shop, ebooks, landing-pages]

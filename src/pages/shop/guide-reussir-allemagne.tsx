@@ -123,7 +123,7 @@ export default function GuideReussirAllemagne() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-tr from-green-500/20 to-emerald-500/20 blur-3xl rounded-full"></div>
               <Image
-                src="/guide-hero.jpg"
+                src="/guide-reussir-allemagne.png"
                 alt="Guide Réussir en Allemagne"
                 width={600}
                 height={700}
