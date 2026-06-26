@@ -12,7 +12,7 @@ export default function Home() {
       <OpportunityTypes />
       <AboutSection />
       <Testimonials />
-      <QuickAppointment />
+      <QuickAppointment calendlyUrl="https://calendly.com/vivre-en-allemagne/30min" />
       <CallToAction />
     </>
   );
